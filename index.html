@@ -33,20 +33,20 @@
         Prevent Scrolling down.
         Uses jQuery.
         */
-        var frameCount = 0;
-        function resetScroll() {
-            window.requestAnimationFrame(resetScroll);
+        var c6_frameCount = 0;
+        function c6_resetScroll() {
+            window.requestAnimationFrame(c6_resetScroll);
             // Drawing code goes here
-            frameCount++;
-            if(frameCount > 60) {
-                frameCount  = 0;
-                checkForScroll();
+            c6_frameCount++;
+            if(c6_frameCount > 60) {
+                c6_frameCount  = 0;
+                c6_checkForScroll();
             }
         };
-        resetScroll();
+        c6_resetScroll();
         
          
-        var checkForScroll = function(e) {
+        var c6_checkForScroll = function(e) {
             var iScroll = $(document).scrollTop();
             if (iScroll > 1){
                 $('body, html').scrollTop(0);

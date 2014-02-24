@@ -10,6 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/frame.css">
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>
     <body>
@@ -19,7 +20,7 @@
         <div id="bottomDock" class="dock__bottom">
             bottom dock
         </div>
-        <div class="content__group">
+        <div class="content__group" id="contentGroup">
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
             <p>Curabitur quis urna arcu. Nullam fringilla commodo tellus, non semper urna pharetra eget. Sed tincidunt velit in enim feugiat, ut rutrum sem ultricies. Phasellus feugiat aliquet felis. Curabitur elementum gravida lacus eget imperdiet. Suspendisse tincidunt commodo porta. Vestibulum vitae molestie quam. Duis non dapibus leo. Morbi ipsum sapien, sollicitudin in pretium vitae, sollicitudin vitae massa. Sed sagittis hendrerit sem, vitae posuere tortor placerat ut. Nam varius imperdiet eros eu lacinia. Duis et odio ornare, lobortis lorem non, cursus tellus. Pellentesque dictum mi orci. Integer non turpis tincidunt, posuere magna sit amet, lobortis dolor.</p>
 
@@ -32,8 +33,11 @@
             <p>Sed dapibus urna vitae lorem venenatis, id bibendum erat porttitor. Proin ultrices dignissim odio, ac adipiscing diam tincidunt vitae. Nunc porttitor, massa vitae tempor mattis, purus turpis adipiscing mauris, vel auctor lorem libero blandit nulla. Nulla facilisi. Quisque laoreet diam id congue convallis. Praesent quam dui, aliquet sit amet cursus non, tincidunt non lacus. Etiam dapibus gravida velit, eu vestibulum tortor mollis quis. Donec vel tempus turpis, at pretium mauris. Aliquam porttitor orci et odio consequat pellentesque.</p>
         </div>
         <script>
-            var bottomDock  = document.getElementById('bottomDock'),
-                topDock  = document.getElementById('topDock');
+            var bottomDock      = document.getElementById('bottomDock'),
+                topDock         = document.getElementById('topDock'),
+                $contentGroup   = $('#contentGroup'),
+                contentHeight   = $contentGroup.height(),
+                scrollHeight  = $contentGroup.get(0).scrollHeight;
             bottomDock.addEventListener('touchmove', function(e) {
                 e.preventDefault();
             }, false);

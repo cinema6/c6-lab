@@ -10,16 +10,19 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/parent.css">
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>
     <body>
         <div class="container">
-            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+            <h1>Parent Frame Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
             <p>Curabitur quis urna arcu. Nullam fringilla commodo tellus, non semper urna pharetra eget. Sed tincidunt velit in enim feugiat, ut rutrum sem ultricies. Phasellus feugiat aliquet felis. Curabitur elementum gravida lacus eget imperdiet. Suspendisse tincidunt commodo porta. Vestibulum vitae molestie quam. Duis non dapibus leo. Morbi ipsum sapien, sollicitudin in pretium vitae, sollicitudin vitae massa. Sed sagittis hendrerit sem, vitae posuere tortor placerat ut. Nam varius imperdiet eros eu lacinia. Duis et odio ornare, lobortis lorem non, cursus tellus. Pellentesque dictum mi orci. Integer non turpis tincidunt, posuere magna sit amet, lobortis dolor.</p>
 
             <p>Nam mollis eros et justo aliquet sagittis. Sed eget eros sit amet diam sollicitudin ultrices. Aenean vestibulum erat quis enim elementum, a bibendum nibh mattis. Praesent sagittis tristique est, et vestibulum sapien tempor at. Donec quis sollicitudin felis. Donec accumsan orci aliquet, feugiat est non, porttitor justo. Morbi posuere sed ante sed egestas. Pellentesque justo nisl, congue vel elementum in, tincidunt ac sapien.</p>
             
-            <p><iframe src="frame.html" id="mr-iframe"></iframe></p>
+            <div >
+            <iframe src="frame.html?sdaflkj" id="mr-iframe" class="mr-iframe__group" seamless scrolling="yes"></iframe>
+            </div>
 
             <p>Fusce mi lacus, dictum adipiscing malesuada suscipit, fringilla sed augue. Morbi accumsan velit et nisl fermentum, nec pharetra erat ornare. Nullam dignissim nulla sit amet massa mattis venenatis. Vivamus id consectetur est, vel lacinia velit. Cras pharetra lorem a augue rutrum, malesuada mattis sapien dignissim. Aliquam vitae dapibus purus, ac eleifend enim. Quisque viverra bibendum lectus, sit amet rutrum urna vestibulum et. Etiam vitae elit viverra, euismod eros nec, auctor arcu.</p>
 
@@ -27,5 +30,30 @@
 
             <p>Sed dapibus urna vitae lorem venenatis, id bibendum erat porttitor. Proin ultrices dignissim odio, ac adipiscing diam tincidunt vitae. Nunc porttitor, massa vitae tempor mattis, purus turpis adipiscing mauris, vel auctor lorem libero blandit nulla. Nulla facilisi. Quisque laoreet diam id congue convallis. Praesent quam dui, aliquet sit amet cursus non, tincidunt non lacus. Etiam dapibus gravida velit, eu vestibulum tortor mollis quis. Donec vel tempus turpis, at pretium mauris. Aliquam porttitor orci et odio consequat pellentesque.</p>
         </div>
+        <script>
+        /*
+        Prevent Scrolling down.
+        Uses jQuery.
+        */
+        var frameCount = 0;
+        function resetScroll() {
+            window.requestAnimationFrame(resetScroll);
+            // Drawing code goes here
+            frameCount++;
+            if(frameCount > 60) {
+                frameCount  = 0;
+                checkForScroll();
+            }
+        };
+        resetScroll();
+        
+         
+        var checkForScroll = function(e) {
+            var iScroll = $(document).scrollTop();
+            if (iScroll > 1){
+                $('body, html').scrollTop(0);
+            }
+        }
+        </script>
     </body>
 </html>

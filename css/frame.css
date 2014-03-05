@@ -3,8 +3,8 @@ body {
     background:#fff;
 }
 .content__group {
-    margin:0; overflow-x:auto; overflow-y: auto; -webkit-overflow-scrolling: touch;
-    position:fixed; top:2em; bottom:2.5em; left:0; right:0;
+    overflow-x:auto; overflow-y: auto; -webkit-overflow-scrolling: touch;
+    position:fixed; top:2em; left:0; right:0; bottom:2.5em;
 }
 .dock__top {
     position:fixed; top:0; left:0; z-index:5000;

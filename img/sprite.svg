@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" xml:space="preserve">
+    <defs>
+        <style>
+            .square {
+                display:none;
+            }
+            @media screen and (min-width:21px) and (max-width: 40px) {
+                .green-square {
+                    display:block;
+                }
+            }
+            @media screen and (max-width: 20px) {
+                .red-square {
+                    display:block;
+                }
+            }
+            .square:hover {
+                fill:blue;
+            }
+        </style>
+    </defs>
+    <rect class="red-square square" fill="#BC2632" width="100" height="100"/>
+    <rect class="green-square square" fill="#6EBE44" width="100" height="100"/>
+</svg>

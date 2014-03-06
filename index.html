@@ -13,23 +13,99 @@
         <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <style>
+            body {
+                margin:0;
+            }
             embed {
                 width: 100%; height: auto;
             }
-            .myEmbed {
-                -moz-transform: scale(2);
-                -webkit-transform: scale(2);
-                -o-transform: scale(2);
-                -ms-transform: scale(2);
-                transform: scale(2);
+            .myEmbed, .svg-bg {
+                display: block;
+                -moz-transform: scale(100);
+                -webkit-transform: scale(100);
+                -o-transform: scale(100);
+                -ms-transform: scale(100);
+                transform: scale(100);
+                transform-origin:0 0;
+                -ms-transform-origin:0 0; /* IE 9 */
+                -webkit-transform-origin:0 0; /* Chrome, Safari, Opera */
+            }
+            .container {
+                width:1px;  height:0; float:left; margin:10px;
+                position: relative;
+            }
+            .container--help {
+                width:3px; padding:0 97px 100px 0;
+            }
+                .container--help .myEmbed {
+                    -moz-transform: scale(33.33);
+                    -webkit-transform: scale(33.33);
+                    -o-transform: scale(33.33);
+                    -ms-transform: scale(33.33);
+                    transform: scale(33.33);
+                }
+            .container--red {
+                padding:0 99px 100px 0;
+            }
+            .container--green {
+                width:2px; padding:0 98px 100px 0;
+            }
+                .container--green .myEmbed {
+                    -moz-transform: scale(50);
+                    -webkit-transform: scale(50);
+                    -o-transform: scale(50);
+                    -ms-transform: scale(50);
+                    transform: scale(50);
+                }
+            .container--green .svg-bg {
+                width:2px; height:2px;
+                -moz-transform: scale(50);
+                -webkit-transform: scale(50);
+                -o-transform: scale(50);
+                -ms-transform: scale(50);
+                transform: scale(50);
+            }
+            .container--red .svg-bg {
+                -moz-transform: scale(100);
+                -webkit-transform: scale(100);
+                -o-transform: scale(100);
+                -ms-transform: scale(100);
+                transform: scale(100);
+            }
+            .container--help .svg-bg {
+                width:3px; height:3px;
+                -moz-transform: scale(33.33);
+                -webkit-transform: scale(33.33);
+                -o-transform: scale(33.33);
+                -ms-transform: scale(33.33);
+                transform: scale(33.33);
+            }
+            .svg-bg {
+                width:1px; height:1px; background:url('img/sprite.svg') 0 0 / contain no-repeat;
+                overflow: hidden; position:absolute; top:0; left:0;
             }
         </style>
     </head>
     <body>
-        <div style="width: 20px;">
-            <object>
-                <embed src="img/sprite.svg" class="myEmbed" />
-            </object>
+        <div class="container container--help">
+            <div class="svg-bg">hello red box</div>
+        </div>
+        <div class="container container--red">
+            <div class="svg-bg">hello red box</div>
+        </div>
+        <div class="container container--green">
+            <div class="svg-bg">hello green box</div>
+        </div>
+
+
+        <div class="container container--help">
+            <embed src="img/sprite.svg" class="myEmbed" >
+        </div>
+        <div class="container container--red">
+            <embed src="img/sprite.svg" class="myEmbed" >
+        </div>
+        <div class="container container--green">
+            <embed src="img/sprite.svg" class="myEmbed" >
         </div>
     </body>
 </html>

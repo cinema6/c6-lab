@@ -139,7 +139,7 @@
 
             }
 
-            @media screen and (max-width: 150px) {
+            @media screen and (max-width: 1px) {
                 #window-item-main {
                     display: none;
                 }
@@ -152,7 +152,7 @@
 
             }
 
-            @media screen and (max-width: 100px) {
+            @media screen and (max-width: 1px) {
                 #tube-body {
                     display: none;
                 }
@@ -160,7 +160,7 @@
             }
 
 
-            @media screen and (max-width: 44px) {
+            @media screen and (max-width: 1px) {
                 #door-body {
                     display: none;
                 }

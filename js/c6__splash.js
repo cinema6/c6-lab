@@ -5,13 +5,17 @@ var iPad        = document.getElementById('iPad'),
     iPhoneTip   = document.getElementById('iPhone-tooltip'),
     iPhoneAni   = new TimelineLite({'paused':true}),
     content     = document.getElementById('content'),
-    elemW       = 0;
+    elemW       = 0,
+    slideX      = 0,
+    startX      = 0,
+    endX        = 0;
 
 iPad.onmouseover = function() {
-    var elemW   = this.clientWidth,
-        slideX  = elemW * 0.21,
-        startX  = elemW * -0.05,
-        endX    = elemW * 0.1;
+    elemW   = this.clientWidth;
+    slideX  = elemW * 0.21;
+    startX  = elemW * -0.05;
+    endX    = elemW * 0.1;
+
     iPadAni.clear();
     iPadAni.to(iPadTip, 0, {'display':'block', 'opacity':'0', 'transform':'translateX(' + startX +'px)'})
         .to(content, 0.3, {'opacity':'0.3'})
@@ -20,10 +24,6 @@ iPad.onmouseover = function() {
     iPadAni.play();
 };
 iPad.onmouseout = function() {
-    var elemW   = this.clientWidth,
-        slideX  = elemW * 0.21,
-        startX  = elemW * -0.05,
-        endX    = elemW * 0.1;
     iPadAni.clear();
     iPadAni.to(iPad, 0.4, {'transform':'translateX(0)', 'ease':'Back.easeInOut'})
         .to(iPadTip, 0.4, {'transform':'translateX(' + startX +'px)', 'opacity' : '0'}, '-=0.2')
@@ -34,10 +34,11 @@ iPad.onmouseout = function() {
 
 
 iPhone.onmouseover = function() {
-    var elemW   = this.clientWidth,
-        slideX  = elemW * -0.25,
-        startX  = elemW * 0,
-        endX    = elemW * -0.15;
+    elemW   = this.clientWidth;
+    slideX  = elemW * -0.25;
+    startX  = elemW * 0;
+    endX    = elemW * -0.15;
+
     iPhoneAni.clear();
     iPhoneAni.to(iPhoneTip, 0, {'display':'block', 'opacity':'0', 'transform':'translateX(' + startX + 'px)'})
         .to(content, 0.3, {'opacity':'0.3'})
@@ -46,10 +47,6 @@ iPhone.onmouseover = function() {
     iPhoneAni.play();
 };
 iPhone.onmouseout = function() {
-    var elemW   = this.clientWidth,
-        slideX  = elemW * -0.25,
-        startX  = elemW * 0,
-        endX    = elemW * -0.15;
     iPhoneAni.clear();
     iPhoneAni.to(iPhone, 0.4, {'transform':'translateX(0)', 'ease':'Back.easeInOut'})
         .to(iPhoneTip, 0.4, {'transform':'translateX(' + startX +'px)', 'opacity' : '0'}, '-=0.2')

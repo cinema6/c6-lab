@@ -4,26 +4,56 @@ var iPad        = document.getElementById('iPad'),
     iPhone      = document.getElementById('iPhone'),
     iPhoneTip   = document.getElementById('iPhone-tooltip'),
     iPhoneAni   = new TimelineLite({'paused':true}),
-    content     = document.getElementById('content');
+    content     = document.getElementById('content'),
+    elemW       = 0;
 
-iPadAni.to(iPadTip, 0, {'display':'block', 'opacity':'0', 'transform':'translateX(-5%)'})
-    .to(content, 0.5, {'opacity':'0.3'})
-    .to(iPad, 0.6, {'transform':'translateX(21%)', 'ease':'Back.easeInOut'}, '-=0.4')
-    .to(iPadTip, 0.4, {'transform':'translateX(10%)', 'opacity' : '1'}, '-=0.2');
 iPad.onmouseover = function() {
+    var elemW   = this.clientWidth,
+        slideX  = elemW * 0.21,
+        startX  = elemW * -0.05,
+        endX    = elemW * 0.1;
+    iPadAni.clear();
+    iPadAni.to(iPadTip, 0, {'display':'block', 'opacity':'0', 'transform':'translateX(' + startX +'px)'})
+        .to(content, 0.3, {'opacity':'0.3'})
+        .to(iPad, 0.6, {'transform':'translateX(' + slideX + 'px)', 'ease':'Back.easeInOut'}, '-=0.3')
+        .to(iPadTip, 0.4, {'transform':'translateX(' + endX + 'px)', 'opacity' : '1'}, '-=0.2');
     iPadAni.play();
 };
 iPad.onmouseout = function() {
-    iPadAni.reverse();
+    var elemW   = this.clientWidth,
+        slideX  = elemW * 0.21,
+        startX  = elemW * -0.05,
+        endX    = elemW * 0.1;
+    iPadAni.clear();
+    iPadAni.to(iPad, 0.4, {'transform':'translateX(0)', 'ease':'Back.easeInOut'})
+        .to(iPadTip, 0.4, {'transform':'translateX(' + startX +'px)', 'opacity' : '0'}, '-=0.2')
+        .to(content, 0.3, {'opacity':'1'}, '-=0.2')
+        .to(iPadTip, 0, {'display':'none'});
+    iPadAni.play();
 };
 
-iPhoneAni.to(iPhoneTip, 0, {'display':'block', 'opacity':'0', 'transform':'translateX(0%)'})
-    .to(content, 0.5, {'opacity':'0.3'})
-    .to(iPhone, 0.6, {'transform':'translateX(-25%)', 'ease':'Back.easeInOut'}, '-=0.4')
-    .to(iPhoneTip, 0.4, {'transform':'translateX(-15%)', 'opacity' : '1'}, '-=0.2');
+
 iPhone.onmouseover = function() {
+    var elemW   = this.clientWidth,
+        slideX  = elemW * -0.25,
+        startX  = elemW * 0,
+        endX    = elemW * -0.15;
+    iPhoneAni.clear();
+    iPhoneAni.to(iPhoneTip, 0, {'display':'block', 'opacity':'0', 'transform':'translateX(' + startX + 'px)'})
+        .to(content, 0.3, {'opacity':'0.3'})
+        .to(iPhone, 0.6, {'transform':'translateX(' + slideX + 'px)', 'ease':'Back.easeInOut'}, '-=0.3')
+        .to(iPhoneTip, 0.4, {'transform':'translateX(' + endX + 'px)', 'opacity' : '1'}, '-=0.2');
     iPhoneAni.play();
 };
 iPhone.onmouseout = function() {
-    iPhoneAni.reverse();
+    var elemW   = this.clientWidth,
+        slideX  = elemW * -0.25,
+        startX  = elemW * 0,
+        endX    = elemW * -0.15;
+    iPhoneAni.clear();
+    iPhoneAni.to(iPhone, 0.4, {'transform':'translateX(0)', 'ease':'Back.easeInOut'})
+        .to(iPhoneTip, 0.4, {'transform':'translateX(' + startX +'px)', 'opacity' : '0'}, '-=0.2')
+        .to(content, 0.3, {'opacity':'1'}, '-=0.2')
+        .to(iPhoneTip, 0, {'display':'none'});
+    iPhoneAni.play();
 };

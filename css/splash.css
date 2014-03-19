@@ -31,7 +31,7 @@
     c6-splash classes
     ========================================================================== */
     .c6-splash__group {
-        position: absolute; height: 55.75rem; width: 100%; overflow-x: hidden;
+        position: absolute; width: 100%; overflow-x: hidden;
         font-family: 'MuseoSans', Arial, Helvetica, sans-serif;
         font-size: 1em; font-weight:100; color:#444; background: #fff;
         border-top: 4px solid #2074c9; border-bottom: 4px solid #454a51;
@@ -141,10 +141,10 @@
     @media screen and (max-width: 596px) {
         /* mobile version*/
         .c6-splash__group {
-            height: 100rem; min-width: 320px;
+            min-width: 320px;
         }
         .c6-splash__mobile-blocks {
-            height: 350px;
+            height: 19rem;
         }
         .c6-splash__copy {
             width: 100%; padding: 3em 0 0;
@@ -163,13 +163,13 @@
                 }
 
             .c6-splash__p {
-                width: auto;
+                width: auto; margin: 2.625em 0 0; padding: 0 0 0 1.5625em;
             }
-                .c6-splash__p--callout {
-                    
-                }
+            .c6-splash__callout {
+                margin: 3.4375em 0 0;
+            }
             .c6-splash__legal {
-               
+               margin: 15.333em 0 2.5em;
             }
 
         .c6-splash__ipad, .c6-splash__iphone {
@@ -179,8 +179,7 @@
                 height: 19.5rem; width: 7.3125rem; float: left;
             }
             .c6-splash__iphone {
-                height: 19.5rem; width: 5rem; float: right;
-                
+                height: 26.75rem; width: 6.25rem; float: right; margin-top: -2.5rem;
             }
 
         .c6-splash__caption-left, .c6-splash__caption-right {

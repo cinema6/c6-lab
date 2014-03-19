@@ -64,6 +64,7 @@
         position: absolute; top: 18em; font-size: 0.875em;/*14px*/ line-height: 1.428;
         width: 10.2857em; height: 5.2857em; padding: 0.5714em 0.85714em 1.14285em; border-radius: 5px;
         background: #d94040; border: 2px solid #fff; color: #fff;
+        display: none;
     }
         .c6-splash__caption-left {
             text-align: left; left: 19.5em;

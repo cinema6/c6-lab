@@ -1,0 +1,170 @@
+/*  ==========================================================================
+    global styles
+    ========================================================================== */
+    body {
+        margin: 0; background: #454a51;
+    }
+
+/*  ==========================================================================
+    helper classes
+    ========================================================================== */
+    .clearfix:before,
+    .clearfix:after {
+        content: ' ';
+        display: table;
+    }
+    .clearfix:after {
+        clear: both;
+    }
+
+/*  ==========================================================================
+    c6-splash classes
+    ========================================================================== */
+    .c6-splash__group {
+        position: absolute; height: 55.75rem; width: 100%; overflow-x: hidden;
+        font-family: 'museo-sans', Arial, Helvetica, sans-serif;
+        font-size: 1em; font-weight:100; color:#444; background: #fff;
+        border-top: 4px solid #2074c9; border-bottom: 4px solid #454a51;
+    }
+        .c6-logo { 
+            margin-top: 3em;
+        }
+
+    .c6-splash__copy {
+        margin: 0 auto; max-width: 35rem;/*560px*/ padding: 0 0.625em 0;
+        background: url(../img/branching-bg.png) no-repeat 50% 7.375rem;
+        text-align: center; 
+    }
+        .c6-splash__title {
+            font-size: 2.75em;/*44px*/ margin: 2em 0 0.75em; font-weight:100; line-height: 1.36;
+        }
+        .c6-splash__subtitle {
+            display:none;
+        }
+        .c6-splash__p {
+            line-height: 1.75; text-align: left; margin: 0.5625em auto; width: 80%;
+        }
+        .c6-splash__legal {
+            font-size: 0.75em;/*12px*/ width:100%; color: #aaa; margin: 22.667em 0 2.5em;
+        }
+
+    .c6-splash__ipad, .c6-splash__iphone {
+        position: absolute;
+    }
+        .c6-splash__ipad {
+            top: 5.25rem; left: -4.125rem; width: 17.875rem;/*286px*/ height: 755px;
+            background: url(../img/mr-ipad.png) no-repeat center left / contain;
+        }
+        .c6-splash__iphone {
+            top: 6.75rem; right: -3.75rem; width: 11.25rem;/*180x*/ height: 727px;
+            background: url(../img/mr-iphone.png) no-repeat center right / contain;
+        }
+
+    .c6-splash__caption-left, .c6-splash__caption-right {
+        position: absolute; top: 18em; font-size: 0.875em;/*14px*/ line-height: 1.428;
+        width: 10.2857em; height: 5.2857em; padding: 0.5714em 0.85714em 1.14285em; border-radius: 5px;
+        background: #d94040; border: 2px solid #fff; color: #fff;
+    }
+        .c6-splash__caption-left {
+            text-align: left; left: 19.5em;
+        }
+            /* css arrow */
+            .c6-splash__caption-left:after, .c6-splash__caption-left:before {
+                position: absolute; height: 0; width: 0; right: 100%; top: 20%;
+                content: " "; border: solid transparent; pointer-events: none;
+            }
+            .c6-splash__caption-left:after {
+                border-color: rgba(217, 64, 64, 0); border-right-color: #d94040;
+                border-width: 4px; margin-top: -4px;
+            }
+            .c6-splash__caption-left:before {
+                border-color: rgba(194, 225, 245, 0); border-right-color: #fff;
+                border-width: 7px; margin-top: -7px;
+            }
+        .c6-splash__caption-right {
+            text-align: right; right: 11.5em;
+        }
+            /* css arrow */
+            .c6-splash__caption-right:after, .c6-splash__caption-right:before {
+                position: absolute;height: 0; width: 0; left: 100%; top: 20%;
+                content: " "; border: solid transparent; pointer-events: none;
+            }
+            .c6-splash__caption-right:after {
+                border-color: rgba(217, 64, 64, 0); border-left-color: #d94040;
+                border-width: 4px; margin-top: -4px;
+            }
+            .c6-splash__caption-right:before {
+                border-color: rgba(194, 225, 245, 0); border-left-color: #fff;
+                border-width: 7px; margin-top: -7px;
+            }
+
+
+    @media screen and (min-width: 596px) and (max-width: 1016px) {
+        /* small desktop sizes */
+        .c6-splash__group { 
+            height: 48.75rem;
+        }
+        .c6-splash__ipad {
+            width: 10.875rem; height: 27.75rem; left: -3.25em; top: 9em;
+        }
+            .c6-splash__caption-left { 
+                left: 11.5em;
+            }
+        .c6-splash__iphone {
+            width: 7.125rem; height: 28.625rem; right: -2rem; top: 9em;
+        }
+            .c6-splash__caption-right { 
+                right: 7em;
+            }
+        .c6-splash__copy {
+            max-width: 26rem;
+        }
+            .c6-splash__title {
+                font-size: 1.875em;/*30px*/
+            }
+            .c6-splash__legal {
+                margin: 17.667em 0 2.5em;
+            }
+    }
+
+
+    @media screen and (max-width: 596px) {
+        /* mobile version*/
+        .c6-splash__copy {
+            width: 100%; padding: 3em 0 0;
+            background-size: 21.375rem; background-position: 50% 0;
+        }
+        .c6-logo {
+            margin-bottom: 5.5625em;
+        }
+            .c6-splash__title {
+                font-size: 1.75em;/*28px*/ line-height: 1.28;
+                text-align: left; margin: 0; width: 75%; float: right;
+            }
+                .c6-splash__subtitle {
+                    display:inline-block; font-size: 1em; font-weight: 100;
+                    text-align: left; margin: 0; width: 75%;
+
+                    display:none;
+                }
+            .c6-splash__p {
+                display:none;
+            }
+            .c6-splash__legal {
+                display:none;
+            }
+
+        .c6-splash__ipad, .c6-splash__iphone {
+
+        }
+            .c6-splash__ipad {
+                height: 19.5rem; width: 7.3125rem; float: left;
+            }
+            .c6-splash__iphone {
+                display:none;
+            }
+
+        .c6-splash__caption-left, .c6-splash__caption-right {
+            display:none;
+        }
+    }

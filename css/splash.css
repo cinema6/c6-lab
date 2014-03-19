@@ -2,7 +2,7 @@
     global styles
     ========================================================================== */
     body {
-        margin: 0; background: #454a51;
+        margin: 0; background: #454a51; -webkit-text-size-adjust: 100%;
     }
     @font-face {
         font-family: 'MuseoSans';
@@ -40,7 +40,7 @@
         background: url(../img/branching-bg.png) #fff no-repeat 50% 7.375rem;
     }
         .c6-logo__img { 
-            margin: 3em 0 0;
+            margin: 3em 0 0; width: 9.625rem;
         }
         .mobile__group {
             display:none;

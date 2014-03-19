@@ -34,13 +34,13 @@
     c6-splash classes
     ========================================================================== */
     .splash__group {
-        position: absolute; width: 100%; overflow-x: hidden;
-        font-family: 'MuseoSans', Arial, Helvetica, sans-serif;
-        font-size: 1em; font-weight:100; color:#444; background: #fff;
+        position: absolute; font-size: 1em; width: 100%; overflow-x: hidden;
+        font-family: 'MuseoSans', Arial, Helvetica, sans-serif; font-weight:100; color:#444;
         border-top: 4px solid #2074c9; border-bottom: 4px solid #454a51;
+        background: url(../img/branching-bg.png) #fff no-repeat 50% 7.375rem;
     }
         .c6-logo__img { 
-            margin-top: 3em;
+            margin: 3em 0 0;
         }
         .mobile__group {
             display:none;
@@ -50,9 +50,7 @@
         }
 
     .copy__group {
-        margin: 0 auto; max-width: 35rem;/*560px*/ padding: 0 0.625em 0;
-        background: url(../img/branching-bg.png) no-repeat 50% 7.375rem;
-        text-align: center; 
+        margin: 0 auto; max-width: 35rem;/*560px*/ padding: 0 0.625em 0; text-align: center; 
     }
         .copy__title {
             font-size: 2.75em;/*44px*/ margin: 2em auto 0.75em; font-weight:100; line-height: 1.36;
@@ -157,7 +155,7 @@
     @media screen and (max-width: 480px) {
         /* mobile version*/
         .splash__group {
-            min-width: 320px;
+            min-width: 320px;  background-size: 21.375rem; background-position: 50% 0;
         }
             .desktop__group {
                 display:none;
@@ -169,11 +167,10 @@
                     height: 19rem;
                 }
         .c6-logo__img {
-            margin-bottom: 5.5625em;
+            margin: 0 0 5.5625em;
         }
         .copy__group {
             width: 100%; padding: 3em 0 0;
-            background-size: 21.375rem; background-position: 50% 0;
         }
             .copy__title {
                 font-size: 1.75em;/*28px*/ line-height: 1.28;

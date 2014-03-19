@@ -117,7 +117,7 @@
             }
 
 
-    @media screen and (min-width: 480px) and (max-width: 1016px) {
+    @media screen and (min-width: 470px) and (max-width: 1016px) {
         /* small desktop sizes */
         .ipad__img {
             width: 10.875rem; height: 27.75rem; left: -3.25em; top: 9em;
@@ -142,7 +142,13 @@
             }
     }
 
-    @media screen and (min-width: 480px) and (max-width: 670px) {
+    @media screen and (min-width: 470px) and (max-width: 560px) and (orientation: landscape) {
+        .ipad__img {
+            left: -4em;
+        }
+    }
+
+    @media screen and (min-width: 470px) and (max-width: 670px) {
         .copy__title {
             width: 70%;
         }
@@ -152,7 +158,7 @@
     }
 
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 470px) {
         /* mobile version*/
         .splash__group {
             min-width: 320px;  background-size: 21.375rem; background-position: 50% 0;

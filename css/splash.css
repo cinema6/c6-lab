@@ -4,6 +4,16 @@
     body {
         margin: 0; background: #454a51;
     }
+    @font-face {
+        font-family: 'MuseoSans';
+        src: url('museosans-100-webfont.eot');
+        src: url('museosans-100-webfont.eot?#iefix') format('embedded-opentype'),
+             url('museosans-100-webfont.woff') format('woff'),
+             url('museosans-100-webfont.svg#museo_sans100') format('svg'),
+             url('museosans-100-webfont.ttf') format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
 
 /*  ==========================================================================
     helper classes
@@ -22,7 +32,7 @@
     ========================================================================== */
     .c6-splash__group {
         position: absolute; height: 55.75rem; width: 100%; overflow-x: hidden;
-        font-family: 'museo-sans', Arial, Helvetica, sans-serif;
+        font-family: 'MuseoSans', Arial, Helvetica, sans-serif;
         font-size: 1em; font-weight:100; color:#444; background: #fff;
         border-top: 4px solid #2074c9; border-bottom: 4px solid #454a51;
     }
@@ -130,6 +140,12 @@
 
     @media screen and (max-width: 596px) {
         /* mobile version*/
+        .c6-splash__group {
+            height: 100rem; min-width: 320px;
+        }
+        .c6-splash__mobile-blocks {
+            height: 350px;
+        }
         .c6-splash__copy {
             width: 100%; padding: 3em 0 0;
             background-size: 21.375rem; background-position: 50% 0;
@@ -139,29 +155,32 @@
         }
             .c6-splash__title {
                 font-size: 1.75em;/*28px*/ line-height: 1.28;
-                text-align: left; margin: 0; width: 75%; float: right;
+                text-align: left; padding: 1.357em 0 0; margin: 0;
             }
                 .c6-splash__subtitle {
-                    display:inline-block; font-size: 1em; font-weight: 100;
-                    text-align: left; margin: 0; width: 75%;
-
-                    display:none;
+                    display: block; font-size: 1em; font-weight: 100;
+                    text-align: left; margin: 1.375em 0 0 0;
                 }
+
             .c6-splash__p {
-                display:none;
+                width: auto;
             }
+                .c6-splash__p--callout {
+                    
+                }
             .c6-splash__legal {
-                display:none;
+               
             }
 
         .c6-splash__ipad, .c6-splash__iphone {
-
+            position: static;
         }
             .c6-splash__ipad {
                 height: 19.5rem; width: 7.3125rem; float: left;
             }
             .c6-splash__iphone {
-                display:none;
+                height: 19.5rem; width: 5rem; float: right;
+                
             }
 
         .c6-splash__caption-left, .c6-splash__caption-right {

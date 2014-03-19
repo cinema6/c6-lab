@@ -6,7 +6,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/splash.css">
-    <link rel="stylesheet" href="css/splash--hover.css">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenLite.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TimelineLite.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/easing/EasePack.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/plugins/CSSPlugin.min.js"></script>
 </head>
 <body>
     <div class="c6-splash__group"> 
@@ -14,25 +18,44 @@
             <div class="c6-logo__group">
                 <img src="img/cinema6-logo.png" title="Cinema6" class="c6-logo">
             </div>
-            
-            <div class="c6-splash__mobile-blocks">
-                <div class="c6-splash__ipad clearfix">&nbsp;</div>
-                <div class="c6-splash__caption-left">Custom video experiences coming soon to desktop and mobile devices.</div>
 
-                <h1 class="c6-splash__title">Custom Video Experiences for Online Publishers</h1>
-                <h2 class="c6-splash__subtitle">(Launching Soon)</h2>
+            <div class="mobile__group">
+                <div class="c6-splash__mobile-blocks">
+                    <div class="c6-splash__ipad clearfix">&nbsp;</div>
+                    <div class="c6-splash__caption-left">Custom video experiences coming soon to desktop and mobile devices.</div>
+
+                    <h1 class="c6-splash__title">Custom Video Experiences for Online Publishers</h1>
+                    <h2 class="c6-splash__subtitle">(Launching Soon)</h2>
+                </div>
+                
+                <div class="c6-splash__mobile-blocks">             
+                    <div class="c6-splash__iphone clearfix">&nbsp;</div>
+                    <div class="c6-splash__caption-right">Custom video experiences coming soon to desktop and mobile devices.</div>
+
+                    <p class="c6-splash__p">The Cinema6 platform enables publishers with limited video resources to create new video experiences and unlock high value advertising inventory. Our solutions work seamlessly on desktop and mobile and easily integrate with all major publishing platforms.</p>
+                    <p class="c6-splash__p c6-splash__callout">Stay tuned, we&lsquo;re launching soon!</p> 
+                </div>
             </div>
-            
-            <div class="c6-splash__mobile-blocks">             
-                <div class="c6-splash__iphone clearfix">&nbsp;</div>
-                <div class="c6-splash__caption-right">Custom video experiences coming soon to desktop and mobile devices.</div>
 
-                <p class="c6-splash__p">The Cinema6 platform enables publishers with limited video resources to create new video experiences and unlock high value advertising inventory. Our solutions work seamlessly on desktop and mobile and easily integrate with all major publishing platforms.</p>
-                <p class="c6-splash__p c6-splash__callout">Stay tuned, we&lsquo;re launching soon!</p> 
+            <div class="desktop__group">
+                <div id="content">
+                    <h1 class="c6-splash__title clearfix">Custom Video Experiences for Online Publishers</h1>
+                    <h2 class="c6-splash__subtitle">(Launching Soon)</h2>
+                    <p class="c6-splash__p">The Cinema6 platform enables publishers with limited video resources to create new video experiences and unlock high value advertising inventory. Our solutions work seamlessly on desktop and mobile and easily integrate with all major publishing platforms.</p>
+
+                    <p class="c6-splash__p">Stay tuned, we&lsquo;re launching soon!</p>
+                </div>
+                
+                <div id="iPad" class="c6-splash__ipad clearfix">&nbsp;</div>
+                <div id="iPad-tooltip" class="c6-splash__caption-left">Custom video experiences coming soon to desktop and mobile devices.</div>
+
+                <div id="iPhone" class="c6-splash__iphone clearfix">&nbsp;</div>
+                <div id="iPhone-tooltip" class="c6-splash__caption-right">Custom video experiences coming soon to desktop and mobile devices.</div>
             </div>
             
             <p class="c6-splash__legal">&copy; Copyright 2014 Cinema6. All rights reserved.</p>        
         </article> 
     </div>
+    <script src="js/c6__splash.js"></script>
 </body>
 </html>

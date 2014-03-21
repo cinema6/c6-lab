@@ -5,12 +5,57 @@
     <title>Cinema6.com - Custom Video Experiences for Online Publishers</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimal-ui">
+    <link rel="stylesheet" href="styles/csswizardry-grid.css">
     <link rel="stylesheet" href="styles/c6-dashboard.css">
-    <script src="js/modernizr.custom.18331.js"></script>
+    <link rel="stylesheet" href="styles/c6-dashboard--hover.css">
 
 </head>
 <body>
-   
-   <script src="js/init.js"></script>
+    <header class="c6-masthead__group">
+        <ul class="c6-masthead__nav">
+            <li class="c6-masthead__item c6-masthead__branding clearfix">
+                <a href="/" title="Cinema6" class="c6-masthead__link">  
+                    <img src="img/cinema6-inline-logo@2x.png" alt="Cinema6" class="c6-masthead__logo">
+                    <span class="ir">Cinema6</span>
+                </a>
+            </li>
+            <li class="c6-masthead__item">
+                <a href="#" title="Dashboard" class="c6-masthead__nav-dashboard c6-masthead__link">Dashboard</a>
+            </li>
+            <li class="c6-masthead__item">    
+                <a href="#" title="Settings" class="c6-masthead__nav-settings c6-masthead__link">Settings</a>
+            </li>
+            <li class="c6-masthead__item c6-masthead__user-profile clearfix">
+                <span>Welcome, <a href="#" title="elitedaily" class="c6-masthead__user-link c6-masthead__link">elitedaily</a></span>
+                <div class="c6-user__portrait-box" style="background: url(img/ed-portrait.png) no-repeat">
+                    <span class="ir"><img src="img/ed-portrait.png" title="elitedaily"></span>
+                </div>
+                <button class="c6-masthead__user-settings clearfix" title="User Settings"><span class="ir">User Settings</span></button>
+            </li>
+        </ul>
+    </header>
+
+    <article class="c6-dashboard__group">
+        <h1 class="c6-dashboard__header">Dashboard</h1>
+        <ul class="c6-dashboard__menu clearfix">
+            <li class="c6-dashboard__menu-item">
+                <button class="c6-dashboard__menu-button c6-dashboard__menu-button--active">Show All</button>
+            </li>
+            <li class="c6-dashboard__menu-item">
+                <button class="c6-dashboard__menu-button">Draft</button>
+            </li>
+            <li class="c6-dashboard__menu-item">
+                <button class="c6-dashboard__menu-button">Published</button>
+            </li>
+            <li class="c6-dashboard__menu-item">
+                <button class="c6-dashboard__menu-button">Private</button>
+            </li>
+            <li class="c6-dashboard__menu-item">
+                <button class="c6-dashboard__deleted">Deleted</button>
+            </li>
+        </ul>
+        <button class="c6-dashboard__new-button clearfix" title="&#43; New MiniReel">&#43; New MiniReel</button> 
+        <hr class="c6-dashboard__divide">
+    </article>  
 </body>
 </html>

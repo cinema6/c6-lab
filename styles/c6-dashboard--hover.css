@@ -1,0 +1,25 @@
+/*  ==========================================================================
+    .c6-masthead classes
+    ========================================================================== */
+    .c6-user__portrait-box, .c6-masthead__user-settings, .c6-dashboard__menu-button, 
+    .c6-dashboard__deleted, .c6-dashboard__new-button { 
+        cursor: pointer;
+    }
+    .c6-dashboard__menu-button, .c6-dashboard__deleted, .c6-dashboard__new-button {
+        transition: all 0.15s;
+    } 
+        .c6-dashboard__menu-button:hover {
+            color: #fff; background: #cdcdcd;
+        }
+        .c6-dashboard__deleted:hover {
+            color: #fff; background: #f3b7b7;
+        }
+        .c6-dashboard__menu-button--active:hover {
+            background: #565656;
+        }
+        .c6-dashboard__deleted--active:hover {
+            background: #d61212;
+        }
+        .c6-dashboard__new-button:hover {
+            background: #61bdf8;
+        }

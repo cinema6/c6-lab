@@ -1,0 +1,165 @@
+/*  ==========================================================================
+    global styles
+    ========================================================================== */
+    body {
+        font-size: 1em; margin:0; font-family: 'MuseoSans', 'Helvetica', Arial, sans-serif; 
+        font-weight: 100; color: #565656;
+    }
+    @font-face {
+        font-family: 'MuseoSans';
+        src: url('museosans-100-webfont.eot');
+        src: url('museosans-100-webfont.eot?#iefix') format('embedded-opentype'),
+             url('museosans-100-webfont.woff') format('woff'),
+             url('museosans-100-webfont.svg#museo_sans100') format('svg'),
+             url('museosans-100-webfont.ttf') format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'MuseoSans';
+        src: url('museosans-300-webfont.eot');t
+        src: url('museosans-300-webfont.eot?#iefix') format('embedded-opentype'),
+             url('museosans-300-webfont.woff') format('woff'),
+             url('museosans-300-webfont.svg#museo_sans300') format('svg'),
+             url('museosans-300-webfont.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'MuseoSans';
+        src: url('museosans_700-webfont.eot');
+        src: url('museosans_700-webfont.eot?#iefix') format('embedded-opentype'),
+             url('museosans_700-webfont.woff') format('woff'),
+             url('museosans_700-webfont.svg#museo_sans700') format('svg'),
+             url('museosans_700-webfont.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+    }
+    p {
+        margin: 0.75em 0;
+    }
+    img {
+        border:0;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:focus, button:focus, input:focus {
+        outline:none; border:0;
+    }
+    
+
+/*  ==========================================================================
+    helper classes
+    ========================================================================== */
+    .ir {
+        background-color: transparent;
+        border: 0; width:0; height:0;
+        overflow: hidden; display: block; position:absolute;
+    }
+    .clearfix:before,
+    .clearfix:after {
+        content: ' ';
+        display: table;
+    }
+    .clearfix:after {
+        clear: both;
+    }
+
+/*  ==========================================================================
+    .c6-user classes
+    ========================================================================== */
+    .c6-user__portrait-box {
+        display: inline-block; height: 2.75rem; width: 2.75rem;
+        background: #000; margin: 0 2.25rem -1em 0.625em;
+    }
+        .c6-user__portrait {
+            width: 100%;
+        }
+
+/*  ==========================================================================
+    .c6-masthead classes
+    ========================================================================== */
+    .c6-masthead__group {
+        background: #383d3e; color: #fff; padding: 1em 1.5em;
+    }
+    .c6-masthead__nav {
+        list-style: none; padding: 0; margin: 0;
+    }
+        .c6-masthead__link {
+            color: #fff;
+        }
+        .c6-masthead__item {
+            display: inline-block; height: 2.75rem; 
+        }
+        .c6-masthead__branding {
+            float: left; margin: 0 3.375em 0 0;
+        }
+            .c6-masthead__logo {
+                width: 11.5em; 
+            }
+        .c6-masthead__nav-dashboard, .c6-masthead__nav-settings {
+            display:block; margin: 1em 3.375em 0 0;
+        }
+        .c6-masthead__user-profile {
+            position: relative; float: right; font-weight: 300; font-size: 0.875em;/*14px*/ 
+        } 
+            .c6-masthead__user-link {
+                font-weight: 700; 
+            }
+            .c6-masthead__user-settings {
+                height: 1.75em; width: 1.5rem; border: 0; padding: 0; 
+                background: url(../img/gear-icon.png) no-repeat 50% 50%;
+                position: absolute; right: 0; top: 0.75em;
+            }
+    @media screen and (max-width: 768px) {
+        /* tablets */
+        .c6-masthead__branding {
+            margin:0; display:block; float: none; text-align: center;
+        }
+        .c6-masthead__nav-dashboard, .c6-masthead__nav-settings {
+            margin: 1.25em 3.375em 0 0;
+        }
+    }
+
+/*  ==========================================================================
+    .c6-dashboard classes
+    ========================================================================== */
+    .c6-dashboard__group {
+        padding: 0 1.5em;
+    }
+    .c6-dashboard__header {
+        font-weight: 100; line-height: 1; font-size: 1.875em;/*30px*/ margin: 0.8667em 0 0.4333em;
+    }
+    .c6-dashboard__menu {
+        list-style: none; padding: 0; margin: 0; float:left;
+    }
+        .c6-dashboard__menu-item {
+            display: inline-block;
+        }
+        .c6-dashboard__menu-button, .c6-dashboard__deleted, .c6-dashboard__new-button {
+            font-family: 'MuseoSans', 'Helvetica', Arial, sans-serif; line-height: 1;
+            font-weight: 700; border: 0; border-radius: 3px; 
+        }
+            .c6-dashboard__menu-button, .c6-dashboard__deleted {
+                font-size: 1em;  padding: 0.3125em 0.5em;  background: transparent;
+            }
+            .c6-dashboard__menu-button {
+                color: #565656;
+            }
+                .c6-dashboard__menu-button--active {
+                    color: #fff; background: #565656;
+                }
+            .c6-dashboard__deleted {
+                color: #d61212; margin-left: 1.375em;
+            }
+                .c6-dashboard__deleted--active {
+                    color: #fff; background: #d61212;
+                }
+            .c6-dashboard__new-button {
+                font-size: 0.875em;/*14px*/ line-height: 1; padding: 0.71429em 1.5714em;
+                color: #fff; background: #4a9cd1; float: right; margin-top: -0.25em;
+            }
+    .c6-dashboard__divide {
+        border: 0; height: 1px; background: #eeeeee; margin: 3.5rem 0;
+    }

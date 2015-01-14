@@ -15,7 +15,10 @@
     </head>
     <body>
         <div class="splashBox">
-            <iframe id="vidFrame" class="youtubeBox" width="400" height="300" src="http://www.youtube.com/embed/gD-dHlw-Ayg" frameborder="0" allowfullscreen></iframe>
+            <!--iframe id="vidFrame" class="youtubeBox" width="400" height="300" src="http://www.youtube.com/embed/gD-dHlw-Ayg" frameborder="0" allowfullscreen></iframe!-->
+            <div class="youtubeBox" id="vidFrame">
+                <div id="youtubePlayer"></div>
+            </div>
             <h1 class="textBox">Click Here <br> To Save the Cat!</h1>
         </div>
 
@@ -25,7 +28,43 @@
         <script type="text/javascript">
             var $showBtn    = $('#showBtn'),
                 $hideBtn    = $('#hideBtn'),
-                $vidFrame   = $('#vidFrame');
+                $vidFrame   = $('#vidFrame'),
+                hasPlayed   = false,
+                ytPlayer,
+                tag         = document.createElement('script');
+
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+            function onYouTubeIframeAPIReady() {
+                ytPlayer = new YT.Player('youtubePlayer', {
+                    height: '300',
+                    width: '400',
+                    videoId: 'gD-dHlw-Ayg',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            function onPlayerReady(event) {
+                //event.target.playVideo();
+            }
+
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.BUFFERING && !hasPlayed) {
+                    $vidFrame.css('opacity', '1');
+                    hasPlayed   = true;
+                }
+            }
+            function stopVideo() {
+                ytPlayer.stopVideo();
+            }
+
 
             $showBtn.click(function() {
                 $vidFrame.css('opacity', '1');

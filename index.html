@@ -8,69 +8,56 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Mini Reel Test Labratory</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="css/styles.css">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/TweenMax.min.js"></script>
+        <script type="text/javascript" src="js/hammer.min.js"></script>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>
     <body>
-        <div class="splashBox">
-            <!--iframe id="vidFrame" class="youtubeBox" width="400" height="300" src="http://www.youtube.com/embed/gD-dHlw-Ayg" frameborder="0" allowfullscreen></iframe!-->
-            <div class="youtubeBox" id="vidFrame">
-                <div id="youtubePlayer"></div>
-            </div>
-            <h1 class="textBox">Click Here <br> To Save the Cat!</h1>
+        <div class="pageHolder">
+            <div id="card01" class="card__group">hello</div>
         </div>
 
-        <button id="showBtn" type="button">Show Video</button>
-        <button id="hideBtn" type="button">Hide Video</button>
-
         <script type="text/javascript">
-            var $showBtn    = $('#showBtn'),
-                $hideBtn    = $('#hideBtn'),
-                $vidFrame   = $('#vidFrame'),
-                hasPlayed   = false,
-                ytPlayer,
-                tag         = document.createElement('script');
-
-
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-            function onYouTubeIframeAPIReady() {
-                ytPlayer = new YT.Player('youtubePlayer', {
-                    height: '300',
-                    width: '400',
-                    videoId: 'gD-dHlw-Ayg',
-                    events: {
-                        'onReady': onPlayerReady,
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
-
-            function onPlayerReady(event) {
-                //event.target.playVideo();
-            }
-
-            function onPlayerStateChange(event) {
-                if (event.data == YT.PlayerState.BUFFERING && !hasPlayed) {
-                    $vidFrame.css('opacity', '1');
-                    hasPlayed   = true;
-                }
-            }
-            function stopVideo() {
-                ytPlayer.stopVideo();
-            }
-
-
-            $showBtn.click(function() {
-                $vidFrame.css('opacity', '1');
-            });
-            $hideBtn.click(function() {
-                $vidFrame.css('opacity', '0');
+            var card01    = document.getElementById('card01'),
+                hammertime      = new Hammer(card01);
+            
+            hammertime.on('pan', function(ev) {
+                console.log(ev.distance);
+                var $card01     = $(card01),
+                    myDistance,
+                    myDirection,
+                    getDirection    = function() {
+                        switch (ev.offsetDirection) {
+                            case 2:
+                                myDirection = 1;
+                                break;
+                            case 4:
+                                myDirection = -1;
+                                break;
+                            default:
+                                myDirection = 1;
+                        }
+                        console.log("myDirection = " + myDirection);
+                    },
+                    getDistance = function() {
+                        var myNum   = Math.abs(ev.distance / 2.5);
+                        getDirection();
+                        if(myNum > 90) {
+                            myNum = 90;
+                        }
+                        myDistance  = myDirection * myNum;
+                        if(myDirection === -1 && myDistance > 0) {
+                            myDirection = 0;
+                        }
+                        console.log("myNum = " + myNum);
+                        console.log("myDistance = " + myDistance);
+                    };
+                getDistance();
+                TweenMax.to($card01, 0.5, {rotationY:myDistance, transformOrigin:'left top'});
+                //$( $card01 ).css( 'transform', 'rotateY(130deg)' );
             });
         </script>
     </body>

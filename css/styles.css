@@ -2,20 +2,14 @@ body {
     margin:0; font-family:Arial, 'Helvetica', sans-serif; font-size:100%;
     background:#ccc;
 }
-.splashBox {
-    width:400px; height:300px;
-    background:red url('../img/giphy.gif') 50% 50% no-repeat;
-    position: relative;
+.pageHolder {
+    width:400px;
+    margin:100px auto;
+    -webkit-perspective: 2000px; /* Chrome, Safari, Opera */
+    perspective: 2000px;
 }
-    .youtubeBox {
-        opacity:0;
-        position: absolute; z-index: 10;
-        width:100%; height:100%;
-    }
-    .textBox {
-        text-align: center;
-        position: absolute; z-index: 2;
-        margin:100px 0 0 0;
-        width:100%;
-        color:#000;
-    }
+.card__group {
+    width:400px; height:600px;
+    background:darkblue;
+    color:#fff;
+}

@@ -20,9 +20,26 @@
 
     <div class="viewPane">
         
-        <div class="viewPane viewPane--info"></div>
+        <div class="infoPanel__group">
+            <div class="infoPanel">
+                <div class="infoTitle__group">
+                    <a href="#" class="sponsor__logo sponsor__logo--large sponsor__logo--round">
+                        <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
+                        alt="Star Wars" class="sponsor__logoImg sponsor__logoImg--large">
+                    </a>
+                    <h1 class="infoTitle__title">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
+                </div>
+                <div class="infoSponsor__group">
+                    <h2 class="infoSponsor__tag">
+                        Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+                    </h2>
+                </div>
+
+                <button class="actionBtn actionBtn__closeInfo" type="button" title="Ok"><span class="actionBtn__label">OK</span></button>
+            </div>
+        </div>
         
-        <div class="viewPane viewPane--cards">
+        <div class="viewPane">
             <div class="headerBar__group">
                 <button class="navBtn headerBar__infoBtn c6sprite c6sprite--infoIcon" type="button" title="Info">
                     <span class="ir">Info</span>
@@ -131,6 +148,8 @@
 
     </div>
 
+    <div class="viewPane viewPane--landscape">No landscape.</div>
+
 
     <script type="text/javascript">
         var cardNum     = 0,
@@ -144,6 +163,9 @@
             $flipBtn    = $('.navBar__flipBtn'),
             $prevBtn    = $('.navBar__prevBtn'),
             $nextBtn    = $('.navBar__nextBtn'),
+            $showInfoBtn    = $('.headerBar__infoBtn'),
+            $hideInfoBtn    = $('.actionBtn__closeInfo'),
+            $infoPanel  = $('.infoPanel__group'),
             hammerTime  = new Hammer(myCards),
             goNext      = function() {
                 cardNum++;
@@ -172,6 +194,14 @@
         
         $flipBtn.click(function() {
             $myCardHolder.toggleClass('card__holder--flipped');
+        });
+
+        $showInfoBtn.click(function() {
+            $infoPanel.css({ "-webkit-transform": "translate3d(0,0,0)", "transform": "translate3d(0,0,0)" });
+        });
+
+        $hideInfoBtn.click(function() {
+            $infoPanel.css({ "-webkit-transform": "translate3d(-100%,0,0)", "transform": "translate3d(-100%,0,0)" });
         });
 
         $nextBtn.click(function() {

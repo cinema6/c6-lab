@@ -10,23 +10,17 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/mobile-card-flipper.css">
-    <style type="text/css">
-        .domBox {
-            width:320px;
-            height:568px;
-            position:relative;
-            margin:50px auto;
-            background:#fff;
-        }
-    </style>
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/hammer.min.js"></script>
 </head>
 <body>
-<div class="domBox">
+
 
 
     <div class="viewPane">
         
-        <!--<div class="viewPane viewPane--info"></div>-->
+        <div class="viewPane viewPane--info"></div>
         
         <div class="viewPane viewPane--cards">
             <div class="headerBar__group">
@@ -47,17 +41,89 @@
                 </a>
                 <h1 class="mrTitle__text">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
             </div>
-            <div class="cardsHolder__group">
-                
-            </div>
+
+            <ul class="cards__list" id="TESTLIST">
+                <li class="cards__item cards__item--current">
+                    <div class="card__holder TESTCARD">
+                        <div class="card__group card__group--front">
+                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        </div>
+                        <div class="card__group card__group--back">
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                            <div class="card__copy">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <div class="card__holder">
+                        <div class="card__group card__group--front">
+                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        </div>
+                        <div class="card__group card__group--back">
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                            <div class="card__copy">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <div class="card__holder">
+                        <div class="card__group card__group--front">
+                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        </div>
+                        <div class="card__group card__group--back">
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                            <div class="card__copy">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <div class="card__holder">
+                        <div class="card__group card__group--front">
+                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        </div>
+                        <div class="card__group card__group--back">
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                            <div class="card__copy">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <div class="card__holder">
+                        <div class="card__group card__group--front">
+                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        </div>
+                        <div class="card__group card__group--back">
+                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                            <div class="card__copy">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="skipTimer__group">Skip in 5</div>
+           
             <nav class="navBar__group">
-                <button class="navBtn" type="button" title="Previous Card">
+                <button class="navBtn navBar__prevBtn c6sprite c6sprite--leftArrowIcon" type="button" title="Previous Card">
                     <span class="ir">Previous Card</span>
                 </button>
-                <button class="navBtn" type="button" title="Flip Card">
+                <button class="navBtn navBar__flipBtn c6sprite c6sprite--flipIcon" type="button" title="Flip Card">
                     <span class="navBtn__label">Flip Card</span>
                 </button>
-                <button class="navBtn" type="button" title="Next Card">
+                <button class="navBtn navBar__nextBtn c6sprite c6sprite--rightArrowIcon" type="button" title="Next Card">
                     <span class="ir">Next Card</span>
                 </button>
             </nav>
@@ -66,6 +132,65 @@
     </div>
 
 
-</div>
+    <script type="text/javascript">
+        var cardNum     = 0,
+            cardMax     = $('.cards__item').length,
+            slideInc    = -0.84,
+            slideAmount = 0,
+            $myCards    = $('.cards__list'),
+            $myCard     = $('.cards__item:nth-child(' + (cardNum + 1) + ')'),
+            $myCardHolder   = $('.cards__item:nth-child(' + (cardNum + 1) + ') .card__holder'),
+            myCards     = document.getElementById('TESTLIST'),
+            $flipBtn    = $('.navBar__flipBtn'),
+            $prevBtn    = $('.navBar__prevBtn'),
+            $nextBtn    = $('.navBar__nextBtn'),
+            hammerTime  = new Hammer(myCards),
+            goNext      = function() {
+                cardNum++;
+                if(cardNum > cardMax - 1) {
+                    cardNum = cardMax - 1;
+                };
+                doSlide();
+            },
+            goPrev      = function() {
+                cardNum--;
+                if(cardNum < 0) {
+                    cardNum = 0;
+                };
+                doSlide();
+            },
+            doSlide     = function() {
+                slideAmount     = cardNum * slideInc;
+                $('.cards__item').removeClass('cards__item--current');
+                $('.card__holder').removeClass('card__holder--flipped');
+                $myCard     = $('.cards__item:nth-child(' + (cardNum + 1) + ')');
+                $myCardHolder   = $('.cards__item:nth-child(' + (cardNum + 1) + ') .card__holder');
+
+                $myCard.addClass('cards__item--current');
+                $myCards.css({ "-webkit-transform": "translate3d(" + slideAmount + "%,0,0)", "transform": "translate3d(" + slideAmount + "%,0,0)" });
+            };
+        
+        $flipBtn.click(function() {
+            $myCardHolder.toggleClass('card__holder--flipped');
+        });
+
+        $nextBtn.click(function() {
+            goNext();
+        });
+
+        $prevBtn.click(function() {
+            goPrev();
+        });
+
+        hammerTime.on('swipeleft', function(ev) {
+            goNext();
+        });
+        hammerTime.on('swiperight', function(ev) {
+            goPrev();
+        });
+
+
+
+    </script>
 </body>
 </html>

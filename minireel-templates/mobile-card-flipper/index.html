@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/mobile-card-flipper.css">
 
@@ -20,7 +21,7 @@
 
     <div class="viewPane">
         
-        <div class="infoPanel__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">
+        <div class="infoPanel__group">
             <div class="infoPanel">
                 <div class="infoTitle__group">
                     <a href="#" class="sponsor__logo sponsor__logo--large sponsor__logo--round">
@@ -33,123 +34,136 @@
                     <h2 class="infoSponsor__tag">
                         Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
                     </h2>
+                    <div class="infoSponsor__links">
+                        <a href="#" class="infoSponsor__iconLink fa fa-link"><span class="ir">Website</span></a>
+                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--youtube fa fa-youtube-play"><span class="ir">YouTube</span></a>
+                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--vimeo fa fa-vimeo-square"><span class="ir">Vimeo</span></a>
+                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--facebook fa fa-facebook"><span class="ir">Facebook</span></a>
+                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--twitter fa fa-twitter"><span class="ir">Twitter</span></a>
+                    </div>
                 </div>
 
                 <button class="actionBtn actionBtn__closeInfo" type="button" title="Ok"><span class="actionBtn__label">OK</span></button>
             </div>
-            <div class="infoPanel__gradient">&nbsp;</div>
+            <div class="c6Powered__text">Powered by <a href="http://www.cinema6.com" target="_blank" title="Cinema6.com">Cinema6</a></div>
+            <div class="infoPanel__img" style="background-image:url('http://i.guim.co.uk/static/w-620/h--/q-95/sys-images/Film/Pix/pictures/2014/12/4/1417687817859/Forum-menace---an-image-f-011.jpg');">&nbsp;</div>
         </div>
         
-        <div class="viewPane">
-            <div class="headerBar__group">
-                <button class="navBtn headerBar__infoBtn c6sprite c6sprite--infoIcon" type="button" title="Info">
-                    <span class="ir">Info</span>
-                </button>
-                <h2 class="headerBar__tag">
-                    Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
-                </h2>
-                <button class="navBtn headerBar__closeBtn c6sprite c6sprite--closeIcon" type="button" title="Close">
-                    <span class="ir">Close</span>
-                </button>
-            </div>
-            <div class="mrTitle__group mrTitle__group--sponsored">
-                <a href="#" class="sponsor__logo sponsor__logo--round">
-                    <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
-                    alt="Star Wars" class="sponsor__logoImg">
-                </a>
-                <h1 class="mrTitle__text">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
-            </div>
-
-            <ul class="cards__list" id="cardStack">
-                <li class="cards__item cards__item--current">
-                    <div class="card__holder">
-                        <div class="card__group card__group--front">
-                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                        </div>
-                        <div class="card__group card__group--back">
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                            <div class="card__copy">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <div class="card__holder">
-                        <div class="card__group card__group--front">
-                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                            <button class="actionBtn adSkipTestBtn" type="Test Ad Skip" style="margin-top:12px;">Test Ad Skip</button>
-                        </div>
-                        <div class="card__group card__group--back">
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                            <div class="card__copy">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <div class="card__holder">
-                        <div class="card__group card__group--front">
-                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                        </div>
-                        <div class="card__group card__group--back">
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                            <div class="card__copy">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <div class="card__holder">
-                        <div class="card__group card__group--front">
-                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                        </div>
-                        <div class="card__group card__group--back">
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                            <div class="card__copy">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <div class="card__holder">
-                        <div class="card__group card__group--front">
-                            <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                        </div>
-                        <div class="card__group card__group--back">
-                            <h1 class="card__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                            <div class="card__copy">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="skipTimer__group">
-                <div class="skipTimer__text">Skip in 5</div>
-                <div class="skipTimer__meter">&nbsp;</div>
-            </div>
-           
-            <nav class="navBar__group">
-                <button class="navBtn navBar__prevBtn c6sprite c6sprite--leftArrowIcon" type="button" title="Previous Card">
-                    <span class="ir">Previous Card</span>
-                </button>
-                <button class="navBtn navBar__flipBtn c6sprite c6sprite--flipIcon" type="button" title="Flip Card">
-                    <span class="navBtn__label">Flip Card</span>
-                </button>
-                <button class="navBtn navBar__nextBtn c6sprite c6sprite--rightArrowIcon" type="button" title="Next Card">
-                    <span class="ir">Next Card</span>
-                </button>
-            </nav>
+        
+        <div class="headerBar__group">
+            <button class="navBtn headerBar__infoBtn c6sprite c6sprite--infoIcon" type="button" title="Info">
+                <span class="ir">Info</span>
+            </button>
+            <h2 class="headerBar__tag">
+                Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+            </h2>
+            <button class="navBtn headerBar__closeBtn c6sprite c6sprite--closeIcon" type="button" title="Close">
+                <span class="ir">Close</span>
+            </button>
         </div>
+        <div class="mrTitle__group mrTitle__group--sponsored">
+            <a href="#" class="sponsor__logo sponsor__logo--round">
+                <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
+                alt="Star Wars" class="sponsor__logoImg">
+            </a>
+            <h1 class="mrTitle__text">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
+        </div>
+
+        <ul class="cards__list" id="cardStack">
+            <li class="cards__item cards__item--current">
+                <div class="card__holder">
+                    <div class="card__group card__group--front">
+                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                    </div>
+                    <div class="card__group card__group--back">
+                        <p class="card__count">1 of 5</p>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <div class="card__copy">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cards__item">
+                <div class="card__holder">
+                    <div class="card__group card__group--front">
+                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/y6fjc9EjeeE/0.jpg');">&nbsp;</div>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <button class="actionBtn adSkipTestBtn" type="Test Ad Skip" style="margin-top:12px;">Test Ad Skip</button>
+                    </div>
+                    <div class="card__group card__group--back">
+                        <p class="card__count">2 of 5</p>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <div class="card__copy">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cards__item">
+                <div class="card__holder">
+                    <div class="card__group card__group--front">
+                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/nzeCn1f30go/0.jpg');">&nbsp;</div>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                    </div>
+                    <div class="card__group card__group--back">
+                        <p class="card__count">3 of 5</p>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <div class="card__copy">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cards__item">
+                <div class="card__holder">
+                    <div class="card__group card__group--front">
+                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/my9am2iYrUQ/0.jpg');">&nbsp;</div>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                    </div>
+                    <div class="card__group card__group--back">
+                        <p class="card__count">4 of 5</p>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <div class="card__copy">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cards__item">
+                <div class="card__holder">
+                    <div class="card__group card__group--front">
+                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/PtuJk5hSOlM/0.jpg');">&nbsp;</div>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                    </div>
+                    <div class="card__group card__group--back">
+                        <p class="card__count">5 of 5</p>
+                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <div class="card__copy">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="skipTimer__group">
+            <div class="skipTimer__text">Skip in 5</div>
+            <div class="skipTimer__meter">&nbsp;</div>
+        </div>
+       
+        <nav class="navBar__group">
+            <button class="navBtn navBar__prevBtn c6sprite c6sprite--leftArrowIcon" type="button" title="Previous Card">
+                <span class="ir">Previous Card</span>
+            </button>
+            <button class="navBtn navBar__flipBtn c6sprite c6sprite--flipIcon" type="button" title="Flip Card">
+                <span class="navBtn__label">Flip Card</span>
+            </button>
+            <button class="navBtn navBar__nextBtn c6sprite c6sprite--rightArrowIcon" type="button" title="Next Card">
+                <span class="ir">Next Card</span>
+            </button>
+        </nav>
+
 
     </div>
 
@@ -157,6 +171,8 @@
 
 
     <script type="text/javascript">
+    (function() {
+
         var cardNum     = 0,
             cardMax     = $('.cards__item').length,
             slideInc    = -0.84,
@@ -165,7 +181,6 @@
             $myCards    = $('.cards__list'),
             $myCard     = $('.cards__item:nth-child(' + (cardNum + 1) + ')'),
             $myCardHolder   = $myCard.find('.card__holder'),
-            cardWidth   = $myCard.width(),
             myCards     = document.getElementById('cardStack'),
             $flipBtn    = $('.navBar__flipBtn'),
             $prevBtn    = $('.navBar__prevBtn'),
@@ -175,6 +190,7 @@
             $infoPanel  = $('.infoPanel__group'),
             $adSkipBtn  = $('.adSkipTestBtn'),
             hammerTime  = new Hammer(myCards),
+            cardWidth   = $myCard.width(),
             goNext      = function() {
                 cardNum++;
                 if(cardNum > cardMax - 1) {
@@ -194,6 +210,9 @@
                 doSlide();
             },
             doSlide     = function() {
+                //don't like having to look up cardwidth every time this runs but this is necessary for firefox on some android devices
+                cardWidth   = $myCard.width();
+                
                 slideAmount     = -cardNum * cardWidth;
                 $myCard     = $('.cards__item:nth-child(' + (cardNum + 1) + ')');
                 $myCardHolder   = $myCard.find('.card__holder');
@@ -206,22 +225,13 @@
                 isLocked    = true;
             },
             startAdTimer    = function() {
-                var $adTimer    = $('.skipTimer__group'),
-                    $adMeter    = $('.skipTimer__meter'),
-                    $viewPane   = $('.viewPane'),
-                    $navBar     = $('.navBar__group'),
-                    $otherCards = $('.cards__item').not('.cards__item--current');
+                var $adMeter    = $('.skipTimer__meter'),
+                    $viewPane   = $('.viewPane');
 
                 isLocked    = true;
-                $navBar.stop().hide();
-                $adTimer.stop().fadeIn();
-                $viewPane.addClass('viewPane--focusMode');
-                $otherCards.stop().addClass('cards__item--hidden');
+                $viewPane.addClass('viewPane--skipLock');
                 $adMeter.stop().css('width','100%').show().animate({width: "0"}, 5000, function() {
-                    $adTimer.stop().fadeOut();
-                    $navBar.stop().fadeIn();
-                    $viewPane.removeClass('viewPane--focusMode');
-                    $otherCards.stop().removeClass('cards__item--hidden');
+                    $viewPane.removeClass('viewPane--skipLock');
                     isLocked    = false;
                 });
             };
@@ -231,11 +241,11 @@
         });
 
         $showInfoBtn.click(function() {
-            $infoPanel.css({ "-webkit-transform": "translate3d(0,0,0)", "transform": "translate3d(0,0,0)" });
+            $infoPanel.addClass('infoPanel__group--show');
         });
 
         $hideInfoBtn.click(function() {
-            $infoPanel.css({ "-webkit-transform": "translate3d(-100%,0,0)", "transform": "translate3d(-100%,0,0)" });
+            $infoPanel.removeClass('infoPanel__group--show');
         });
 
         $nextBtn.click(function() {
@@ -265,6 +275,7 @@
         hammerTime.on('pan', function(ev) {
             //test if gesture is complete
             if(ev.isFinal) {
+
                 //test for next swipe
                 if(ev.deltaX > 0) {
                     //go next if delta is big enough & if state is unlocked
@@ -295,8 +306,7 @@
             startAdTimer();
         });
 
-
-
+    })();
     </script>
 </body>
 </html>

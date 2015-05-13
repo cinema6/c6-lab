@@ -123,9 +123,14 @@
         z-index: 10;
         overflow: hidden;
         background:#222;
+        -webkit-transition: background 0.5s;
+        transition: background 0.5s;
     }
         .viewPane--landscape {
             display: none;
+        }
+        .viewPane--focusMode {
+            background:#000;
         }
     /* Landscape */
     @media only screen and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -251,6 +256,9 @@
                 -webkit-transition: opacity 0.5s;
                 transition: opacity 0.5s;
             }
+                .cards__item--hidden {
+                    opacity:0;
+                }
                 .cards__item--current {
                     opacity:1;
                 }
@@ -272,8 +280,6 @@
 
                 .card__group {
                     background:#fff;
-                    border-radius:3px;
-                    overflow: hidden;
                     margin:0;
                     height:100%;
                     position:absolute;
@@ -308,7 +314,7 @@
 
 
         .skipTimer__group {
-            color:#999; font-weight:bold;
+            color:#ff3f00; font-weight:bold;
             font-size: 0.75em;
             text-align: center;
             line-height: 1;
@@ -316,7 +322,16 @@
             bottom:3.75rem;
             position: absolute;
             width:100%;
+            display:none;
         }
+            .skipTimer__meter {
+                display:none;
+                position: absolute;
+                height:0.125em;
+                width:100%;
+                background:#ff3f00;
+                bottom:0; left:0;
+            }
 
 
 

@@ -159,6 +159,7 @@
             $myCards    = $('.cards__list'),
             $myCard     = $('.cards__item:nth-child(' + (cardNum + 1) + ')'),
             $myCardHolder   = $('.cards__item:nth-child(' + (cardNum + 1) + ') .card__holder'),
+            cardWidth   = $myCard.width(),
             myCards     = document.getElementById('TESTLIST'),
             $flipBtn    = $('.navBar__flipBtn'),
             $prevBtn    = $('.navBar__prevBtn'),
@@ -182,14 +183,15 @@
                 doSlide();
             },
             doSlide     = function() {
-                slideAmount     = cardNum * slideInc;
+                slideAmount     = -cardNum * cardWidth;
                 $('.cards__item').removeClass('cards__item--current');
                 $('.card__holder').removeClass('card__holder--flipped');
                 $myCard     = $('.cards__item:nth-child(' + (cardNum + 1) + ')');
                 $myCardHolder   = $('.cards__item:nth-child(' + (cardNum + 1) + ') .card__holder');
 
                 $myCard.addClass('cards__item--current');
-                $myCards.css({ "-webkit-transform": "translate3d(" + slideAmount + "%,0,0)", "transform": "translate3d(" + slideAmount + "%,0,0)" });
+                $myCards.addClass('cards__list--animator');
+                $myCards.css({ "-webkit-transform": "translate3d(" + slideAmount + "px,0,0)", "transform": "translate3d(" + slideAmount + "px,0,0)" });
             };
         
         $flipBtn.click(function() {
@@ -212,12 +214,38 @@
             goPrev();
         });
 
-        hammerTime.on('swipeleft', function(ev) {
-            goNext();
+        hammerTime.on('panleft', function(ev) {
+            slideAmount     = -cardNum * cardWidth + ev.deltaX;
+            $myCards.removeClass('cards__list--animator');
+            $myCards.css({ "-webkit-transform": "translate3d(" + slideAmount + "px,0,0)", "transform": "translate3d(" + slideAmount + "px,0,0)" });
         });
-        hammerTime.on('swiperight', function(ev) {
-            goPrev();
+        hammerTime.on('panright', function(ev) {
+            slideAmount     = -cardNum * cardWidth + ev.deltaX;
+            $myCards.removeClass('cards__list--animator');
+            $myCards.css({ "-webkit-transform": "translate3d(" + slideAmount + "px,0,0)", "transform": "translate3d(" + slideAmount + "px,0,0)" });
         });
+        hammerTime.on('pan', function(ev) {
+            if(ev.isFinal) {
+                if(ev.deltaX > 0) {
+                    //next
+                    if(Math.abs(ev.deltaX) > (cardWidth / 3.8)) {
+                        goPrev();
+                    }
+                    else {
+                        doSlide();
+                    }
+                } else {
+                    //prev
+                    if(Math.abs(ev.deltaX) > (cardWidth / 3.8)) {
+                        goNext();
+                    }
+                    else {
+                        doSlide();
+                    }
+                }
+            }
+        });
+        
 
 
 

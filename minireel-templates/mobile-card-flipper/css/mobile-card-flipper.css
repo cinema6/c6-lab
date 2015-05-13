@@ -229,14 +229,16 @@
     }
         .cards__list {
             width:10000%; 
-            top:5.625em; bottom:4.0625em;
+            top:5.625em; bottom:4.75em;
             left:0;
             position: absolute;
             list-style:none;
             margin:0; padding:0 0 0 8%;
-            -webkit-transition: -webkit-transform 0.5s;
-            transition: transform 0.5s;
         }
+            .cards__list--animator {
+                -webkit-transition: -webkit-transform 0.5s;
+                transition: transform 0.5s;
+            }
             .cards__item {
                 float:left;
                 width:0.84%;
@@ -311,7 +313,7 @@
             text-align: center;
             line-height: 1;
             text-transform: uppercase;
-            bottom:3rem;
+            bottom:3.75rem;
             position: absolute;
             width:100%;
         }
@@ -387,12 +389,12 @@
     .navBar__group {
         position:absolute;
         bottom:0;
-        height:2.75em; width:100%;
+        height:3.125em; width:100%;
     }
         .navBar__prevBtn,
         .navBar__nextBtn,
         .navBar__flipBtn {
-            width:5em; height:2.75em;
+            width:5em; height:3.125em;
             position: absolute;
         }
             .navBar__prevBtn {

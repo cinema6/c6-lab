@@ -427,7 +427,10 @@
                 text-align: center;
                 font-size:1.375em;
                 font-style: italic;
-                margin:1rem 1.25rem 2rem;
+                margin:0.75rem 1.25rem;
+            }
+            .actionBtn__closeInfo {
+                margin:3em auto 0;
             }
 
 
@@ -472,24 +475,82 @@
                 }
 
 
+/*  ================================================
+    standalone MiniReel classes
+    ================================================ */
+    .c6MiniReel--standalone .headerBar__closeBtn {
+        display:none;
+    }
+    .c6MiniReel--standalone .headerBar__infoBtn {
+        right:0; left:auto;
+    }
+
+
+
+
+
+/*  ================================================
+    sponsor classes - shared in both MRs and cards
+    ================================================ */
+    .sponsor__logo {
+        width:2.5em; height:2.5em;
+        border-radius:50%;
+        overflow: hidden;
+    }
+        .sponsor__logoImg {
+            width:2.5em; height:2.5em;
+        }
+
+        .sponsor__logo--large {
+            width:3.75em; height:3.75em;
+            position: relative;
+            display: block;
+            margin:0 auto;
+        }
+            .sponsor__logoImg--large {
+                width:3.75em; height:3.75em;
+            }
+
+    .sponsor__links {
+        text-align: center;
+        margin:1em 0 0 0;
+    }
+        .sponsor__iconLink {
+            width:32px; height:32px;
+            display: inline-block;
+            background:#00c0ff;
+            color:#fff;
+            line-height: 2;
+        }
+            .sponsor__iconLink--youtube {
+                background:#e22d24;
+            }
+            .sponsor__iconLink--vimeo {
+                background:#445566;
+            }
+            .sponsor__iconLink--facebook {
+                background:#3b5998;
+            }
+            .sponsor__iconLink--twitter {
+                background:#00b0ed;
+            }
+
+
 
 
 /*  ================================================
     sponsored card classes
     ================================================ */
-    .card__sponsor {
+    .cardSponsor__profile {
         margin:0.5em 0.9375em 0;
         height:2.5rem;
         overflow: hidden;
     }
-        .card__sponsorLogo {
-            width:2.5em; height:2.5em;
+        .cardSponsor__logo {
             display:block;
-            border-radius:50%;
-            overflow: hidden;
             float:left;
         }
-        .card__sponsorTag {
+        .cardSponsor__tag {
             font-size:0.6875em;
             color:#999;
             font-weight: bold;
@@ -498,9 +559,13 @@
             float:right;
             width:calc(100% - 3.125rem);
         }
-        .actionBtn__sponsorAction {
+        .cardSponsor__action {
             margin:1em 0.9375em 0;
         }
+
+    .c6Card--sponsored .card__group--back .card__title {
+        display:none;
+    }
 
 
 
@@ -533,60 +598,13 @@
         top:5.625em;
     }
 
-    .sponsor__logo {
-        width:2.5em; height:2.5em;
-        border-radius:50%;
-        overflow: hidden;
-    }
-        .sponsor__logoImg {
-            width:2.5em; height:2.5em;
-        }
-
-        .sponsor__logo--large {
-            width:3.75em; height:3.75em;
-            position: relative;
-            display: block;
-            margin:0 auto;
-        }
-            .sponsor__logoImg--large {
-                width:3.75em; height:3.75em;
-            }
-
     .c6MiniReel--sponsored .infoPanel {
-        margin:-11em 0 0 0;
+        margin:-10em 0 0 0;
     }
 
-
-            .infoSponsor__group {
-                margin:0 0 4.5em 0;
-            }
-                .infoSponsor__tag {
-                    font-size:0.75em;
-                    text-align: center;
-                    color:#ccc;
-                    text-transform: uppercase;
-                }
-
-                .infoSponsor__links {
-                    text-align: center;
-                    margin:1em 0 0 0;
-                }
-                    .infoSponsor__iconLink {
-                        width:32px; height:32px;
-                        display: inline-block;
-                        background:#00c0ff;
-                        color:#fff;
-                        line-height: 2;
-                    }
-                        .infoSponsor__iconLink--youtube {
-                            background:#e22d24;
-                        }
-                        .infoSponsor__iconLink--vimeo {
-                            background:#445566;
-                        }
-                        .infoSponsor__iconLink--facebook {
-                            background:#3b5998;
-                        }
-                        .infoSponsor__iconLink--twitter {
-                            background:#00b0ed;
-                        }
+        .mrSponsor__introText {
+            text-align: center;
+            font-size:0.875em;
+            color:#ccc;
+            margin:0 0 1em 0;
+        }

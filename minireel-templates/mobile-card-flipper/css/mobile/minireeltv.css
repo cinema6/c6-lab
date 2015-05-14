@@ -28,16 +28,3 @@
     .tk--copy {
         font-family: 'Open Sans', Arial, Helvetica, sans-serif; 
     }
-
-    .infoSponsor__iconLink--youtube {
-        background:#e22d24;
-    }
-    .infoSponsor__iconLink--vimeo {
-        background:#445566;
-    }
-    .infoSponsor__iconLink--facebook {
-        background:#3b5998;
-    }
-    .infoSponsor__iconLink--twitter {
-        background:#00b0ed;
-    }

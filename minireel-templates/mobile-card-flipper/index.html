@@ -19,15 +19,40 @@
 
 
 
-    <div class="viewPane c6MiniReel--sponsored 6MiniReel--standalone">
+    <div class="viewPane c6MiniReel--sponsored c6MiniReel--standalone">
         
         <div class="infoPanel__group">
             <div class="infoPanel">
+                
+                <!-- ONLY RENDER 'sponsor__logo' if MiniReel is Sponsored -->
+                <a href="#" class="sponsor__logo sponsor__logo--large" target="_blank"
+                title="Star Wars: The Force Awakens">
+                    <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
+                    alt="Star Wars" class="sponsor__logoImg sponsor__logoImg--large">
+                </a>
+                <!-- ONLY RENDER 'sponsor__logo' if MiniReel is Sponsored -->
+
                 <h1 class="infoPanel__title">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
+
+                <!-- ONLY RENDER 'sponsor__links' if MiniReel is Sponsored -->
+                <div class="sponsor__links">
+                    <h2 class="mrSponsor__introText">
+                        Presented by 
+                        <a href="#" target="_blank" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+                    </h2>
+                    <a href="#" target="_blank" title="Official Website" class="sponsor__iconLink fa fa-link"><span class="ir">Website</span></a>
+                    <a href="#" target="_blank" title="Official YouTube" class="sponsor__iconLink sponsor__iconLink--youtube fa fa-youtube-play"><span class="ir">YouTube</span></a>
+                    <a href="#" target="_blank" title="Official Vimeo" class="sponsor__iconLink sponsor__iconLink--vimeo fa fa-vimeo-square"><span class="ir">Vimeo</span></a>
+                    <a href="#" target="_blank" title="Official Facebook" class="sponsor__iconLink sponsor__iconLink--facebook fa fa-facebook"><span class="ir">Facebook</span></a>
+                    <a href="#" target="_blank" title="Official Twitter" class="sponsor__iconLink sponsor__iconLink--twitter fa fa-twitter"><span class="ir">Twitter</span></a>
+                </div>
+                <!-- ONLY RENDER 'sponsor__links' if MiniReel is Sponsored -->
 
                 <button class="actionBtn actionBtn__closeInfo" type="button" title="Go Back"><span class="actionBtn__label">Go Back</span></button>
             </div>
+
             <div class="c6Powered__text">Powered by <a href="http://www.cinema6.com" target="_blank" title="Cinema6.com">Cinema6</a></div>
+            
             <div class="infoPanel__img" style="background-image:url('http://i.guim.co.uk/static/w-620/h--/q-95/sys-images/Film/Pix/pictures/2014/12/4/1417687817859/Forum-menace---an-image-f-011.jpg');">&nbsp;</div>
         </div>
         
@@ -47,11 +72,12 @@
         <!-- ONLY RENDER 'mrSponsor__header' if MiniReel is Sponsored -->
         <div class="mrSponsor__header">
             <h2 class="mrSponsor__sponsorTag">
-                Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+                Sponsored by <a href="#" target="_blank" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
             </h2>
-            <a href="#" class="mrSponsor__headerLogo sponsor__logo skipLock--fadeOut">
+            <a href="#" class="mrSponsor__headerLogo sponsor__logo skipLock--fadeOut"
+            title="Star Wars: The Force Awakens" target="_blank">
                 <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
-                alt="Star Wars" class="sponsor__logoImg">
+                alt="Star Wars: The Force Awakens" class="sponsor__logoImg">
             </a>
         </div>
         <!-- ONLY RENDER 'mrSponsor__header' if MiniReel is Sponsored -->
@@ -96,48 +122,65 @@
                     </div>
                 </div>
             </li>
-            <li class="cards__item skipLock--fadeOut">
+            <li class="cards__item skipLock--fadeOut c6Card--sponsored">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
                         <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/nzeCn1f30go/0.jpg');">&nbsp;</div>
-                        <div class="card__sponsor clearfix">
-                            <a href="#" class="card__sponsorLogo">
+                        
+                        <!-- ONLY RENDER 'cardSponsor__profile' if card is Sponsored -->
+                        <div class="cardSponsor__profile clearfix">
+                            <a href="#" class="sponsor__logo cardSponsor__logo" title="Star Wars: The Force Awakens" target="_blank">
                                 <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
                                 alt="Star Wars" class="sponsor__logoImg">
                             </a>
-                            <p class="card__sponsorTag">
+                            <p class="cardSponsor__tag">
                                 Sponsored by <br>
-                                <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+                                <a href="#" title="Star Wars: The Force Awakens" target="_blank">Star Wars: The Force Awakens</a>
                             </p>
                         </div>
+                        <!-- ONLY RENDER 'cardSponsor__profile' if card is Sponsored -->
+
                         <h1 class="card__title card__title--secondary tk--hdr">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                             <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
                         </h1>
-                        <a href="#" class="actionBtn actionBtn__sponsorAction" type="button" title="More Info"><span class="actionBtn__label">More Info</span></a>
+
+                        <!-- ONLY RENDER 'cardSponsor__action' if card is Sponsored -->
+                        <a href="#" class="actionBtn cardSponsor__action" target="_blank" title="More Info"><span class="actionBtn__label">More Info</span></a>
+                        <!-- ONLY RENDER 'cardSponsor__action' if card is Sponsored -->
+
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">3 of 5</p>
-                        <div class="card__sponsor clearfix">
-                            <a href="#" class="card__sponsorLogo">
+                        
+                        <!-- ONLY RENDER 'cardSponsor__profile' if card is Sponsored -->
+                        <div class="cardSponsor__profile clearfix">
+                            <a href="#" class="sponsor__logo cardSponsor__logo" target="_blank" title="Star Wars: The Force Awakens">
                                 <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
                                 alt="Star Wars" class="sponsor__logoImg">
                             </a>
-                            <p class="card__sponsorTag">
+                            <p class="cardSponsor__tag">
                                 Sponsored by <br>
-                                <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+                                <a href="#" title="Star Wars: The Force Awakens" target="_blank">Star Wars: The Force Awakens</a>
                             </p>
                         </div>
+                        <!-- ONLY RENDER 'cardSponsor__profile' if card is Sponsored -->
+                        
+                        <h1 class="card__title card__title--secondary tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        
                         <div class="card__copy">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
                         </div>
-                        <div class="infoSponsor__links">
-                            <a href="#" class="infoSponsor__iconLink fa fa-link"><span class="ir">Website</span></a>
-                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--youtube fa fa-youtube-play"><span class="ir">YouTube</span></a>
-                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--vimeo fa fa-vimeo-square"><span class="ir">Vimeo</span></a>
-                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--facebook fa fa-facebook"><span class="ir">Facebook</span></a>
-                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--twitter fa fa-twitter"><span class="ir">Twitter</span></a>
+
+                        <!-- ONLY RENDER 'sponsor__links' if card is Sponsored -->
+                        <div class="sponsor__links">
+                            <a href="#" target="_blank" title="Official Website" class="sponsor__iconLink fa fa-link"><span class="ir">Website</span></a>
+                            <a href="#" target="_blank" title="Official YouTube" class="sponsor__iconLink sponsor__iconLink--youtube fa fa-youtube-play"><span class="ir">YouTube</span></a>
+                            <a href="#" target="_blank" title="Official Vimeo" class="sponsor__iconLink sponsor__iconLink--vimeo fa fa-vimeo-square"><span class="ir">Vimeo</span></a>
+                            <a href="#" target="_blank" title="Official Facebook" class="sponsor__iconLink sponsor__iconLink--facebook fa fa-facebook"><span class="ir">Facebook</span></a>
+                            <a href="#" target="_blank" title="Official Twitter" class="sponsor__iconLink sponsor__iconLink--twitter fa fa-twitter"><span class="ir">Twitter</span></a>
                         </div>
+                        <!-- ONLY RENDER 'sponsor__links' if card is Sponsored -->
                     </div>
                 </div>
             </li>

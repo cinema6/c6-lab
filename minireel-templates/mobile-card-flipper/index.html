@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
+    
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/mobile-card-flipper.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile/minireeltv.css">
 
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/hammer.min.js"></script>
@@ -19,31 +19,13 @@
 
 
 
-    <div class="viewPane">
+    <div class="viewPane c6MiniReel--sponsored 6MiniReel--standalone">
         
         <div class="infoPanel__group">
             <div class="infoPanel">
-                <div class="infoTitle__group">
-                    <a href="#" class="sponsor__logo sponsor__logo--large sponsor__logo--round">
-                        <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
-                        alt="Star Wars" class="sponsor__logoImg sponsor__logoImg--large">
-                    </a>
-                    <h1 class="infoTitle__title">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
-                </div>
-                <div class="infoSponsor__group">
-                    <h2 class="infoSponsor__tag">
-                        Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
-                    </h2>
-                    <div class="infoSponsor__links">
-                        <a href="#" class="infoSponsor__iconLink fa fa-link"><span class="ir">Website</span></a>
-                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--youtube fa fa-youtube-play"><span class="ir">YouTube</span></a>
-                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--vimeo fa fa-vimeo-square"><span class="ir">Vimeo</span></a>
-                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--facebook fa fa-facebook"><span class="ir">Facebook</span></a>
-                        <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--twitter fa fa-twitter"><span class="ir">Twitter</span></a>
-                    </div>
-                </div>
+                <h1 class="infoPanel__title">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
 
-                <button class="actionBtn actionBtn__closeInfo" type="button" title="Ok"><span class="actionBtn__label">OK</span></button>
+                <button class="actionBtn actionBtn__closeInfo" type="button" title="Go Back"><span class="actionBtn__label">Go Back</span></button>
             </div>
             <div class="c6Powered__text">Powered by <a href="http://www.cinema6.com" target="_blank" title="Cinema6.com">Cinema6</a></div>
             <div class="infoPanel__img" style="background-image:url('http://i.guim.co.uk/static/w-620/h--/q-95/sys-images/Film/Pix/pictures/2014/12/4/1417687817859/Forum-menace---an-image-f-011.jpg');">&nbsp;</div>
@@ -54,92 +36,141 @@
             <button class="navBtn headerBar__infoBtn c6sprite c6sprite--infoIcon" type="button" title="Info">
                 <span class="ir">Info</span>
             </button>
-            <h2 class="headerBar__tag">
-                Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
-            </h2>
+            <h1 class="mrTitle__group skipLock--fadeOut">
+                10 Reasons The New Star Wars Movies Will Be Amazing
+            </h1>
             <button class="navBtn headerBar__closeBtn c6sprite c6sprite--closeIcon" type="button" title="Close">
                 <span class="ir">Close</span>
             </button>
         </div>
-        <div class="mrTitle__group mrTitle__group--sponsored">
-            <a href="#" class="sponsor__logo sponsor__logo--round">
+
+        <!-- ONLY RENDER 'mrSponsor__header' if MiniReel is Sponsored -->
+        <div class="mrSponsor__header">
+            <h2 class="mrSponsor__sponsorTag">
+                Sponsored by <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+            </h2>
+            <a href="#" class="mrSponsor__headerLogo sponsor__logo skipLock--fadeOut">
                 <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
                 alt="Star Wars" class="sponsor__logoImg">
             </a>
-            <h1 class="mrTitle__text">10 Reasons The New Star Wars Movies Will Be Amazing</h1>
         </div>
+        <!-- ONLY RENDER 'mrSponsor__header' if MiniReel is Sponsored -->
 
         <ul class="cards__list" id="cardStack">
-            <li class="cards__item cards__item--current">
+            <li class="cards__item cards__item--current skipLock--fadeOut">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
                         <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <h1 class="card__title tk--hdr">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                            <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
+                        </h1>
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">1 of 5</p>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <h1 class="card__title card__title--secondary tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
                         <div class="card__copy">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="cards__item">
+            <li class="cards__item skipLock--fadeOut">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
-                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/y6fjc9EjeeE/0.jpg');">&nbsp;</div>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
-                        <button class="actionBtn adSkipTestBtn" type="Test Ad Skip" style="margin-top:12px;">Test Ad Skip</button>
+                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/y6fjc9EjeeE/0.jpg');">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wCc2v7izk8w" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h1 class="card__title tk--hdr">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                            <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
+                        </h1>
+                        <button class="actionBtn adSkipTestBtn" type="Test Ad Skip" style="margin-top:12px;"><span class="actionBtn__label">Ad Mode Demo</span></button>
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">2 of 5</p>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <h1 class="card__title card__title--secondary tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
                         <div class="card__copy">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="cards__item">
+            <li class="cards__item skipLock--fadeOut">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
                         <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/nzeCn1f30go/0.jpg');">&nbsp;</div>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <div class="card__sponsor clearfix">
+                            <a href="#" class="card__sponsorLogo">
+                                <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
+                                alt="Star Wars" class="sponsor__logoImg">
+                            </a>
+                            <p class="card__sponsorTag">
+                                Sponsored by <br>
+                                <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+                            </p>
+                        </div>
+                        <h1 class="card__title card__title--secondary tk--hdr">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                            <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
+                        </h1>
+                        <a href="#" class="actionBtn actionBtn__sponsorAction" type="button" title="More Info"><span class="actionBtn__label">More Info</span></a>
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">3 of 5</p>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <div class="card__sponsor clearfix">
+                            <a href="#" class="card__sponsorLogo">
+                                <img src="https://yt3.ggpht.com/-H1KqX5HicIU/AAAAAAAAAAI/AAAAAAAAAAA/M-IrkLisjV0/s100-c-k-no/photo.jpg"
+                                alt="Star Wars" class="sponsor__logoImg">
+                            </a>
+                            <p class="card__sponsorTag">
+                                Sponsored by <br>
+                                <a href="#" title="Star Wars: The Force Awakens">Star Wars: The Force Awakens</a>
+                            </p>
+                        </div>
                         <div class="card__copy">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                        </div>
+                        <div class="infoSponsor__links">
+                            <a href="#" class="infoSponsor__iconLink fa fa-link"><span class="ir">Website</span></a>
+                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--youtube fa fa-youtube-play"><span class="ir">YouTube</span></a>
+                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--vimeo fa fa-vimeo-square"><span class="ir">Vimeo</span></a>
+                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--facebook fa fa-facebook"><span class="ir">Facebook</span></a>
+                            <a href="#" class="infoSponsor__iconLink infoSponsor__iconLink--twitter fa fa-twitter"><span class="ir">Twitter</span></a>
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="cards__item">
+            <li class="cards__item skipLock--fadeOut">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
                         <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/my9am2iYrUQ/0.jpg');">&nbsp;</div>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <h1 class="card__title tk--hdr">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                            <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
+                        </h1>
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">4 of 5</p>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <h1 class="card__title card__title--secondary tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
                         <div class="card__copy">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="cards__item">
+            <li class="cards__item skipLock--fadeOut">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
                         <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/PtuJk5hSOlM/0.jpg');">&nbsp;</div>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <h1 class="card__title tk--hdr">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                            <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
+                        </h1>
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">5 of 5</p>
-                        <h1 class="card__title tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
+                        <h1 class="card__title card__title--secondary tk--hdr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</h1>
                         <div class="card__copy">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
                         </div>

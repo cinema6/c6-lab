@@ -4,6 +4,15 @@
 /*  ================================================
     helper classes & default style resets
     ================================================ */
+    a,
+    .navBtn,
+    .cardQuestion__closeBtn {
+        color:#d94040;
+    }
+    .actionBtn,
+    .infoSponsor__iconLink {
+        background:#d94040;
+    }
     .cardQuestion--optA {
         background:#259cd3;
     }
@@ -11,6 +20,14 @@
         background:#e18328;
     }
 
+    .c6sprite:after {
+        background-image:url('c6-card-flipper-sprite@2x--d94040.png');
+    }
+    .actionBtn,
+    .card__group,
+    .flyOver__box {
+        border-radius:0;
+    }
 
     .tk--hdr {
         font-family:'Roboto Condensed', 'Open Sans', Arial, Helvetica, sans-serif;

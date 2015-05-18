@@ -126,12 +126,22 @@
     }
         .viewPane--landscape {
             display: none;
+            background:#222 url('portrait-only@2x.png') 50% 50% / contain no-repeat;
+        }
+        .landscape__msg {
+            color:#fff;
+            width:18%;
+            position:absolute;
+            top:36%; left:41%;
+            margin:0;
+            text-align: center;
+            font-size:1em;
         }
         .viewPane--skipLock {
             background:#000;
         }
     /* Landscape */
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    @media only screen and (orientation: landscape) {
         .viewPane {
             display:none;
         }
@@ -582,7 +592,7 @@
             transition-delay:0.2s;
         }
             .flyOver__group--show:after {
-                opacity: 0.9;
+                opacity: 0.8;
             }
 
         .flyOver__box {
@@ -593,6 +603,7 @@
             height:23em;
             background:#fff;
             margin:-11.5em 0 0 0;
+            border-radius:3px;
         }
             .flyOver__content {
                 position: relative;
@@ -793,3 +804,37 @@
             color:#ccc;
             margin:0 0 1em 0;
         }
+
+
+
+
+
+/*  ================================================
+    iphone5 Media Query classes
+    ================================================ */
+    @media only screen and (max-device-width : 340px) { 
+        /* iphone 5 */
+
+        .card__title {
+            font-size:1em;
+        }
+            .card__title--secondary {
+                font-size:0.875em;
+            }
+        .card__copy {
+            font-size:0.75em;
+        }
+
+        .player__group {
+            height:9em;
+        }
+
+        .flyOver__box {
+            height:18em;
+            margin:-9em 0 0 0;
+        }
+            .flyOver__box .player__group {
+                height:12em;
+            }
+
+    }

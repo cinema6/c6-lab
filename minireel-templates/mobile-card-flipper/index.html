@@ -82,15 +82,72 @@
         </div>
         <!-- ONLY RENDER 'mrSponsor__header' if MiniReel is Sponsored -->
 
+
+        <!-- ONLY RENDER 'flyOver__group' during pre-roll ads -->
+        <div class="flyOver__group">
+            <div class="flyOver__box">
+                <div class="flyOver__content">
+                    <p class="flyOver__introTag">Advertisement</p>
+                    <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                    <button class="actionBtn flyOver__closeBtn">
+                        <span class="actionBtn__label">Skip in 5</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- ONLY RENDER 'flyOver__group' during pre-roll ads -->
+
+
         <ul class="cards__list" id="cardStack">
             <li class="cards__item cards__item--current skipLock--fadeOut">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
-                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                        <div class="player__group" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>
+                        </div>
                         <h1 class="card__title tk--hdr">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                             <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
                         </h1>
+                        <button class="actionBtn cardQuestion__showBtn" type="button">
+                            <span class="actionBtn__label">Show Survey</span>
+                        </button>
+
+                        <!-- ONLY RENDER 'card__question' if card has a questionnaire -->
+                        <div class="card__question">
+                            <div class="cardQuestion__group">
+                                <p class="cardQuestion__intro">Please answer this Question:</p>
+                                <h1 class="card__title tk--hdr">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros?
+                                </h1>
+                                <div class="cardQuestion__options cardQuestion__options--show">
+                                    <button class="actionBtn cardQuestion__btn cardQuestion--optA" type="button" title="Yes">
+                                        <span class="actionBtn__label">Yes</span>
+                                    </button>
+                                    <button class="actionBtn cardQuestion__btn cardQuestion--optB" type="button" title="No">
+                                        <span class="actionBtn__label">No</span>
+                                    </button>
+                                </div>
+                                <div class="cardQuestion__results">
+                                    <div class="questionResult cardQuestion--optA">
+                                        <span class="questionResult__label">Yes:</span>
+                                        <span class="questionResult__count">56%</span>
+                                        <div class="questionResult__bar cardQuestion--optA"
+                                        style="width:56%;">&nbsp;</div>
+                                    </div>
+                                    <div class="questionResult cardQuestion--optB">
+                                        <span class="questionResult__label">No:</span>
+                                        <span class="questionResult__count">44%</span>
+                                        <div class="questionResult__bar cardQuestion--optB"
+                                        style="width:44%;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <button class="cardQuestion__closeBtn" type="button" title="Return to Video">Return to Video</button>
+                            </div>
+                            <div class="card__bg" style="background-image:url('https://i.ytimg.com/vi/ngElkyQ6Rhs/0.jpg');">&nbsp;</div>
+                        </div>
+                        <!-- ONLY RENDER 'card__question' if card has a questionnaire -->
+
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">1 of 5</p>
@@ -192,6 +249,9 @@
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                             <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
                         </h1>
+                        <button class="actionBtn preRoll__showBtn" type="button">
+                            <span class="actionBtn__label">Show Preroll</span>
+                        </button>
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">4 of 5</p>
@@ -222,7 +282,7 @@
             </li>
         </ul>
         <div class="skipTimer__group">
-            <div class="skipTimer__text">Skip in 5</div>
+            <div class="skipTimer__text tk--alert">Skip in 5</div>
             <div class="skipTimer__meter">&nbsp;</div>
         </div>
        
@@ -263,6 +323,12 @@
             $hideInfoBtn    = $('.actionBtn__closeInfo'),
             $infoPanel  = $('.infoPanel__group'),
             $adSkipBtn  = $('.adSkipTestBtn'),
+            $showSurveyResultsBtn   = $('.cardQuestion__btn'),
+            $showSurveyBtn  = $('.cardQuestion__showBtn'),
+            $hideSurveyBtn  = $('.cardQuestion__closeBtn'),
+            $flyOverPanel   = $('.flyOver__group'),
+            $showFlyOverBtn = $('.preRoll__showBtn'),
+            $hideFlyOverBtn = $('.flyOver__closeBtn'),
             hammerTime  = new Hammer(myCards),
             cardWidth   = $myCard.width(),
             goNext      = function() {
@@ -314,6 +380,7 @@
             $myCardHolder.toggleClass('card__holder--flipped');
         });
 
+
         $showInfoBtn.click(function() {
             $infoPanel.addClass('infoPanel__group--show');
         });
@@ -321,6 +388,38 @@
         $hideInfoBtn.click(function() {
             $infoPanel.removeClass('infoPanel__group--show');
         });
+
+
+        $showFlyOverBtn.click(function() {
+            $flyOverPanel.addClass('flyOver__group--show');
+        });
+        $hideFlyOverBtn.click(function() {
+            $flyOverPanel.removeClass('flyOver__group--show');
+        });
+
+
+        $showSurveyBtn.click(function() {
+            var $mySurvey   = $myCard.find('.card__question');
+            $mySurvey.addClass('card__question--show');
+        });
+
+        $hideSurveyBtn.click(function() {
+            var $mySurvey   = $myCard.find('.card__question--show'),
+                $mySurveyResults    = $myCard.find('.cardQuestion__results'),
+                $mySurveyOptions    = $myCard.find('.cardQuestion__options');
+            $mySurvey.removeClass('card__question--show');
+            $mySurveyOptions.addClass('cardQuestion__options--show');
+            $mySurveyResults.removeClass('cardQuestion__results--show');
+        });
+
+        $showSurveyResultsBtn.click(function() {
+            var $mySurveyResults    = $myCard.find('.cardQuestion__results'),
+                $mySurveyOptions    = $myCard.find('.cardQuestion__options');
+
+            $mySurveyOptions.removeClass('cardQuestion__options--show');
+            $mySurveyResults.addClass('cardQuestion__results--show');
+        });
+
 
         $nextBtn.click(function() {
             goNext();

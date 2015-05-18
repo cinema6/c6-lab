@@ -5,12 +5,19 @@
     helper classes & default style resets
     ================================================ */
     a,
-    .navBtn {
+    .navBtn,
+    .cardQuestion__closeBtn {
         color:#d94040;
     }
     .actionBtn,
     .infoSponsor__iconLink {
         background:#d94040;
+    }
+    .cardQuestion--optA {
+        background:#259cd3;
+    }
+    .cardQuestion--optB {
+        background:#e18328;
     }
 
     .c6sprite:after {

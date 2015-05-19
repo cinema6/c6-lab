@@ -168,7 +168,7 @@
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                             <span class="card__source tk--copy">&mdash;&nbsp;<a href="http://www.youtube.com" title="YouTube" target="_blank">YouTube</a></span>
                         </h1>
-                        <button class="actionBtn adSkipTestBtn" type="Test Ad Skip" style="margin-top:12px;"><span class="actionBtn__label">Ad Mode Demo</span></button>
+                        <button class="actionBtn adSkipTestBtn" type="Test Ad Skip"><span class="actionBtn__label">Ad Mode Demo</span></button>
                     </div>
                     <div class="card__group card__group--back">
                         <p class="card__count">2 of 5</p>
@@ -179,6 +179,7 @@
                     </div>
                 </div>
             </li>
+            <!-- for sponsored cards, add class 'c6Card--sponsored'-->
             <li class="cards__item skipLock--fadeOut c6Card--sponsored">
                 <div class="card__holder">
                     <div class="card__group card__group--front">
@@ -310,7 +311,7 @@
     (function() {
 
         var cardNum     = 0,
-            cardMax     = $('.cards__item').length,
+            cardMax     = $('.cards__item').length - 1,
             slideAmount = 0,
             isLocked    = false,
             $myCards    = $('.cards__list'),
@@ -323,19 +324,19 @@
             $showInfoBtn    = $('.headerBar__infoBtn'),
             $hideInfoBtn    = $('.actionBtn__closeInfo'),
             $infoPanel  = $('.infoPanel__group'),
-            $adSkipBtn  = $('.adSkipTestBtn'),
-            $showSurveyResultsBtn   = $('.cardQuestion__btn'),
-            $showSurveyBtn  = $('.cardQuestion__showBtn'),
+            $adSkipBtn  = $('.adSkipTestBtn'), //demo only
+            $showSurveyResultsBtn   = $('.cardQuestion__btn'), //demo only
+            $showSurveyBtn  = $('.cardQuestion__showBtn'), //demo only
             $hideSurveyBtn  = $('.cardQuestion__closeBtn'),
             $flyOverPanel   = $('.flyOver__group'),
-            $showFlyOverBtn = $('.preRoll__showBtn'),
+            $showFlyOverBtn = $('.preRoll__showBtn'), //demo only
             $hideFlyOverBtn = $('.flyOver__closeBtn'),
             hammerTime  = new Hammer(myCards),
             cardWidth   = $myCard.width(),
             goNext      = function() {
                 cardNum++;
-                if(cardNum > cardMax - 1) {
-                    cardNum = cardMax - 1;
+                if(cardNum >= cardMax) {
+                    cardNum = cardMax;
                 };
                 $('.cards__item--current').removeClass('cards__item--current');
                 $('.card__holder--flipped').removeClass('card__holder--flipped');
@@ -351,6 +352,7 @@
                 doSlide();
             },
             doSlide     = function() {
+                console.log(cardNum + '   ' + cardMax);
                 //don't like having to look up cardwidth every time this runs but this is necessary for firefox on some android devices
                 cardWidth   = $myCard.width();
                 

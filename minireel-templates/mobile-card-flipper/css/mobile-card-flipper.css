@@ -168,6 +168,9 @@
         display:block;
         text-align: center;
     }
+        .actionBtn:disabled {
+            background:#ccc;
+        }
         .actionBtn__label {
             font-weight:bold;
         }
@@ -310,13 +313,13 @@
                     }
                     .card__title {
                         color:#222;
-                        font-size:1.25em;
+                        font-size:1.5em;
                         margin:0.625em 0.9375rem 0 0.9375rem;
                         font-weight:normal;
                         line-height:1.25;
                     }
                         .card__title--secondary {
-                            font-size:1em;
+                            font-size:1.125em;
                         }
                         .card__source {
                             font-size:0.75em;
@@ -324,7 +327,7 @@
                         }
                     .card__copy {
                         color:#4d4d4d;
-                        font-size:0.875em;
+                        font-size:1em;
                         line-height: 1.36;
                         margin:0.75em 0.9375rem 0 0.9375rem;
                     }
@@ -394,9 +397,6 @@
                             margin:1em auto;
                         }
 
-                        .cardQuestion__showBtn {
-                            margin:1.5em auto 0;
-                        }
                         .cardQuestion__closeBtn {
                             color:#00c0ff;
                             position:absolute;
@@ -810,11 +810,9 @@
 
 
 /*  ================================================
-    iphone5 Media Query classes
+    Small Mobile Device (below iphone 5) Media Query classes
     ================================================ */
     @media only screen and (max-device-width : 340px) { 
-        /* iphone 5 */
-
         .card__title {
             font-size:1em;
         }
@@ -836,5 +834,33 @@
             .flyOver__box .player__group {
                 height:12em;
             }
+    }
 
+
+
+/*  ================================================
+    Large Mobile Device (above iphone 6) Media Query classes
+    ================================================ */
+    @media only screen and (min-device-width : 400px) { 
+        .card__title {
+            font-size:1.75em;
+        }
+            .card__title--secondary {
+                font-size:1.25em;
+            }
+        .card__copy {
+            font-size:1.125em;
+        }
+
+        .player__group {
+            height:15em;
+        }
+
+        .flyOver__box {
+            height:24em;
+            margin:-12em 0 0 0;
+        }
+            .flyOver__box .player__group {
+                height:18em;
+            }
     }

@@ -526,6 +526,7 @@
                 opacity:1;
             }
 
+
         .infoPanel {
             position:absolute;
             z-index: 10;
@@ -554,6 +555,16 @@
             .actionBtn__closeInfo {
                 margin:3em auto 0;
             }
+
+
+        .infoPanel__closeBtn {
+            width:2.5em; height:2em;
+            position: absolute;
+            z-index: 10;
+            right:0;
+            margin:0;
+            display:none;
+        }
 
 
 
@@ -679,6 +690,9 @@
     }
     .c6MiniReel--standalone .headerBar__infoBtn {
         right:0; left:auto;
+    }
+    .c6MiniReel--standalone .infoPanel__closeBtn {
+        display:block;
     }
 
 

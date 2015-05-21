@@ -153,6 +153,9 @@
     .navBtn {
         color:#00c0ff;
     }
+        .navBtn:disabled {
+            opacity:0.2;
+        }
         .navBtn__label {
             font-size:0.625em;
             font-weight:bold;

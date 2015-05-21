@@ -677,10 +677,6 @@
             .navBar__flipBtn {
                 left:50%;
                 margin:0 0 0 -3.5em;
-                border-radius:3px;
-                background:#00c0ff;
-                width:7em; height:2.75em;
-                color:#fff;
             }
                 .navBar__flipBtn .navBtn__label {
                     position: absolute;

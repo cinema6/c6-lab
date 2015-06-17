@@ -64,7 +64,7 @@
         font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
     }
     .tk--alert {
-        color:#ff0000;
+        color:#ff1e1e;
     }
 
 
@@ -86,36 +86,14 @@
         clear: both;
     }
 
-    .c6sprite:after {
-        background:url('c6-card-flipper-sprite@2x--00c0ff.png') 0 0 / 6.25em 1.25em no-repeat;
-        content:'';
-        position: absolute;
-        top:50%; left:50%; z-index: 0;
-        font-size:1rem;
+    .ui--error {
+        display: none;
     }
-        .c6sprite--infoIcon:after,
-        .c6sprite--closeIcon:after {
-            width:1.25em; height:1.25em;
-            background-position:0 0;
-            margin:-0.625em 0 0 -0.625em;
+        .ui--hasError .ui--error {
+            display: block;
         }
-        .c6sprite--closeIcon:after {
-            background-position:-1.25em 0;
-        }
-        .c6sprite--leftArrowIcon:after,
-        .c6sprite--rightArrowIcon:after {
-            width:0.75em; height:1.25em;
-            background-position: -2.5em 0;
-            margin:-0.625em 0 0 -0.375em;
-        }
-        .c6sprite--rightArrowIcon:after {
-            background-position:-3.625em 0;
-        }
-        .c6sprite--flipIcon:after {
-            width:1.875em; height:1.25em;
-            background-position:-4.375em 0;
-            top:0.375em;
-            margin:0 0 0 -0.9375em;
+        .ui--hasError .fa.ui--error {
+            display: inline;
         }
 
     
@@ -156,7 +134,7 @@
     pageHeader classes
     ================================================ */
     .pageHeader__group {
-        position:absolute;
+        position:fixed;
         top:0;
         z-index: 10;
         width:100%; min-height:3.5em;
@@ -195,10 +173,46 @@
 
 
 /*  ================================================
+    tocNav__group classes
+    ================================================ */
+    .tocNav__group {
+        position: fixed;
+        top:4.75em; left:4.75em;
+    }
+
+        .tocNav__list {
+            list-style: none;
+            margin:0; padding:0;
+        }
+
+            .tocNav__item {
+                margin:0.5em 0;
+            }
+
+        .tocNav__link {
+            display: block;
+            width:2em; height:2em;
+            border-radius:50%;
+            background:#00c0ff;
+            color:#fff;
+            text-align: center;
+            font-size:0.875em;
+            line-height: 2em;
+            transition:background 0.3s;
+        }
+            .tocNav__link:hover {
+                background:#de0073;
+                color:#fff;
+            }
+
+
+
+
+/*  ================================================
     form classes
     ================================================ */
     .formSection__group {
-        margin:3em 0 3.75em;
+        margin:3em 0 0.75em;
     }
 
 
@@ -237,29 +251,46 @@
     .form__item {
         border:none;
         position:relative;
-        margin-top:2.9375em;
     }
+        .form__item:first-child {
+            margin-top:2.9375em;
+        }
 
         .form__label {
             color:#5c5c5c;
             font-size:1em;
             font-weight:300;
             display: block;
-            text-align: center;
-            width:100%;
+            top:0.9375em; 
             position: absolute;
-            top:1.3125em; left:0;
+            left:1em; z-index:-10;
             transition: transform 0.3s;
         }
-            .form__inputText:focus + .form__label {
-                transform: translate3d(0, -2.5em, 0);
+            .form__inputText:focus + .form__label,
+            .form__fillCheck--filled + .form__label {
+                transform: translate3d(-100%, 0, 0);
+                text-align: right;
+                left:0;
             }
+
+
+            .form__item--bigInput .form__label {
+                text-align: center;
+                width:100%;
+                top:1.3125em; left:0;
+            }
+            .form__item--bigInput .form__inputText:focus + .form__label,
+            .form__item--bigInput .form__fillCheck--filled + .form__label {
+                transform: translate3d(0, -2.5em, 0);
+                text-align: center;
+            }
+
 
         
         .form__inputText {
             border:0;
             padding:0.625rem 0.5rem;
-            border-bottom:2px solid #d4d4d4;
+            border-bottom:2px solid #5c5c5c;
             font-size:1.125em;
             color:#1c1c1c;
             background:none;
@@ -271,7 +302,7 @@
                 background:#fff;
             }
 
-            .form__inputText--big {
+            .form__item--bigInput .form__inputText {
                 text-align: center;
                 font-size:1.5em;
             }
@@ -311,34 +342,67 @@
                 }
 
 
-            .form__helpBox--big {
+            .form__helpBox--center {
                 left:20%; right:20%;
                 margin:1em 0 0 0;
             }
-                .form__inputText:focus ~ .form__helpBox--big {
+                .form__inputText:focus ~ .form__helpBox--center {
                     top:100%;
                 }
 
-                .form__helpBox--big:after,
-                .form__helpBox--big:before {
+                .form__helpBox--center:after,
+                .form__helpBox--center:before {
                     bottom: 100%;
                     left: 50%;
                 }
-                    .form__helpBox--big:after {
+                    .form__helpBox--center:after {
                         border-bottom-color: #fff;
                         margin-left: -8px;
                     }
-                    .form__helpBox--big:before {
+                    .form__helpBox--center:before {
                         border-bottom-color: #3eccff;
                         margin-left: -11px;
                     }
 
+            .form__helpBox--right {
+                left:auto; right:auto;
+                margin:0 0 0 1em;
+                width:50%;
+            }
+                .form__inputText:focus ~ .form__helpBox--right {
+                    left:100%;
+                    top:0;
+                }
+
+                .form__helpBox--right:after,
+                .form__helpBox--right:before {
+                    right: 100%;
+                    top: 2em;
+                }
+                    .form__helpBox--right:after {
+                        border-right-color: #fff;
+                        margin-top: -8px;
+                    }
+                    .form__helpBox--right:before {
+                        border-right-color: #3eccff;
+                        margin-top: -11px;
+                    }
+
+
+            .form__errorBox {
+                font-size:0.875em;
+                margin:0.5em 0.25em 0;
+            }
+            .form__item--bigInput .form__errorBox {
+                text-align: center;
+            }
+
             
 
 
-        .form__item--error .form__inputText {
+        .ui--hasError .form__inputText {
             border-color:#ff1e1e;
         }
-        .form__item--error .form__label {
+        .ui--hasError .form__label {
             color:#ff1e1e;
         }

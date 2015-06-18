@@ -21,10 +21,10 @@
     }
 
     ::-moz-selection {
-        background: #e900a4; text-shadow: none; color:#fff;
+        background: #de0073; text-shadow: none; color:#fff;
     }
     ::selection {
-        background: #e900a4; text-shadow: none; color:#fff;
+        background: #de0073; text-shadow: none; color:#fff;
     }
     p {
         margin: 0.75em 0;
@@ -63,8 +63,28 @@
     .tk--copy {
         font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
     }
+
+    .tk--active {
+        color:#00c0ff;
+    }
     .tk--alert {
         color:#ff1e1e;
+    }
+
+    .tk--facebook {
+        color:#3A5795;
+    }
+    .tk--twitter {
+        color:#2CAAE1;
+    }
+    .tk--pinterest {
+        color:#BB0000;
+    }
+    .tk--youtube {
+        color:#CC181E;
+    }
+    .tk--instagram {
+        color:#125688;
     }
 
 
@@ -308,6 +328,19 @@
             }
 
 
+
+        .form__selectBox:focus {
+            outline:none;
+        }
+        .form__selectBox option {
+            background:#00c0ff;
+            border:0;
+            color:#fff;
+        }
+
+
+
+
         .form__helpBox {
             border-radius:6px;
             background:#fff;
@@ -390,12 +423,29 @@
 
 
             .form__errorBox {
-                font-size:0.875em;
-                margin:0.5em 0.25em 0;
+                overflow: hidden;
+                height:0;
             }
-            .form__item--bigInput .form__errorBox {
-                text-align: center;
+                .ui--hasError .form__errorBox {
+                    height:auto;
+                }
+            .form__errorMsg {
+                font-size:0.8125em;
+                margin:0;
+                background:#ff1e1e;
+                color:#fff;
+                padding:0.125em 0.75em 0.25em 0.75em;
+                transition: transform 0.3s 0.2s;
+                transform: translate3d(0, -100%, 0);
             }
+                .ui--hasError .form__errorMsg {
+                    transform: translate3d(0, 0, 0);
+                }
+
+                .form__item--bigInput .form__errorMsg {
+                    text-align: center;
+                }
+                
 
             
 

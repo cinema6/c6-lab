@@ -29,6 +29,11 @@
                 color:#fff;
                 text-align: center;
             }
+                .c6widget-videoPlayer__group iframe {
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                    -webkit-transition: opacity 0.5s;
+                }
             
             
             .c6widget-textBox__group {
@@ -160,6 +165,7 @@
                             var $unit = $('#unit');
 
                             player.mute();
+                            $frame.css('opacity', 1);
 
                             $unit.one('mouseenter', function() {
                                 player.unMute();

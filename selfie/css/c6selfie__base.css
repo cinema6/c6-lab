@@ -232,14 +232,14 @@
     form classes
     ================================================ */
     .formSection__group {
-        margin:3em 0 0.75em;
+        margin:3em 0 1.375em;
     }
 
 
 
     .formSection__title {
         font-size: 1em;
-        margin:3em 0 2em 0;
+        margin:3em 0 1.3125em 0;
         text-align: center;
     }
 
@@ -272,20 +272,19 @@
         border:none;
         position:relative;
         display: block;
+        margin:0 0 1.25em 0; padding:0;
     }
-        .form__item:first-child {
-            margin-top:2.9375em;
-        }
 
         .form__label {
             color:#5c5c5c;
             font-size:1em;
             font-weight:300;
             display: block;
-            top:0.9375em; 
+            top:0.4375em; 
             position: absolute;
-            left:1em; z-index:-10;
+            left:0.5em; z-index:-10;
             transition: transform 0.3s;
+            padding:0 1.25em 0 0;
         }
             .form__inputText:focus ~ .form__label,
             .form__fillCheck--filled ~ .form__label {
@@ -298,7 +297,8 @@
             .form__item--bigInput .form__label {
                 text-align: center;
                 width:100%;
-                top:1.3125em; left:0;
+                top:1.4375em; left:0;
+                padding:0;
             }
             .form__item--bigInput .form__inputText:focus ~ .form__label,
             .form__item--bigInput .form__fillCheck--filled ~ .form__label {
@@ -306,11 +306,15 @@
                 text-align: center;
             }
 
+            .form__item--bigInput:first-child {
+                margin-top:2.8125em;
+            }
+
 
         
         .form__inputText {
             border:0;
-            padding:0.5rem 0.5rem;
+            padding:0.375rem 0.5rem 0.3125rem;
             border-bottom:2px solid #5c5c5c;
             font-size:1.125em;
             color:#1c1c1c;
@@ -327,6 +331,7 @@
             .form__item--bigInput .form__inputText {
                 text-align: center;
                 font-size:1.5em;
+                margin:0.5rem 0 0 0;
                 padding:0.5rem 0.5rem 0.5625rem;
             }
 
@@ -478,7 +483,7 @@
             border-radius:0;
             background:none;
             transition:border 0.3s, background 0.3s;
-            padding:0.625rem 0;
+            padding:0.4375rem 0 0.375rem;
             font-size:1.125em;
             color:#1c1c1c;
             height:auto;
@@ -499,5 +504,24 @@
             }
 
         .select2-container--default .select2-selection--single .select2-selection__arrow {
-            top:7px;
+            top:0.3125em;
         }
+
+
+        .select2-container--default .select2-results__option {
+            transition:background-color 0.3s, color 0.3s;
+        }
+
+            .select2-container--default .select2-results__option[aria-selected=true] {
+                background-color:#de0073;
+                color:#fff;   
+            }
+                .select2-container--default .select2-results__option[aria-selected=true]:before {
+                    content:'\f00c';
+                    font:normal normal normal 14px/1 FontAwesome;
+                    padding-right:0.5em;
+                }
+
+            .select2-container--default .select2-results__option--highlighted[aria-selected] {
+                background-color:#00c0ff;
+            }

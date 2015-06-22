@@ -415,13 +415,13 @@
 
             .form__helpBox--right {
                 left:auto; right:auto;
-                margin:0 0 0 1em;
-                width:50%;
+                margin:0 0 0 1.75em;
+                width:46%;
             }
                 .form__inputText:focus ~ .form__helpBox--right,
                 .ui--active ~ .form__helpBox--right {
                     left:100%;
-                    top:0;
+                    top:-0.75em;
                 }
 
                 .form__helpBox--right:after,
@@ -476,8 +476,13 @@
 
 
 
-    /*  selector classes
+    /*  select form classes
         ================================================ */
+        .select2-container {
+            display:block;
+            width:auto !important;
+        }
+
         .select2-container--default .select2-selection--single {
             border:0; border-bottom:2px solid #5c5c5c;
             border-radius:0;

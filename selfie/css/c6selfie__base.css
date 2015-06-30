@@ -530,3 +530,8 @@
             .select2-container--default .select2-results__option--highlighted[aria-selected] {
                 background-color:#00c0ff;
             }
+
+
+        .select2-dropdown {
+            border:0; border-radius: 0;
+        }

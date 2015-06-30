@@ -318,6 +318,10 @@
                     sendVideoEvent('AutoPlayAttempt', true);
                 });
                 player.addEventListener('OnMediaStart', function() {
+                    var pixels = (params.countUrls || '')
+                        .split(' ')
+                        .filter(function(pixel) { return !!pixel; });
+
                     c6ga('c6.send', 'timing', {
                         timingCategory: 'Player',
                         timingVar: 'videoStart',
@@ -327,6 +331,11 @@
 
                     sendVideoEvent('Play', true);
                     sendVideoEvent('AdCount');
+                    pixels.forEach(function(pixel) {
+                        var image = new Image();
+
+                        image.src = pixel;
+                    });
                 });
                 player.addEventListener('OnMediaUnpause', function() {
                     sendVideoEvent('Play');

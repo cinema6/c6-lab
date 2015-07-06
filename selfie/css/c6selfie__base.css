@@ -544,14 +544,18 @@
         }
 
             .select2-container--default .select2-results__option[aria-selected=true] {
-                background-color:#de0073;
-                color:#fff;   
+                background-color:#00a2de;
+                color:#fff;
             }
                 .select2-container--default .select2-results__option[aria-selected=true]:before {
                     content:'\f00c';
                     font:normal normal normal 14px/1 FontAwesome;
                     padding-right:0.5em;
                 }
+
+                    .select2-container--default .select2-results__option[aria-selected=true].select2-results__option--highlighted[aria-selected] {
+                        background-color:#00a2de; 
+                    }
 
             .select2-container--default .select2-results__option--highlighted[aria-selected] {
                 background-color:#00c0ff;

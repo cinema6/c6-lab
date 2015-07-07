@@ -1,21 +1,86 @@
 /*  ================================================
+    added upon styles
+    ================================================ */
+    textarea {
+        resize: none;
+    }
+    .form__item--bigInput .form__textBox:focus ~ .form__label,
+    .form__item--bigInput .form__fillCheck--filled ~ .form__label {
+        transform: translate3d(0, -2.5em, 0);
+        text-align: center;
+    }
+
+    .form__item--bigInput .form__textBox {
+        text-align: center;
+        font-size:1.5em;
+        margin:0.5rem 0 0 0;
+        padding:0.5rem 0.5rem 0.5625rem;
+    }
+        .form__textBox:focus ~ .form__helpBox,
+        .ui--active ~ .form__helpBox--right {
+            opacity:1;
+        }
+        .form__textBox:focus ~ .form__helpBox--center {
+            top:100%;
+        }
+
+    .form__textBox:focus ~ .form__label,
+    .form__fillCheck--filled ~ .form__label {
+        transform: translate3d(-100%, 0, 0);
+        text-align: right;
+        left:0;
+    }
+
+    .form__textBox:focus ~ .form__helpBox,
+    .ui--active ~ .form__helpBox--right {
+        opacity:1;
+    }
+        .form__textBox:focus ~ .form__helpBox--right,
+        .ui--active ~ .form__helpBox--right {
+            left:100%;
+            top:-0.75em;
+        }
+        .form__textBox:focus ~ .form__helpBox--center, {
+            top:100%;
+        }
+
+    .ui--hasError .form__textBox{
+        border-color:#ff1e1e;
+    }
+/*  ================================================
     form classes
     ================================================ */
-        .form__inputTextArea {
-            border:0;
-            padding:0.375rem 0.5rem 0.3125rem;
-            border-bottom:2px solid #5c5c5c;
-            font-size:1.125em;
-            color:#1c1c1c;
-            background:none;
-            transition:border 0.3s, background 0.3s, height 0.3s;
-            height:3em;
-            width:100%;
-            resize:none;
-            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    .form__textBox { 
+        border:0;
+        padding:0.375rem 0.5rem 0.3125rem;
+        border-bottom:2px solid #5c5c5c;
+        font-size:1.125em;
+        color:#1c1c1c;
+        background:none;
+        transition:border 0.3s, background 0.3s, height 0.3s;
+        width:100%;
+        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    }
+        .form__textBox:focus { 
+            border-bottom:2px solid #00c0ff;
+            background:#fff;
         }
-            .form__inputTextArea:focus {
-                border-bottom:2px solid #00c0ff;
-                background:#fff;
-                height:6em;
+
+    .form__textArea {
+        line-height:1.333;
+        height:1.95em;
+        overflow:hidden;
+        resize:none;
+    }
+            .form__textArea:focus {
+                height:4.55em;
             }
+
+            .form__textArea.form__fillCheck--filled {
+                height:4.55em;
+            }
+
+            
+
+
+

@@ -1,64 +1,81 @@
-
 /*  ================================================
     video preview classes
     ================================================ */
-    .form__subDivider {
-        margin-top:-1.125em;
-        margin-bottom:0.5em;
-        position:relative;
-    }
 
-        .form__subDivider--dot {
-            width:0.25em;
-            height:0.25em;
-            border-radius:50%;
-            background-color:#b1b1b1;
-            margin:0 auto 0.25em;
-        }
-
-
-
-    .form__videoPreview {
+    .videoPreview__group {
         position: relative;
         padding-bottom: 56.25%;
         margin:0;
     }
-        .form__videoPreview iframe {
+        .videoPreview__group::before {
+            content:url("../img/sub-divider.svg");
+            display:block;
+            width:0.25em;
+            margin:-1.25em auto;
+        }
+
+        .videoPreview__iframe {
             position: absolute;
-            top: 0;
+            top: 1.5em;
             left: 0;
             width: 100%;
             height: 100%;
         }
 
-        .form__videoDescription {
+        .videoDescription__group {
             width:100%;
-            padding:0.825em;
+            padding:1em;
+            margin-top:1.5em;
             background-color:#fff;
             box-shadow:0 0 1em #e8e8e8;
         }
-            .form__videoDescription--title {
-                margin:0;
+
+            .videoDescription__title {
+                margin:-0.25em 0 0 0;
                 color:#1c1c1c;
                 font-size:1.125em;
-                line-height:1.333em;
+                line-height:1.34em;
                 font-weight:normal;
             }
-            .form__videoDescription--source {
+
+            .videoDescription__source {
                 font-size:0.778em;
             }
-            .form__videoDescription--metaData {
+
+            .videoDescription__metaData {
                 color:#5c5c5c;
                 font-size:0.875em;
                 margin-top:0.75em;
             }
-                .videoDescription__metaData {
+
+                .videoDescription__metaDatum {
                     margin-right:2em;
                 }
-                    .metaData__fa {
+
+                    .videoDescription__metaDatumFa {
                         font-size:1em;
                         color:#b1b1b1;
                         margin-right:0.35715em;
                     }
 
 
+/*  ================================================
+    video thumbnail classes
+    ================================================ */
+
+    .videoThumbnail__group {
+        margin:1.25em 0;
+
+    }
+
+        .videoThumbnail__item {
+            background-color:#f1f1f1;
+            border-bottom:2px solid #5c5c5c;
+            margin:1em 0;
+        }
+            .videoThumbnail__itemLeft {
+                margin-right:1em;
+            }
+            .videoThumbnail__itemRight {
+                margin-left:1em;
+            }

@@ -561,15 +561,15 @@
             }
 
         .form__textArea {
-            line-height:1.333;
-            height:1.95em;
+            line-height:1.35;
+            height:2em;
             overflow:hidden;
             resize:none;
         }
             .form__textArea:focus {
-                height:4.55em;
+                height:4.675em;
             }
 
             .form__textArea.form__fillCheck--filled {
-                height:4.55em;
+                height:4.675em;
             }

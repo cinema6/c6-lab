@@ -64,18 +64,81 @@
     ================================================ */
 
     .videoThumbnail__group {
-        margin:1.25em 0;
+        margin:1.5em 0;
 
     }
 
         .videoThumbnail__item {
             background-color:#f1f1f1;
             border-bottom:2px solid #5c5c5c;
-            margin:1em 0;
+            margin-right:0.75em;
+            padding:0.25em;
+            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
+            transition: background-color 0.3s, border-bottom 0.3s;
+            text-align:center;
+            position:relative;
+            
         }
-            .videoThumbnail__itemLeft {
-                margin-right:1em;
+         
+
+            .videoThumbnail {
+                width:100%;
             }
-            .videoThumbnail__itemRight {
-                margin-left:1em;
+
+            .videoThumbnail__item:hover {
+                background-color:#fff;
+                border-bottom:2px solid #00a2de;
+               
+            }
+
+            .videoThumbnail__text{
+                font-size:1em;
+                margin:0.125em 0 0.2em;
+                display:inline-block;
+            }
+                .videoThumbnail__text:before,
+                .videoThumbnail__uploadText:before {
+                    content:"\f00c";
+                    font-family:FontAwesome;
+                    color:#00a2de;
+                    position:absolute;
+                    left:0.25em;
+                    bottom:0.5em;
+                }
+
+
+        .videoThumbnail__uploadContainer {
+            width:100%;
+            background-color:#f1f1f1;
+            border-bottom:2px solid #5c5c5c;
+            padding:0.25em;
+            text-align:center;
+            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
+            transition: background-color 0.3s, border-bottom 0.3s;
+            position:relative;
+        }
+            .videoThumbnail__uploadContainer:hover {
+                background-color:#fff;
+                border-bottom:2px solid #00a2de;
+            }
+
+            .videoThumbnail__uploadArrow {
+                background:url("../img/upload-arrow.svg") #f1f1f1 no-repeat center;
+                background-size:30%;
+                padding:27.25% 0;
+                margin:0;
+                display:block;
+                
+            }
+                
+            .videoThumbnail__uploadText {
+                margin:0.4em 0 0.25em;
+                display:inline-block;
+            }
+                 
+
+
+
+            #upload{
+                display:none
             }

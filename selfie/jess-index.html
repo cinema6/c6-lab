@@ -333,13 +333,13 @@
 
                             <span class="videoDescription__metaDatum">
 
-                                <span class="videoDescription__metaDatumFa fa fa-clock-o"></span>&nbsp;<span id="metaData__time">6:00</span>
+                                <span class="videoDescription__metaDatumFa fa fa-clock-o"></span>&nbsp;<span>6:00</span>
 
                             </span>
 
                             <span class="videoDescription__metaDatum">
 
-                                <span class="videoDescription__metaDatumFa fa fa-eye"></span>&nbsp;<span id="metaData__views">1,431,014</span>
+                                <span class="videoDescription__metaDatumFa fa fa-eye"></span>&nbsp;<span>1,431,014</span>
 
                             </span>
                         </div><!--videoDescription__metaData-->
@@ -348,14 +348,22 @@
                     <div class="videoThumbnail__group grid  grid--full">
 
                         <div class=" grid__item one-half">
-                            <div class="videoThumbnail__item videoThumbnail__itemLeft">
-                            </div>
+                            <button class="videoThumbnail__item">
+                                <img class="videoThumbnail" src="img/cupcake1.jpg">
+                                
+                                <span class="videoThumbnail__text">Default thumbnail</span>
+                            </button>
                         </div><!--
                         
                      --><div class="grid__item  one-half">
-                            <div class="videoThumbnail__item videoThumbnail__itemRight">
-                            </div>
+                            <input id="upload" type="file"/>
+                            <button id="upload_link" class="videoThumbnail__uploadContainer">
+                                <span class="videoThumbnail__uploadArrow">&nbsp;</span>
+                                
+                                <span class="videoThumbnail__uploadText">Custom image</span>
+                            </button>​
                         </div>
+                        
 
                 </section><!--.formSection__group-->
 

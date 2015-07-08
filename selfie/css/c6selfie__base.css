@@ -232,11 +232,8 @@
     form classes
     ================================================ */
     .formSection__group {
-        margin:3em 0 1.375em;
+        margin:3em 0 1.75em;
     }
-        .formSection__group--offset {
-            margin-bottom:1.25em;
-        }
 
 
 
@@ -341,7 +338,7 @@
                 text-align: center;
                 font-size:1.5em;
                 margin:0.5rem 0 0 0;
-                padding:0.5rem 0.5rem 0.5625rem;
+                padding:0.5rem 0.5rem 0.6875rem;
             }
 
 

@@ -65,39 +65,73 @@
 
     .videoThumbnail__group {
         margin:1.5em 0;
+        position:relative;
 
     }
 
-        .videoThumbnail__item {
-            background-color:#f1f1f1;
-            border-bottom:2px solid #5c5c5c;
-            margin-right:0.75em;
-            padding:0.25em;
-            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
-            transition: background-color 0.3s, border-bottom 0.3s;
-            text-align:center;
+
+        .videoThumbnail__container {
             position:relative;
-            
         }
-         
+            
+
+            .videoThumbnail__item,
+            .videoThumbnail__item--selected {
+                background-color:#f1f1f1;
+                border-bottom:2px solid #5c5c5c;
+                padding:0.25em;
+                font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
+                transition: background-color 0.3s, border-bottom 0.3s;
+                text-align:center;
+                position:relative;
+                z-index:1;
+                width:calc(100% - 0.75em);
+            }
+                .videoThumbnail__item.left,
+                .videoThumbnail__item--selected.left {
+                    margin-right:0.75em;
+                }
+                .videoThumbnail__item.right,
+                .videoThumbnail__item--selected.right {
+                    margin-left:0.75em;
+                }
+
+                .videoThumbnail__item--selected:before,
+                .videoThumbnail__uploadContainer--selected:before {
+                    content:"\f00c";
+                    font-family:FontAwesome;
+                    color:#00a2de;
+                    position:absolute;
+                    bottom:0.51em;
+                    left:0.5em;
+                    z-index:2;
+                }
+                .videoThumbnail__item:hover,
+                .videoThumbnail__item--selected:hover,
+                .videoThumbnail__item:focus,
+                .videoThumbnail__item--selected:focus {
+                    background-color:#fff;
+                    border-bottom:2px solid #00a2de;
+                }
+
+
 
             .videoThumbnail {
                 width:100%;
+                padding-bottom:57.5%;
+                display:block;
+                background:url("../img/cupcake3.png") no-repeat center;
+                background-size:cover;   
             }
-
-            .videoThumbnail__item:hover {
-                background-color:#fff;
-                border-bottom:2px solid #00a2de;
-               
-            }
+            
 
             .videoThumbnail__text{
                 font-size:1em;
-                margin:0.125em 0 0.2em;
+                margin:0.4em 0 0.2em;
                 display:inline-block;
             }
-                .videoThumbnail__text:before,
-                .videoThumbnail__uploadText:before {
+             
+                .videoThumbnail__uploadText.faCheck__active:before {
                     content:"\f00c";
                     font-family:FontAwesome;
                     color:#00a2de;
@@ -107,25 +141,11 @@
                 }
 
 
-        .videoThumbnail__uploadContainer {
-            width:100%;
-            background-color:#f1f1f1;
-            border-bottom:2px solid #5c5c5c;
-            padding:0.25em;
-            text-align:center;
-            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
-            transition: background-color 0.3s, border-bottom 0.3s;
-            position:relative;
-        }
-            .videoThumbnail__uploadContainer:hover {
-                background-color:#fff;
-                border-bottom:2px solid #00a2de;
-            }
 
             .videoThumbnail__uploadArrow {
                 background:url("../img/upload-arrow.svg") #f1f1f1 no-repeat center;
                 background-size:30%;
-                padding:27.25% 0;
+                padding:28.7% 0;
                 margin:0;
                 display:block;
                 
@@ -142,3 +162,88 @@
             #upload{
                 display:none
             }
+
+
+
+/*  ================================================
+    form helper class
+    ================================================ */
+
+
+        .form__textAreaMarginFix {
+            margin-bottom:-0.25em;
+        }
+
+
+/*  ================================================
+    cta preview classes
+    ================================================ */
+
+
+.ctaPreview__group {
+    width:100%;
+    margin-bottom:1.25em;
+}
+    
+    .ctaPreview__title {
+        text-align:center;
+        font-size:0.875em;
+        font-weight:300;
+        margin:-0.85715em 0 0.0714em 0;
+    }
+        .ctaPreview__title::before {
+            content:url("../img/sub-divider.svg");
+            display:block;
+            width:0.25em;
+            margin:-0.25em auto;
+        }
+
+    .ctaPreview__container {
+        width:100%;
+        padding:1.5em 5em;
+        background-color:#fff;
+        box-shadow:0 0 1em #e8e8e8;
+        text-align:center;
+    }
+
+        .ctaPreview__button,
+        .ctaPreview__buttonHidden {
+            padding:1em;
+            margin:0 auto;
+            width:100%;
+            font-size:1.125em;
+            background-color:#00c0ff;
+            color:white;
+        }
+            .ctaPreview__buttonHidden {
+                display:none;
+            }
+
+        .ctaPreview__link,
+        .ctaPreview__linkHidden {
+            font-size:1em;
+            
+        }
+            .ctaPreview__linkHidden {
+                display:none;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

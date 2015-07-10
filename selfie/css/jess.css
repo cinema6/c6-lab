@@ -70,22 +70,23 @@
 
 
         .thumbnail__container,
-        .thumbnail__container--upload {
+        .thumbnail__containerUpload {
             position:relative;
 
         }
-            .thumbnail__container--upload {
-                padding:0.25em 0.25em 0 0.25em; 
+            .thumbnail__containerUpload {
+                width:100%;
+                padding-top:64%;
             }
-                .thumbnail__container--upload:hover {
-                    background-color:#fff;
-                }
-            
+         
             
 
             .thumbnail__item,
             .thumbnail__item--selected,
-            .thumbnail__itemButton {
+            .thumbnail__itemButton,
+            .thumbnail__itemButton--selected,
+            .thumbnail__logoButton,
+            .thumbnail__logoButton--selected {
                 background-color:#f1f1f1;
                 font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
                 transition: background-color 0.3s, border-bottom 0.3s;
@@ -93,16 +94,24 @@
                 position:relative;
                 z-index:1;
                 width:100%;
+                border-bottom:2px solid #5c5c5c;
+                padding:0.25em;
+            } 
+            .thumbnail__itemButton,
+            .thumbnail__itemButton--selected {
+                padding-top:66.25%; 
+                position:absolute;
+                top:-0.0625em;
             }
-                .thumbnail__item,
-                .thumbnail__item--selected {
-                    border-bottom:2px solid #5c5c5c;
-                    padding:0.25em;
-                }
-                
-  
-
-                .thumbnail__item--selected:before {
+            .thumbnail__logoButton,
+            .thumbnail__logoButton--selected {
+                padding-top:99%; 
+                position:absolute;
+                top:0;
+            }    
+                .thumbnail__item--selected:before,
+                .thumbnail__itemButton--selected:before,
+                .thumbnail__logoButton--selected:before {
                     content:"\f00c";
                     font-family:FontAwesome;
                     color:#00a2de;
@@ -112,36 +121,83 @@
                     z-index:2;
                 }
                 
-
                 .thumbnail__item:hover,
-                .thumbnail__item--selected:hover {
+                .thumbnail__item--selected:hover,
+                .thumbnail__item:focus,
+                .thumbnail__item--selected:focus,
+                .thumbnail__itemButton:hover,
+                .thumbnail__itemButton--selected:hover,
+                .thumbnail__itemButton:focus,
+                .thumbnail__itemButton--selected:focus,
+                .thumbnail__logoButton:hover,
+                .thumbnail__logoButton--selected:hover,
+                .thumbnail__logoButton:focus,
+                .thumbnail__logoButton--selected:focus {
                     background-color:#fff;
+                }
+                .thumbnail__item:hover,
+                .thumbnail__item--selected:hover,
+                .thumbnail__itemButton:hover,
+                .thumbnail__itemButton--selected:hover,
+                .thumbnail__logoButton:hover,
+                .thumbnail__logoButton--selected:hover {
                     border-bottom:2px solid #00c0ff;
                 }
                 .thumbnail__item:focus,
-                .thumbnail__item--selected:focus {
-                    background-color:#fff;
+                .thumbnail__item--selected:focus,
+                .thumbnail__itemButton:focus,
+                .thumbnail__itemButton--selected:focus,
+                .thumbnail__logoButton:focus,
+                .thumbnail__logoButton--selected:focus {
                     border-bottom:2px solid #00a2de;
                 }
 
                 
-                
 
-
+            .thumbnail__upload--preview,
+            .thumbnail__upload--logoPreview,
+            .thumbnail__upload--icon,
             .thumbnail__box,
-            .thumbnail__box--true {
+            .thumbnail__box--logo {
                 width:100%;
                 display:block;
-                position: relative;
+                position:relative;
                 padding-bottom:66.25%;
                 margin:0;
                 overflow:hidden;
             }
-                .thumbnail__box--true {
-                    display:block;
-                }
+            .thumbnail__upload--icon,
+            .thumbnail__upload--preview,
+            .thumbnail__upload--logoPreview {
+                position:absolute;
+                bottom:2.125em; 
+                padding:0 0.5em 66.5% 0.5em;
+                right:0.25em;
+            }
+            .thumbnail__upload--icon {
+                width:96.5%;
+            }
+            
+            .thumbnail__box {
+                padding-bottom:66%
+            }
+            .thumbnail__box--logo,
+            .thumbnail__upload--logoPreview {
+                padding-bottom:100%;
+            }
 
-                .thumbnail__box--true:hover:before {
+            
+
+
+
+
+
+
+
+
+
+               
+                .thumbnail__upload--preview:hover:before {
                     position:absolute;
                     content:url("../img/upload-arrow-hover.svg");
                     display:block;
@@ -152,10 +208,7 @@
                     z-index:2;
                 }
                     
-                .thumbnail__box--false {
-                    display:none;
-                }
-
+    
 
                 .thumbnail {
                     position:absolute;
@@ -174,76 +227,43 @@
                     
             
 
-            .thumbnail__text{
+            .thumbnail__text,
+            .thumbnailDefault__text {
                 font-size:1em;
                 margin:0.4em 0 0.2em;
                 display:inline-block;
             }
+
+            .thumbnailDefault__text {
+                margin-top:0.45em;
+            }
              
 
 
-
-            .thumbnail__uploadArrow--true,
-            .thumbnail__uploadArrow--false {
+            .thumbnail__upload--icon {
                 background:url("../img/upload-arrow.svg") #f1f1f1 no-repeat center;
                 background-size:30%;
-                padding:28.7% 0;
+                padding:33.15% 0;
                 margin:0;
                 display:block;
                 background-color:#e8e8e8;
-                transition:background-color 0.3s;
-                
+                transition:background-color 0.3s; 
+
             }
-                .thumbnail__uploadArrow--true {
-                    display:block;
-                }
-                    .thumbnail__uploadArrow--true:hover {
+                    .thumbnail__upload--icon:hover {
                         display:block;
                         background:url("../img/upload-arrow-hover.svg") #f1f1f1 no-repeat center;
                         background-size:30%;
-                        padding:28.7% 0;
+                        padding:33.15% 0;
                         margin:0;
                         background-color:#fff;
                         transition:background-color 0.3s;
                     }
-                .thumbnail__uploadArrow--false {
-                    display:none;
-                }
 
-
-            
-                 
-
-                .thumbnail__uploadText {
-                    font-size:1em;
-                    padding:0.45em 0 0.4em 0;
-                    width:100%;
-                    text-align:center;
-                    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
-                    position:relative;
-                    border-bottom:2px solid #5c5c5c;
-                }
-                    .thumbnail__uploadText--selected:before {
-                        content:"\f00c";
-                        font-family:FontAwesome;
-                        color:#00a2de;
-                        position:absolute;
-                        
-                        z-index:2;
+                    .thumbnail__upload--icon .thumbnail {
+                        display:none;
                     }
-
-                    .thumbnail__uploadText:hover,
-                    .thumbnail__uploadText--selected:hover {
-                        background-color:#fff;
-                        border-bottom:2px solid #00c0ff;
-                    }
-                    .thumbnail__uploadText:focus,
-                    .thumbnail__uploadText--selected:focus {
-                        background-color:#fff;
-                        border-bottom:2px solid #00a2de;
-                    }
-
-
+    
 
 
 /*  ================================================

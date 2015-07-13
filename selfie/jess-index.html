@@ -347,33 +347,30 @@
 
                     <div class="thumbnail__group grid">
 
-                        <div class="thumbnail__container grid__item one-half">
-                            <button class="thumbnail__item--selected">
+                        <div class="grid__item one-half">
+                            <button class="thumbnail__btn">
                                 <span class="thumbnail__box">
                                     <span class="thumbnail">
                                         <img class="thumbnail__img" src="img/cupcake4.jpg">
                                     </span>
                                 </span>
-                                
-                                <span class="thumbnailDefault__text">Default thumbnail</span>
+                                <span class="thumbnail__text">Default thumbnail</span>
                             </button>
-                            
                         </div><!--
     
-
-
                         
                      --><div class="grid__item one-half">
-                            <div class="thumbnail__containerUpload">
-                                <button class="thumbnail__itemButton">
-                                    <span class="thumbnail__upload--preview">
-                                        <span class="thumbnail">
-                                            <img class="thumbnail__img" src="img/cupcake5.jpg">
-                                        </span>
+                            <button class="thumbnail__btn thumbnail__customBtn thumbnail__btn--selected">
+                                
+                                <span class="thumbnail__uploadBox">
+                                    <span class="thumbnail">
+                                        <img class="thumbnail__img" src="img/cupcake5.jpg">
                                     </span>
-                                    <span class="thumbnail__text">Default thumbnail</span>
-                                </button>
-                            </div>
+                                </span>
+
+
+                                <span class="thumbnail__text">Custom thumbnail</span>
+                            </button>
                         </div>
 
                         <!-- Logo upload testing code
@@ -449,7 +446,7 @@
                         </fieldset>
 
                         <fieldset class="form__item">
-                            <textarea class="form__textBox form__textArea form__textAreaMarginFix form__fillCheck" type="text" id="c6-video-description"></textarea>
+                            <textarea class="form__textBox form__textArea form__fillCheck" type="text" id="c6-video-description"></textarea>
                             <label class="form__label" for="c6-video-description">   
                                 <i class="fa fa-times ui--error"></i> 
                                 Video Description
@@ -488,22 +485,35 @@
 
                     <div class="ctaPreview__group">
                         <h3 class="ctaPreview__title">Preview</h3>
-                        <div class="ctaPreview__container">
-                            <button class="ctaPreview__button--hidden">Learn More</button>
+                        <div class="ctaPreview__container ctaPreview__container--button">
+                            <button class="ctaPreview__button">Learn More</button>
                             <a class="ctaPreview__link" href="">Learn More</a>
                         </div>
-
 
                     </div><!--ctaPreview__group--> 
 
                     
                     <div class="form__items">
 
-                        <fieldset class="form__item">
-                            <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
-                            <label class="form__label" for="c6-video-ctaText">
+                        <fieldset class="form__microItem">
+                            <input class="form__microTextBox form__fillCheck" type="text" id="c6-video-ctaText">
+                            <label class="form__microLabel" for="c6-video-ctaText">
                                 <i class="fa fa-times ui--error"></i> 
                                 Button Text
+                            </label>
+                            
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__microItem">
+                            <input class="form__microTextBox form__fillCheck" type="text" id="c6-video-ctaText">
+                            <label class="form__microLabel" for="c6-video-ctaText">
+                                <i class="fa fa-times ui--error"></i> 
+                                Link/URL
                             </label>
                             
                             <div class="form__errorBox">
@@ -518,7 +528,45 @@
                     
 
                 </section> 
-                <br><br><br><br><br><br><br><br><br><br>
+            </div> 
+
+
+
+
+
+
+            <div class="grid__item one-half">
+                
+                <section class="formSection__groupLast">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__number">
+                            <span class="formSection__numberText">5</span>
+                        </span>
+                        <span class="formSection__titleText tk--hdr">Preview Your Ad</span>
+                    </h1>
+
+                    <div class="grid grid--full grid--center">
+
+                        <div class="adPreview__buttonGroup grid__item one-third">
+                            <button class="adPreview__button">Desktop</button>
+                            
+                        </div><!--
+    
+
+
+                        
+                     --><div class="adPreview__buttonGroup grid__item one-third">
+                            <button class="adPreview__button">Mobile</button>
+                        </div>
+                    
+                    </div>
+
+                    
+                    
+
+                </section> 
+    
             </div> 
 
 
@@ -526,6 +574,15 @@
 
 
         </div><!--.grid grid--center-->
+
+        <div class="grid grid--center">
+                        <div class="grid__item one-half">
+                            <div class="adPreview__container">
+                                <iframe src="https://www.youtube.com/embed/0SCMs-xIu2U?rel=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <br><br><br><br><br>
+                    </div>
 
     </div><!--.gridHolder-->
 

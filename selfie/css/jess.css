@@ -5,13 +5,13 @@
     .videoPreview__group {
         position: relative;
         padding-bottom: 56.25%;
-        margin:0;
+        margin:-1em 0 0;
     }
         .videoPreview__group::before {
             content:url("../img/sub-divider.svg");
             display:block;
             width:0.25em;
-            margin:-1.25em auto;
+            margin:0 auto;
         }
 
         .videoPreview__iframe {
@@ -24,8 +24,8 @@
 
         .videoDescription__group {
             width:100%;
-            padding:1em;
-            margin-top:1.5em;
+            padding:1em 1em 0.9375em;
+            margin-top:1.4375em;
             background-color:#fff;
             box-shadow:0 0 1em #e8e8e8;
         }
@@ -68,202 +68,150 @@
         position:relative;
     }
 
-
-        .thumbnail__container,
-        .thumbnail__containerUpload {
+        .thumbnail__btn,
+        .thumbnail__btn:focus {
+            background-color:#f1f1f1;
+            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
+            transition: background-color 0.3s, border-bottom 0.3s, color 0.3s;
+            text-align:center;
             position:relative;
+            z-index:1;
+            width:100%;
+            border-bottom:2px solid #5c5c5c;
+            padding:0.25em;
+        } 
+        
+        .thumbnail__btn .thumbnail__text:before {
+            display:none;
+        }
+        .thumbnail__btn.thumbnail__btn--selected .thumbnail__text:before {
+            display:block;
+        }
+        .thumbnail__btn.thumbnail__btn--selected {
+            border-bottom:2px solid #00a2de;
+            background-color:#fff;
 
         }
-            .thumbnail__containerUpload {
-                width:100%;
-                padding-top:64%;
-            }
-         
-            
 
-            .thumbnail__item,
-            .thumbnail__item--selected,
-            .thumbnail__itemButton,
-            .thumbnail__itemButton--selected,
-            .thumbnail__logoButton,
-            .thumbnail__logoButton--selected {
+
+
+ 
+            
+            .thumbnail__btn:hover {
+                background-color:#fff;
+            }
+            .thumbnail__btn:hover  {
+                border-bottom:2px solid #00c0ff;
+            }
+            
+            .thumbnail__btn--selected:hover .thumbnail__text:before {
+                content:"\f00c";
+                font-family:FontAwesome;
+                color:#00c0ff;
+                position:absolute;
+                z-index:10;
+                left:0.5em;
+                margin-top:0.0625em;
+
+            }
+
+            
+        .thumbnail__box,
+        .thumbnail__uploadBox {
+            width:96.25%;
+            display:block;
+            margin:0;
+            overflow:hidden;
+            position:absolute;
+            padding:0 0 66%;
+            right:0.25em;
+            background-color:#f1f1f1;
+        }
+
+
+
+
+
+           
+            .thumbnail__btn.thumbnail__customBtn:hover:before {
+                position:absolute;
+                content:url("../img/upload-arrow-hover.svg");
+                display:block;
+                left:36%;
+                top:24%;
+                width:29%;
+                height:29%;
+                z-index:10;
+            }
+                
+
+
+            .thumbnail {
+                position:absolute;
+                display:block;
+                transform:translateY(50%);
+                width:100%;
+                height:100%;
                 background-color:#f1f1f1;
-                font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
-                transition: background-color 0.3s, border-bottom 0.3s;
-                text-align:center;
-                position:relative;
-                z-index:1;
-                width:100%;
-                border-bottom:2px solid #5c5c5c;
-                padding:0.25em;
-            } 
-            .thumbnail__itemButton,
-            .thumbnail__itemButton--selected {
-                padding-top:66.25%; 
-                position:absolute;
-                top:-0.0625em;
-            }
-            .thumbnail__logoButton,
-            .thumbnail__logoButton--selected {
-                padding-top:99%; 
-                position:absolute;
-                top:0;
-            }    
-                .thumbnail__item--selected:before,
-                .thumbnail__itemButton--selected:before,
-                .thumbnail__logoButton--selected:before {
-                    content:"\f00c";
-                    font-family:FontAwesome;
-                    color:#00a2de;
-                    position:absolute;
-                    bottom:0.51em;
-                    left:0.5em;
-                    z-index:2;
-                }
-                
-                .thumbnail__item:hover,
-                .thumbnail__item--selected:hover,
-                .thumbnail__item:focus,
-                .thumbnail__item--selected:focus,
-                .thumbnail__itemButton:hover,
-                .thumbnail__itemButton--selected:hover,
-                .thumbnail__itemButton:focus,
-                .thumbnail__itemButton--selected:focus,
-                .thumbnail__logoButton:hover,
-                .thumbnail__logoButton--selected:hover,
-                .thumbnail__logoButton:focus,
-                .thumbnail__logoButton--selected:focus {
-                    background-color:#fff;
-                }
-                .thumbnail__item:hover,
-                .thumbnail__item--selected:hover,
-                .thumbnail__itemButton:hover,
-                .thumbnail__itemButton--selected:hover,
-                .thumbnail__logoButton:hover,
-                .thumbnail__logoButton--selected:hover {
-                    border-bottom:2px solid #00c0ff;
-                }
-                .thumbnail__item:focus,
-                .thumbnail__item--selected:focus,
-                .thumbnail__itemButton:focus,
-                .thumbnail__itemButton--selected:focus,
-                .thumbnail__logoButton:focus,
-                .thumbnail__logoButton--selected:focus {
-                    border-bottom:2px solid #00a2de;
-                }
-
-                
-
-            .thumbnail__upload--preview,
-            .thumbnail__upload--logoPreview,
-            .thumbnail__upload--icon,
-            .thumbnail__box,
-            .thumbnail__box--logo {
-                width:100%;
-                display:block;
-                position:relative;
-                padding-bottom:66.25%;
-                margin:0;
-                overflow:hidden;
-            }
-            .thumbnail__upload--icon,
-            .thumbnail__upload--preview,
-            .thumbnail__upload--logoPreview {
-                position:absolute;
-                bottom:2.125em; 
-                padding:0 0.5em 66.5% 0.5em;
-                right:0.25em;
-            }
-            .thumbnail__upload--icon {
-                width:96.5%;
-            }
-            
-            .thumbnail__box {
-                padding-bottom:66%
-            }
-            .thumbnail__box--logo,
-            .thumbnail__upload--logoPreview {
-                padding-bottom:100%;
+                z-index:5;
             }
 
-            
-
-
-
-
-
-
-
-
-
-               
-                .thumbnail__upload--preview:hover:before {
-                    position:absolute;
-                    content:url("../img/upload-arrow-hover.svg");
-                    display:block;
-                    left:35%; right:35%;
-                    top:30%;
-                    width:30%;
-                    height:30%;
-                    z-index:2;
-                }
-                    
-    
-
-                .thumbnail {
+                .thumbnail__img {
                     position:absolute;
                     display:block;
-                    transform:translateY(50%);
+                    transform:translateY(-50%);
                     width:100%;
-                    height:100%;
+                    background-color:#f1f1f1;
                 }
+                
+        
 
-                    .thumbnail__img {
-                        position:absolute;
-                        display:block;
-                        transform:translateY(-50%);
-                        width:100%;
-                    }
-                    
+        .thumbnail__text {
+            font-size:1em;
+            margin:69% 0 0.2em;
+            display:inline-block;
+            padding:0 1.75em;
+            transition:color 0.3s;
+            
+        }
+
+          .thumbnail__text:before {
+                content:"\f00c";
+                font-family:FontAwesome;
+                color:#00a2de;
+                position:absolute;
+                z-index:10;
+                left:0.5em;
+                margin-top:0.0625em;
+            }
             
 
-            .thumbnail__text,
-            .thumbnailDefault__text {
-                font-size:1em;
-                margin:0.4em 0 0.2em;
-                display:inline-block;
-            }
-
-            .thumbnailDefault__text {
-                margin-top:0.45em;
-            }
-             
+         
 
 
-            .thumbnail__upload--icon {
-                background:url("../img/upload-arrow.svg") #f1f1f1 no-repeat center;
-                background-size:30%;
-                padding:33.15% 0;
-                margin:0;
-                display:block;
-                background-color:#e8e8e8;
-                transition:background-color 0.3s; 
+        .thumbnail__uploadBox {
+            background:url("../img/upload-arrow.svg") #f1f1f1 no-repeat center;
+            background-size:30%;
+            padding:33.15% 0;
+            margin:0;
+            display:block;
+            background-color:#e8e8e8;
+            transition:background-color 0.3s; 
 
-            }
-                    .thumbnail__upload--icon:hover {
-                        display:block;
-                        background:url("../img/upload-arrow-hover.svg") #f1f1f1 no-repeat center;
-                        background-size:30%;
-                        padding:33.15% 0;
-                        margin:0;
-                        background-color:#fff;
-                        transition:background-color 0.3s;
-                    }
+        }
+                .thumbnail__upload:hover {
+                    display:block;
+                    background:url("../img/upload-arrow-hover.svg") #f1f1f1 no-repeat center;
+                    background-size:30%;
+                    padding:33.15% 0;
+                    margin:0;
+                    background-color:#f1f1f1;
+                }
 
-                    .thumbnail__upload--icon .thumbnail {
-                        display:none;
-                    }
-    
+                .thumbnail__upload .thumbnail {
+                    display:none;
+                }
+
 
 
 /*  ================================================
@@ -271,8 +219,8 @@
     ================================================ */
 
 
-        .form__textAreaMarginFix {
-            margin-bottom:-0.25em;
+        .form__textArea {
+            vertical-align: top;
         }
 
 
@@ -283,14 +231,14 @@
 
 .ctaPreview__group {
     width:100%;
-    margin-bottom:1.25em;
+    margin-bottom:2em;
 }
     
     .ctaPreview__title {
         text-align:center;
         font-size:0.875em;
         font-weight:300;
-        margin:-0.85715em 0 0.0714em 0;
+        margin:-0.85715em 0 0.1875em 0;
     }
         .ctaPreview__title::before {
             content:url("../img/sub-divider.svg");
@@ -306,9 +254,12 @@
         box-shadow:0 0 1em #e8e8e8;
         text-align:center;
     }
+    .ctaPreview__container--button .ctaPreview__link,
+    .ctaPreview__container--link .ctaPreview__button {
+        display:none;
+    }
 
-        .ctaPreview__button,
-        .ctaPreview__button--hidden {
+        .ctaPreview__button {
             padding:0.85em 1em 0.651em;
             margin:0 auto;
             width:100%;
@@ -316,26 +267,54 @@
             background-color:#00c0ff;
             color:white;
         }
-            .ctaPreview__button--hidden {
-                display:none;
-            }
 
-        .ctaPreview__link,
-        .ctaPreview__link--hidden {
+        .ctaPreview__link {
             font-size:1em;
             
         }
-            .ctaPreview__link--hidden {
-                display:none;
-            }
 
 
+
+/*  ================================================
+    cta label classes
+    ================================================ */
+.form__label {
+    color:#5c5c5c;
+    font-size:1em;
+    font-weight:300;
+    display: block;
+    top:0.375em;
+    position: absolute;
+    left:0.5em; z-index:-10;
+    transition: transform 0.3s;
+    padding:0 1.25em 0 0;
+}
+.form__microLabel {
+    color:#5c5c5c;
+    font-size:0.875em;
+    font-weight:300;
+    display: block;
+    top:-1.625em;
+    position: absolute;
+    left:0; z-index:10;
+    padding:0 1.25em 0 0;
+}
 /*  ================================================
     cta form classes
     ================================================ */
 
+.form__microItem,
+.form__microItemLast {
+    border:none;
+    position:relative;
+    display: block;
+    margin:1.25em 0 2.25em; padding:0;
+}
 
-.form__textBox { 
+
+
+.form__textBox,
+.form__microTextBox { 
     border:0;
     padding:0.375rem 0.5rem 0.3125rem;
     border-bottom:2px solid #5c5c5c;
@@ -346,13 +325,51 @@
     width:100%;
     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
+.form__microTextBox { 
+    background-color:#e8e8e8;
+    padding:0.45rem 0.5rem 0.45rem;
+    font-size:1em;
+}
     
-    .form__textBox:focus { 
+    .form__textBox:focus,
+    .form__microTextBox:focus { 
         border-bottom:2px solid #00c0ff;
         background:#fff;
     }
 
 
+
+
+
+/*  ================================================
+    ad preview classes
+    ================================================ */
+.formSection__groupLast {
+        margin:3em 0 0;
+    }
+
+.adPreview__buttonGroup {
+    
+}
+
+    .adPreview__button {
+        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+        text-align:center;
+        display:block;
+        width:100%;
+        border-bottom:2px solid #5c5c5c;
+        padding:0.5em 0 0.45em;
+        transition:border 0.3s, background 0.3s;
+    }
+        .adPreview__button:focus {
+            border-top:2px solid #00c0ff;
+            background-color:#fff;
+        }
+
+.adPreview__container {
+    padding:2em;
+    background-color:#fff;
+}
 
 
 

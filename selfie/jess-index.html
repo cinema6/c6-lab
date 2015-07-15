@@ -373,7 +373,7 @@
                                     
                                     <span class="thumbnail__box thumbnail__box--uploader">
                                         <span class="thumbnail">
-                                            
+                                            <img class="thumbnail__img" src="img/cupcake5.jpg">
                                         </span>
                                     </span>
 
@@ -382,7 +382,7 @@
                                 </button>
                                 <div class="form__errorBox">
                                     <p class="form__errorMsg">
-                                        <i class="fa fa-exclamation-triangle"></i> Your image is greater than 30mb and you suck at hockey
+                                        <i class="fa fa-exclamation-triangle"></i> Your image should be between 5mb and 50mb.
                                     </p>
                                 </div>
                             </div> <!-- .grid__item-->
@@ -538,9 +538,9 @@
 
 
 
-            <div class="grid__item one-half">
+            <div class="grid__item">
                 
-                <section class="formSection__groupLast">
+                <section class="formSection__group">
                     
                     <h1 class="formSection__title">
                         <span class="formSection__number">
@@ -551,30 +551,37 @@
 
                     <div class="grid grid--full grid--center">
 
-                        <div class="grid__item one-third">
+                        <div class="grid__item one-quarter">
                             <button class="adPreview__button">Desktop</button>
                         </div><!--
     
 
-                     --><div class="grid__item one-third">
-                            <button class="adPreview__button">Mobile</button>
+                     --><div class="grid__item one-quarter">
+                            <button class="adPreview__button adPreview__button--selected">Mobile</button>
                         </div>
                     
                     </div>
+
+                    <div class="adPreview__container adPreview__container--desktop">
+                        <div class="adPreview__desktop--dormant">
+                            <h1 class="adPreview__desktop--dormantTitle">No preview available</h1>
+                        </div>
+                        
+                        <div class="mobile__iframeContainer">
+                            <iframe class="mobile__iframe" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=mobile" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <img class="adPreview__mobileWireFrame" src="img/mobile-wireframe.svg">
+                        
+                    </div>
+
                 </section> 
+
     
             </div> 
 
         </div><!--.grid grid--center-->
 
-        <div class="grid grid--center">
-                        <div class="grid__item one-half">
-                            <div class="adPreview__container">
-                                <iframe src="https://www.youtube.com/embed/0SCMs-xIu2U?rel=0" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <br><br><br><br><br>
-                    </div>
+       
 
     </div><!--.gridHolder-->
 

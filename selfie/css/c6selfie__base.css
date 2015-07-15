@@ -276,6 +276,13 @@
         margin:0 0 1.25em 0; padding:0;
     }
 
+    .form__item--sub {
+        border:none;
+        position:relative;
+        display: block;
+        margin:1.25em 0 2.1875em; padding:0;
+    }
+
         .form__label {
             color:#5c5c5c;
             font-size:1em;
@@ -312,6 +319,18 @@
             }
 
 
+        .form__label--sub {
+            font-size:0.875em;
+            top:-1.625em;
+            left:0; z-index:10;
+        }
+            .form__textBox:focus ~ .form__label--sub,
+            .form__fillCheck--filled ~ .form__label--sub {
+                transform:none;
+                text-align: left;
+            }
+
+
     
 
     /*  input fields classes
@@ -340,6 +359,15 @@
                 margin:0.5rem 0 0 0;
                 padding:0.5rem 0.5rem 0.6875rem;
             }
+
+
+        .form__textBox--sub { 
+            color:#1c1c1c;
+            padding:0.5125rem 0.5rem 0.4375rem;
+            font-size:1em;
+            background-color:#e8e8e8;
+        }
+
 
 
 
@@ -463,13 +491,16 @@
             
 
 
-        .ui--hasError .form__textBox{
+        .ui--hasError .form__textBox,
+        .ui--hasError .thumbnail__customBtn,
+        .ui--hasError .form__textBox--sub {
             border-color:#ff1e1e;
         }
-        .ui--hasError .form__label {
+        .ui--hasError .form__label,
+        .ui--hasError .thumbnail__label,
+        .ui--hasError .form__label--sub {
             color:#ff1e1e;
         }
-
 
 
 
@@ -545,15 +576,255 @@
     /*  .form__textArea classes
         ================================================ */
         .form__textArea {
-            line-height:1.35;
-            height:2em;
+            border-bottom:none;
+            vertical-align: top;
+            height:4.67em;
             overflow:hidden;
             resize:none;
+            border-left:2px solid #5c5c5c;
         }
             .form__textArea:focus {
                 height:4.675em;
+                border-left:2px solid #00c0ff;
+                border-bottom:none;
             }
 
             .form__textArea.form__fillCheck--filled {
                 height:4.675em;
             }
+
+
+
+
+
+
+
+/*  ================================================
+    form wizard modules
+    ================================================ */
+
+
+    /*  .videoPreview classes
+        ============================================ */
+
+    .videoPreview {
+        position: relative;
+        padding-bottom: 55.5%;
+        margin:-0.5em 0 0;
+    }
+        .videoPreview:before {
+            content:url("../img/sub-divider.svg");
+            display:block;
+            width:0.25em;
+            margin:0 auto;
+        }
+
+        .videoPreview__iframe {
+            position: absolute;
+            top: 2.0625em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+    /*  .videoDescription classes
+        ================================================ */
+
+        .videoDescription__group {
+            width:100%;
+            padding:1.5em 1em 0.8125em;
+            margin-top:1.4375em;
+            background-color:#fff;
+            box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+            .videoDescription__title {
+                margin:-0.25em 0 0 0;
+                color:#1c1c1c;
+                font-size:1.125em;
+                line-height:1.34em;
+                font-weight:normal;
+            }
+            .videoDescription__source {
+                font-size:0.778em;
+            }
+
+
+            .videoDescription__metaData {
+                color:#5c5c5c;
+                font-size:0.875em;
+                margin-top:0.75em;
+            }
+
+                .videoDescription__metaDatum {
+                    margin-right:2em;
+                }
+
+                    .videoDescription__metaDatumFa {
+                        font-size:1em;
+                        color:#b1b1b1;
+                        margin-right:0.35715em;
+                    }
+
+    
+
+
+    /*  .thumbnail__btn/.thumbnail__box classes
+        ================================================ */
+        .thumbnail__btn,
+        .thumbnail__btn:focus {
+            margin:1.3125em auto 0;
+            background-color:#f1f1f1;
+            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
+            transition: background-color 0.3s, border-bottom 0.3s, color 0.3s;
+            text-align:center;
+            position:relative;
+            z-index:1;
+            width:100%;
+            border-bottom:2px solid #5c5c5c;
+            padding:0.25em;
+        }
+            .thumbnail__btn:hover {
+                background-color:#fff;
+            }
+            .thumbnail__btn:hover  {
+                border-bottom:2px solid #00c0ff;
+            }
+
+        .thumbnail__btn--selected {
+            border-bottom:2px solid #00a2de;
+            background-color:#fff;
+            transition: border-bottom 0.3s;
+        }
+
+           
+        .thumbnail__box {
+            width:100%;
+            display:block;
+            margin:0;
+            overflow:hidden;
+            position:relative;
+            padding:0 0 66%;
+            background-color:#f1f1f1;
+        }
+
+        .thumbnail__box--uploader {
+            background:url("../img/upload-arrow.svg") #f1f1f1 no-repeat center;
+            background-size:30%;
+            padding:33% 0;
+            margin:0;
+            display:block;
+            background-color:#e8e8e8;
+            transition:background-color 0.3s;
+            
+        }
+            .thumbnail__box--uploader:hover {
+                display:block;
+                background:url("../img/upload-arrow-hover.svg") #f1f1f1 no-repeat center;
+                background-size:30%;
+                padding:33% 0;
+                margin:0;
+                background-color:#f1f1f1;
+            }
+
+
+            .thumbnail {
+                position:absolute;
+                display:block;
+                transform:translateY(50%);
+                width:100%;
+                height:100%;
+                z-index:5;
+                top:0;
+            }
+
+                .thumbnail__img {
+                    position:absolute;
+                    display:block;
+                    transform:translateY(-50%);
+                    width:100%;
+                    background-color:#f1f1f1;
+                }
+                
+
+
+        .thumbnail__label {
+            font-size:1em;
+            margin:0.5em 0 0.2em;
+            display:inline-block;
+            padding:0 1.75em;
+            transition:color 0.3s;
+        }
+
+            .thumbnail__label:before,
+            .ui--hasError .thumbnail__label:before {
+                content:"\f00c";
+                font-family:FontAwesome;
+                color:#00a2de;
+                position:absolute;
+                z-index:10;
+                left:0.5em;
+                margin-top:0.0625em;
+                transition: color 0.3s;
+            }
+                .ui--hasError .thumbnail__label:before,
+                .ui--hasError .thumbnail__btn--selected:hover .thumbnail__label:before  {
+                    content:"\f00d";
+                    color:#ff1e1e;
+                }
+                .thumbnail__btn .thumbnail__label:before {
+                    display:none;
+                }
+                .thumbnail__btn--selected .thumbnail__label:before {
+                    display:block;
+                }
+                .thumbnail__btn--selected:hover .thumbnail__label:before {
+                    color:#00c0ff;
+                }
+        
+
+
+    /*  call to action preview classes
+        ================================================ */
+
+
+        .ctaPreview__group {
+            width:100%;
+            margin-bottom:2em;
+        }
+            
+            .ctaPreview__title {
+                text-align:center;
+                font-size:0.875em;
+                font-weight:300;
+                margin:-0.85715em 0 0.1875em 0;
+            }
+                .ctaPreview__title:before {
+                    content:url("../img/sub-divider.svg");
+                    display:block;
+                    width:0.25em;
+                    margin:-0.25em auto;
+                }
+
+            .ctaPreview__container {
+                width:100%;
+                padding:1.5em 5em;
+                background-color:#fff;
+                box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+                text-align:center;
+            }
+
+                .ctaPreview__button {
+                    padding:0.85em 1em 0.651em;
+                    margin:0 auto;
+                    width:100%;
+                    font-size:1.125em;
+                    background-color:#00c0ff;
+                    color:white;
+                }
+
+                .ctaPreview__link {
+                    font-size:1em;
+                    
+                }

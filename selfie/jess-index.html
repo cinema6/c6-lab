@@ -112,7 +112,7 @@
 
                     <div class="form__items">
 
-                        <fieldset class="form__item">
+                        <fieldset class="form__item ">
                             <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
                             <label class="form__label" for="c6-sponsor-name">
                                 <i class="fa fa-times ui--error"></i> 
@@ -166,7 +166,7 @@
                             </div>
                         </fieldset>
 
-                        <fieldset class="form__item">
+                        <fieldset class="form__item ">
                             <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
                             <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
@@ -283,6 +283,19 @@
                 </section> 
             </div> 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="grid__item one-half">
                 <section class="formSection__group">
                     
@@ -295,7 +308,7 @@
 
                     <div class="form__items">
 
-                        <fieldset class="form__item">
+                        <fieldset class="form__item ">
                             <textarea class="form__textBox form__textArea form__fillCheck" type="text" id="c6-video-input"></textarea>
                             <label class="form__label" for="c6-video-input">   
                                 <i class="fa fa-times ui--error"></i> 
@@ -308,105 +321,79 @@
                             </div>
                             <div class="form__errorBox">
                                 <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    <i class="fa fa-exclamation-triangle"></i> Your URL is porn and we don't do that!
                                 </p>
                             </div>
                         </fieldset>
 
 
-                    </div>
-
-
+                    </div><!--.form__items-->
 
 
 
                     <div class="videoPreview__group">
-                        <iframe class="videoPreview__iframe" src="https://www.youtube.com/embed/UOjY61tlh98?rel=0" frameborder="0" allowfullscreen></iframe>
-                    </div><!--.videoPreview__group-->
+
+                        <div class="videoPreview">
+                            <iframe class="videoPreview__iframe" src="https://www.youtube.com/embed/UOjY61tlh98?rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div><!--.videoPreview-->
 
 
-                    <div class="videoDescription__group">
+                        <div class="videoDescription__group">
 
-                        <h1 class="videoDescription__title">The Chocolate Ball | Byron Talbott and the Funkiest Cookie Bunch &#151; <a class="videoDescription__source">YouTube</a></h1>
+                            <h1 class="videoDescription__title">The Chocolate Ball | Byron Talbott and the Funkiest Cookie Bunch &#151; <a href="#" class="videoDescription__source">YouTube</a></h1>
 
-                        <div class="videoDescription__metaData">
+                            <div class="videoDescription__metaData">
 
-                            <span class="videoDescription__metaDatum">
-
-                                <span class="videoDescription__metaDatumFa fa fa-clock-o"></span>&nbsp;<span>6:00</span>
-
-                            </span>
-
-                            <span class="videoDescription__metaDatum">
-
-                                <span class="videoDescription__metaDatumFa fa fa-eye"></span>&nbsp;<span>1,431,014</span>
-
-                            </span>
-                        </div><!--videoDescription__metaData-->
-                    </div><!--.videoDescription__group-->
-
-                    <div class="thumbnail__group grid">
-
-                        <div class="grid__item one-half portable--one-whole">
-                            <button class="thumbnail__btn">
-                                <span class="thumbnail__box">
-                                    <span class="thumbnail">
-                                        <img class="thumbnail__img" src="img/cupcake4.jpg">
-                                    </span>
-                                </span>
-                                <span class="thumbnail__text">Default thumbnail</span>
-                            </button>
-                        </div><!--
-    
-                        
-                     --><div class="grid__item one-half portable--one-whole">
-                            <button class="thumbnail__btn thumbnail__customBtn thumbnail__btn--selected">
-                                
-                                <span class="thumbnail__uploadBox">
-                                    <span class="thumbnail">
-                                        <img class="thumbnail__img" src="img/cupcake5.jpg">
-                                    </span>
+                                <span class="videoDescription__metaDatum">
+                                    <span class="videoDescription__metaDatumFa fa fa-clock-o"></span>&nbsp;<span>6:00</span>
                                 </span>
 
-
-                                <span class="thumbnail__text">Custom thumbnail</span>
-                            </button>
-                        </div>
-
-                        <!-- Logo upload testing code
-
-                        <div class="thumbnail__container grid__item one-half">
-                            <button class="thumbnail__item--selected">
-                                <span class="thumbnail__box--logo">
-                                    <span class="thumbnail">
-                                        <img class="thumbnail__img" src="img/cupcakelogo1.jpg">
-                                    </span>
+                                <span class="videoDescription__metaDatum">
+                                    <span class="videoDescription__metaDatumFa fa fa-eye"></span>&nbsp;<span>1,431,014</span>
                                 </span>
-                                
-                                <span class="thumbnailDefault__text">Default thumbnail</span>
-                            </button>
-                            
-                        </div><!--
-    
-                        
-                     --><!--<div class="grid__item one-half">
-                            <div class="thumbnail__containerUpload">
-                                <button class="thumbnail__logoButton">
-                                    <span class="thumbnail__upload--logoPreview">
+                            </div><!--videoDescription__metaData-->
+                        </div><!--.videoDescription__group-->
+
+                        <div class="grid thumbnail__group">
+
+                            <div class="grid__item one-half portable--one-whole">
+                                <button class="thumbnail__btn">
+                                    <span class="thumbnail__box">
                                         <span class="thumbnail">
-                                            <img class="thumbnail__img" src="img/cupcake5.jpg">
+                                            <img class="thumbnail__img" src="img/cupcake4.jpg">
                                         </span>
                                     </span>
-                                    <span class="thumbnail__text">Default thumbnail</span>
+                                    <span class="thumbnail__label">Default thumbnail</span>
                                 </button>
-                            </div>
-                        </div>
+                            </div><!--
+        
+                            
+                         --><div class="grid__item one-half portable--one-whole">
+                                <button class="thumbnail__btn thumbnail__btn--selected">
+                                    
+                                    <span class="thumbnail__box thumbnail__box--uploader">
+                                        <span class="thumbnail">
+                                            
+                                        </span>
+                                    </span>
 
-                    -->
+                                    <span class="thumbnail__label">Custom thumbnail</span>
 
-                </section><!--.formSection__group-->
+                                </button>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Your image is greater than 30mb and you suck at hockey
+                                    </p>
+                                </div>
+                            </div> <!-- .grid__item-->
 
-            </div><!--.grid__item-->
+                        </div> <!--.grid thumbnail__group-->
+
+                    </div> <!--.videoPreview__group-->
+
+                </section> <!--.formSection__group-->
+
+            </div> <!--.grid__item-->
 
 
 
@@ -437,7 +424,11 @@
                                 <i class="fa fa-times ui--error"></i> 
                                 Video Title
                             </label>
-                            
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    The video title is for your ad. Changing the title here will not affect the original video.
+                                </div>
+                            </div>
                             <div class="form__errorBox">
                                 <p class="form__errorMsg">
                                     <i class="fa fa-exclamation-triangle"></i> Error message goes here
@@ -451,7 +442,11 @@
                                 <i class="fa fa-times ui--error"></i> 
                                 Video Description
                             </label>
-                            
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This step is optional. The description is the last thing anyone will ever read so good luck being pithy.
+                                </div>
+                            </div>
                             <div class="form__errorBox">
                                 <p class="form__errorMsg">
                                     <i class="fa fa-exclamation-triangle"></i> Error message goes here
@@ -459,7 +454,7 @@
                             </div>
                         </fieldset>
 
-                        <fieldset class="form__item">
+                        <fieldset class="form__item ">
                             <select class="form__selectBox form__selectBox--single">
                                 <option>None</option>
                                 <option>Link</option>
@@ -483,11 +478,14 @@
 
                     </div>
 
+
+
                     <div class="ctaPreview__group">
+
                         <h3 class="ctaPreview__title">Preview</h3>
-                        <div class="ctaPreview__container ctaPreview__container--button">
+                        <div class="ctaPreview__container">
                             <button class="ctaPreview__button">Learn More</button>
-                            <a class="ctaPreview__link" href="">Learn More</a>
+                            <a class="ctaPreview__link" href="#" style="display:none;">Learn More</a>
                         </div>
 
                     </div><!--ctaPreview__group--> 
@@ -495,13 +493,17 @@
                     
                     <div class="form__items">
 
-                        <fieldset class="form__microItem">
-                            <input class="form__microTextBox form__fillCheck" type="text" id="c6-video-ctaText">
-                            <label class="form__microLabel" for="c6-video-ctaText">
+                        <fieldset class="form__item form__item--sub">
+                            <input class="form__textBox form__textBox--sub form__fillCheck" type="text" id="c6-video-ctaText" placeholder="Learn More">
+                            <label class="form__label form__label--sub" for="c6-video-ctaText">
                                 <i class="fa fa-times ui--error"></i> 
                                 Button Text
                             </label>
-                            
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    The text is what the link will be attached to for the button or the link.
+                                </div>
+                            </div>
                             <div class="form__errorBox">
                                 <p class="form__errorMsg">
                                     <i class="fa fa-exclamation-triangle"></i> Error message goes here
@@ -509,13 +511,17 @@
                             </div>
                         </fieldset>
 
-                        <fieldset class="form__microItem">
-                            <input class="form__microTextBox form__fillCheck" type="text" id="c6-video-ctaText">
-                            <label class="form__microLabel" for="c6-video-ctaText">
+                        <fieldset class="form__item form__item--sub">
+                            <input class="form__textBox form__textBox--sub form__fillCheck" type="text" id="c6-video-ctaText">
+                            <label class="form__label form__label--sub" for="c6-video-ctaText">
                                 <i class="fa fa-times ui--error"></i> 
                                 Link/URL
                             </label>
-                            
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Paste in your link.
+                                </div>
+                            </div>
                             <div class="form__errorBox">
                                 <p class="form__errorMsg">
                                     <i class="fa fa-exclamation-triangle"></i> Error message goes here
@@ -524,9 +530,6 @@
                         </fieldset>
 
                     </div>
-
-                    
-
                 </section> 
             </div> 
 
@@ -548,30 +551,19 @@
 
                     <div class="grid grid--full grid--center">
 
-                        <div class="adPreview__buttonGroup grid__item one-third">
+                        <div class="grid__item one-third">
                             <button class="adPreview__button">Desktop</button>
-                            
                         </div><!--
     
 
-
-                        
-                     --><div class="adPreview__buttonGroup grid__item one-third">
+                     --><div class="grid__item one-third">
                             <button class="adPreview__button">Mobile</button>
                         </div>
                     
                     </div>
-
-                    
-                    
-
                 </section> 
     
             </div> 
-
-
-
-
 
         </div><!--.grid grid--center-->
 

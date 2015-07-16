@@ -12,6 +12,10 @@
         }
     });
 
+
+
+    // select forms : single item selection
+
     $('.form__selectBox--single').select2({
         minimumResultsForSearch: Infinity
     });
@@ -19,12 +23,28 @@
     $('.form__selectBox--single').on("select2:open", function (e) {
         $(this).addClass('form__fillCheck--filled');
         $(this).addClass('ui--active');
-        //$('.form__selectBox--single ~ .form__helpBox' ).addClass('form__helpBox--show');
     });
 
     $('.form__selectBox--single').on("select2:close", function (e) {
         $(this).removeClass('ui--active');
-        //$('.form__selectBox--single ~ .form__helpBox' ).removeClass('form__helpBox--show');
+    });
+
+
+
+
+    // select forms :  multiple item selection
+
+    $('.form__selectBox--multiple').select2({
+        minimumResultsForSearch: Infinity
+    });
+
+    $('.form__selectBox--multiple').on("select2:open", function (e) {
+        $(this).addClass('form__fillCheck--filled');
+        $(this).addClass('ui--active');
+    });
+
+    $('.form__selectBox--multiple').on("select2:close", function (e) {
+        $(this).removeClass('ui--active');
     });
 
 })();

@@ -16,7 +16,7 @@
         color:#1c1c1c;
         line-height: 1.5;
 
-        background:#f1f1f1; 
+        background:#eee; 
         margin:0;
     }
 
@@ -548,14 +548,16 @@
 
 
 
-    /*  select form classes
+    /*  select form classes : single selection
         ================================================ */
         .select2-container {
             display:block;
             width:auto !important;
+            border:0;
         }
 
-        .select2-container--default .select2-selection--single {
+        .select2-container--default .select2-selection--single,
+        .select2-container--default .select2-selection--multiple {
             border:0; border-bottom:2px solid #5c5c5c;
             border-radius:0;
             background:none;
@@ -565,9 +567,13 @@
             color:#1c1c1c;
             height:auto;
         }
-            .ui--active ~ .select2-container--default .select2-selection--single {
+            .ui--active ~ .select2-container--default .select2-selection--single,
+            .ui--active ~ .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
+            .select2-container--default.select2-container--focus .select2-selection--multiple {
                 background:#fff;
+                border:0;
                 border-bottom:2px solid #00c0ff;
+                border-radius:0;
             }
 
         .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -614,6 +620,25 @@
         }
 
 
+
+
+    /*  select form classes : multiple selection
+        ================================================ */
+        .select2-container .select2-selection--multiple .select2-selection__rendered {
+            display: block;
+        }
+        .select2-container--default .select2-selection--multiple {
+            padding:0 0 3px;
+            min-height:2.25rem;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            margin-top:3px; margin-right:3px;
+            background:#e8e8e8;
+            border:0;
+            border-radius:2px;
+            padding:0 8px 1px;
+        }
 
 
 

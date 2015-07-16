@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>C6 Selfie UI</title>
+    <title>C6 Selfie UI--Jess</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
     <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
     <link rel="stylesheet" type="text/css" href="css/jess.css">
-
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/select2.min.js"></script>
 </head>
@@ -112,7 +111,7 @@
 
                     <div class="form__items">
 
-                        <fieldset class="form__item ">
+                        <fieldset class="form__item">
                             <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
                             <label class="form__label" for="c6-sponsor-name">
                                 <i class="fa fa-times ui--error"></i> 
@@ -134,7 +133,7 @@
                             <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
                             <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
-                                Sponsor Logo
+                                Sponsor Logo URL
                             </label>
                             <div class="form__helpBox form__helpBox--right">
                                 <div class="form__helpText">
@@ -146,6 +145,8 @@
                                     <i class="fa fa-exclamation-triangle"></i> Error message goes here
                                 </p>
                             </div>
+
+                            
                         </fieldset>
 
                         <fieldset class="form__item">
@@ -285,17 +286,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
             <div class="grid__item one-half">
                 <section class="formSection__group">
                     
@@ -331,30 +321,30 @@
 
 
 
-                    <div class="videoPreview__group">
+                    <div class="videoPreview__wizard ui__connector">
 
-                        <div class="videoPreview">
-                            <iframe class="videoPreview__iframe" src="https://www.youtube.com/embed/UOjY61tlh98?rel=0" frameborder="0" allowfullscreen></iframe>
-                        </div><!--.videoPreview-->
+                        <div class="videoPreview__group">
+                            <div class="videoPreview">
+                                <iframe class="videoPreview__iframe" src="https://www.youtube.com/embed/UOjY61tlh98?rel=0" frameborder="0" allowfullscreen></iframe>
+                            </div><!--.videoPreview-->
 
 
-                        <div class="videoDescription__group">
+                            <div class="videoDescription__group">
+                                <h1 class="videoDescription__title">The Chocolate Ball | Byron Talbott and the Funkiest Cookie Bunch &#151; <a href="#" class="videoDescription__source">YouTube</a></h1>
 
-                            <h1 class="videoDescription__title">The Chocolate Ball | Byron Talbott and the Funkiest Cookie Bunch &#151; <a href="#" class="videoDescription__source">YouTube</a></h1>
+                                <div class="videoDescription__metaData">
+                                    <span class="videoDescription__metaDatum">
+                                        <span class="videoDescription__metaDatumFa fa fa-clock-o"></span>&nbsp;<span>6:00</span>
+                                    </span>
 
-                            <div class="videoDescription__metaData">
+                                    <span class="videoDescription__metaDatum">
+                                        <span class="videoDescription__metaDatumFa fa fa-eye"></span>&nbsp;<span>1,431,014</span>
+                                    </span>
+                                </div><!--videoDescription__metaData-->
+                            </div><!--.videoDescription__group-->
+                        </div><!--.videoPreview__group-->
 
-                                <span class="videoDescription__metaDatum">
-                                    <span class="videoDescription__metaDatumFa fa fa-clock-o"></span>&nbsp;<span>6:00</span>
-                                </span>
-
-                                <span class="videoDescription__metaDatum">
-                                    <span class="videoDescription__metaDatumFa fa fa-eye"></span>&nbsp;<span>1,431,014</span>
-                                </span>
-                            </div><!--videoDescription__metaData-->
-                        </div><!--.videoDescription__group-->
-
-                        <div class="grid thumbnail__group">
+                        <div class="grid">
 
                             <div class="grid__item one-half portable--one-whole">
                                 <button class="thumbnail__btn">
@@ -373,7 +363,7 @@
                                     
                                     <span class="thumbnail__box thumbnail__box--uploader">
                                         <span class="thumbnail">
-                                            <img class="thumbnail__img" src="img/cupcake5.jpg">
+                                            
                                         </span>
                                     </span>
 
@@ -382,12 +372,12 @@
                                 </button>
                                 <div class="form__errorBox">
                                     <p class="form__errorMsg">
-                                        <i class="fa fa-exclamation-triangle"></i> Your image should be between 5mb and 50mb.
+                                        <i class="fa fa-exclamation-triangle"></i> Your image is greater than 30mb and you suck at hockey
                                     </p>
                                 </div>
                             </div> <!-- .grid__item-->
 
-                        </div> <!--.grid thumbnail__group-->
+                        </div> <!--.grid-->
 
                     </div> <!--.videoPreview__group-->
 
@@ -437,7 +427,7 @@
                         </fieldset>
 
                         <fieldset class="form__item">
-                            <textarea class="form__textBox form__textArea form__fillCheck" type="text" id="c6-video-description"></textarea>
+                            <textarea class="form__textBox form__textArea form__textArea--large form__fillCheck" type="text" id="c6-video-description"></textarea>
                             <label class="form__label" for="c6-video-description">   
                                 <i class="fa fa-times ui--error"></i> 
                                 Video Description
@@ -457,8 +447,8 @@
                         <fieldset class="form__item ">
                             <select class="form__selectBox form__selectBox--single">
                                 <option>None</option>
-                                <option>Link</option>
                                 <option>Button</option>
+                                <option>Text link</option>
                             </select>
                             <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
@@ -479,57 +469,59 @@
                     </div>
 
 
+                    <div class="ctaPreview__wizard">
+                        <div class="ctaPreview__group ui__connector">
 
-                    <div class="ctaPreview__group">
+                            <h2 class="ctaPreview__title">Preview</h2>
+                            <div class="ctaPreview__container">
+                                <button class="ctaPreview__btn">Learn More</button>
+                                <a href="#" class="ctaPreview__link" style="display:none;">Learn More</a>
+                            </div>
 
-                        <h3 class="ctaPreview__title">Preview</h3>
-                        <div class="ctaPreview__container">
-                            <button class="ctaPreview__button">Learn More</button>
-                            <a class="ctaPreview__link" href="#" style="display:none;">Learn More</a>
+                        </div><!--ctaPreview__group--> 
+
+                        
+                        <div class="form__items">
+
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText" value="Learn More">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Label Text
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        The text is what the link will be attached to for the button or the link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Link/URL
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Paste in your link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+
                         </div>
+                    </div><!--.ctaPreview__wizard-->
 
-                    </div><!--ctaPreview__group--> 
-
-                    
-                    <div class="form__items">
-
-                        <fieldset class="form__item form__item--sub">
-                            <input class="form__textBox form__textBox--sub form__fillCheck" type="text" id="c6-video-ctaText" placeholder="Learn More">
-                            <label class="form__label form__label--sub" for="c6-video-ctaText">
-                                <i class="fa fa-times ui--error"></i> 
-                                Button Text
-                            </label>
-                            <div class="form__helpBox form__helpBox--right">
-                                <div class="form__helpText">
-                                    The text is what the link will be attached to for the button or the link.
-                                </div>
-                            </div>
-                            <div class="form__errorBox">
-                                <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                </p>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="form__item form__item--sub">
-                            <input class="form__textBox form__textBox--sub form__fillCheck" type="text" id="c6-video-ctaText">
-                            <label class="form__label form__label--sub" for="c6-video-ctaText">
-                                <i class="fa fa-times ui--error"></i> 
-                                Link/URL
-                            </label>
-                            <div class="form__helpBox form__helpBox--right">
-                                <div class="form__helpText">
-                                    Paste in your link.
-                                </div>
-                            </div>
-                            <div class="form__errorBox">
-                                <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                </p>
-                            </div>
-                        </fieldset>
-
-                    </div>
                 </section> 
             </div> 
 
@@ -549,37 +541,47 @@
                         <span class="formSection__titleText tk--hdr">Preview Your Ad</span>
                     </h1>
 
-                    <div class="grid grid--full grid--center">
 
-                        <div class="grid__item one-quarter">
+
+                    <div class="grid grid--full grid--center adPreview__group--mobile">
+
+                        <div class="grid__item one-quarter palm--one-half adPreview__buttonDesktop">
                             <button class="adPreview__button">Desktop</button>
                         </div><!--
-    
-
-                     --><div class="grid__item one-quarter">
-                            <button class="adPreview__button adPreview__button--selected">Mobile</button>
+                     --><div class="grid__item one-quarter palm--one-half adPreview__buttonMobile">
+                            <button class="adPreview__button">Mobile</button>
                         </div>
+
+
+
+                        <div class="adPreview__container">
+
+                            <div class="adPreview__desktop">
+        
+                                <iframe class="desktop__iframe" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=full-np"></iframe>
+                            
+                            </div>
+                            
+                            <div class="adPreview__mobile">
+
+                                <iframe class="mobile__iframe" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=mobile" frameborder="0" allowfullscreen></iframe>
+
+                            </div>
+
+                        
+                        
+                        </div> <!--.adPreview__container-->
                     
-                    </div>
+                    </div> <!--.grid .grid--full .grid--center adPreview__group-->
 
-                    <div class="adPreview__container adPreview__container--desktop">
-                        <div class="adPreview__desktop--dormant">
-                            <h1 class="adPreview__desktop--dormantTitle">No preview available</h1>
-                        </div>
-                        
-                        <div class="mobile__iframeContainer">
-                            <iframe class="mobile__iframe" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=mobile" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <img class="adPreview__mobileWireFrame" src="img/mobile-wireframe.svg">
-                        
-                    </div>
+                    
 
                 </section> 
 
     
             </div> 
 
-        </div><!--.grid grid--center-->
+        </div> <!--.grid grid--center-->
 
        
 

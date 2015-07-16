@@ -447,8 +447,8 @@
                         <fieldset class="form__item ">
                             <select class="form__selectBox form__selectBox--single">
                                 <option>None</option>
-                                <option>Display as a text link</option>
-                                <option>Display as a button</option>
+                                <option>Button</option>
+                                <option>Text link</option>
                             </select>
                             <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
@@ -469,59 +469,70 @@
                     </div>
 
 
+                    <div class="ctaPreview__wizard">
+                        <div class="ctaPreview__group ui__connector">
 
-                    <div class="ctaPreview__group ui__connector">
+                            <h2 class="ctaPreview__title">Preview</h2>
+                            <div class="ctaPreview__container">
+                                <button class="ctaPreview__btn">Learn More</button>
+                                <a href="#" class="ctaPreview__link" style="display:none;">Learn More</a>
+                            </div>
 
-                        <h3 class="ctaPreview__title">Preview</h3>
-                        <div class="ctaPreview__container">
-                            <button class="ctaPreview__button">Learn More</button>
-                            <a class="ctaPreview__link" href="#" style="display:none;">Learn More</a>
+                        </div><!--ctaPreview__group--> 
+
+                        
+                        <div class="form__items">
+
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText" value="Learn More">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Label Text
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        The text is what the link will be attached to for the button or the link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Link/URL
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Paste in your link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+
                         </div>
+                    </div><!--.ctaPreview__wizard-->
 
-                    </div><!--ctaPreview__group--> 
-
-                    
-                    <div class="form__items ctaPreview__wizard">
-
-                        <fieldset class="form__item form__item--sub">
-                            <input class="form__textBox form__textBox--sub form__fillCheck" type="text" id="c6-video-ctaText" placeholder="Learn More">
-                            <label class="form__label form__label--sub" for="c6-video-ctaText">
-                                <i class="fa fa-times ui--error"></i> 
-                                Button Text
-                            </label>
-                            <div class="form__helpBox form__helpBox--right">
-                                <div class="form__helpText">
-                                    The text is what the link will be attached to for the button or the link.
-                                </div>
-                            </div>
-                            <div class="form__errorBox">
-                                <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                </p>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="form__item form__item--sub">
-                            <input class="form__textBox form__textBox--sub form__fillCheck" type="text" id="c6-video-ctaText">
-                            <label class="form__label form__label--sub" for="c6-video-ctaText">
-                                <i class="fa fa-times ui--error"></i> 
-                                Link/URL
-                            </label>
-                            <div class="form__helpBox form__helpBox--right">
-                                <div class="form__helpText">
-                                    Paste in your link.
-                                </div>
-                            </div>
-                            <div class="form__errorBox">
-                                <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                </p>
-                            </div>
-                        </fieldset>
-
-                    </div>
                 </section> 
             </div> 
+
+
+
+            
+
+
+
+
+
 
 
         </div><!--.grid grid--center-->

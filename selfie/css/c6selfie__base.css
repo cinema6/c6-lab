@@ -291,13 +291,6 @@
         margin:0 0 1.25em 0; padding:0;
     }
 
-    .form__item--sub {
-        border:none;
-        position:relative;
-        display: block;
-        margin:1.25em 0 2.1875em; padding:0;
-    }
-
         .form__label {
             color:#5c5c5c;
             font-size:1em;
@@ -317,12 +310,13 @@
             }
 
 
-            .form__item--bigInput .form__label {
-                text-align: center;
-                width:100%;
-                top:1.375em; left:0;
-                padding:0;
-            }
+
+        .form__item--bigInput .form__label {
+            text-align: center;
+            width:100%;
+            top:1.375em; left:0;
+            padding:0;
+        }
             .form__item--bigInput .form__textBox:focus ~ .form__label,
             .form__item--bigInput .form__fillCheck--filled ~ .form__label {
                 transform: translate3d(0, -2.5em, 0);
@@ -334,16 +328,24 @@
             }
 
 
-        .form__label--sub {
-            font-size:0.875em;
-            top:-1.625em;
-            left:0; z-index:10;
+
+        .form__item--sub {
+            border:none;
+            position:relative;
+            display: block;
+            margin:2.25em 0 1.25em; padding:0;
         }
-            .form__textBox:focus ~ .form__label--sub,
-            .form__fillCheck--filled ~ .form__label--sub {
-                transform:none;
-                text-align: left;
+
+            .form__item--sub .form__label {
+                font-size:0.875em;
+                top:-1.625rem;
+                left:0; z-index:10;
             }
+                .form__item--sub .form__textBox:focus ~ .form__label,
+                .form__item--sub .form__fillCheck--filled ~ .form__label {
+                    transform:none;
+                    text-align: left;
+                }
 
 
     
@@ -363,10 +365,12 @@
             font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
         }
         
-            .form__textBox:focus { 
+            .form__textBox:focus,
+            .form__item--sub .form__textBox:focus { 
                 border-bottom:2px solid #00c0ff;
                 background:#fff;
             }
+
 
 
             .form__item--bigInput .form__textBox {
@@ -376,13 +380,11 @@
                 padding:0.5rem 0.5rem 0.6875rem;
             }
 
+            .form__item--sub .form__textBox { 
+                color:#1c1c1c;
+                background-color:#e8e8e8;
+            }
 
-        .form__textBox--sub { 
-            color:#1c1c1c;
-            padding:0.5125rem 0.5rem 0.4375rem;
-            font-size:1em;
-            background-color:#e8e8e8;
-        }
 
 
 
@@ -534,13 +536,11 @@
 
 
         .ui--hasError .form__textBox,
-        .ui--hasError .thumbnail__customBtn,
-        .ui--hasError .form__textBox--sub {
+        .ui--hasError .thumbnail__customBtn {
             border-color:#ff1e1e;
         }
         .ui--hasError .form__label,
-        .ui--hasError .thumbnail__label,
-        .ui--hasError .form__label--sub {
+        .ui--hasError .thumbnail__label {
             color:#ff1e1e;
         }
 
@@ -622,32 +622,27 @@
 
 
 
-
 /*  ================================================
-    form wizard modules
+    video Preview wizard
     ================================================ */
-    
+    .videoPreview__group {
+        background-color:#fff;
+        box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+    }
 
-    /*  .videoPreview__wizard classes
-        ============================================ */
-        .videoPreview__group {
-            background-color:#fff;
-            box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+
+    .videoPreview {
+        position: relative;
+        padding-bottom: 56%;
+        margin:0;
+    }
+
+        .videoPreview__iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
         }
-
-
-        .videoPreview {
-            position: relative;
-            padding-bottom: 56%;
-            margin:0;
-        }
-
-            .videoPreview__iframe {
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%;
-                height: 100%;
-            }
 
 
     /*  .videoDescription classes
@@ -703,14 +698,14 @@
             border-bottom:2px solid #5c5c5c;
             padding:0.25em;
         }
-            .thumbnail__btn:hover {
+            .thumbnail__btn:hover,
+            .thumbnail__btn:focus:hover {
                 background-color:#fff;
-            }
-            .thumbnail__btn:hover  {
                 border-bottom:2px solid #00c0ff;
             }
 
-        .thumbnail__btn--selected {
+        .thumbnail__btn--selected,
+        .thumbnail__btn--selected:focus {
             border-bottom:2px solid #00a2de;
             background-color:#fff;
             transition: border-bottom 0.3s;
@@ -745,15 +740,6 @@
 
 
 
-            .thumbnail__box--squareSm {
-                padding:0 0 50px;
-                margin:0 auto;
-                width:50px;
-            }
-
-
-
-
             .thumbnail__box--uploader {
                 background-color:#e8e8e8;
                 background-image:url("../img/upload-arrow.svg");
@@ -779,7 +765,8 @@
 
                 
 
-
+    /*  .thumbnail__label classes
+        ================================================ */
         .thumbnail__label {
             font-size:1em;
             margin:0.5em 0 0.125em;
@@ -816,38 +803,45 @@
         
 
 
-    /*  call to action preview classes
-        ================================================ */
-        .ctaPreview__group {
-            width:100%;
-            margin-bottom:2em;
+
+
+
+
+/*  ================================================
+    call to action wizard
+    ================================================ */
+    .ctaPreview__group {
+        width:100%;
+        margin-bottom:2em;
+    }
+        
+        .ctaPreview__title {
+            text-align:center;
+            font-size:1em;
+            line-height:1.25em;
+            font-weight:300;
+            margin:0 0 0.25em 0;
+            color:#5c5c5c;
         }
-            
-            .ctaPreview__title {
-                text-align:center;
-                font-size:0.875em;
-                font-weight:300;
-                margin:0 0 0.1875em 0;
-            }
 
-            .ctaPreview__container {
+        .ctaPreview__container {
+            width:100%;
+            padding:1.375em 5em;
+            background-color:#fff;
+            box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+            text-align:center;
+        }
+
+            .ctaPreview__btn {
+                padding:0.75em 1em;
+                margin:0 auto;
                 width:100%;
-                padding:1.5em 5em;
-                background-color:#fff;
-                box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
-                text-align:center;
+                font-size:1.125em;
+                background-color:#00c0ff;
+                color:white;
             }
 
-                .ctaPreview__button {
-                    padding:0.85em 1em 0.651em;
-                    margin:0 auto;
-                    width:100%;
-                    font-size:1.125em;
-                    background-color:#00c0ff;
-                    color:white;
-                }
-
-                .ctaPreview__link {
-                    font-size:1em;
-                    
-                }
+            .ctaPreview__link {
+                font-size:1em;
+                
+            }

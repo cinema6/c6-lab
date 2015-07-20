@@ -1,6 +1,7 @@
 (function() {
 
-    var $fillCheckTarget        = $('.form__fillCheck');
+    var $fillCheckTarget        = $('.form__fillCheck'),
+        $uiTab                  = $('.ui__tab');
 
 
     $fillCheckTarget.blur(function() {
@@ -45,6 +46,37 @@
 
     $('.form__selectBox--multiple').on("select2:close", function (e) {
         $(this).removeClass('ui--active');
+    });
+
+
+
+    // uiTabs code
+    $uiTab.click(function() {
+        var $this       = $(this),
+            $tabHolder  = $this.parent(),
+            $tabs       = $tabHolder.find('.ui__tab'),
+            $tabPanels  = $tabHolder.siblings('.ui__tabPanel'),
+            myPanel;
+
+        $tabs.removeClass('ui__tab--active');
+        $this.toggleClass('ui__tab--active');
+        myPanel     = $this.data('panel');
+        console.log(myPanel);
+
+        $tabPanels.hide();
+        $('.' + myPanel).show();
+    });
+
+    
+    //tocNav links 
+    var $tocLink    = $('.tocNav__link');
+
+    $tocLink.click(function(e) {
+        $this       = $(this),
+        myDistance  = $($this.attr('href')).offset().top - 80;
+
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: myDistance + 'px' });
     });
 
 })();

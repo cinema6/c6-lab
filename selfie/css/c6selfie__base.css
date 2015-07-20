@@ -41,6 +41,7 @@
         display: inline-block;
         cursor:pointer;
         background:none;
+        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
     }
 
 /*  ================================================
@@ -161,12 +162,43 @@
             background:#de0073;
         }
 
-
-
         .action__btn--small {
             font-size:1em;
             padding:0.5rem 1rem 0.375rem;
         }
+        .action__btn--big {
+            padding:1rem 1.75rem 0.875rem;
+            font-size:1.5em;
+        }
+
+
+    .ui__tab {
+        border:0;
+        border-bottom:2px solid #5c5c5c;
+        padding:0.75rem 0 0.625rem;
+        transition:border-color 0.3s, background 0.3s;
+        text-align: center;
+        display: inline-block;
+        margin:0;
+        font-size:1.125em;
+        line-height:1.5rem;
+    }
+        .ui__tab:hover,
+        .ui__tab:focus {
+            border-color:#00c0ff;
+        }
+
+        .ui__tab--active,
+        .ui__tab--active:focus {
+            padding:0.625rem 0 0.75rem;
+            border-top:2px solid #00a2de;
+            border-bottom:0;
+            background-color:#fff;
+        }
+            .ui__tab--active:hover {
+                border-color:#00c0ff;
+            }
+
 
     
 
@@ -189,6 +221,9 @@
         margin:0 0 0 4em;
         position: relative;
     }
+        .pageHolder--forms {
+            padding-bottom:4em;
+        }
 
     .gridHolder {
         width:96%;
@@ -249,12 +284,16 @@
     ================================================ */
     .tocNav__group {
         position: fixed;
-        top:4.75em; left:4.75em;
+        top:50%; left:4.75em;
     }
+        .tocNav__item {
+            position: relative;
+        }
 
         .tocNav__list {
             list-style: none;
             margin:0; padding:0;
+            transform: translate3d(0, -42%, 0);
         }
 
             .tocNav__item {
@@ -277,6 +316,16 @@
                 color:#fff;
             }
 
+
+        .tocNav__label {
+            opacity:0;
+            position:absolute;
+            left:2.25em; top:0.125em;
+            transition:opacity 0.3s;
+        }
+            .tocNav__link:hover ~ .tocNav__label {
+                opacity:1;
+            }
 
 
 
@@ -775,7 +824,7 @@
 
         .thumbnail__box--uploader {
             background-color:#e8e8e8;
-            background-image:url("../img/upload-arrow.svg");
+            background-image:url('../img/upload-arrow.svg');
             transition:background-color 0.3s;
         }
             .thumbnail__box--uploader:hover {
@@ -787,7 +836,7 @@
                 top:0; left:0;
                 z-index: 10;
                 width:100%; height:100%;
-                background:url("../img/upload-arrow-hover.svg") center / 30% no-repeat;
+                background:url('../img/upload-arrow-hover.svg') center / 30% no-repeat;
                 content:'';
                 opacity:0;
                 transition:opacity 0.3s;
@@ -895,7 +944,6 @@
         .thumbnail__btn:focus {
             margin:1.25em auto 0;
             background-color:#f1f1f1;
-            font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; 
             transition: background-color 0.3s, border-bottom 0.3s, color 0.3s;
             text-align:center;
             position:relative;
@@ -932,7 +980,7 @@
 
             .thumbnail__label:before,
             .ui--hasError .thumbnail__label:before {
-                content:"\f00c";
+                content:'\f00c';
                 font-family:FontAwesome;
                 color:#00a2de;
                 position:absolute;
@@ -944,7 +992,7 @@
             }
                 .ui--hasError .thumbnail__label:before,
                 .ui--hasError .thumbnail__btn--selected:hover .thumbnail__label:before  {
-                    content:"\f00d";
+                    content:'\f00d';
                     color:#ff1e1e;
                 }
                 .thumbnail__btn--selected .thumbnail__label:before {
@@ -986,15 +1034,79 @@
         }
 
             .ctaPreview__btn {
-                padding:0.75em 1em;
+                padding:0.75rem 1em;
                 margin:0 auto;
                 width:100%;
                 font-size:1.125em;
+                line-height: 1.5rem;
                 background-color:#00c0ff;
                 color:white;
+                border-radius:3px;
             }
 
             .ctaPreview__link {
                 font-size:1em;
                 
+            }
+
+
+
+/*  ================================================
+    ad preview wizard
+    ================================================ */
+    .adPreview__panel {
+        padding:2em 2em 2.25em;
+        background-color:#fff;
+        box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+
+        .adPreview__desktop {
+            width:100%;
+            padding:29% 0;
+            background-color:#e1e1e1;
+            position:relative;
+        }
+            .adPreview__desktop:before {
+                content:'No preview available';
+                font-style: italic;
+                font-size:1.5em;
+                color:#b1b1b1;
+            }
+
+            .adPreview__desktopFrame {
+                position:absolute;
+                width:100%;
+                top:0;
+                left:0;
+                height:100%;
+                border:2px solid #e1e1e1;
+            }
+
+
+
+        .adPreview__mobile {
+            background:url('../img/mobile-wireframe.svg') no-repeat center;
+            width:40%;
+            height:90%;
+            padding-bottom:84%;
+            margin:0 auto;
+            position:relative;
+        }
+            .adPreview__mobile:before {
+                content:'No preview available';
+                font-style: italic;
+                font-size:1.5em;
+                left:1em; right:1em;
+                top:46%;
+                position:absolute;
+            }
+
+            .adPreview__mobileFrame {
+                width:90%;
+                height:81%;
+                background-color:#e1e1e1;
+                position:absolute;
+                z-index: 2;
+                top:8.5%; 
+                left:5%;
             }

@@ -130,10 +130,13 @@
                         </fieldset>
 
                         <fieldset class="form__item">
-                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <select class="form__selectBox form__selectBox--single">
+                                <option>Use image URL</option>
+                                <option>Upload your image</option>
+                            </select>
                             <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
-                                Sponsor Logo URL
+                                Sponsor Logo
                             </label>
                             <div class="form__helpBox form__helpBox--right">
                                 <div class="form__helpText">
@@ -145,9 +148,37 @@
                                     <i class="fa fa-exclamation-triangle"></i> Error message goes here
                                 </p>
                             </div>
-
-                            
                         </fieldset>
+
+                        <div class="sponsorLogo__wizard ui__connector">
+                            <div class="logoPreview__group">
+                                <div class="logoPreview__thumbnail">
+                                    <span class="thumbnail__box thumbnail__box--square">
+                                        <span class="thumbnail">
+                                            <img class="thumbnail__img" src="img/cupcake4.jpg">
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="thumbnail__label">Thumbnail Preview</span>
+                            </div>
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    URL to image
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        The text is what the link will be attached to for the button or the link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                        </div>
 
                         <fieldset class="form__item">
                             <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
@@ -281,7 +312,7 @@
 
                     </div> 
 
-                </section> 
+                </section><!--.formSection__group-->
             </div> 
 
 
@@ -375,15 +406,15 @@
                                         <i class="fa fa-exclamation-triangle"></i> Your image is greater than 30mb and you suck at hockey
                                     </p>
                                 </div>
-                            </div> <!-- .grid__item-->
+                            </div><!-- .grid__item-->
 
-                        </div> <!--.grid-->
+                        </div><!--.grid-->
 
-                    </div> <!--.videoPreview__group-->
+                    </div><!--.videoPreview__group-->
 
-                </section> <!--.formSection__group-->
+                </section><!--.formSection__group-->
 
-            </div> <!--.grid__item-->
+            </div><!--.grid__item-->
 
 
 
@@ -522,7 +553,7 @@
                         </div>
                     </div><!--.ctaPreview__wizard-->
 
-                </section> 
+                </section><!--.formSection__group-->
             </div>
 
 
@@ -570,14 +601,57 @@
                         </fieldset>
 
                         <fieldset class="form__item">
-                            <textarea class="form__textBox form__textArea form__textArea--large form__fillCheck" type="text" id="c6-video-description"></textarea>
-                            <label class="form__label" for="c6-video-description">   
+                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
+                                <option>Alabama</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>Georgia</option>
+                                <option>Idaho</option>
+                                <option>Kansas</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
-                                Video Description
+                                Geography
                             </label>
                             <div class="form__helpBox form__helpBox--right">
                                 <div class="form__helpText">
-                                    This step is optional. The description is the last thing anyone will ever read so good luck being pithy.
+                                    You can use geographic data to target viewers from a specific state.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                            <p class="tk--fineprint tk--warning">
+                                <i class="fa fa-asterisk"></i> Using this feature will add an additional cost of $0.50 per 1000 video plays.
+                            </p>
+                        </fieldset>
+
+                    </div>
+                </section><!--.formSection__group-->
+
+
+                <section class="formSection__group formSection__group--sub">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Set Your Budget</span>
+                    </h1>
+                    <p class="formSection__introText">Your calculated cost per 1000 video plays is : <strong>$50</strong>. A video must play for a minimum of 3 seconds to count as a play.</p>
+
+
+                    <div class="form__items">
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="c6-sponsor-name">
+                            <span class="input__unit">$</span>
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Campaign Budget
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
                                 </div>
                             </div>
                             <div class="form__errorBox">
@@ -587,19 +661,16 @@
                             </div>
                         </fieldset>
 
-                        <fieldset class="form__item ">
-                            <select class="form__selectBox form__selectBox--single">
-                                <option>None</option>
-                                <option>Button</option>
-                                <option>Text link</option>
-                            </select>
-                            <label class="form__label" for="c6-sponsor-name">   
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="c6-sponsor-name">
+                            <span class="input__unit">$</span>
+                            <label class="form__label" for="c6-sponsor-name">
                                 <i class="fa fa-times ui--error"></i> 
-                                Call to Action
+                                Daily Max
                             </label>
                             <div class="form__helpBox form__helpBox--right">
                                 <div class="form__helpText">
-                                    A call to action is a prompt for the user to do an action. For instance, “Learn more,” or “Shop now!”
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
                                 </div>
                             </div>
                             <div class="form__errorBox">
@@ -610,63 +681,9 @@
                         </fieldset>
 
                     </div>
+                </section><!--.formSection__group-->
 
-
-                    <div class="ctaPreview__wizard">
-                        <div class="ctaPreview__group ui__connector">
-
-                            <h2 class="ctaPreview__title">Preview</h2>
-                            <div class="ctaPreview__container">
-                                <button class="ctaPreview__btn">Learn More</button>
-                                <a href="#" class="ctaPreview__link" style="display:none;">Learn More</a>
-                            </div>
-
-                        </div><!--ctaPreview__group--> 
-
-                        
-                        <div class="form__items">
-
-                            <fieldset class="form__item form__item--sub">
-                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText" value="Learn More">
-                                <label class="form__label" for="c6-video-ctaText">
-                                    <i class="fa fa-times ui--error"></i> 
-                                    Label Text
-                                </label>
-                                <div class="form__helpBox form__helpBox--right">
-                                    <div class="form__helpText">
-                                        The text is what the link will be attached to for the button or the link.
-                                    </div>
-                                </div>
-                                <div class="form__errorBox">
-                                    <p class="form__errorMsg">
-                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                    </p>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="form__item form__item--sub">
-                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
-                                <label class="form__label" for="c6-video-ctaText">
-                                    <i class="fa fa-times ui--error"></i> 
-                                    Link/URL
-                                </label>
-                                <div class="form__helpBox form__helpBox--right">
-                                    <div class="form__helpText">
-                                        Paste in your link.
-                                    </div>
-                                </div>
-                                <div class="form__errorBox">
-                                    <p class="form__errorMsg">
-                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                    </p>
-                                </div>
-                            </fieldset>
-
-                        </div>
-                    </div><!--.ctaPreview__wizard-->
-
-                </section> 
-            </div> 
+            </div><!--.grid__item-->
 
 
 

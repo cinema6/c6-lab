@@ -248,9 +248,7 @@
         position:fixed;
         top:0;
         z-index: 10;
-        width:100%; min-height:3.5em;
-        background: #fff;
-        padding:0 1em;
+        width:100%;
     }
         .pageHeader__group:after {
             content: '';
@@ -268,16 +266,29 @@
         }
 
 
-        .pageHeader__breadcrumbs {
-            color:#444;
-            font-size:1.25em;
+        .mainHeader__group {
+            min-height:3.5em;
+            background: #fff;
+            padding:0 1em;
         }
-            .pageHeader__breadcrumbs a {
+
+            .mainHeader__breadcrumbs {
                 color:#444;
+                font-size:1.25em;
+                margin:0; padding:0.75rem 0 0;
             }
-            .pageHeader__breadcrumbs a:hover {
-                color:#de0073;
-            }
+                .mainHeader__breadcrumbs a {
+                    color:#444;
+                }
+                .mainHeader__breadcrumbs a:hover {
+                    color:#de0073;
+                }
+
+
+        .subHeader__group {
+            margin:1px 0 0 0; padding:0 1em;
+            background:#fff;
+        }
 
 
 

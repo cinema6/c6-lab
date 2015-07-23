@@ -221,15 +221,19 @@
         margin:0 0 0 4em;
         position: relative;
     }
-        .pageHolder--forms {
-            padding-bottom:4em;
-        }
 
     .gridHolder {
         width:96%;
         max-width:64em;
         margin: 0 auto;
-        padding:4em 0;
+        padding:4em 0 0 0;
+    }
+
+    .footer__group {
+        padding:4em 0 1em;
+        text-align: center;
+        font-size:0.875em;
+        color:#b1b1b1;
     }
 
 

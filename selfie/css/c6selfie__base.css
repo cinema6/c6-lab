@@ -239,6 +239,66 @@
 
 
 
+/*  ================================================
+    thumbnail box module
+    ================================================ */
+    .thumbnail__box {
+        width:100%;
+        display:block;
+        margin:0;
+        overflow:hidden;
+        position:relative;
+        padding:0 0 66.09%;
+        background:#f1f1f1 center / 30% no-repeat;
+    }
+        .thumbnail__box--square {
+            padding:0 0 100%;
+        }
+
+        .thumbnail,
+        .thumbnail__img {
+            position:absolute;
+            display:block;
+            transform:translateY(50%);
+            width:100%;
+            height:100%;
+            z-index:5;
+            top:0;
+        }
+
+            .thumbnail__img {
+                transform:translateY(-50%);
+                height:auto;
+                background:#f1f1f1;
+            }
+
+
+
+        .thumbnail__box--uploader {
+            background-color:#e8e8e8;
+            background-image:url('../img/upload-arrow.svg');
+            transition:background-color 0.3s;
+        }
+            .thumbnail__box--uploader:hover {
+                background-color:#f1f1f1;
+            }
+
+            .thumbnail__box--uploader:after {
+                position: absolute;
+                top:0; left:0;
+                z-index: 10;
+                width:100%; height:100%;
+                background:url('../img/upload-arrow-hover.svg') center / 30% no-repeat;
+                content:'';
+                opacity:0;
+                transition:opacity 0.3s;
+            }
+                .thumbnail__box--uploader:hover:after {
+                    opacity:1;
+                }
+
+
+
 
 
 /*  ================================================
@@ -246,9 +306,9 @@
     ================================================ */
     .pageHeader__group {
         position:fixed;
-        top:0;
+        top:0; left:4em; right:0;
         z-index: 10;
-        width:100%;
+        background:#eee;
     }
         .pageHeader__group:after {
             content: '';
@@ -285,10 +345,226 @@
                 }
 
 
-        .subHeader__group {
-            margin:1px 0 0 0; padding:0 1em;
+
+    /*  sortBar classes
+        ================================================ */
+        .sortBar__group {
+            margin:1px 0 0 0; padding:0;
             background:#fff;
         }
+
+            .sortBar__list {
+                padding:0 1.5em; margin:0 1.5em;
+                list-style:none;
+                position:relative;
+            }
+
+            .sortBar__btn {
+                font-size:0.875em;
+                line-height:1rem;
+                margin:0; padding:0.9375rem 0 1rem;
+                color:#5c5c5c;
+                transition:color 0.3s;
+                text-align: inherit;
+            }
+                .sortBar__btn:hover {
+                    color:#00c0ff;
+                }
+
+
+    /*  data column classes
+        ================================================ */
+        .sortBar__item,
+        .campaign__column {
+            float:left;
+            padding-right:1em;
+            box-sizing:content-box;
+            text-align: left;
+        }
+
+        .column__status {
+            width:5em;
+            padding:0 0.5em 0 0;
+        }
+        .column__sponsor {
+            width:10.5em;
+        }
+        .column__campaignName {
+            width:calc(100% - 45.5rem);
+            padding:0 2em 0 0;
+        }
+        .column__totalViews {
+            width:7.5em;
+            padding:0 2em 0 0;
+        }
+        .column__totalSpending {
+            width:6.5em;
+            padding:0 2em 0 0;
+        }
+        .column__budget {
+            width:8.5em;
+            padding:0;
+            text-align: right;
+        }
+
+
+
+/*  ================================================
+    campaign list classes
+    ================================================ */
+    .campaigns__list {
+        margin:8em 1.5em 0 1.5em;
+        padding: 0;
+        list-style: none;
+        position:relative;
+    }
+
+        .campaign__item {
+            background:#fff;
+            padding:0.5em 1.5em 0.5em 1.375em;
+            border-left:2px solid #9c9c9c;
+            margin:0 0 2px 0;
+            display: block;
+            color:#5c5c5c;
+            transition:background 0.5s;
+        }
+            .campaign__item:hover {
+                background:#f1fcff;
+                cursor: pointer;
+            }
+
+
+            .campaign__item--active {
+                border-left:2px solid #20d783;
+            }
+            .campaign__item--pending {
+                border-left:2px solid #00c0ff;
+            }
+            .campaign__item--draft {
+                border-left:2px solid #9c9c9c;
+            }
+            .campaign__item--finished {
+                border-left:2px solid #fff;
+            }
+
+            .campaign__item .fa {
+                font-size:0.875rem;
+            }
+
+            .campaign__status {
+                display: block;
+                margin:0.5em 0 0.3125em;
+                line-height:1.25em;
+            }
+                .campaign__item--active .campaign__status {
+                    color: #20d783;
+                }
+                .campaign__item--pending .campaign__status {
+                    color:#00c0ff;
+                }
+                .campaign__item--draft .campaign__status {
+                    color:#9c9c9c;
+                }
+                .campaign__item--finished .campaign__status {
+                    color:#5c5c5c;
+                }
+            
+            .campaign__date {
+                display: block;
+                font-size:0.875em;
+            }
+
+            .campaign__thumbnail {
+                height:6em;
+                padding:0;
+            }
+
+
+            .campaign__sponsorInfo {
+                display: block;
+                min-height:2.5em;
+                margin:0.5em 0 0 0;
+                color:#5c5c5c;
+            }
+                
+                .campaign__sponsorLogo {
+                    width:2.5em; height:2.5em;
+                    border-radius:3px;
+                    overflow: hidden;
+                    padding:0;
+                    position:absolute;
+                }
+
+                .campaign__sponsorName {
+                    font-size:0.875em;
+                    line-height:1rem;
+                    display: block;
+                    padding:0.1875rem 0 0.3125rem 3rem;
+                }
+
+
+            .campaign__name {
+                color:#1c1c1c;
+                font-size:1.25em;
+                font-weight:normal;
+                line-height: 1.2;
+                margin:0.25em 0 0.15em 0;
+            }
+
+                .campaign__nameLink {
+                    color:#1c1c1c;
+                }
+
+
+            .campaign__viewTotal,
+            .campaign__spendTotal {
+                display: block;
+                margin:0.5em 0 0;
+                line-height:1.25em;
+            }
+            .campaign__viewDelta,
+            .campaign__spendDelta {
+                color:#00c0ff;
+                font-size:0.875em;
+                display: block;
+                line-height: 1;
+                margin:0.25rem 0 0.375rem;
+            }
+
+            .campaign__spendDelta {
+                color:#20d783;
+            }
+
+            .campaign__viewChart {
+                background:#eee;
+                margin:0.625em 0 0 0;
+                height:80px;
+            }
+
+
+            .campaign__budgetInfo {
+                margin:0.375em 0 0 0;
+                position: relative;
+            }
+
+                .budget__label {
+                    position:absolute;
+                    left:0;
+                    margin:1px 0 0 0;
+                    text-align: left;
+                    font-size:0.875em;
+                    color:#9c9c9c;
+                }
+
+                .campaign__budgetNumbers {
+                    display: block;
+                    line-height:1.5em;
+                    padding-left:2.5em;
+                }
+
+                
+
+
 
 
 
@@ -808,66 +1084,6 @@
 
 
 /*  ================================================
-    thumbnail box module
-    ================================================ */
-    .thumbnail__box {
-        width:100%;
-        display:block;
-        margin:0;
-        overflow:hidden;
-        position:relative;
-        padding:0 0 66.09%;
-        background:#f1f1f1 center / 30% no-repeat;
-    }
-        .thumbnail__box--square {
-            padding:0 0 100%;
-        }
-
-        .thumbnail,
-        .thumbnail__img {
-            position:absolute;
-            display:block;
-            transform:translateY(50%);
-            width:100%;
-            height:100%;
-            z-index:5;
-            top:0;
-        }
-
-            .thumbnail__img {
-                transform:translateY(-50%);
-                height:auto;
-                background:#f1f1f1;
-            }
-
-
-
-        .thumbnail__box--uploader {
-            background-color:#e8e8e8;
-            background-image:url('../img/upload-arrow.svg');
-            transition:background-color 0.3s;
-        }
-            .thumbnail__box--uploader:hover {
-                background-color:#f1f1f1;
-            }
-
-            .thumbnail__box--uploader:after {
-                position: absolute;
-                top:0; left:0;
-                z-index: 10;
-                width:100%; height:100%;
-                background:url('../img/upload-arrow-hover.svg') center / 30% no-repeat;
-                content:'';
-                opacity:0;
-                transition:opacity 0.3s;
-            }
-                .thumbnail__box--uploader:hover:after {
-                    opacity:1;
-                }
-
-
-
-/*  ================================================
     sponsor logo wizard
     ================================================ */
     .sponsorLogo__wizard {
@@ -883,7 +1099,7 @@
     }
 
         .logoPreview__thumbnail {
-            width:50px;
+            width:3.125em;
             margin:0 auto;
         }
 

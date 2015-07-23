@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
@@ -33,12 +33,293 @@
                 Campaigns
             </h1>
         </div><!--.mainHeader__group-->
-        <ul class="sortBar__group">
-            <li class="sortBar__item sortBar__status">
-                <button class="sortBar__btn" type="button">Status</button>
-            </li>
-        </ul><!--.sortBar__group-->
+        <div class="sortBar__group">
+            <ul class="sortBar__list clearfix">
+                <li class="sortBar__item column__status">
+                    <button class="sortBar__btn" type="button">Status</button>
+                </li>
+                <li class="sortBar__item column__sponsor">
+                    <button class="sortBar__btn" type="button">Sponsor</button>
+                </li>
+                <li class="sortBar__item column__campaignName">
+                    <button class="sortBar__btn" type="button">Campaign Name</button>
+                </li>
+                <li class="sortBar__item column__totalViews">
+                    <button class="sortBar__btn" type="button">Total Views</button>
+                </li>
+                <li class="sortBar__item column__totalSpending">
+                    <button class="sortBar__btn" type="button">Total Spending</button>
+                </li>
+                <li class="sortBar__item column__budget">
+                    <button class="sortBar__btn" type="button">Budget</button>
+                </li>
+            </ul><!--.sortBar__list-->
+        </div><!--.sortBar__group-->
     </div><!--.pageHeader__group-->
+
+
+    <ul class="campaigns__list">
+        
+        <li class="campaign__item campaign__item--active clearfix">
+            
+            <div class="campaign__column column__status">
+                <span class="campaign__status">Active</span>
+                <span class="campaign__date">07/08/2015</span>
+            </div><!--.column__status-->
+            
+            <div class="campaign__column column__sponsor">
+                <a href="#" class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
+                    <span class="thumbnail">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/200/200/" alt="CAMPAIGN NAME">
+                    </span>
+                </a>
+                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
+                    <span class="thumbnail__box campaign__sponsorLogo">
+                        <span class="thumbnail">
+                            <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
+                        </span>
+                    </span>
+                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
+                </a>
+            </div><!--.column__sponsor-->
+            
+            <div class="campaign__column column__campaignName">
+                <h1 class="campaign__name tk--hdr">
+                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                </h1>
+            </div><!--.column__campaignName-->
+            
+            <div class="campaign__column column__totalViews">
+                <span class="campaign__viewTotal">
+                    <i class="fa fa-play-circle"></i> 1,235,032
+                </span>
+                <span class="campaign__viewDelta">
+                    <i class="fa fa-arrow-circle-up"></i> 4,587
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalViews-->
+            
+            <div class="campaign__column column__totalSpending">
+                <span class="campaign__spendTotal">
+                    <strong>$</strong> 361,051.39
+                </span>
+                <span class="campaign__spendDelta">
+                    <i class="fa fa-arrow-circle-up"></i> $1,239.25
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalSpending-->
+            
+            <div class="campaign__column column__budget">
+                <div class="campaign__budgetInfo">
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Total:</span>
+                        <strong>$</strong> 950,000.00
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Daily:</span>
+                        <strong>$</strong> 500.00
+                    </span>
+                </div>
+            </div><!--.column__budget-->
+
+        </li><!--.campaign__item-->
+
+
+        <li class="campaign__item campaign__item--pending clearfix">
+            
+            <div class="campaign__column column__status">
+                <span class="campaign__status">Approval Pending</span>
+                <span class="campaign__date">07/08/2015</span>
+            </div><!--.column__status-->
+            
+            <div class="campaign__column column__sponsor">
+                <a href="#" class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
+                    <span class="thumbnail">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/200/200/" alt="CAMPAIGN NAME">
+                    </span>
+                </a>
+                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
+                    <span class="thumbnail__box campaign__sponsorLogo">
+                        <span class="thumbnail">
+                            <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
+                        </span>
+                    </span>
+                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
+                </a>
+            </div><!--.column__sponsor-->
+            
+            <div class="campaign__column column__campaignName">
+                <h1 class="campaign__name tk--hdr">
+                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                </h1>
+            </div><!--.column__campaignName-->
+            
+            <div class="campaign__column column__totalViews">
+                <span class="campaign__viewTotal">
+                    <i class="fa fa-play-circle"></i> 1,235,032
+                </span>
+                <span class="campaign__viewDelta">
+                    <i class="fa fa-arrow-circle-up"></i> 4,587
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalViews-->
+            
+            <div class="campaign__column column__totalSpending">
+                <span class="campaign__spendTotal">
+                    <strong>$</strong> 361,051.39
+                </span>
+                <span class="campaign__spendDelta">
+                    <i class="fa fa-arrow-circle-up"></i> $1,239.25
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalSpending-->
+            
+            <div class="campaign__column column__budget">
+                <div class="campaign__budgetInfo">
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Total:</span>
+                        <strong>$</strong> 950,000.00
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Daily:</span>
+                        <strong>$</strong> 500.00
+                    </span>
+                </div>
+            </div><!--.column__budget-->
+            
+        </li><!--.campaign__item-->
+
+
+        <li class="campaign__item campaign__item--draft clearfix">
+            
+            <div class="campaign__column column__status">
+                <span class="campaign__status">Draft or Paused</span>
+                <span class="campaign__date">07/08/2015</span>
+            </div><!--.column__status-->
+            
+            <div class="campaign__column column__sponsor">
+                <a href="#" class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
+                    <span class="thumbnail">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/200/200/" alt="CAMPAIGN NAME">
+                    </span>
+                </a>
+                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
+                    <span class="thumbnail__box campaign__sponsorLogo">
+                        <span class="thumbnail">
+                            <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
+                        </span>
+                    </span>
+                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
+                </a>
+            </div><!--.column__sponsor-->
+            
+            <div class="campaign__column column__campaignName">
+                <h1 class="campaign__name tk--hdr">
+                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                </h1>
+            </div><!--.column__campaignName-->
+            
+            <div class="campaign__column column__totalViews">
+                <span class="campaign__viewTotal">
+                    <i class="fa fa-play-circle"></i> 1,235,032
+                </span>
+                <span class="campaign__viewDelta">
+                    <i class="fa fa-arrow-circle-up"></i> 4,587
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalViews-->
+            
+            <div class="campaign__column column__totalSpending">
+                <span class="campaign__spendTotal">
+                    <strong>$</strong> 361,051.39
+                </span>
+                <span class="campaign__spendDelta">
+                    <i class="fa fa-arrow-circle-up"></i> $1,239.25
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalSpending-->
+            
+            <div class="campaign__column column__budget">
+                <div class="campaign__budgetInfo">
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Total:</span>
+                        <strong>$</strong> 950,000.00
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Daily:</span>
+                        <strong>$</strong> 500.00
+                    </span>
+                </div>
+            </div><!--.column__budget-->
+            
+        </li><!--.campaign__item-->
+
+
+        <li class="campaign__item campaign__item--finished clearfix">
+            
+            <div class="campaign__column column__status">
+                <span class="campaign__status">Finished</span>
+                <span class="campaign__date">07/08/2015</span>
+            </div><!--.column__status-->
+            
+            <div class="campaign__column column__sponsor">
+                <a href="#" class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
+                    <span class="thumbnail">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/200/200/" alt="CAMPAIGN NAME">
+                    </span>
+                </a>
+                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
+                    <span class="thumbnail__box campaign__sponsorLogo">
+                        <span class="thumbnail">
+                            <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
+                        </span>
+                    </span>
+                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
+                </a>
+            </div><!--.column__sponsor-->
+            
+            <div class="campaign__column column__campaignName">
+                <h1 class="campaign__name tk--hdr">
+                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                </h1>
+            </div><!--.column__campaignName-->
+            
+            <div class="campaign__column column__totalViews">
+                <span class="campaign__viewTotal">
+                    <i class="fa fa-play-circle"></i> 1,235,032
+                </span>
+                <span class="campaign__viewDelta">
+                    <i class="fa fa-arrow-circle-up"></i> 4,587
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalViews-->
+            
+            <div class="campaign__column column__totalSpending">
+                <span class="campaign__spendTotal">
+                    <strong>$</strong> 361,051.39
+                </span>
+                <span class="campaign__spendDelta">
+                    <i class="fa fa-arrow-circle-up"></i> $1,239.25
+                </span>
+                <div class="campaign__viewChart">&nbsp;</div>
+            </div><!--.column__totalSpending-->
+            
+            <div class="campaign__column column__budget">
+                <div class="campaign__budgetInfo">
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Total:</span>
+                        <strong>$</strong> 950,000.00
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Daily:</span>
+                        <strong>$</strong> 500.00
+                    </span>
+                </div>
+            </div><!--.column__budget-->
+            
+        </li><!--.campaign__item-->
+
+    </ul>
 
 
 

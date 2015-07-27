@@ -79,4 +79,22 @@
         $('html, body').animate({ scrollTop: myDistance + 'px' });
     });
 
+
+    //sortBar buttons 
+    var $sortBtns   = $('.sortBar__btn');
+
+    $sortBtns.click(function(e) {
+        $this       = $(this);
+        if ($this.hasClass('sortBar__btn--asc')) {
+            $this.removeClass('sortBar__btn--asc').addClass('sortBar__btn--desc');
+        } else
+        if ($this.hasClass('sortBar__btn--desc')) {
+            $this.removeClass('sortBar__btn--desc').addClass('sortBar__btn--asc');
+        } else {
+            $this.addClass('sortBar__btn--asc');
+        }
+
+        $sortBtns.not($this).removeClass('sortBar__btn--asc').removeClass('sortBar__btn--desc');
+    });
+
 })();

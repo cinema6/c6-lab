@@ -36,7 +36,7 @@
         <div class="sortBar__group">
             <ul class="sortBar__list clearfix">
                 <li class="sortBar__item column__status">
-                    <button class="sortBar__btn" type="button">Status</button>
+                    <button class="sortBar__btn sortBar__btn--asc" type="button">Status</button>
                 </li>
                 <li class="sortBar__item column__sponsor">
                     <button class="sortBar__btn" type="button">Sponsor</button>
@@ -78,19 +78,19 @@
                         <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
                     </span>
                 </div>
-                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
-                    <span class="thumbnail__box campaign__sponsorLogo">
+                <div class="campaign__sponsorInfo">
+                    <div class="thumbnail__box campaign__sponsorLogo">
                         <span class="thumbnail">
                             <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
                         </span>
-                    </span>
-                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
-                </a>
+                    </div>
+                    <div class="campaign__sponsorName">Walt Disney Animation Studios</div>
+                </div>
             </div><!--.column__sponsor-->
             
             <div class="campaign__column column__campaignName">
                 <h1 class="campaign__name tk--hdr">
-                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                    A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
                 </h1>
             </div><!--.column__campaignName-->
 
@@ -116,15 +116,13 @@
             
             <div class="campaign__column column__budget">
                 <div class="campaign__budgetInfo">
-                    <span class="campaign__budgetNumbers ui__tooltipHover">
+                    <span class="campaign__budgetNumbers">
                         <span class="budget__label">T<span class="fullText">otal</span>:</span>
                         <strong>$</strong> 950,000.00
-                        <span class="ui__tooltip">Total Budget</span>
                     </span>
-                    <span class="campaign__budgetNumbers ui__tooltipHover">
+                    <span class="campaign__budgetNumbers">
                         <span class="budget__label">D<span class="fullText">aily</span>:</span>
                         <strong>$</strong> 500.00
-                        <span class="ui__tooltip">Daily Budget</span>
                     </span>
                 </div>
             </div><!--.column__budget-->
@@ -143,10 +141,6 @@
                         <span class="budget__label">Budget:</span>
                         <strong>$</strong> 950,000.00
                     </span>
-                    <span class="campaign__budgetNumbers">
-                        <span class="budget__label">Daily:</span>
-                        <strong>$</strong> 500.00
-                    </span>
                 </div>
             </div><!--.column__summaryTotals-->
 
@@ -156,32 +150,32 @@
         <li class="campaign__item campaign__item--pending clearfix">
             
             <div class="campaign__column column__status">
-                <span class="campaign__status">Approval Pending</span>
+                <span class="campaign__status">Pending Approval</span>
                 <span class="campaign__date">07/08/2015</span>
             </div><!--.column__status-->
             
             <div class="campaign__column column__sponsor">
-                <a href="#" class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
+                <div class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
                     <span class="thumbnail">
-                        <img class="thumbnail__img" src="http://www.lorempixel.com/200/200/" alt="CAMPAIGN NAME">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
                     </span>
-                </a>
-                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
-                    <span class="thumbnail__box campaign__sponsorLogo">
+                </div>
+                <div class="campaign__sponsorInfo">
+                    <div class="thumbnail__box campaign__sponsorLogo">
                         <span class="thumbnail">
                             <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
                         </span>
-                    </span>
-                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
-                </a>
+                    </div>
+                    <div class="campaign__sponsorName">Walt Disney Animation Studios</div>
+                </div>
             </div><!--.column__sponsor-->
             
             <div class="campaign__column column__campaignName">
                 <h1 class="campaign__name tk--hdr">
-                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                    A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
                 </h1>
             </div><!--.column__campaignName-->
-            
+
             <div class="campaign__column column__totalViews">
                 <span class="campaign__viewTotal">
                     <i class="fa fa-play-circle"></i> 1,235,032
@@ -205,16 +199,33 @@
             <div class="campaign__column column__budget">
                 <div class="campaign__budgetInfo">
                     <span class="campaign__budgetNumbers">
-                        <span class="budget__label">Total:</span>
+                        <span class="budget__label">T<span class="fullText">otal</span>:</span>
                         <strong>$</strong> 950,000.00
                     </span>
                     <span class="campaign__budgetNumbers">
-                        <span class="budget__label">Daily:</span>
+                        <span class="budget__label">D<span class="fullText">aily</span>:</span>
                         <strong>$</strong> 500.00
                     </span>
                 </div>
             </div><!--.column__budget-->
-            
+
+            <div class="campaign__column column__summaryTotals">
+                <div class="campaign__budgetInfo">
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Views:</span>
+                        <i class="fa fa-play-circle"></i> 1,235,032
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Spend:</span>
+                        <strong>$</strong> 361,051.39
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Budget:</span>
+                        <strong>$</strong> 950,000.00
+                    </span>
+                </div>
+            </div><!--.column__summaryTotals-->
+
         </li><!--.campaign__item-->
 
 
@@ -226,27 +237,27 @@
             </div><!--.column__status-->
             
             <div class="campaign__column column__sponsor">
-                <a href="#" class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
+                <div class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
                     <span class="thumbnail">
-                        <img class="thumbnail__img" src="http://www.lorempixel.com/200/200/" alt="CAMPAIGN NAME">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
                     </span>
-                </a>
-                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
-                    <span class="thumbnail__box campaign__sponsorLogo">
+                </div>
+                <div class="campaign__sponsorInfo">
+                    <div class="thumbnail__box campaign__sponsorLogo">
                         <span class="thumbnail">
                             <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
                         </span>
-                    </span>
-                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
-                </a>
+                    </div>
+                    <div class="campaign__sponsorName">Walt Disney Animation Studios</div>
+                </div>
             </div><!--.column__sponsor-->
             
             <div class="campaign__column column__campaignName">
                 <h1 class="campaign__name tk--hdr">
-                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                    A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
                 </h1>
             </div><!--.column__campaignName-->
-            
+
             <div class="campaign__column column__totalViews">
                 <span class="campaign__viewTotal">
                     <i class="fa fa-play-circle"></i> 1,235,032
@@ -270,16 +281,33 @@
             <div class="campaign__column column__budget">
                 <div class="campaign__budgetInfo">
                     <span class="campaign__budgetNumbers">
-                        <span class="budget__label">Total:</span>
+                        <span class="budget__label">T<span class="fullText">otal</span>:</span>
                         <strong>$</strong> 950,000.00
                     </span>
                     <span class="campaign__budgetNumbers">
-                        <span class="budget__label">Daily:</span>
+                        <span class="budget__label">D<span class="fullText">aily</span>:</span>
                         <strong>$</strong> 500.00
                     </span>
                 </div>
             </div><!--.column__budget-->
-            
+
+            <div class="campaign__column column__summaryTotals">
+                <div class="campaign__budgetInfo">
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Views:</span>
+                        <i class="fa fa-play-circle"></i> 1,235,032
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Spend:</span>
+                        <strong>$</strong> 361,051.39
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Budget:</span>
+                        <strong>$</strong> 950,000.00
+                    </span>
+                </div>
+            </div><!--.column__summaryTotals-->
+
         </li><!--.campaign__item-->
 
 
@@ -291,27 +319,27 @@
             </div><!--.column__status-->
             
             <div class="campaign__column column__sponsor">
-                <a href="#" class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
+                <div class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
                     <span class="thumbnail">
-                        <img class="thumbnail__img" src="http://www.lorempixel.com/200/200/" alt="CAMPAIGN NAME">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
                     </span>
-                </a>
-                <a href="#" class="campaign__sponsorInfo" title="SPONSOR NAME">
-                    <span class="thumbnail__box campaign__sponsorLogo">
+                </div>
+                <div class="campaign__sponsorInfo">
+                    <div class="thumbnail__box campaign__sponsorLogo">
                         <span class="thumbnail">
                             <img class="thumbnail__img" src="http://www.lorempixel.com/50/50/" alt="SPONSOR NAME">
                         </span>
-                    </span>
-                    <span class="campaign__sponsorName">Walt Disney Animation Studios</span>
-                </a>
+                    </div>
+                    <div class="campaign__sponsorName">Walt Disney Animation Studios</div>
+                </div>
             </div><!--.column__sponsor-->
             
             <div class="campaign__column column__campaignName">
                 <h1 class="campaign__name tk--hdr">
-                    <a href="#" class="campaign__nameLink">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
+                    A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
                 </h1>
             </div><!--.column__campaignName-->
-            
+
             <div class="campaign__column column__totalViews">
                 <span class="campaign__viewTotal">
                     <i class="fa fa-play-circle"></i> 1,235,032
@@ -335,16 +363,33 @@
             <div class="campaign__column column__budget">
                 <div class="campaign__budgetInfo">
                     <span class="campaign__budgetNumbers">
-                        <span class="budget__label">Total:</span>
+                        <span class="budget__label">T<span class="fullText">otal</span>:</span>
                         <strong>$</strong> 950,000.00
                     </span>
                     <span class="campaign__budgetNumbers">
-                        <span class="budget__label">Daily:</span>
+                        <span class="budget__label">D<span class="fullText">aily</span>:</span>
                         <strong>$</strong> 500.00
                     </span>
                 </div>
             </div><!--.column__budget-->
-            
+
+            <div class="campaign__column column__summaryTotals">
+                <div class="campaign__budgetInfo">
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Views:</span>
+                        <i class="fa fa-play-circle"></i> 1,235,032
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Spend:</span>
+                        <strong>$</strong> 361,051.39
+                    </span>
+                    <span class="campaign__budgetNumbers">
+                        <span class="budget__label">Budget:</span>
+                        <strong>$</strong> 950,000.00
+                    </span>
+                </div>
+            </div><!--.column__summaryTotals-->
+
         </li><!--.campaign__item-->
 
     </ul>

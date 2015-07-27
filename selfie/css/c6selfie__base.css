@@ -200,6 +200,18 @@
             }
 
 
+    .ui__tooltipHover:hover .ui__tooltip {
+        display: block;
+    }
+    .ui__tooltip {
+        display: none;
+        position: absolute;
+        background:#fff;
+        border-radius:3px;
+        padding:2em;
+    }
+
+
     
 
 
@@ -255,10 +267,12 @@
             padding:0 0 100%;
         }
 
+
         .thumbnail,
         .thumbnail__img {
             position:absolute;
             display:block;
+            transition:transform 0.3s;
             transform:translateY(50%);
             width:100%;
             height:100%;
@@ -390,7 +404,6 @@
             width:10.5em;
         }
         .column__campaignName {
-            width:calc(100% - 45.5rem);
             padding:0 2em 0 0;
         }
         .column__totalViews {
@@ -401,10 +414,43 @@
             width:6.5em;
             padding:0 2em 0 0;
         }
-        .column__budget {
+        .column__budget,
+        .column__summaryTotals {
             width:8.5em;
             padding:0;
             text-align: right;
+        }
+        .column__summaryTotals {
+            width:10.5em;
+        }
+
+        @media screen and (max-width:69em) {
+            /*
+                up to 1104px wide
+            */
+            .column__campaignName {
+                width:calc(100% - 29.5rem);
+            }
+            .column__totalViews {
+                display: none;
+            }
+            .column__totalSpending {
+                display: none;
+            }
+            .column__budget {
+                display: none;
+            }
+        }
+        @media screen and (min-width:69em) {
+            /*
+                wider than 1104px
+            */
+            .column__campaignName {
+                width:calc(100% - 45.5rem);
+            }
+            .column__summaryTotals {
+                display: none;
+            }
         }
 
 
@@ -477,7 +523,11 @@
             .campaign__thumbnail {
                 height:6em;
                 padding:0;
+                perspective:200px;
             }
+                .campaign__thumbnail:hover .thumbnail {
+                    transform:translate3d(0, 50%, 20px);
+                }
 
 
             .campaign__sponsorInfo {

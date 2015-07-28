@@ -34,8 +34,15 @@
 
                 return params;
             }, {});
+        if('_ADCOUNT_') {
+            if (params.countUrls) {
+                params.countUrls += ' _ADCOUNT_';
+            } else {
+                params.countUrls = '_ADCOUNT_';
+            }
+        }
     </script>
-    <script src="./lib/tpPdkController.js"></script>
+    <script src="tpPdkController.js"></script>
     <style type="text/css">
         .c6billboard__group {
             width:970px;

@@ -1,13 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
 <head>
-    <script>
-        'use strict';
-
-        var LOAD_START = (function() {
-            try { return window.performance.timing.domLoading } catch(e) { return Date.now(); }
-        }());
-    </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>C6 Selfie UI</title>
@@ -20,29 +13,6 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','c6ga');
     </script>
-    <script>
-        var params = window.location.search.replace(/^\?/, '')
-            .split('&')
-            .reduce(function(params, pair) {
-                var parts = pair.split('=').map(decodeURIComponent);
-                var key = parts[0];
-                var value = parts[1];
-
-                if (key) {
-                    params[key] = value;
-                }
-
-                return params;
-            }, {});
-        if('_ADCOUNT_') {
-            if (params.countUrls) {
-                params.countUrls += ' _ADCOUNT_';
-            } else {
-                params.countUrls = '_ADCOUNT_';
-            }
-        }
-    </script>
-    <script src="tpPdkController.js"></script>
     <style type="text/css">
         .c6billboard__group {
             width:970px;
@@ -51,7 +21,7 @@
             font-family: Arial, Helvetica, 'Helvetica Neue', sans-serif;
         }
 
-        #c6billboard__collapsed {
+        .c6billboard__collapsed {
             display: none;
             width:968px;
             height:15px;
@@ -59,7 +29,7 @@
             border:1px solid #FFF;
         }
 
-            #c6ExpandBtn {
+            .c6ExpandBtn {
                 position:absolute;
                 top:0px;
                 left:0px;
@@ -74,13 +44,13 @@
 
 
         
-        #c6billboard__default {
+        .c6billboard__default {
             width:960px; height:240px;
             padding:5px;
             background:#24548b;
         }
 
-            #c6HideBtn {
+            .c6HideBtn {
                 position: absolute;
                 top: 5px;
                 right: 5px;
@@ -149,16 +119,16 @@
 </head>
 <body>
     
-    <div id="unit" class="c6billboard__group">
+    <div class="c6billboard__group">
     	
-        <div id="c6billboard__collapsed">
-        	<button id="c6ExpandBtn"></button>
+        <div class="c6billboard__collapsed">
+        	<button class="c6ExpandBtn"></button>
         </div>
 
-        <div id="c6billboard__default">
-            <button id="c6HideBtn">X Hide Ad</button>
+        <div class="c6billboard__default">
+            <button class="c6HideBtn">X Hide Ad</button>
             <div class="c6billboard-videoPlayer__group">
-                <iframe id="player" class="c6-player" src="http://player.theplatform.com/p/pzkKfC/g40pM2ccK0Eq/embed/select/media/W0NUQi0MB4gO?form=html&autoPlay=true" frameBorder="0" seamless="seamless" allowFullScreen></iframe>
+                <iframe class="c6-player" src="http://player.theplatform.com/p/pzkKfC/g40pM2ccK0Eq/embed/select/media/W0NUQi0MB4gO?form=html&autoPlay=true" frameBorder="0" seamless="seamless" allowFullScreen></iframe>
                 <!--<div style="padding:72px 0 0 0; font-size:80px; color:#24272a;"><i class="fa fa-play-circle-o"></i></div>-->
             </div>
             <a href="http://www.cinema6.com" target="_blank" class="c6billboard__link" title="Learn More">&nbsp;</a>
@@ -172,10 +142,16 @@
         </div>
         
     </div>
-
+    <script src="tpPdkController.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
-        (function() {
+        (function($) {
+            'use strict';
+
+            var params = {};
+            var LOAD_START = (function() {
+                try { return window.performance.timing.domLoading } catch(e) { return Date.now(); }
+            }());
             var EXP_ID = params.exp || 'e-61902bc37cfe16';
             var CARD_ID = params.card || 'rc-f1fefcda8ae8ab';
             var GA_PLAYER_ID = (function(acc,mi,mx){
@@ -195,12 +171,13 @@
                 ct: params.src
             }));
 
-            var player = $pdk.bind('player');
-            var $unit = $('#unit');
-            var $hideButton = $('#c6HideBtn');
-            var $expandButton = $('#c6ExpandBtn');
-            var $default = $('#c6billboard__default');
-            var $collapsed = $('#c6billboard__collapsed');
+            var $unit = $('.c6billboard__group').last();
+            var $player = $unit.find('.c6-player');
+            var $hideButton = $unit.find('.c6HideBtn');
+            var $expandButton = $unit.find('.c6ExpandBtn');
+            var $default = $unit.find('.c6billboard__default');
+            var $collapsed = $unit.find('.c6billboard__collapsed');
+            var player = $pdk.bind($player[0]);
 
             function sendVideoEvent(event, nonInteractive, label) {
                 c6ga('c6.send', 'event', {
@@ -234,6 +211,14 @@
                     }
                 }
             }());
+
+            if('_ADCOUNT_') {
+                if (params.countUrls) {
+                    params.countUrls += ' _ADCOUNT_';
+                } else {
+                    params.countUrls = '_ADCOUNT_';
+                }
+            }
 
             c6ga('create', GA_PLAYER_ID, {
                 'name'         : 'c6',
@@ -370,11 +355,7 @@
                     sendVideoEvent('Unmute');
                 }
             });
-        }());
-    </script>
-    <script type="text/javascript">
-        (function() {
-        }());
+        }(jQuery.noConflict(true)));
     </script>
 </body>
 </html>

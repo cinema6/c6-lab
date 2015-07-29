@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Totally Legit E-Commerce Site</title>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+        <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+        <p>Gimme all your money, using some tokenized credenitals:</p>
+
+        <script>
+            var paymentCreds = {
+                number: '4111111111111111',
+                expirationDate: '02/17'
+            };
+            
+            $.ajax({
+                url: '/braintree/clientToken',
+                success: function(data) {
+                    console.log('got data from clientToken:');
+                    console.log(data);
+                    
+                    var client = new braintree.api.Client({clientToken: data.clientToken});
+                    
+                    client.tokenizeCard(paymentCreds, function(err, nonce) {
+                        if (err) {
+                            console.log('failed tokenizing card: ' + erro);
+                        } else {
+                            console.log('successfully tokenized card');
+                            $('<input>').attr({
+                                type: 'hidden',
+                                name: 'payment_method_nonce',
+                                value: nonce
+                            }).appendTo('#checkout');
+                        }
+                    });
+                }
+            });
+        </script>
+
+        <form id="checkout" method="post" action="/braintree/checkout">
+            <input type="submit" id="submit" value="Pay $10">
+        </form>
+    </body>
+</html>

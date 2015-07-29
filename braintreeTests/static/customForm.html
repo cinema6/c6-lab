@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Totally Legit E-Commerce Site</title>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+        <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+        <p>Gimme all your money, with my own janky form:</p>
+
+        <form id="checkout" method="post" action="/braintree/checkout">
+            <input data-braintree-name="number" placeholder="Card Number">
+            <input data-braintree-name="expiration_date" placeholder="Expiration Date">
+            <input type="submit" id="submit" value="Pay $10">
+        </form>
+
+        <script>
+            $.ajax({
+                url: '/braintree/clientToken',
+                success: function(data) {
+                    console.log('got data from clientToken:');
+                    console.log(data);
+                    
+                    braintree.setup(data.clientToken, 'custom', {
+                        id: 'checkout'
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

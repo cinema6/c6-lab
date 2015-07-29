@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Totally Legit E-Commerce Site</title>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+        <script src="https://js.braintreegateway.com/js/beta/braintree-hosted-fields-beta.18.js"></script>
+        <p>Gimme all your money, using hosted fields:</p>
+
+        <form id="checkout" method="post" action="/braintree/checkout">
+            <label for="card-number">Card Number</label>
+            <div id="card-number"></div>
+            
+            <label for="expiration-date">Expiration Date</label>
+            <div id="expiration-date"></div>
+            
+            <label for="paypal-container">Paypal Option</label>
+            <div id="paypal-container"></div>
+            
+            <input type="submit" value="Pay $10">
+        </form>
+
+        <script>
+            $.ajax({
+                url: '/braintree/clientToken',
+                success: function(data) {
+                    console.log('got data from clientToken:');
+                    console.log(data);
+                    
+                    braintree.setup(data.clientToken, 'custom', {
+                        id: 'checkout',
+                        hostedFields: {
+                            number: {
+                                selector: '#card-number'
+                            },
+                            expirationDate: {
+                                selector: '#expiration-date'
+                            }
+                        },
+                        paypal: {
+                            container: 'paypal-container',
+                            singleUse: false
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

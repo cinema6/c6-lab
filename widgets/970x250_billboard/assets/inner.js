@@ -1,11 +1,23 @@
-(function($,params) {
+(function($) {
     'use strict';
 
+    var PARAMS = window.location.search.replace(/^\?/, '').split('&')
+        .map(function(pair) {
+            return pair.split('=')
+                .map(decodeURIComponent)
+                .map(function(part) {
+                    return part.trim();
+                });
+        })
+        .reduce(function(params, pair) {
+            params[pair[0]] = pair[1];
+            return params;
+        }, {});
     var LOAD_START = (function() {
-        try { return window.performance.timing.domLoading } catch(e) { return Date.now(); }
+        try { return window.performance.timing.domLoading; } catch(e) { return Date.now(); }
     }());
-    var EXP_ID = params.exp || 'e-61902bc37cfe16';
-    var CARD_ID = params.card || 'rc-f1fefcda8ae8ab';
+    var EXP_ID = PARAMS.exp || 'e-61902bc37cfe16';
+    var CARD_ID = PARAMS.card || 'rc-f1fefcda8ae8ab';
     var GA_PLAYER_ID = (function(acc,mi,mx){
         return acc+'-'+parseInt(((Math.random()*999999999)%(mx-mi+1))+mi,10);
     }('UA-44457821',31,35));
@@ -20,16 +32,21 @@
         return r;
     }(EXP_ID, {
         cx: 'banner',
-        ct: params.src
+        ct: PARAMS.src
     }));
 
-    var $unit = $('.c6billboard__group').last();
-    var $player = $unit.find('.c6-player');
-    var $hideButton = $unit.find('.c6HideBtn');
-    var $expandButton = $unit.find('.c6ExpandBtn');
-    var $default = $unit.find('.c6billboard__default');
-    var $collapsed = $unit.find('.c6billboard__collapsed');
+    var $body = $('body');
+    var $unit = $('.c6billboard__group');
+    var $player = $('.c6-player');
+    var $hideButton = $('.c6HideBtn');
+    var $expandButton = $('.c6ExpandBtn');
+    var $default = $('.c6billboard__default');
+    var $collapsed = $('.c6billboard__collapsed');
     var player = $pdk.bind($player[0]);
+
+    function notify(message, data) {
+        window.parent.postMessage(JSON.stringify({ message: message, data: data, c6: true }), '*');
+    }
 
     function sendVideoEvent(event, nonInteractive, label) {
         c6ga('c6.send', 'event', {
@@ -61,7 +78,7 @@
                 fn();
                 fns.push(fn);
             }
-        }
+        };
     }());
 
     c6ga('create', GA_PLAYER_ID, {
@@ -118,11 +135,13 @@
         $default.hide();
         $collapsed.show();
         player.pause(true);
+        notify('resize', $body.height());
     });
     $expandButton.click(function() {
         $default.show();
         $collapsed.hide();
         player.pause(false);
+        notify('resize', $body.height());
     });
 
     player.addEventListener('OnMediaPlaying', function(event) {
@@ -159,7 +178,7 @@
         sendVideoEvent('AutoPlayAttempt', true);
     });
     player.addEventListener('OnMediaStart', function() {
-        var pixels = (params.countUrls || '')
+        var pixels = (PARAMS.countUrls || '')
             .split(' ')
             .filter(function(pixel) { return !!pixel; });
 
@@ -199,4 +218,4 @@
             sendVideoEvent('Unmute');
         }
     });
-}(jQuery.noConflict(true),window.__c6__ || {}));
+}(jQuery.noConflict(true)));

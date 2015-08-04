@@ -15,11 +15,12 @@
             return id;
         };
     }());
-    var iframe = makeFrame('_ADPATH_/inner.html?countUrls=_ADCOUNT_%20_ADSUB2_&src=_ADSUB1_', {
-        width: '970',
-        height: '250',
-        scrolling: 'no'
-    });
+    var iframe = makeFrame(
+        '_ADPATH_/inner.html?countUrls=' + encodeURIComponent('_ADCOUNT_') +
+            '%20' + encodeURIComponent('_ADSUB2_') +
+            '&src=' + encodeURIComponent('_ADSUB1_'),
+        { width: '970', height: '250', scrolling: 'no' }
+    );
 
     function makeFrame(src, attrs) {
         /* jshint evil:true */

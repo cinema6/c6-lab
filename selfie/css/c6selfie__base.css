@@ -522,37 +522,26 @@
             margin:0 0 2px 0;
             display: block;
             color:#5c5c5c;
-            transition:box-shadow 0.3s;
+            transition:transform 0.3s;
         }
             .campaign__item:hover {
                 cursor: pointer;
+                transform:translate3d(0.375em, 0, 0);
             }
 
 
             .campaign__item--active {
                 border-left:2px solid #20d783;
             }
-                .campaign__item--active:hover {
-                    box-shadow: 0 0 5px 0 #20d783;
-                }
             .campaign__item--pending {
                 border-left:2px solid #00c0ff;
             }
-                .campaign__item--pending:hover {
-                    box-shadow: 0 0 5px 0 #00c0ff;
-                }
             .campaign__item--draft {
                 border-left:2px solid #9c9c9c;
             }
-                .campaign__item--draft:hover {
-                    box-shadow: 0 0 5px 0 #9c9c9c;
-                }
             .campaign__item--finished {
                 border-left:2px solid #fff;
             }
-                .campaign__item--finished:hover {
-                    box-shadow: 0 0 5px 0 #9c9c9c;
-                }
 
             .campaign__item .fa {
                 font-size:0.875rem;
@@ -584,11 +573,7 @@
             .campaign__thumbnail {
                 height:6em;
                 padding:0;
-                perspective:200px;
             }
-                .campaign__item:hover .thumbnail {
-                    transform:translate3d(0, 50%, 20px);
-                }
                 @media screen and (max-width:48em) {
                     /*
                         up to 768px wide

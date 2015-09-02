@@ -1,0 +1,25 @@
+{
+  "name": "c6-lab",
+  "version": "0.0.0",
+  "description": "Cinema6 design sandbox.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cinema6/c6-lab.git"
+  },
+  "author": "Cinema6",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cinema6/c6-lab/issues"
+  },
+  "homepage": "https://github.com/cinema6/c6-lab",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-htmlmin": "^0.4.0",
+    "grunt-inline": "^0.3.6"
+  }
+}

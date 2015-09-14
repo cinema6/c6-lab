@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+</head>
+<body>
+    <div class="prelogin__gridHolder">
+        <div class="grid grid--center grid--middle">
+            <div class="grid__item one-whole">
+            <div class="brandingHead">
+                <h1 class="text--center tk--hdr"><img src="img/cinema6-logo.png" /><span class="ir">Cinema6</span></h1>
+            </div>
+                <form class="login__form">
+                    <fieldset class="form__item">
+                        <input class="form__textBox form__fillCheck" type="text" id="c6-username">
+                        <label class="form__label" for="c6-username">
+                            <i class="fa fa-times ui--error"></i> 
+                            Email
+                        </label>
+                        <div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                Please enter your email associated with the account 
+                            </div>
+                        </div>
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg">
+                                <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                            </p>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__item">
+                        <input class="form__textBox form__fillCheck" type="password" id="c6-password">
+                        <label class="form__label" for="c6-password">
+                            <i class="fa fa-times ui--error"></i> 
+                            Password
+                        </label>
+                        <div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                Please enter your password
+                            </div>
+                        </div>
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg">
+                                <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                            </p>
+                        </div>
+                    </fieldset>
+                    <div class="ui__btnHolder">
+                        <button class="action__btn action__btn--full">Login</button>
+                    </div>
+                    <div class="subActions__box">
+                        <p class="subAction text--center"><a href="#">Forgot Password?</a></p>
+                    </div>
+                    <div class="subActions__box">
+                        <p class="subAction text--center">Don't have a Selfie account? <a href="#">Sign up Now!</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>    

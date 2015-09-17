@@ -81,4 +81,10 @@ window.initAd = function initAd(config) {
         }
     });
     window.mraid.addEventListener('error', error);
+
+    document.body.onclick = function clickthrough() {
+        logger.info('Ad clicked!');
+
+        window.mraid.open(config.clickthrough);
+    };
 };

@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
     <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+        <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
 
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/select2.min.js"></script>
@@ -36,20 +37,24 @@
         <div class="tabBar__group">
             <ul class="tabBar__list clearfix">
                 <li class="tabBar__item">
-                <button class="tabBar__btn" type="button">
-                    Stats</button>
+                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
+                    Campaign Details</button>
                 </li>
                 <li class="tabBar__item">
-                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
-                    Manage Campaign</button>
+                <button class="tabBar__btn" type="button">
+                    Budget</button>
                 </li>
                 <li class="tabBar__item tabBar__item--active">
                 <button class="tabBar__btn" type="button">
-                    Targetting</button>
+                    Targeting</button>
+                </li>                
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='payment-options.html' ">
+                    Payment Options</button>
                 </li>
                 <li class="tabBar__item">
                 <button class="tabBar__btn" type="button">
-                    Payment Options</button>
+                    Stats</button>
                 </li>
             </ul><!--.tabBar__list-->
             
@@ -58,8 +63,8 @@
     
     <div class="tabContent targeting__content container">
         <header class="tabContent__header">
-            <h2 class="tabContent__title tk--hdr">Choose Your Audience</h2>
-            <span class="tabContent__subtitle">Sub heading can be entered here to explain more about the tab function</span>
+            <h2 class="tabContent__title tk--hdr">Target your campaign</h2>
+            <span class="tabContent__subtitle">Reach your desired audience by selecting relevant options</span>
         </header>
     <div class="tabContent__gridHolder">
 
@@ -68,10 +73,13 @@
             <div class="grid__item one-half">
                 
                 <section class="formSection__group">               
-                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Choose Your Audience</span>
+                    </h1>
+                    <p class="formSection__introText">Where do you want your ad to show up?</p>
                     <div class="form__items">
 
-                        <fieldset class="form__item">
+                        <fieldset class="form__item form__item--shortInput">
                             <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
                                 <option>Entertainment</option>
                                 <option>Food</option>
@@ -95,19 +103,36 @@
                                 </p>
                             </div>
                         </fieldset>
-
-                        <fieldset class="form__item">
-                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
-                                <option>Alabama</option>
-                                <option>Connecticut</option>
-                                <option>Delaware</option>
-                                <option>Georgia</option>
-                                <option>Idaho</option>
-                                <option>Kansas</option>
+                        <fieldset class="form__item form__item--shortInput">
+                            <select class="form__selectBox form__selectBox--single">
+                                <option>Choose States</option>
+                                <option>Choose Metropolitian Areas</option>
                             </select>
                             <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
                                 Geography
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>            
+                        <!-- show either metro or state based on selection above-->
+                        <fieldset class="form__item form__item--shortInput">
+                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
+                                <option>Greater NYC Area</option>
+                                <option>Philadelphia Metro</option>
+                                <option>Washington DC</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Metropolitian Areas
                             </label>
                             <div class="form__helpBox form__helpBox--right">
                                 <div class="form__helpText">
@@ -123,15 +148,165 @@
                                 <i class="fa fa-asterisk"></i> Using this feature will add an additional cost of $0.50 per 1000 video plays.
                             </p>
                         </fieldset>
-                        <div class="ui__btnHolder">
-                            <button class="action__btn action__btn--big">Save Changes</button>
-                        </div>
+                        <!-- show either metro or state based on selection above-->
+                         <fieldset class="form__item form__item--shortInput">
+                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                States
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    You can use geographic data to target viewers from a specific state.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                            <p class="tk--fineprint tk--warning">
+                                <i class="fa fa-asterisk"></i> Using this feature will add an additional cost of $0.50 per 1000 video plays.
+                            </p>
+                        </fieldset>
                     </div>
-                </section><!--.formSection__group-->                
+                </section><!--.formSection__group-->
+                <section class="formSection__group formSection__group--sub">
+                   <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Demographics</span>
+                    </h1>
+                    <p class="formSection__introText">Who should be able to see your ads?</p>
+                        <div class="form__items">
+                            <fieldset class="form__item form__item--shortInput">
+                                <select class="form__selectBox form__selectBox--single">
+                                    <option>All Genders</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                                <label class="form__label" for="c6-sponsor-name">   
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Gender
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item form__item--shortInput">
+                                <select class="form__selectBox form__selectBox--single">
+                                    <option>All Ages</option>
+                                    <option>Under 18</option>
+                                    <option>18 - 24</option>
+                                    <option>25 - 39</option>
+                                    <option>40 - 64</option>
+                                    <option>65 and older</option>
+                                </select>
+                                <label class="form__label" for="c6-sponsor-name">   
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Age
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item form__item--shortInput">
+                                <select class="form__selectBox form__selectBox--single">
+                                    <option>All Income Groups</option>
+                                    <option>Under 25,000</option>
+                                    <option>25,000 - 50,000</option>
+                                    <option>50,000 - 100,000 </option>
+                                    <option>Over 100,000</option>
+                                </select>
+                                <label class="form__label" for="c6-sponsor-name">   
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Household Income
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <div class="ui__btnHolder form__item--shortInput">
+                                <button class="action__btn action__btn--full">Save Changes</button>
+                            </div>                            
+                        </div>
+                </section>
 
             </div><!--.grid__item-->        
             
         </div><!--.grid grid--center-->
+           
 
     </div><!--.gridHolder-->
 </div><!--.tabContent-->

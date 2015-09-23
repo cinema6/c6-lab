@@ -1245,9 +1245,11 @@ fa,
     }
     .settingsContent__header {
         margin:0 auto 0;
-        padding:0 2% 0;
+        padding:0;
         max-width:104em;
+        width:96%;
     }
+
         .settingsContent__title {
             display:block;
             font-size:2em;

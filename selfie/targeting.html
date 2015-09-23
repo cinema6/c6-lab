@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Targeting - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+</head>
+<body>
+
+<nav class="mainNav__group">
+    
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="campaigns.html">Campaigns</a>  /  Captain Morgan Very Important Campaign
+            </h1>
+        </div><!--.mainHeader__group-->
+        <div class="tabBar__group">
+            <ul class="tabBar__list clearfix">
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button">
+                    Stats</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
+                    Manage Campaign</button>
+                </li>
+                <li class="tabBar__item tabBar__item--active">
+                <button class="tabBar__btn" type="button">
+                    Targetting</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button">
+                    Payment Options</button>
+                </li>
+            </ul><!--.tabBar__list-->
+            
+        </div><!--.tabBar__group-->
+    </div><!--.pageHeader__group-->
+    
+    <div class="tabContent targeting__content container">
+        <header class="tabContent__header">
+            <h2 class="tabContent__title tk--hdr">Choose Your Audience</h2>
+            <span class="tabContent__subtitle">Sub heading can be entered here to explain more about the tab function</span>
+        </header>
+    <div class="tabContent__gridHolder">
+
+        <div class="grid grid--center">
+        
+            <div class="grid__item one-half">
+                
+                <section class="formSection__group">               
+                    
+                    <div class="form__items">
+
+                        <fieldset class="form__item">
+                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
+                                <option>Entertainment</option>
+                                <option>Food</option>
+                                <option>Gaming</option>
+                                <option>Music</option>
+                                <option>Sports</option>
+                                <option>Travel</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Content Categories
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    If possible, we will try to match your ad to relevant content. Please choose your category preferences here.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
+                                <option>Alabama</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>Georgia</option>
+                                <option>Idaho</option>
+                                <option>Kansas</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Geography
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    You can use geographic data to target viewers from a specific state.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                            <p class="tk--fineprint tk--warning">
+                                <i class="fa fa-asterisk"></i> Using this feature will add an additional cost of $0.50 per 1000 video plays.
+                            </p>
+                        </fieldset>
+                        <div class="ui__btnHolder">
+                            <button class="action__btn action__btn--big">Save Changes</button>
+                        </div>
+                    </div>
+                </section><!--.formSection__group-->                
+
+            </div><!--.grid__item-->        
+            
+        </div><!--.grid grid--center-->
+
+    </div><!--.gridHolder-->
+</div><!--.tabContent-->
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+    
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

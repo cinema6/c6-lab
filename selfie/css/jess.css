@@ -1,0 +1,112 @@
+
+
+/*  ================================================
+    ad preview classes
+    ================================================ */
+
+
+.adPreview__group--desktop .adPreview__mobile,
+.adPreview__group--desktop .adPreview__mobileWireFrame,
+.adPreview__group--mobile .adPreview__desktop--dormant,
+.adPreview__group--mobile .adPreview__desktop {
+    display:none;
+}
+
+    .adPreview__button,
+    .adPreview__button:focus {
+        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+        border-bottom:2px solid #5c5c5c;
+        padding:0.5125em 0 0.2625em;
+        width:100%;
+        transition:border 0.3s, background 0.3s;
+        position:relative;
+        z-index:1;
+    }
+
+    .adPreview__group--desktop .adPreview__buttonDesktop .adPreview__button,
+    .adPreview__group--mobile .adPreview__buttonMobile .adPreview__button {
+        padding:0.3875em 0;
+        border-top:2px solid #00c0ff;
+        border-bottom:none;
+        background-color:#fff;
+    }
+    
+
+
+
+    /*  desktop/mobile ad preview classes
+        ================================================ */
+
+        .adPreview__container {
+            padding:2em;
+            background-color:#fff;
+            box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+  
+        }
+
+
+            .adPreview__desktop {
+                width:100%;
+                padding:29% 0;
+                background-color:#e8e8e8;
+                position:relative;
+            }
+            .adPreview__desktop:before {
+                content:"No preview available";
+                font: italic 400 1.5em 'Source Sans Pro', Arial, Helvetica, sans-serif;
+                color:#b1b1b1;
+            }
+
+
+
+                .desktop__iframe {
+                    position:absolute;
+                    width:100%;
+                    top:0;
+                    left:0;
+                    height:100%;
+                    border:2px solid #e8e8e8;
+                }
+
+
+
+
+            .adPreview__mobile {
+                background:url("../img/mobile-wireframe.svg") no-repeat center;
+                width:40%;
+                height:90%;
+                padding-bottom:84%;
+                margin:0 auto;
+                position:relative;
+            }
+            .adPreview__mobile:before {
+                content:"No preview available";
+                font: italic 400 1.5em 'Source Sans Pro', Arial, Helvetica, sans-serif;
+                left:1em; right:1em;
+                top:3.5625em;
+                position:absolute;
+            }
+
+
+                .mobile__iframe {
+                    width:90%;
+                    height:81%;
+                    background-color:#f1f1f1;
+                    position:absolute;
+                    top:8.5%; 
+                    left:5%;
+                }
+
+
+
+            
+
+
+
+
+
+
+
+
+
+

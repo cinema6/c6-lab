@@ -279,6 +279,61 @@
         color:#b1b1b1;
     }
 
+/*  ================================================
+    mainNav classes
+    ================================================ 
+    (Jess added)                                    */
+
+    .mainNav__settings {
+        width:100%;
+        height:4rem;
+        border-top:1px solid #232628;
+        position:absolute;
+        bottom:0;
+    }
+        .mainNav__iconOnly {
+            font-size:2rem;
+            color:#87949f;
+            padding:1.125rem;
+        }
+        .mainNav__settings:hover .mainNav__iconOnly:hover {
+            background:#232628;
+        }
+
+        .mainNav__dropDownGroup {
+            list-style:none;
+            margin:0;
+            padding:0;
+            position:absolute;
+            z-index:11;
+            bottom:0;
+            left:4rem;
+            background:#232628;
+            color:#fff;
+            display:none;
+        }
+
+        .mainNav__settings:hover .mainNav__dropDownGroup {
+            display:block;
+        }
+
+        .mainNav__dropDownGroup a:hover {
+            color:#fff;
+        }
+
+            .mainNav__dropDownItem {
+                margin:0;
+                padding:1.25rem 4rem;
+                display:block;
+                width:100%;
+                background:#232628;
+                transition:0.3s background;
+            }
+
+            .mainNav__dropDownItem:hover {
+                background:#29c5ff;
+            }
+
 
 
 /*  ================================================

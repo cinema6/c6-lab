@@ -60,6 +60,9 @@
     .fa {
         font-size:0.875rem;
     }
+    .text--center {
+        text-align: center;
+    }
     .tk--hdr {
         font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
         font-weight:300;
@@ -267,7 +270,7 @@ fa,
         .action__btnSecondary--big {
             padding:1rem 1.75rem 0.875rem;
             font-size:1.5em;
-            width:100%;
+            margin: 0.25rem;
         }
 
 
@@ -557,7 +560,6 @@ fa,
     .mainNav__settings {
         width:100%;
         height:4rem;
-        border-top:1px solid #232628;
         position:absolute;
         bottom:0;
     }
@@ -582,7 +584,13 @@ fa,
             color:#fff;
             display:none;
         }
-
+        .mainNav__item--active {
+            background: #222;
+            border-left: 2px solid #00c0ff;
+        }
+            .mainNav__dropDownGroup a {
+                color: #eee;
+            }
         .mainNav__settings:hover .mainNav__dropDownGroup {
             display:block;
         }
@@ -699,7 +707,6 @@ fa,
 
         .modalPayment__group {
             max-width:45rem;
-            height:20rem; /*    in v2 we'll have to use media queries to make sure height is good   */
             overflow-y:auto;
             padding:1em;
         }
@@ -838,6 +845,7 @@ fa,
                 padding: 0 3em;
                 line-height: 3em;
                 -webkit-box-shadow: inset 3px 3px 5px -1px rgba(0,0,0,0.1), inset -3px 3px 5px -1px rgba(0,0,0,0.1);
+                -moz-box-shadow: inset 3px 3px 5px -1px rgba(0,0,0,0.1), inset -3px 3px 5px -1px rgba(0,0,0,0.1);
                 box-shadow: inset 3px 3px 5px -1px rgba(0,0,0,0.1), inset -3px 3px 5px -1px rgba(0,0,0,0.1);
             }
             .tabBar__btn {
@@ -1376,27 +1384,32 @@ fa,
     .payment__default {
         color:#20d783;
         font-size:1.25em;
-        position:absolute;
+        /*position:absolute;
         top:0.25em;
-        right:0.5em;
+        right:0.5em; 
+        Removed by Dhaval*/
     }
 
     .payment__group .payment__default {
         display:none;
     }
-
+    .payment__group--info { 
+        margin-right: 2.25em;
+    }
     .payment__group.payment__group--default .payment__default {
         display:block;
     }
 
-        .payment__kind {
+        .payment__type {
            font-size:1.5em;
            margin:0 0.5em 0 0;
+           font-weight: 400;
         }
 
         .payment__id {
            font-size:1.5em;
            margin:0 1em 0 0;
+           font-weight: 400;
         }
 
         .payment__exp {
@@ -1411,7 +1424,93 @@ fa,
         margin:3.25em 0 0;
     }
 
+/*  ================================================
+    action menu styles
+    ================================================ */
+    .action__row {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+    }
+        .action__row--item {
+            display: inline-block;
+            /*width: 1.5em;
+            height: 1.75em;*/
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 0.25em;
+        }
+        .action__dropdown {
+            margin-top: 0.25em;
+        }
 
+        .action__dropdown ul {
+            list-style:none;
+            position:relative;
+            float:left;
+            margin:0;
+            padding:0
+        }
+
+        .action__dropdown ul a {
+            display:block;
+            color:#333;
+            text-decoration:none;
+            font-weight:normal;
+            font-size:0.875em;
+            line-height:2em;
+            padding:0 15px;
+        }
+
+        .action__dropdown ul li {
+            position:relative;
+            float:left;
+            margin:0;
+            padding:0
+        }
+
+        .action__dropdown ul li.current-menu-item {
+            background:#ddd
+        }
+
+        .action__dropdown ul ul li:hover {
+            background:#f6f6f6;
+        }
+
+        .action__dropdown ul ul {
+            display:none;
+            position:absolute;
+            top:100%;
+            right:0;
+            background:#fff;
+            padding:0;
+            z-index: 100;
+            box-shadow: 0 0 5px #ccc;
+        }
+
+        .action__dropdown ul ul li {
+            float:none;
+            width:120px;
+            text-align: left;
+        }
+        .action__dropdown ul ul li:hover {
+            background: #f5f5f5;
+        }
+
+        .action__dropdown ul ul a {
+            line-height:120%;
+            padding:10px 15px
+        }
+
+        .action__dropdown ul ul ul {
+            top:0;
+            left:100%
+        }
+
+        .action__dropdown ul li:hover > ul {
+            display:block
+        }
 
 /*  ================================================
     form classes

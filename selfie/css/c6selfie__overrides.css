@@ -5,22 +5,6 @@
     .brandingHead {
         margin-top: 5em;
     }
-    /*form elements change to white background*/
-    .form__textBox {
-        background: #fff;
-        border-bottom: 2px solid transparent;
-        padding: 0.5em;
-    }
-    .form__label {
-        z-index: 1;
-    }
-    .form__textArea {
-        border: none;
-    }
-    .form__item--sub .form__textBox {
-        background: #f5f5f5;
-        color: #1c1c1c;
-    }
     /*helper classes*/
     .item--left {
         float: left;
@@ -36,6 +20,28 @@
     }
     .text--right {
         text-align: right;
+    }
+    /*form elements change to white background*/
+    .form__textBox {
+        background: #fff;
+        border-bottom: 2px solid #eee;
+        box-shadow: inset 0 0 3px #bbb;
+                -moz-box-shadow: inset 0 0 3px #bbb;
+                -webkit-box-shadow: inset 0 0 3px #bbb;
+        padding: 0.5em;
+    }
+    .form__label {
+        z-index: 1;
+    }
+    .form__textArea {
+        border: none;
+    }
+    .form__item--sub .form__textBox {
+        background: #f5f5f5;
+        color: #1c1c1c;
+    }
+    .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple {
+        padding: 0.5em;
     }
 
 /*  ================================================
@@ -93,4 +99,30 @@
         margin-top: 0;
         margin-left: 0.5em;
         margin-bottom: 0;
+    }
+/*  ================================================
+    Account Settings and Payment screen styles
+    ================================================ */    
+    
+    /*display boxes for account settings*/
+    .card--item {
+        background: #fff;
+    }
+    .card--item .tk--hdr {
+        font-weight: normal;
+    }
+    .accountSettings__box-item, .paymentOptions__box-item {
+        list-style-type: none;
+        padding: 1em 1em 2em 1em;
+        border-bottom: 1px solid #eee;
+    }
+    .accountSettings__box-item li, .paymentOptions__box-item li {
+        padding: 0;
+    }
+    .accountSettings__box-item li h2, .accountSettings__box-item li h3, .paymentOptions__box-item li h2, .paymentOptions__box-item li h3{
+        margin: 0;
+    }
+    .accountSettings__box-item li h2, .paymentOptions__box-item li h2 {
+        display: inline-block;
+        margin-right: 1em;
     }

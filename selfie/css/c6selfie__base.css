@@ -859,7 +859,8 @@ fa,
     /*  data column classes
         ================================================ */
         .sortBar__item,
-        .campaign__column {
+        .campaign__column,
+        .paymentHistory__column {
             float:left;
             padding-right:1em;
             box-sizing:content-box;
@@ -943,6 +944,76 @@ fa,
             .column__campaignName {
                 width:calc(100% - 17.5rem);
             }
+        }
+
+    /*  Payment screen sortbar classes
+        Jess
+    ================================================ */
+
+        .column__paymentDate {
+            width:10em;
+            padding:0 2em 0 0;
+        }
+
+        .column__paymentCampaign {
+            width:calc(100% - 54em);
+            padding:0 2em 0 0;
+        }
+
+        .column__paymentMethod {
+            width:18em;
+            padding:0 2em 0 0;
+        }
+
+        .column__paymentAmount {
+            width:18em;
+            padding:0 2em 0 0;
+        }
+
+        @media screen and (max-width:160em) {
+            /*
+                up to 1600px wide
+            */
+            .column__paymentDate {
+                width:5em;
+            }
+
+            .column__paymentCampaign {
+                width:calc(100% - 34em);
+                padding-right:1em;
+            }
+
+            .column__paymentMethod {
+                width:11em;
+                padding-right:1em;
+            }
+
+            .column__paymentAmount {
+                width:13em;
+                padding-right:1em;
+            }
+
+        }
+
+
+        @media screen and (max-width:69em) {
+            /*
+                up to 1104px wide
+            */
+
+
+        }
+        @media screen and (max-width:48em) {
+            /*
+                up to 768px wide
+            */
+
+        }
+        @media screen and (max-width:42em) {
+            /*
+                up to 672px wide
+            */
+
         }
 
 
@@ -1185,7 +1256,99 @@ fa,
                     padding-left:2.5em;
                 }
 
-                
+/*  ================================================
+    payment history list classes
+    (Jess)
+    ================================================ */
+    .paymentHistory__list {
+        margin: 8em 1.5em 5em 1.5em;
+        padding: 0;
+        list-style: none;
+        position:relative;
+    }
+
+        .paymentHistory__item {
+            background:#fff;
+            height:4.5em;
+            padding:0.5em 1.5em 0.5625em 1.375em;
+            margin:0 0 0.5em 0;
+            display: block;
+            color:#5c5c5c;
+        }
+
+            .paymentHistory__item .fa {
+                font-size:0.875rem;
+            }
+
+            .paymentHistory__date {
+                display:block;
+                margin:0.25em 0 0.3125em;
+                line-height:1.125em;
+                color:#1c1c1c;
+                font-size:1.25em;
+                font-weight:normal;
+            }
+            
+            .paymentHistory__time {
+                display: block;
+                font-size:0.875em;
+            }
+
+
+            .paymentHistory__campaign {
+                color:#1c1c1c;
+                font-size:1.25em;
+                font-weight:normal;
+                line-height: 1.2;
+                margin:0.2em 0 0.15em 0;
+            }
+
+            .paymentHistory__method {
+                display:block;
+                margin:0.25em 0 0.3125em;
+                line-height:1.125em;
+                color:#1c1c1c;
+                font-size:1.25em;
+                font-weight:normal;
+            }
+
+            .paymentHistory__methodOwner {
+                display: block;
+                font-size:0.875em;
+            }
+
+
+            .paymentHistory__paymentInfo {
+                margin:0.375em 0 0 0;
+                position: relative;
+            }
+
+                .paymentInfo__label {
+                    position:absolute;
+                    left:0;
+                    margin:1px 0 0 0;
+                    text-align: left;
+                    font-size:0.875em;
+                    color:#9c9c9c;
+                }
+
+                .paymentInfo__paymentNumbers {
+                    display: block;
+                    line-height:1.5em;
+                    padding-left:5em;
+                    text-align:right;
+                }
+
+                .paymentInfo__total {
+                    color:#1c1c1c;
+                    font-size:1.25em;
+                    line-height:1em;
+                    font-weight:normal;
+                }
+
+
+   
+          
 /*  ================================================
     UI Elements classes
     ================================================ */

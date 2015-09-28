@@ -1300,6 +1300,9 @@ fa,
                 font-size:1.25em;
                 font-weight:normal;
                 line-height: 1.2;
+                width:100%;
+                height:2.5em;
+                overflow:hidden;
                 margin:0.2em 0 0.15em 0;
             }
 

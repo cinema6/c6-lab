@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Payment Options - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <!-- script to copy the selected payment method from the drop down and show as selected-->
+        <script type="text/javascript">
+          //<![CDATA[
+            $(window).load(function(){
+            $('.pmtDropdown__btn').click(function() {
+            $('.pmtDropdown__menu').slideToggle(200).css('none');
+            $('.pmtDropdown__menu li').click(function() {
+                $('.pmtDropdown__btn').html($(this).html());
+                $('.pmtDropdown__menu').slideUp(200);
+                    });
+                });            
+            });//]]> 
+        </script>
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png" />
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>       
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="campaigns.html">Campaigns</a>  /  Captain Morgan Very Important Campaign
+            </h1>
+        </div><!--.mainHeader__group-->
+        <div class="tabBar__group">
+            <ul class="tabBar__list clearfix">
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button">
+                    Stats</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
+                    Manage Campaign</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='targeting.html' ">
+                    Targeting</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='budget.html' ">
+                    Budget</button>
+                </li>
+                <li class="tabBar__item tabBar__item--active">
+                <button class="tabBar__btn" type="button" onclick="location.href='payment-options.html' ">
+                    Payment Options</button>
+                </li>
+            </ul><!--.tabBar__list-->
+            
+        </div><!--.tabBar__group-->
+    </div><!--.pageHeader__group-->
+    
+    <div class="tabContent targeting__content container">
+        <header class="tabContent__header">
+            <h2 class="tabContent__title tk--hdr">Paymenet Options</h2>
+            <span class="tabContent__subtitle">Your campaign would use the primary payment method provided in the account settings unless you choose a different option</span>
+        </header>
+    <div class="tabContent__gridHolder">
+
+        <div class="grid grid--center">
+        
+            <div class="grid__item one-half">
+                
+                <section class="formSection__group">               
+                    <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Campaign Name</span>
+                    </h1>
+                    <p class="formSection__introText">Captain Morgan Very Important Campaign</p>
+                    <div class="form__items">
+                        <fieldset class="form__item form__item--shortInput">
+                        <div class="pmtDropdown">
+                        <!-- current payment method-->
+                            <button class="btn pmtDropdown__btn default"><span class="ui__clickDrop--bigText">Visa ***3245 </span><span class="ui__clickDrop--sub-label"> Expires 07/2018</span>
+                                <span class="ui__clickDrop--sub-label-block">Genesis Media</p><i class="fa fa-chevron-down"> </i>
+                                </button>
+                                <!-- all payment method options-->
+                            <ul class="pmtDropdown__menu">
+                                <li class="pmtDropdown__menu--item">
+                                    <button class="ui__clickDropBtn" type="button" title="Visa1" ><span class="ui__clickDrop--bigText">Visa ***3245</span> <span class="ui__clickDrop--sub-label"> Expires 07/2018</span>
+                                        <span class="ui__clickDrop--sub-label-block">Genesis Media</p>
+                                    </button></li>
+                                <li class="pmtDropdown__menu--item">
+                                    <button class="ui__clickDropBtn" type="button" title="Visa1" ><span class="ui__clickDrop--bigText">Visa ***3245</span> <span class="ui__clickDrop--sub-label"> Expires 07/2018</span>
+                                        <span class="ui__clickDrop--sub-label-block">Genesis Media2</p>
+                                    </button></li>
+                                <li class="pmtDropdown__menu--item">
+                                    <button class="ui__clickDropBtn" type="button" title="Paypal"><span class="ui__clickDrop--bigText">Paypal</span> <span class="ui__clickDrop--sub-label"></span>
+                                        <span class="ui__clickDrop--sub-label-block">johndoe@gmail.com</p>
+                                    </button>
+                                </li>
+                                <li class="pmtDropdown__menu--item">
+                                    <button class="ui__clickDropBtn" type="button" title="Paypal2" ><span class="ui__clickDrop--bigText">Paypal2</span> <span class="ui__clickDrop--sub-label"></span>
+                                        <span class="ui__clickDrop--sub-label-block">janedoe@gmail.com</p>
+                                    </button>
+                                </li>
+                                <li class="pmtDropdown__menu--item">
+                                    <button class="ui__clickDropBtn" type="button" title="addCard" ><span class="ui__clickDrop--bigText">Paypal2</span> <span class="ui__clickDrop--sub-label"></span>
+                                        <span class="ui__clickDrop--sub-label-block">Add New Card</p>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div><!--pmtDropdown-->
+                        </fieldset>
+                        
+                        <div class="ui__btnHolder">
+                            <button class="action__btn action__btn--big">Save Changes</button>
+                        </div>
+                    </div>
+                </section><!--.formSection__group-->                
+
+            </div><!--.grid__item-->        
+            
+        </div><!--.grid grid--center-->
+
+    </div><!--.gridHolder-->
+</div><!--.tabContent-->
+
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

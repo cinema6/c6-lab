@@ -20,7 +20,22 @@
 <body>
 
 <nav class="mainNav__group">
-    
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>       
 </nav>
 
 
@@ -36,25 +51,25 @@
         </div><!--.mainHeader__group-->
         <div class="tabBar__group">
             <ul class="tabBar__list clearfix">
+               <li class="tabBar__item">
+                <button class="tabBar__btn" type="button">
+                    Stats</button>
+                </li>
                 <li class="tabBar__item">
                 <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
-                    Campaign Details</button>
+                    Manage Campaign</button>
                 </li>
                 <li class="tabBar__item">
-                <button class="tabBar__btn" type="button">
+                <button class="tabBar__btn tabBar__item--active" type="button" onclick="location.href='targeting.html' ">
+                    Targeting</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='budget.html' ">
                     Budget</button>
                 </li>
-                <li class="tabBar__item tabBar__item--active">
-                <button class="tabBar__btn" type="button">
-                    Targeting</button>
-                </li>                
                 <li class="tabBar__item">
                 <button class="tabBar__btn" type="button" onclick="location.href='payment-options.html' ">
                     Payment Options</button>
-                </li>
-                <li class="tabBar__item">
-                <button class="tabBar__btn" type="button">
-                    Stats</button>
                 </li>
             </ul><!--.tabBar__list-->
             
@@ -103,7 +118,7 @@
                                 </p>
                             </div>
                         </fieldset>
-                        <fieldset class="form__item form__item--shortInput">
+                        <!--<fieldset class="form__item form__item--shortInput">
                             <select class="form__selectBox form__selectBox--single">
                                 <option>Choose States</option>
                                 <option>Choose Metropolitian Areas</option>
@@ -122,8 +137,8 @@
                                     <i class="fa fa-exclamation-triangle"></i> Error message goes here
                                 </p>
                             </div>
-                        </fieldset>            
-                        <!-- show either metro or state based on selection above-->
+                        </fieldset>-->
+                        <!-- Decided to include both state and metropolitian areas as available options instead of just one -->
                         <fieldset class="form__item form__item--shortInput">
                             <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
                                 <option>Greater NYC Area</option>

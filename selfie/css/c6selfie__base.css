@@ -959,23 +959,23 @@ fa,
     ================================================ */
 
         .column__paymentDate {
-            width:10em;
+            width:12em;
             padding:0 2em 0 0;
         }
 
         .column__paymentCampaign {
-            width:calc(100% - 54em);
+            width:calc(100% - 56em);
             padding:0 2em 0 0;
         }
 
         .column__paymentMethod {
-            width:18em;
+            width:20em;
             padding:0 2em 0 0;
         }
 
         .column__paymentAmount {
             width:18em;
-            padding:0 2em 0 0;
+            padding:0;
         }
 
         @media screen and (max-width:160em) {
@@ -983,22 +983,22 @@ fa,
                 up to 1600px wide
             */
             .column__paymentDate {
-                width:5em;
-            }
-
-            .column__paymentCampaign {
-                width:calc(100% - 34em);
+                width:7em;
                 padding-right:1em;
             }
 
+            .column__paymentCampaign {
+                width:calc(100% - 38em);
+                padding-right:2em;
+            }
+
             .column__paymentMethod {
-                width:11em;
+                width:14em;
                 padding-right:1em;
             }
 
             .column__paymentAmount {
                 width:13em;
-                padding-right:1em;
             }
 
         }

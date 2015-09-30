@@ -272,7 +272,12 @@ fa,
             font-size:1.5em;
             margin: 0.25rem;
         }
-
+        .btn--disabled, .btn--disabled:hover {
+            background-color: #ccc;
+            color: #999;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+            cursor: auto;
+        }
 
     .ui__tab {
         border:0;
@@ -574,7 +579,7 @@ fa,
 
         .mainNav__dropDownGroup {
             list-style:none;
-            margin:0;
+            margin:0 0 0 -2px;
             padding:0;
             position:absolute;
             z-index:11;
@@ -583,6 +588,9 @@ fa,
             background:#232628;
             color:#fff;
             display:none;
+        }
+        .mainNav__item:hover {
+            background-color: #222;
         }
         .mainNav__item--active {
             background: #222;
@@ -1351,7 +1359,55 @@ fa,
 
 
    
-          
+
+    /*search input group*/
+    .form__textBox {
+        border: 0;
+        padding: 0.375rem 0.5rem 0.25rem;
+        border-bottom: 2px solid #5c5c5c;
+        box-shadow: inset 0 0 3px #bbb;
+        -moz-box-shadow: inset 0 0 3px #bbb;
+        -webkit-box-shadow: inset 0 0 3px #bbb;
+        font-size: 1.125em;
+        line-height: 1.5rem;
+        color: #1c1c1c;
+        background: #fff;
+        transition: border 0.3s, background 0.3s;
+        width: auto;
+        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    }
+    .search__group {
+        margin-top: 0.5em;
+    }
+    .search__group  .form__textBox {
+        /*vertical-align: middle;
+        margin-top: 0.45em;*/
+        border-bottom: 2px solid #fff;
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+        width: 50%;
+    }
+    .search__group .select2-container {
+        display: inline-block;
+        /*width: auto;
+        margin-top: 0.535em;*/
+        vertical-align: top;
+        margin-left: -4px;
+        border-bottom: 2px solid #fff;
+    }
+    .search__group .select2-container--default .select2-selection--single {
+        border-bottom: 2px solid #fff;
+    }
+    .search__group .searchBtn {
+        padding: 0.25em 1em 0.3em 1em;
+        vertical-align: top;        
+        margin-bottom: 0;
+        margin-left: -4px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+                
+
 /*  ================================================
     UI Elements classes
     ================================================ */
@@ -2082,8 +2138,77 @@ fa,
             color:#ff1e1e;
         }
 
-
-
+ /*  Payment Dropdown classes
+        ================================================ */
+        .pmtDropdown .pmtDropdown__btn, .pmtDropdown .ui__clickDropMenu, .pmtDropdown .ui__clickDropBtn {
+            text-align: left;
+        }        
+        .pmtDropdown__btn, .pmtDropdown__btn:focus {
+            width: 100%;
+            border: 0;
+            border-bottom: 2px solid #eee;
+            padding: 0;
+            height: auto;
+            background-color: #fff;
+            box-shadow: inset 0 0 3px #bbb;
+            border-radius: 0;
+            font-weight: normal;
+        }
+        .pmtDropdown__btn:hover {
+            border: 0;
+            border-bottom: 2px solid #eee;
+            box-shadow: inset 0 0 3px #bbb;
+        }
+        .pmtDropdown__btn:focus {
+            border: 0;
+            border-bottom: 2px solid #00c0ff;
+            padding: 0;
+            height: auto;
+            background-color: #fff;
+            box-shadow: inset 0 0 3px #bbb;
+        }
+        .pmtDropdown__btn:after {
+            font-family: FontAwesome;            
+        }
+        .pmtDropdown__btn i.fa {
+            text-align: right;
+            float: right;
+            vertical-align: middle;
+            margin-top: -4em;
+            margin-right: 1em;
+        }
+        .pmtDropdown .ui__clickDropBtn { 
+            width: 100%;
+            padding: 0;
+        }
+        .btn.pmtDropdown__btn.default span {
+            padding-left: 1rem;
+        }
+        .pmtDropdown .ui__clickDropBtn span {
+            padding-left: 1rem;
+        }
+        .pmtDropdown .ui__clickDrop--bigText{
+            font-size: 2em;
+            line-height: 2.25em;
+            font-weight: 500;
+            display: inline-block;
+        }
+        .pmtDropdown  .ui__clickDrop--sub-label {
+            display: inline-block;
+        }
+        .pmtDropdown  .ui__clickDrop--sub-label-block {
+            display: block;
+        }
+        .pmtDropdown__menu {
+            display: none; /**hiding by default and showing with JS toggle**/
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .pmtDropdown__menu--item:hover {
+            background-color: #00c0ff;
+        }
 
 
     /*  select form classes : single selection
@@ -2444,7 +2569,8 @@ fa,
             width:100%;
             background-color:#e1e1e1;
             position:relative;
-            min-height:32em;
+            height: 32em;
+            min-height:32em;            
         }
             .adPreview__desktop:before {
                 content:'No preview available';

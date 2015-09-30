@@ -19,7 +19,22 @@
 <body>
 
 <nav class="mainNav__group">
-    
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>        
 </nav>
 
 
@@ -29,9 +44,29 @@
 
     <div class="pageHeader__group">
         <div class="mainHeader__group">
+        <div class="grid">
+            <div class="grid__item one-third">
             <h1 class="mainHeader__breadcrumbs tk--hdr">
                 Campaigns
             </h1>
+            </div>
+            <div class="grid__item one-third search__group">            
+                <input type="text" placeholder="Search" class="form__textBox form__searchBox">
+                <select class="form__selectBox form__selectBox--single">
+                    <option selected>Campaigns</option>
+                    <option>Sponsors</option>
+                </select>
+                    <button class="searchBtn action__btnSecondary action__btnSecondary--small">Go</button>
+            </div>
+        <div class="pageHeader__actions">
+                <!--<button c6-sref="Selfie:NewCampaign" title="New Campaign" class="action__btn action__btn--small" type="button">
+                    
+                    New Campaign
+                </button>-->
+                <a href="campaign-creation-combined.html" class="action__btn action__btn--small" style="color: #fff;"><i class="fa fa-plus"></i> New Campaign</a>
+        </div>
+            
+        </div>    
         </div><!--.mainHeader__group-->
         <div class="sortBar__group">
             <ul class="sortBar__list clearfix">
@@ -75,7 +110,7 @@
             <div class="campaign__column column__sponsor">
                 <div class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
                     <span class="thumbnail">
-                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/sports/" alt="CAMPAIGN NAME">
                     </span>
                 </div>
                 <div class="campaign__sponsorInfo">
@@ -90,7 +125,7 @@
             
             <div class="campaign__column column__campaignName">
                 <h1 class="campaign__name tk--hdr">
-                    A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
+                    <a href="manage-campaign.html">A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket</a>
                 </h1>
             </div><!--.column__campaignName-->
 
@@ -157,7 +192,7 @@
             <div class="campaign__column column__sponsor">
                 <div class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
                     <span class="thumbnail">
-                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/food/" alt="CAMPAIGN NAME">
                     </span>
                 </div>
                 <div class="campaign__sponsorInfo">
@@ -239,7 +274,7 @@
             <div class="campaign__column column__sponsor">
                 <div class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
                     <span class="thumbnail">
-                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/animals/" alt="CAMPAIGN NAME">
                     </span>
                 </div>
                 <div class="campaign__sponsorInfo">
@@ -321,7 +356,7 @@
             <div class="campaign__column column__sponsor">
                 <div class="thumbnail__box campaign__thumbnail" title="CAMPAIGN NAME">
                     <span class="thumbnail">
-                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/" alt="CAMPAIGN NAME">
+                        <img class="thumbnail__img" src="http://www.lorempixel.com/300/300/business/" alt="CAMPAIGN NAME">
                     </span>
                 </div>
                 <div class="campaign__sponsorInfo">

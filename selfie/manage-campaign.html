@@ -15,11 +15,34 @@
 
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/select2.min.js"></script>
+    <style type="text/css">
+    .adPreview__desktop {
+        width: 100%;
+        background-color: #e1e1e1;
+        position: relative;
+        height: 36em;
+    }
+    </style>
 </head>
 <body>
 
 <nav class="mainNav__group">
-    
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>           
 </nav>
 
 
@@ -39,20 +62,23 @@
                 <button class="tabBar__btn" type="button">
                     Stats</button>
                 </li>
-                <li class="tabBar__item tabBar__item--active">
-                <button class="tabBar__btn" type="button">
+                <li class="tabBar__item">
+                <button class="tabBar__btn tabBar__item--active" type="button" onclick="location.href='manage-campaign.html' ">
                     Manage Campaign</button>
                 </li>
                 <li class="tabBar__item">
                 <button class="tabBar__btn" type="button" onclick="location.href='targeting.html' ">
-                    Targetting</button>
+                    Targeting</button>
                 </li>
                 <li class="tabBar__item">
-                <button class="tabBar__btn" type="button">
+                <button class="tabBar__btn" type="button" onclick="location.href='budget.html' ">
+                    Budget</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='payment-options.html' ">
                     Payment Options</button>
                 </li>
-            </ul><!--.tabBar__list-->
-            
+            </ul><!--.tabBar__list-->            
         </div><!--.tabBar__group-->
     </div><!--.pageHeader__group-->
     
@@ -65,35 +91,31 @@
 
         <div class="grid">
             <!--left column-->
-             <div class="grid__item  adManage one-third  palm--one-whole">
-        
-            <div class="grid">
-            
-             <div class="grid__item  lap--one-half  desk--one-third grid--center">
-                    <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-copy"></i>  Copy</button>
-                </div><!--
-
-             --><div class="grid__item  lap--one-half  desk--one-third grid--center">
-                    <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-ban"></i>  Cancel</button>
-                </div><!--
-
-             --><div class="grid__item  desk--one-third grid--center">
-                    <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-trash-o"></i>  Delete</button>
+             <div class="grid__item  adManage one-third  palm--one-whole">        
+                <div class="grid">            
+                 <div class="grid__item  one--whole grid--center">
+                     <div class="action__btnGroup">
+                      <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-copy"></i>  Copy</button>
+                      <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-ban"></i>  Cancel</button>
+                      <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-trash-o"></i>  Delete</button>
+                    </div>
+                    
                 </div>
-                <div class="grid__item grid--center lockedMsg">
-                    <img src="img/lock-icon.png" class="lockedMsg__icon"/>
-                    <h3 class="lockedMsg__icon--text tk--hdr">Locked</h3>
-                    <p class="lockedMsg__info">Your campaign is <strong>active</strong></p>
-                    <p class="lockedMsg__info">You cannot make changes to the campaign once it's approved. If you want to make changes, create a copy of the campaign and cancel this one.</p>                    
-                </div>
-                <div class="grid__item one--whole grid--center">
-                    <button class="action__btn action__btn--small"><i class="fa fa-pause"></i>  Pause</button>
-                </div>
-            </div>
-
-        </div>
-            <!--left column ends-->
-            <div class="grid__item one-half palm--one-whole">
+                    <div class="grid__item grid--center lockedMsg">
+                        <img src="img/lock-icon.png" class="lockedMsg__icon"/>
+                        <h3 class="lockedMsg__icon--text tk--hdr">Locked</h3>
+                        <p class="lockedMsg__info">Your campaign is <strong>active</strong></p>
+                        <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p>
+                    </div>
+                    <div class="grid__item one--whole grid--center">
+                        <div class="action__btnGroup">                          
+                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-pause"></i>  Pause</button>
+                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-pencil-square-o"></i>  Edit</button>
+                        </div>
+                    </div>
+                </div>            
+        </div><!--left column ends--><!--
+            --><div class="grid__item two-thirds palm--one-whole">
                 
                 <section class="campaignPreview__group">
                     

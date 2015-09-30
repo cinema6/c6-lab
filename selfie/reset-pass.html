@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login - C6 Selfie UI </title>
+    <title>Reset Password - C6 Selfie UI </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,21 +19,23 @@
 </head>
 <body>
     <div class="prelogin__gridHolder">
-        <div class="grid grid--center grid--middle">
+        <div class="grid grid--center">
+            <form class="forgotpass__form">
             <div class="grid__item one-whole">
             <div class="brandingHead">
                 <h1 class="text--center tk--hdr"><img src="img/cinema6-logo.png" /><span class="ir">Cinema6</span></h1>
             </div>
-                <form class="login__form">
+             <p class="subAction text--center">Reset your password</p>
+                <div class="form__items">
                     <fieldset class="form__item">
-                        <input class="form__textBox form__fillCheck" type="email" id="c6-username">
-                        <label class="form__label" for="c6-username">
+                        <input class="form__textBox form__fillCheck" type="password" id="c6-password-new">
+                        <label class="form__label" for="c6-password-new">
                             <i class="fa fa-times ui--error"></i> 
-                            Email
+                            New Password
                         </label>
                         <div class="form__helpBox form__helpBox--right">
                             <div class="form__helpText">
-                                Please enter your email associated with the account 
+                                Your password must have minimum 8 characters and include letters and at least 1 number
                             </div>
                         </div>
                         <div class="form__errorBox">
@@ -43,14 +45,14 @@
                         </div>
                     </fieldset>
                     <fieldset class="form__item">
-                        <input class="form__textBox form__fillCheck" type="password" id="c6-password">
-                        <label class="form__label" for="c6-password">
+                        <input class="form__textBox form__fillCheck" type="password" id="c6-password-confirm">
+                        <label class="form__label" for="c6-password-confirm">
                             <i class="fa fa-times ui--error"></i> 
-                            Password
+                            Repeat New Password
                         </label>
                         <div class="form__helpBox form__helpBox--right">
                             <div class="form__helpText">
-                                Please enter your password
+                                Your password must have minimum 8 characters and include letters and at least 1 number
                             </div>
                         </div>
                         <div class="form__errorBox">
@@ -60,16 +62,14 @@
                         </div>
                     </fieldset>
                     <div class="ui__btnHolder">
-                        <button class="action__btn action__btn--full">Login</button>
+                        <button class="action__btn action__btn--full">Reset Password</button>
                     </div>
                     <div class="subActions__box">
-                        <p class="subAction text--center"><a href="forgot-pass.html">Forgot Password?</a></p>
+                        <p class="subAction text--center">Don't need to reset? <a href="login.html">Back to login</a></p>
                     </div>
-                    <div class="subActions__box">
-                        <p class="subAction text--center">Don't have a Selfie account? <a href="sign-up.html">Sign up Now!</a></p>
-                    </div>
-                </form>
+                </div>
             </div>
+            </form>
         </div>
     </div>
 </body>

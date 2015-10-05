@@ -19,9 +19,23 @@
 <body>
 
 <nav class="mainNav__group">
-    
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item mainNav__item--active">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>    
 </nav>
-
 
 
 <div class="pageHolder">
@@ -33,6 +47,20 @@
                 Campaigns / Payment History
             </h1>
         </div><!--.mainHeader__group-->
+        
+    </div><!--.pageHeader__group-->
+    <div class="grid grid--center">
+        <div class="grid__item">
+            <header class="settingsContent__header">
+                <h2 class="settingsContent__title tk--hdr">Payment History</h2>
+                <span class="settingsContent__subtitle">List of all the transactions on your account for all campaigns</span>
+            </header>
+        </div>        
+    </div>     
+    <div class="settingsContent__gridHolder paymentHistory__group">
+        <div class="grid grid--center">
+        <div class="grid__item one-whole">
+            <!--<div style="max-width: 104em; width: 96%; margin: 2em auto;">-->
         <div class="sortBar__group">
             <ul class="sortBar__list clearfix">
                 <li class="sortBar__item column__paymentDate">
@@ -44,266 +72,274 @@
                 <li class="sortBar__item column__paymentMethod">
                     <button class="sortBar__btn" type="button">Payment Method</button>
                 </li>
-                <li class="sortBar__item column__paymentAmount">
-                    <button class="sortBar__btn" type="button">Transaction Amount</button>
+                <li class="sortBar__item column__discountAmount">
+                    <button class="sortBar__btn" type="button">Beta User Discount</button>
+                </li>
+                <li class="sortBar__item column__paymentAmount text--center">
+                    <button class="sortBar__btn" type="button">Total</button>
                 </li>
             </ul><!--.sortBar__list-->
         </div><!--.sortBar__group-->
-    </div><!--.pageHeader__group-->
+        <ul class="paymentHistory__list">            
+            <li class="paymentHistory__item clearfix">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">Today</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
+                    </h1>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">Visa *** 8963</span>
+                    <span class="paymentHistory__methodOwner">Genesis Media</span>
+                </div><!--.column__paymentMethod-->
+               
+               <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
 
+            <li class="paymentHistory__item clearfix">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">07/08/2015</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        1,000 Reasons to Watch The West Wing
+                    </h1>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">PayPal</span>
+                    <span class="paymentHistory__methodOwner">jeb@bartletmedia.com</span>
+                </div><!--.column__paymentMethod-->
 
-    <ul class="campaigns__list">
-        
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">Today</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">Visa *** 8963</span>
-                <span class="paymentHistory__methodOwner">Genesis Media</span>
-            </div><!--.column__paymentMethod-->
+                <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
 
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 26.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
+            <li class="paymentHistory__item clearfix">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">07/08/2015</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        So What’s a Yuccie, Anyway?
+                    </h1>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">MasterCard *** 9847</span>
+                    <span class="paymentHistory__methodOwner">The New Thing Media</span>
+                </div><!--.column__paymentMethod-->
 
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">07/08/2015</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    1,000 Reasons to Watch The West Wing
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">PayPal</span>
-                <span class="paymentHistory__methodOwner">jeb@bartletmedia.com</span>
-            </div><!--.column__paymentMethod-->
+                <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
 
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 126.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 1,267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
+            <li class="paymentHistory__item clearfix">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">07/08/2015</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        How to Put Your Life Together After You Learn that You’re Surrounded by Chemicals
+                    </h1>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">Discover *** 5273</span>
+                    <span class="paymentHistory__methodOwner">Phobia Media</span>
+                </div><!--.column__paymentMethod-->
 
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">07/08/2015</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    So What’s a Yuccie, Anyway?
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">MasterCard *** 9847</span>
-                <span class="paymentHistory__methodOwner">The New Thing Media</span>
-            </div><!--.column__paymentMethod-->
+                <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
 
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 26.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
+            <li class="paymentHistory__item clearfix creditTransaction">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">07/08/2015</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
+                    </h1>
+                    <span class="creditTransaction__type">Credit/Refund</span>
+                    <span class="creditTransaction__note">This is a credit transaction</span>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">Visa *** 8963</span>
+                    <span class="paymentHistory__methodOwner">Genesis Media</span>
+                </div><!--.column__paymentMethod-->
 
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">07/08/2015</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    How to Put Your Life Together After You Learn that You’re Surrounded by Chemicals
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">Discover *** 5273</span>
-                <span class="paymentHistory__methodOwner">Phobia Media</span>
-            </div><!--.column__paymentMethod-->
+                <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
 
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 1,226.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 12,267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
+            <li class="paymentHistory__item clearfix">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">07/08/2015</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        1,000 Reasons to Watch The West Wing
+                    </h1>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">PayPal</span>
+                    <span class="paymentHistory__methodOwner">jeb@bartletmedia.com</span>
+                </div><!--.column__paymentMethod-->
 
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">07/08/2015</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    A Story of Technology: The History of What&rsquo;s In Everyone&rsquo;s Pocket
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">Visa *** 8963</span>
-                <span class="paymentHistory__methodOwner">Genesis Media</span>
-            </div><!--.column__paymentMethod-->
+                <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
 
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 26.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
+            <li class="paymentHistory__item clearfix">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">07/08/2015</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        So What’s a Yuccie, Anyway?
+                    </h1>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">MasterCard *** 9847</span>
+                    <span class="paymentHistory__methodOwner">The New Thing Media</span>
+                </div><!--.column__paymentMethod-->
 
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">07/08/2015</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    1,000 Reasons to Watch The West Wing
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">PayPal</span>
-                <span class="paymentHistory__methodOwner">jeb@bartletmedia.com</span>
-            </div><!--.column__paymentMethod-->
+                <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
 
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 126.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 1,267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
+            <li class="paymentHistory__item clearfix">
+                <div class="paymentHistory__column column__paymentDate">
+                    <span class="paymentHistory__date tk--hdr">07/08/2015</span>
+                    <span class="paymentHistory__time">04:12pm</span>
+                </div><!--.column__paymentDate-->
+                
+                <div class="paymentHistory__column column__paymentCampaign">
+                    <h1 class="paymentHistory__campaign tk--hdr">
+                        How to Put Your Life Together After You Learn that You’re Surrounded by Chemicals
+                    </h1>
+                </div><!--.column__paymentCampaign-->
+                
+                <div class="paymentHistory__column column__paymentMethod">
+                    <span class="paymentHistory__method tk--hdr">Discover *** 5273</span>
+                    <span class="paymentHistory__methodOwner">Phobia Media</span>
+                </div><!--.column__paymentMethod-->
 
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">07/08/2015</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    So What’s a Yuccie, Anyway?
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">MasterCard *** 9847</span>
-                <span class="paymentHistory__methodOwner">The New Thing Media</span>
-            </div><!--.column__paymentMethod-->
-
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 26.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
-
-        <li class="paymentHistory__item clearfix">
-            <div class="paymentHistory__column column__paymentDate">
-                <span class="paymentHistory__date tk--hdr">07/08/2015</span>
-                <span class="paymentHistory__time">04:12pm</span>
-            </div><!--.column__paymentDate-->
-            
-            <div class="paymentHistory__column column__paymentCampaign">
-                <h1 class="paymentHistory__campaign tk--hdr">
-                    How to Put Your Life Together After You Learn that You’re Surrounded by Chemicals
-                </h1>
-            </div><!--.column__paymentCampaign-->
-            
-            <div class="paymentHistory__column column__paymentMethod">
-                <span class="paymentHistory__method tk--hdr">Discover *** 5273</span>
-                <span class="paymentHistory__methodOwner">Phobia Media</span>
-            </div><!--.column__paymentMethod-->
-
-            <div class="paymentHistory__column column__paymentAmount">
-                <div class="paymentHistory__paymentInfo">
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscount</span>:</span>
-                        <strong>$</strong> 1,226.78
-                    </span>
-                    <span class="paymentInfo__paymentNumbers">
-                        <span class="paymentInfo__label">D<span class="fullText">iscounted Total</span>:</span>
-                        <span class="paymentInfo__total tk--hdr"><strong>$</strong> 12,267.76</span>
-                    </span>
-                </div>
-            </div><!--.column__paymentAmount-->
-        </li><!--.paymentHistory__item-->
-    </ul>
-
-    <footer class="dockedFooter__group">
+                <div class="paymentHistory__column column__discountAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__discountNumbers">
+                            <span class="paymentInfo__discount">$ 26.78</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->    
+                <div class="paymentHistory__column column__paymentAmount">
+                    <div class="paymentHistory__paymentInfo">
+                        <span class="paymentInfo__paymentNumbers">
+                            <span class="paymentInfo__total tk--hdr">$ 267.76</span>
+                        </span>
+                    </div>
+                </div><!--.column__paymentAmount-->
+            </li><!--.paymentHistory__item-->
+        </ul>
         <div class="paginator__group clearfix">
             <paginator-controls page="SelfieCampaignsCtrl.model.page" limit="SelfieCampaignsCtrl.limit" limits="SelfieCampaignsCtrl.limits" total="SelfieCampaignsCtrl.model.items.page.total"></paginator-controls>
                 <div class="paginator__readout" c6-alias="SelfieCampaignsCtrl.model.items.value.meta.items as items">
@@ -312,7 +348,10 @@
                 </div><!--.paginator__readout-->
 
         </div><!--.paginator__group-->
-    </footer><!--.dockedFooter__group-->
+        
+    </div>
+</div>
+</div><!-- .settingsContent__gridHolder -->
 
     <div class="footer__group">
         &copy; Copyright 2015 Cinema6. All rights reserved.

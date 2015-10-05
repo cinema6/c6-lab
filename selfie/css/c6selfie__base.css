@@ -863,6 +863,130 @@ fa,
                 color: #00c0ff;
             }
 
+    /*  stats page classes
+        (Jess)
+        ================================================ */
+
+        .statsChart__infoBox {
+            background:#fff;
+            margin:0 0 1em 0;
+            padding:1em;
+            text-align:center;
+            position:relative;
+        }
+
+        .statsChart__infoBox--views {
+            border-top:2px solid #00c0ff;
+        }
+
+        .statsChart__infoBox--interactions {
+            border-top:2px solid #ffc000;
+        }
+
+        .statsChart__infoBox--cost {
+            border-top:2px solid #20d783;
+        }
+
+            .stats__label {
+                font-size:1em;
+                margin:0;
+                color:#5c5c5c;
+            }
+
+            .stats__row--labels .stats__label {
+                font-weight:600;
+            }
+
+            .stats__row .stats__label {
+                float:left;
+            }
+
+            .stats__infoNumber {
+                font-size:3em;
+                margin:0;
+                font-weight:500;
+                color:#5c5c5c;
+            }
+
+            .statsChart__infoBox--views .stats__infoNumber {
+                color:#00c0ff;
+            }
+
+            .statsChart__infoBox--interactions .stats__infoNumber {
+                color:#ffc000;
+            }
+
+            .statsChart__infoBox--cost .stats__infoNumber {
+                color:#20d783;
+            }
+
+        .statsBreakdown__group {
+            background:#fff;
+            margin:0 0 0 1.5em;
+            padding:2em 0;
+        }
+
+            .statsBreakdown__item {
+                position:relative;
+                margin:1em 0;
+            }
+
+        .stats__hdr {
+            font-size:2.25em;
+            font-weight:500;
+            color:#5c5c5c;
+            display:block;
+            background:#fff;
+            margin:1rem 0 0.25rem;
+            padding:0.125em 0 0.125em 1.5rem;
+            position:relative;
+        } 
+
+        .interactions__group,
+        .quartile__group {
+            position:relative;
+        }
+
+            .stats__row {
+                background:#fff;
+                padding:1.25em 0 2.75em 1.5rem;
+                margin:0 0 0.25rem 0;
+                position:relative;
+            }
+
+                .stats__rowClicks {
+                    float:right;
+                    margin:-0.75rem 1.5rem 0 0;
+                    font-weight:600;
+                    color:#5c5c5c;
+                }
+
+            .stats__column {
+                margin:0 1rem 0 0;
+            }
+
+            .stats__column--duration {
+                width:8rem;
+            }
+
+            .stats__column--views,
+            .stats__column--percent {
+                width:6rem;
+            }
+
+            .stats__columnGraph {
+                width:calc(100% - 24rem);
+                float:right;
+                margin-top:0.375em;
+            }
+
+                .stats__columnGraph--bar {
+                    height:0.75rem;
+                    background:#00c0ff;
+                }
+
+
+
 
     /*  data column classes
         ================================================ */
@@ -1003,26 +1127,69 @@ fa,
 
         }
 
-        /*
-        @media screen and (max-width:69em) {
-            
-                up to 1104px wide
-            
+    /*  helpbox classes
+        Jess
+        ================================================ */
 
-
+        .helpBox {
+            border-radius:6px;
+            background:#fff;
+            border:2px solid #3eccff;
+            position: absolute;
+            padding:0.75rem;
+            font-size:0.875em;
+            z-index: 1000;
+            -webkit-box-shadow: 0 0 5px #888;
+            -moz-box-shadow: 0 0 5px #888;
+            box-shadow: 0 0 5px #888;
+            opacity:0;
+            display:none;
         }
-        @media screen and (max-width:48em) {
-         
-                up to 768px wide
-            
 
+        .stats__infoNumber:hover ~ .helpBox,
+        .stats__hdr:hover ~ .helpBox {
+            opacity:1;
+            display:block;
         }
-        @media screen and (max-width:42em) {
-            
-                up to 672px wide
-            
 
-        }*/
+        .helpBox:after,
+        .helpBox:before {
+            border: solid transparent;
+            content: '';
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+            .helpBox:after {
+                border-color: rgba(255, 255, 255, 0);
+                border-width: 8px;
+            }
+            .helpBox:before {
+                border-color: rgba(62, 204, 255, 0);
+                border-width: 11px;
+            }
+
+        .helpBox--center {
+            left:5%; 
+            right:5%;
+            max-width:30rem;
+            margin:1em 0 0 1.5em;
+        }
+
+            .helpBox--center:after,
+            .helpBox--center:before {
+                bottom: 100%;
+                left: 50%;
+            }
+                .helpBox--center:after {
+                    border-bottom-color: #fff;
+                    margin-left: -8px;
+                }
+                .helpBox--center:before {
+                    border-bottom-color: #3eccff;
+                    margin-left: -11px;
+                }
 
 
 /*  ================================================
@@ -1534,6 +1701,7 @@ fa,
     }
     .tabContent__header {
         padding: 0 0 0 4.5em;
+        position:relative;
     }
         .tabContent__title {
             display: block;
@@ -1663,9 +1831,30 @@ fa,
             vertical-align: middle;
             margin-right: 0.25em;
         }
+
+        .action__selection {
+            display:block;
+            position:absolute;
+            top:0.875em;
+            right:5.25em;
+            color:#5c5c5c;
+            font-weight:bold;
+        }
+
+        .action__selection:hover {
+            color:#5c5c5c;
+        }
+
         .action__dropdown {
             margin-top: 0.25em;
         }
+
+        .action__selection ~ .action__dropdown {
+            position:absolute;
+            top:0.5em;
+            right:3em;
+        }
+
 
         .action__dropdown ul {
             list-style:none;
@@ -1674,6 +1863,13 @@ fa,
             margin:0;
             padding:0
         }
+
+        .action__dropdownSelection {
+            position:absolute;
+            left:0;
+        }
+
+
 
         .action__dropdown ul a {
             display:block;
@@ -1685,12 +1881,16 @@ fa,
             padding:0 15px;
         }
 
+
+
         .action__dropdown ul li {
             position:relative;
             float:left;
             margin:0;
             padding:0
         }
+
+
 
         .action__dropdown ul li.current-menu-item {
             background:#ddd
@@ -1732,6 +1932,12 @@ fa,
 
         .action__dropdown ul li:hover > ul {
             display:block
+        }
+
+        .action__dropdownItem--selected {
+            position:absolute;
+            right:1em;
+            color:#5c5c5c;
         }
 
 /*  ================================================

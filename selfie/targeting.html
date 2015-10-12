@@ -12,10 +12,18 @@
     <link rel="stylesheet" type="text/css" href="css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
     <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
-        <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.tree-multiselect.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
 
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tree-multiselect.js"></script>
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        var options = { sortable: true };
+        $("select#demo1").treeMultiselect(options);
+        });
+    </script>
 </head>
 <body>
 
@@ -23,7 +31,7 @@
     <div class="mainNav__dashboard mainNav__item">
         <img src="img/c6-logo-square.png">
     </div>
-    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+    <div class="mainNav__campaigns mainNav__item is--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
         <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
     </div>
     <div class="mainNav__archives mainNav__item">
@@ -52,15 +60,15 @@
         <div class="tabBar__group">
             <ul class="tabBar__list clearfix">
                <li class="tabBar__item">
-                <button class="tabBar__btn" type="button">
+                <button class="tabBar__btn" type="button" onclick="location.href='stats.html'">
                     Stats</button>
                 </li>
                 <li class="tabBar__item">
                 <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
                     Manage Campaign</button>
                 </li>
-                <li class="tabBar__item">
-                <button class="tabBar__btn tabBar__item--active" type="button" onclick="location.href='targeting.html' ">
+                <li class="tabBar__item tabBar__item--active">
+                <button class="tabBar__btn" type="button" onclick="location.href='targeting.html' ">
                     Targeting</button>
                 </li>
                 <li class="tabBar__item">
@@ -118,26 +126,7 @@
                                 </p>
                             </div>
                         </fieldset>
-                        <!--<fieldset class="form__item form__item--shortInput">
-                            <select class="form__selectBox form__selectBox--single">
-                                <option>Choose States</option>
-                                <option>Choose Metropolitian Areas</option>
-                            </select>
-                            <label class="form__label" for="c6-sponsor-name">   
-                                <i class="fa fa-times ui--error"></i> 
-                                Geography
-                            </label>
-                            <div class="form__helpBox form__helpBox--right">
-                                <div class="form__helpText">
-                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
-                                </div>
-                            </div>
-                            <div class="form__errorBox">
-                                <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                </p>
-                            </div>
-                        </fieldset>-->
+                        
                         <!-- Decided to include both state and metropolitian areas as available options instead of just one -->
                         <fieldset class="form__item form__item--shortInput">
                             <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
@@ -236,6 +225,34 @@
                                 <i class="fa fa-asterisk"></i> Using this feature will add an additional cost of $0.50 per 1000 video plays.
                             </p>
                         </fieldset>
+                    </div>
+                </section><!--.formSection__group-->
+				<section class="formSection__group formSection__group--sub">
+                        <!-- multiple select side by side display -->
+                    <h1 class="formSection__title bottom--flushed">
+                        <span class="formSection__titleText tk--hdr">Interests</span>
+                        <p class="formSection__introText">Please choose the interests you would want to target</p>
+                        
+                    </h1>
+                    <div class="form__items">
+                        <fieldset class="form__item form__item--shortInput">
+                            <select id="demo1" multiple="multiple" name="demo1">
+                              <option value="one" data-section="Interests/top" selected="selected" data-index="1">One</option>
+                              <option value="two" data-section="Interests/top" selected="selected" data-index="2">Two</option>
+                              <option value="three" data-section="Interests/top" selected="selected" data-index="3">Three</option>
+                              <option value="four" data-section="Interests/top"  selected="selected" data-index="4">Four</option>
+                              <option value="five" data-section="Interests/bottom" data-index="5">Five</option>
+                              <option value="six" data-section="Interests/bottom" data-index="6">Six</option>
+                              <option value="five" data-section="Interests/bottom" data-index="7">Seven</option>
+                              <option value="six" data-section="Interests/bottom" data-index="8">Eight</option>
+                            </select>
+                            <!--<label class="form__label" for="c6-interests">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Interests
+                            </label>-->
+                            <!-- courtsey http://www.patosai.com/projects/tree-multiselect -->
+                        </fieldset>
+                        
                     </div>
                 </section><!--.formSection__group-->
                 <section class="formSection__group formSection__group--sub">

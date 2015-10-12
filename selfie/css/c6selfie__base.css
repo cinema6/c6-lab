@@ -540,13 +540,13 @@ fa,
     }
 
     .tabContent__gridHolder,
-    .settingsContent__gridHolder {
+    .settingsContent__gridHolder,.supportContent__gridHolder {
         width: 96%;
         max-width: 84em;
         margin: 0 auto;
         padding: 4em 0 0 0;
     }
-    .settingsContent__gridHolder {
+    .settingsContent__gridHolder,.supportContent__gridHolder {
         padding:5em 0 0 0;
     }
 
@@ -842,7 +842,7 @@ fa,
         }
             .tabBar__list .tabBar__item {
                 display: inline-block;
-                padding: 0 3em;
+                padding: 0;
                 line-height: 3em;
                 vertical-align: middle;
                 border-bottom: 3px solid transparent;
@@ -850,7 +850,7 @@ fa,
             .tabBar__list .tabBar__item--active {
                 background-color: #eee;
                 border-bottom: 3px solid #eee;
-                padding: 0 3em;
+                padding: 0;
                 line-height: 3em;
                 -webkit-box-shadow: inset 3px 3px 5px -1px rgba(0,0,0,0.1), inset -3px 3px 5px -1px rgba(0,0,0,0.1);
                 -moz-box-shadow: inset 3px 3px 5px -1px rgba(0,0,0,0.1), inset -3px 3px 5px -1px rgba(0,0,0,0.1);
@@ -858,6 +858,9 @@ fa,
             }
             .tabBar__btn {
                 transition: color 0.3s;
+                padding: 0 3em;
+                display: inline-block;
+                line-height: 3em;
             }
             .tabBar__btn:hover {
                 color: #00c0ff;
@@ -1786,7 +1789,61 @@ fa,
             margin:0;
             padding:0 0 1.625em;
         }
+/*  ================================================
+    support content classes
+    ================================================ */
 
+    .supportContent{
+        margin:7em 1.5em 0 1.5em;
+    }
+    .supportContent__header {
+        margin:0 auto 0;
+        padding:0;
+        max-width:104em;
+        width:96%;
+    }
+
+        .supportContent__title {
+            display:block;
+            font-size:2em;
+            line-height:1.125;
+            color:#b1b1b1;
+            margin:3.8125em 0 0;
+        }
+
+        .supportContent__subtitle{
+            color:#5c5c5c;
+            font-size: 1em;
+            margin:0;
+            padding:0 0 1.625em;
+        }
+
+        .accountSupport__title {
+            margin: 0;
+            padding: 1em;
+            border-bottom: 1px solid #EEE;
+        }
+        .supportContent__article {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5em;
+            margin-bottom: 5em;
+        }
+        .supportContent__article img {
+            border: 1px solid #aaa;
+        }
+        .accountSupport__box-item {
+            padding-left: 3em;
+            padding-top: 1em;
+            margin: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2em;
+        }
+            .accountSupport__box-item li {
+                list-style-type: none;
+            }
+            .accountSupport__box-item a {
+                border-bottom: 1px solid #00c0ff;
+            }
 
 /*  ================================================
     manage payment classes
@@ -2017,7 +2074,7 @@ fa,
 
     .formSection__introText {
         color:#5c5c5c;
-        font-size:1em;
+        font-size:1em; font-weight:normal;
         margin:0; padding:0 0 1.625em;
         text-align: center;
     }

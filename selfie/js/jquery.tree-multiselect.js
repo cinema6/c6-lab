@@ -75,7 +75,7 @@
       sortable: false,
       collapsible: true,
       freeze: false,
-      sectionDelimiter: '/',
+      sectionDelimiter: '>',
       showSectionOnSelected: true,
       startCollapsed: true
     };

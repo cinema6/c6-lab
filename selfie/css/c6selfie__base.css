@@ -218,66 +218,6 @@ fa,
             margin-top:1.25em;
         }
 
-    .action__btn {
-        background:#00c0ff;
-        color:#fff;
-        border:0;
-        padding:0.75rem 1.5rem 0.625rem;
-        margin:0 0 1.125rem;
-        font-size:1.125em;
-        line-height:1.5rem;
-        transition:color 0.3s, background 0.3s;
-        border-radius:3px;
-        box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
-        display:inline-block;
-    }
-        .action__btn:hover {
-            background:#de0073;
-        }
-
-        .action__btn--small {
-            font-size:1em;
-            padding:0.5rem 1rem 0.375rem;
-        }
-        .action__btn--big {
-            padding:1rem 1.75rem 0.875rem;
-            font-size:1.5em;
-        }
-        .action__btn--wide {
-            width:100%;
-        }
-
-    .action__btnSecondary {
-        background:#546475;
-        color:#fff;
-        border:0;
-        padding:0.75rem 1.5rem 0.625rem;
-        margin:0 0 1.125rem;
-        font-size:1.125em;
-        line-height:1.5rem;
-        transition:color 0.3s, background 0.3s;
-        border-radius:3px;
-        box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
-    }
-        .action__btnSecondary:hover {
-            background:#384a5c;
-        }
-
-        .action__btnSecondary--small {
-            font-size:1em;
-            padding:0.5rem 1rem 0.375rem;
-        }
-        .action__btnSecondary--big {
-            padding:1rem 1.75rem 0.875rem;
-            font-size:1.5em;
-            margin: 0.25rem;
-        }
-        .btn--disabled, .btn--disabled:hover {
-            background-color: #ccc;
-            color: #999;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.25);
-            cursor: auto;
-        }
 
     .ui__tab {
         border:0;
@@ -309,13 +249,13 @@ fa,
   /*  buttons: default  */
         .btn, .btn:focus {
             background:#eee; color:#626262;
-            border:1px solid #ddd; border-radius:0.1875em;
-            font-weight:700; line-height: 1;
-            padding:0.5625em 1.375em; margin:0;
+            /*border:1px solid #ddd; border-radius:0.1875em;
+            font-weight:400; line-height: 1;
+            padding:0.5625em 1.375em; margin:0;*/
             display: inline-block;
             box-sizing:content-box;
             vertical-align: middle;
-            height:1em;
+            /*height:1em;*/
             -webkit-transition:all 0.25s; transition:all 0.25s;
         }
             .btn__label {
@@ -335,14 +275,17 @@ fa,
                 border:1px solid #ddd;
             }
         .btn--primary, .btn--primary:focus {
-            background:#eaf7ff; color:#2398db;
-            border:1px solid #bfe7ff; 
+            background:#f5f5f5; color:#666;
+            border:1px solid #ccc; 
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            padding:0.75rem 1.5rem 0.625rem;
+            margin:0 0 1.125rem;
+            font-size:1.125em;
+            line-height:1.5rem;
         }
             .btn--primary:hover {
-                border-color:#2398db;
-            }
-            .btn--primary .ui__icon {
-                fill:#2398db;
+                background:#ddd;
+                border: 1px solid #ccc;
             }
         .btn--info, .btn--info:focus {
             background-color:#eaf7ff; color:#2398db;
@@ -359,6 +302,75 @@ fa,
         .btn--danger, .btn--danger:focus {
             background-color:#ffeaea; color:#dc4141;
             border:1px solid #ffcbcb; 
+        }
+        .btn--small, .btn--small:focus {
+            font-size:1em;
+            padding:0.5rem 1rem 0.375rem;
+        }
+        
+        .action__btn {
+            background:#00c0ff;
+            color:#fff;
+            border:0;
+            padding:0.75rem 1.5rem 0.625rem;
+            margin:0 0 1.125rem;
+            font-size:1.125em;
+            line-height:1.5rem;
+            transition:color 0.3s, background 0.3s;
+            border-radius:3px;
+            box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+            display:inline-block;
+        }
+            .action__btn:hover, .action__btn:focus {
+                background:#de0073;
+                color: #fff;
+            }
+            .action__btn--small {
+                font-size:1em;
+                padding:0.5rem 1rem 0.375rem;
+            }
+            .action__btn--big {
+                padding:1rem 1.75rem 0.875rem;
+                font-size:1.5em;
+            }
+            .action__btn--full, .action__btn--wide {
+                width:100%;
+            }
+
+        .action__btnSecondary {
+            background:#546475;
+            color:#fff;
+            border:0;
+            padding:0.75rem 1.5rem 0.625rem;
+            margin:0 0 1.125rem;
+            font-size:1.125em;
+            line-height:1.5rem;
+            transition:color 0.3s, background 0.3s;
+            border-radius:3px;
+            box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+            .action__btnSecondary:hover, .action__btnSecondary:focus {
+                background:#384a5c;
+                color: #fff;
+            }
+            .action__btnSecondary:active {
+                background:#2D353F;
+                color: #fff;
+            }
+            .action__btnSecondary--small {
+                font-size:1em;
+                padding:0.5rem 1rem 0.375rem;
+            }
+            .action__btnSecondary--big {
+                padding:1rem 1.75rem 0.875rem;
+                font-size:1.5em;
+                margin: 0.25rem;
+            }
+        .btn--disabled, .btn--disabled:hover {
+            background-color: #ccc;
+            color: #999;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+            cursor: auto;
         }
 
     /*  buttons: default  */
@@ -393,18 +405,18 @@ fa,
         }
 
     /*  buttons : default : groups;  */
-        .btnGroup__animator {
+        /*.btnGroup__animator {
             display:inline-block;
             vertical-align: middle;
             position:relative;
             width:30em; height:2.25em;
             overflow: hidden;
-        }
+        }*/
         .btnGroup {
             display:inline-block;
             vertical-align: middle;
         }
-            .btnGroup__animator .btnGroup {
+            /*.btnGroup__animator .btnGroup {
                 display:block;
                 position:absolute;
                 -webkit-transition:all 0.25s; transition:all 0.25s;
@@ -414,11 +426,11 @@ fa,
                 left:-25em;
             }
             @media screen and (max-width:55em) {
-                /* width: 880px */
+                /* width: 880px *//*
                 .btnGroup__animator {
                     height:1.875rem;
                 }
-            }
+            }*/
             .btnGroup .btn {
                 float:left;
                 border-radius:0;

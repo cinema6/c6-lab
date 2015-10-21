@@ -22,6 +22,7 @@
         position: relative;
         height: 36em;
     }
+    .btnGroup
     </style>
 </head>
 <body>
@@ -55,15 +56,37 @@
             <h1 class="mainHeader__breadcrumbs tk--hdr">
                 <a href="campaigns.html">Campaigns</a>  /  Captain Morgan Very Important Campaign
             </h1>
+            <div class="pageHeader__actions">
+                <!--<button c6-sref="Selfie:NewCampaign" title="New Campaign" class="action__btn action__btn--small" type="button">
+                    
+                    New Campaign
+                </button>-->
+                <!--<div class="btnGroup">
+                    <button class="btn action__btn action__btn--small" title="Copy"><i class="fa fa-copy"></i></button>
+                    <button class="btn action__btn action__btn--small" title="Cancel"><i class="fa fa-ban"></i></button>
+                    <button class="btn action__btn action__btn--small" title="Delete"><i class="fa fa-trash-o"></i></button>
+                </div>
+                <div class="btnGroup">
+                    <button class="btn action__btnSecondary action__btnSecondary--small" title="Copy"><i class="fa fa-copy"></i></button>
+                    <button class="btn action__btnSecondary action__btnSecondary--small" title="Cancel"><i class="fa fa-ban"></i></button>
+                    <button class="btn action__btnSecondary action__btnSecondary--small" title="Delete"><i class="fa fa-trash-o"></i></button>
+                </div>-->
+                <div class="btnGroup">
+                    <button class="btn btn--primary btn--small" title="Edit"><i class="fa fa-pencil-square-o"></i><span class="hide--palm"> Edit</span></button>
+                    <button class="btn btn--primary btn--small" title="Copy"><i class="fa fa-copy"></i><span class="hide-mobile"> Copy</span></button>
+                    <button class="btn btn--primary btn--small" title="Cancel"><i class="fa fa-ban"></i><span class="hide--palm"> Cancel</span></button>
+                    <button class="btn btn--primary btn--small" title="Delete"><i class="fa fa-trash-o"></i><span class="hide--palm"> Delete</span></button>
+                </div>
+            </div>
         </div><!--.mainHeader__group-->
         <div class="tabBar__group">
             <ul class="tabBar__list clearfix">
                 <li class="tabBar__item">
-                <button class="tabBar__btn" type="button">
+                <button class="tabBar__btn" type="button" onclick="location.href='stats.html'">
                     Stats</button>
                 </li>
-                <li class="tabBar__item">
-                <button class="tabBar__btn tabBar__item--active" type="button" onclick="location.href='manage-campaign.html' ">
+                <li class="tabBar__item tabBar__item--active">
+                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
                     Manage Campaign</button>
                 </li>
                 <li class="tabBar__item">
@@ -93,24 +116,35 @@
             <!--left column-->
              <div class="grid__item  adManage one-third  palm--one-whole">        
                 <div class="grid">            
-                 <div class="grid__item  one--whole grid--center">
+                 <!--<div class="grid__item  one--whole grid--center">
                      <div class="action__btnGroup">
                       <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-copy"></i>  Copy</button>
                       <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-ban"></i>  Cancel</button>
                       <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-trash-o"></i>  Delete</button>
                     </div>
                     
-                </div>
+                </div>-->
                     <div class="grid__item grid--center lockedMsg">
-                        <img src="img/lock-icon.png" class="lockedMsg__icon"/>
+                        <!--<img src="img/lock-icon.png" class="lockedMsg__icon"/>
                         <h3 class="lockedMsg__icon--text tk--hdr">Locked</h3>
                         <p class="lockedMsg__info">Your campaign is <strong>active</strong></p>
+                        <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p>-->
+                        <!--pending approval -->
+                        <h3 class="lockedMsg__icon--text tk--hdr">Pending Approval</h3>
+                        <p class="lockedMsg__info">Your campaign is <strong>Pending Approval</strong></p>
                         <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p>
+                        <!--pending request 
+                        <h3 class="lockedMsg__icon--text tk--hdr">Pending Change Request</h3>
+                        <p class="lockedMsg__info">Your campaign is <strong>active</strong></p>
+                        <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p>-->
+                        
+                        
                     </div>
                     <div class="grid__item one--whole grid--center">
                         <div class="action__btnGroup">                          
-                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-pause"></i>  Pause</button>
-                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-pencil-square-o"></i>  Edit</button>
+                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-pause"></i>  Pause</button> or 
+                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-play"></i>  Resume</button>                          
+                          <button class="action__btn action__btn--small"><i class="fa fa-pencil-square-o"></i>  Edit</button>
                         </div>
                     </div>
                 </div>            
@@ -133,13 +167,13 @@
 
                         <div class="ui__tabPanel js-preview-desktop adPreview__panel">
                             <div class="adPreview__desktop">
-                                <iframe class="adPreview__desktopFrame" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=full-np"></iframe>
+                            <!--    <iframe class="adPreview__desktopFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=full-np"></iframe>-->
                             </div>
                         </div>
                         
                         <div class="ui__tabPanel js-preview-mobile adPreview__panel" style="display:none;">
                             <div class="adPreview__mobile">
-                                <iframe class="adPreview__mobileFrame" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=mobile" frameborder="0" allowfullscreen></iframe>
+                                <iframe class="adPreview__mobileFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=mobile" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
 

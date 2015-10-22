@@ -75,6 +75,8 @@
                     <button class="btn btn--primary btn--small btn--nav" title="Edit"><i class="fa fa-pencil-square-o"></i><span class="hide--palm"> Edit</span></button>
                     <button class="btn btn--primary btn--small btn--nav" title="Copy"><i class="fa fa-copy"></i><span class="hide-mobile"> Copy</span></button>
                     <button class="btn btn--primary btn--small btn--nav" title="Cancel"><i class="fa fa-ban"></i><span class="hide--palm"> Cancel</span></button>
+                    <button class="btn btn--primary btn--small btn--nav btn--disabled" title="Pause"><i class="fa fa-pause"></i><span class="hide--palm"> Pause</span></button>
+                    <button class="btn btn--primary btn--small btn--nav btn--disabled" title="Resume"><i class="fa fa-play"></i><span class="hide--palm"> Resume</span></button>
                     <button class="btn btn--primary btn--small btn--nav" title="Delete"><i class="fa fa-trash-o"></i><span class="hide--palm"> Delete</span></button>
                 </div>
             </div>
@@ -107,49 +109,13 @@
     
     <div class="tabContent targeting__content container">
         <header class="tabContent__header">
-            <h2 class="tabContent__title tk--hdr">Your campaign is currently Active</h2>
+            <h2 class="tabContent__title tk--hdr">Your campaign is currently Pending Approval</h2>
             <span class="tabContent__subtitle">Captain Morgan Very Important Campaign</span>
+                <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p> 
         </header>
     <div class="tabContent__gridHolder">
 
-        <div class="grid">
-            <!--left column-->
-             <div class="grid__item  adManage one-third  palm--one-whole">        
-                <div class="grid">            
-                 <!--<div class="grid__item  one--whole grid--center">
-                     <div class="action__btnGroup">
-                      <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-copy"></i>  Copy</button>
-                      <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-ban"></i>  Cancel</button>
-                      <button class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-trash-o"></i>  Delete</button>
-                    </div>
-                    
-                </div>-->
-                    <div class="grid__item grid--center lockedMsg">
-                        <!--<img src="img/lock-icon.png" class="lockedMsg__icon"/>
-                        <h3 class="lockedMsg__icon--text tk--hdr">Locked</h3>
-                        <p class="lockedMsg__info">Your campaign is <strong>active</strong></p>
-                        <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p>-->
-                        <!--pending approval -->
-                        <h3 class="lockedMsg__icon--text tk--hdr">Pending Approval</h3>
-                        <p class="lockedMsg__info">Your campaign is <strong>Pending Approval</strong></p>
-                        <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p>
-                        <!--pending request 
-                        <h3 class="lockedMsg__icon--text tk--hdr">Pending Change Request</h3>
-                        <p class="lockedMsg__info">Your campaign is <strong>active</strong></p>
-                        <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p>-->
-                        
-                        
-                    </div>
-                    <div class="grid__item one--whole grid--center">
-                        <div class="action__btnGroup">                          
-                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-pause"></i>  Pause</button> or 
-                          <button class="action__btnSecondary action__btnSecondary--small btn--disabled" disabled><i class="fa fa-play"></i>  Resume</button>                          
-                          <button class="action__btn action__btn--small"><i class="fa fa-pencil-square-o"></i>  Edit</button>
-                        </div>
-                    </div>
-                </div>            
-        </div><!--left column ends--><!--
-            --><div class="grid__item two-thirds palm--one-whole">
+       <div class="grid__items palm--one-whole">
                 
                 <section class="campaignPreview__group">
                     

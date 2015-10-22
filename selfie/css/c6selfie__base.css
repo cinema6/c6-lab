@@ -307,6 +307,24 @@ fa,
             font-size:1em;
             padding:0.5rem 1rem 0.375rem;
         }
+
+        /*  JESS ADDED  */
+
+        .btn--nav, .btn--nav:focus {
+            border-top:none;
+            border-left:none;
+            border-bottom:none;
+            background-color:#fff;
+        }
+        .btn--nav:last-child {
+            border:none;
+        }
+
+        .btn--nav:hover {
+            border-top:none;
+            border-left:none;
+            border-bottom:none;
+        }
         
         .action__btn {
             background:#00c0ff;

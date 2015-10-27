@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>C6 Desktop</title>
+<link rel="stylesheet" href="css/desktop.css">
+
+</head>
+<body>
+    <div class="card__wrap">
+        
+        <div class="card__group">
+            
+            <div class="player__group">
+                <div class="player js-playerBox">
+                    <div class="c6-view playerBox playerBox--canplay"> 
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2-xccf3iCyc" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div><!-- .player__group--> <!--video embed -->
+            
+            <div class="social__group">
+                <!--Add sponsor website link in the anchor below-->
+                <a href="#" target="_blank" title="thebar.com" class="sponsorProfile__imgBox">
+                    <span class="sponsorProfile__small--text">Sponsored by</span>
+                    <!-- sponsor logo -->
+                    <img src="http://i.imgur.com/YbBIFZv.png" class="sponsorProfile__img" alt="thebar.com" />
+                    <!-- .sponsor logo -->
+                </a>
+                <ul><!-- social network links and the share button-->
+                    <li class="social__group--item"><a href="www.facebook.com" target="_blank" title="Facebook" class="sponsorProfile__link spriteBe socialIconsBe socialIconsBe--facebook"><span class="ir">Facebook</span></a></li>
+                    <li class="social__group--item"><a href="www.youtube.com" target="_blank" title="YouTube" class="sponsorProfile__link spriteBe socialIconsBe socialIconsBe--youtube"><span class="ir">YouTube</span></a></li>
+                    <li class="social__group--item"><a href="www.youtube.com" target="_blank" title="YouTube" class="sponsorProfile__link spriteBe socialIconsBe socialIconsBe--instagram"><span class="ir">Instagram</span></a></li>
+                    <li class="social__group--item"><a href="www.youtube.com" target="_blank" title="YouTube" class="sponsorProfile__link spriteBe socialIconsBe socialIconsBe--vimeo"><span class="ir">YouTube</span></a></li>
+                    <li class="social__group--item"><a href="www.youtube.com" target="_blank" title="YouTube" class="sponsorProfile__link spriteBe socialIconsBe socialIconsBe--pinterest"><span class="ir">Instagram</span></a></li>
+                    <!-- share button links
+                        Add the share modal to the link below                    
+                    -->                    
+                    <li class="social__group--item"><a href="www.youtube.com" target="_blank" title="YouTube" class="sponsorProfile__link spriteBe socialIconsBe socialIconsBe--share"><span class="ir">Share</span></a></li>
+                    <!-- share button ends-->
+                </ul>        
+            </div><!-- .social__group-->
+            
+            <!--copy and cta below --> 
+            <!-- the div below should have classes based on the the text length.
+                    if "card__desc p" (the paragraph in the card__desc div)
+                        has more than 180 chars, add - "info__group--expands" class
+                        has more than 135 chars, add - "info__group--expandMed" and "info__group--expands" classes
+                        has more than 125 chars, add - "info__group--expandSml" , "info__group--expandMed" and "info__group--expands" classes
+            -->
+            <div class="info__group info__group--expandSml info__group--expandMed info__group--expands">
+                <div class="card__copyBox">
+                    <div class="card__copy card__copy--hasSponsor">   
+                        
+                        <div class="card__copy--content">
+                            <div class="card__title">
+                                <h1 class="tk--hdr">American Flag Cake for The 4th of July</h1>
+                            </div><!-- .card__title-->
+                            <div class="card__desc">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth yes.</p>
+                            </div><!-- .card__desc-->
+                        </div>
+                        <!-- call to action link below-->
+                        <div class="cta__group">
+                            <a class="sponsoredBtn" href="#">Find some awesome recipes here</a>
+                        </div><!-- .cta__group-->
+                        
+                    </div>
+                </div>
+            </div><!-- .info__group-->
+        </div><!-- .card__group-->
+    </div><!-- .card__wrap-->
+</body>
+</html>

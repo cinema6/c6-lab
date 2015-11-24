@@ -13,10 +13,41 @@
     <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
     <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
     <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
-    
 
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/select2.min.js"></script>
+
+    
+<!--Add script below for datepicker -->
+    <script src="js/jquery-ui.min.js"></script>
+    
+    <script>
+      $(function() {
+        $( "#startdate" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          onClose: function( selectedDate ) {
+            $( "#enddate" ).datepicker( "option", "minDate", selectedDate );
+          }
+        });
+        
+        $( "#enddate" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          onClose: function( selectedDate ) {
+            $( "#startdate" ).datepicker( "option", "maxDate", selectedDate );
+          }
+        });
+      });
+    </script>
+<!--Add script above for datepicker -->
+
 </head>
 <body>
 
@@ -129,9 +160,60 @@
 
                     </div>
                 </section><!--.formSection__group-->
-
             </div><!--.grid__item-->
 
+        <!-- add code below to add datepicker-->
+            <div class="grid__item two-thirds">
+                <section class="formSection__group formSection__group--sub">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Set Your Timeline</span>
+                    </h1>
+                    <p class="formSection__introText">Choose your start and end dates</p>
+
+                    <div class="form__items">
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="startdate">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Start date
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This is when your campaign would start.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="enddate">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                End date
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This is when your campaign would end.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </section><!--.formSection__group-->
+
+            </div><!--.grid__item-->
+        <!-- add code above to add date picker-->
 
 
             <div class="grid__item one-half">

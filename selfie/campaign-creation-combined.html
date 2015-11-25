@@ -24,18 +24,18 @@
     <script>
       $(function() {
         $( "#startdate" ).datepicker({
-          defaultDate: "+1w",
           changeMonth: true,
           numberOfMonths: 1,
           prevText: '',
           nextText: '',
+          minDate: 0,
           onClose: function( selectedDate ) {
             $( "#enddate" ).datepicker( "option", "minDate", selectedDate );
           }
         });
         
         $( "#enddate" ).datepicker({
-          defaultDate: "+1w",
+          defaultDate: "+1m",
           changeMonth: true,
           numberOfMonths: 1,
           prevText: '',

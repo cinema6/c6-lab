@@ -29,6 +29,7 @@
           prevText: '',
           nextText: '',
           minDate: 0,
+          changeMonth: false,
           onClose: function( selectedDate ) {
             $( "#enddate" ).datepicker( "option", "minDate", selectedDate );
           }
@@ -40,6 +41,7 @@
           numberOfMonths: 1,
           prevText: '',
           nextText: '',
+          changeMonth: false,
           onClose: function( selectedDate ) {
             $( "#startdate" ).datepicker( "option", "maxDate", selectedDate );
           }

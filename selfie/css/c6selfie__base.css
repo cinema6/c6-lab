@@ -950,15 +950,15 @@ fa,
         }
 
         .statsChart__infoBox--views {
-            border-top:2px solid #00c0ff;
+            border-bottom:2px solid #00c0ff;
         }
 
         .statsChart__infoBox--interactions {
-            border-top:2px solid #ffc000;
+            border-bottom:2px solid #ffc000;
         }
 
         .statsChart__infoBox--cost {
-            border-top:2px solid #20d783;
+            border-bottom:2px solid #20d783;
         }
 
             .stats__label {
@@ -976,10 +976,11 @@ fa,
             }
 
             .stats__infoNumber {
-                font-size:3em;
+                font-size:2em;
                 margin:0;
                 font-weight:500;
                 color:#5c5c5c;
+                cursor: default;
             }
 
             .statsChart__infoBox--views .stats__infoNumber {
@@ -1014,6 +1015,7 @@ fa,
             margin:1rem 0 0.25rem;
             padding:0.125em 0 0.125em 1.5rem;
             position:relative;
+            cursor: default;
         } 
             .stats__hdr--title {
                 margin: 0;
@@ -1038,9 +1040,21 @@ fa,
 
                 .stats__rowClicks {
                     float:right;
-                    margin:-0.75rem 1.5rem 0 0;
+                    margin:-0.5rem 1.5rem 0 0;                    
                     font-weight:600;
                     color:#5c5c5c;
+                    width: 3em;
+                    text-align: center;
+                }
+                .stats__rowClicks .stats__rowClicks--label {
+                    font-size: 0.75rem;
+                    line-height: 0.25em;
+                    vertical-align: middle;
+                    padding-left: 0.5em;
+                    display: block;
+                    padding-top: 0;
+                    margin-top: -5px;
+                    text-align: center;
                 }
 
             .stats__column {
@@ -1067,8 +1081,19 @@ fa,
                     background:#00c0ff;
                 }
 
-
-
+    /* Chart stats*/
+        .chart__wrap {
+            margin-bottom: 50px;
+        }
+        .doughnut-legend {
+            list-style-type: none;
+        }
+        .doughnut-legend li span {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            margin-right: 10px;
+        }
 
     /*  data column classes
         ================================================ */

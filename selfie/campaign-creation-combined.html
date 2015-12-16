@@ -47,6 +47,13 @@
           }
         });
       });
+      $(function() { 
+      $( "#ui-datepicker-div" ).position({
+          my: "right bottom",
+          at: "right bottom",
+          of: "#startdate"
+        });
+        });
     </script>
 <!--Add script above for datepicker -->
 
@@ -93,7 +100,7 @@
             </li>
             <li class="tocNav__item">
                 <a href="#section_2" class="tocNav__link">2</a>
-                <div class="tocNav__label tk--hdr">Sponsor Details</div>
+                <div class="tocNav__label tk--hdr">Advertiser Details</div>
             </li>
             <li class="tocNav__item">
                 <a href="#section_3" class="tocNav__link">3</a>
@@ -226,7 +233,7 @@
                         <span class="formSection__number">
                             <span class="formSection__numberText">2</span>
                         </span>
-                        <span class="formSection__titleText tk--hdr">Sponsor Details</span>
+                        <span class="formSection__titleText tk--hdr">Advertiser Details</span>
                     </h1>
                     <p class="formSection__introText">This information will be displayed on your sponsored card</p>
 
@@ -236,7 +243,24 @@
                             <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
                             <label class="form__label" for="c6-sponsor-name">
                                 <i class="fa fa-times ui--error"></i> 
-                                Sponsor Name
+                                Advertiser Name
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-link tk--active"></i> Advertiser Website
                             </label>
                             <div class="form__helpBox form__helpBox--right">
                                 <div class="form__helpText">
@@ -250,6 +274,54 @@
                             </div>
                         </fieldset>
 
+                        
+<!--website scraping - logo and social links-->
+                        
+                        <!-- import button and message -->                        
+                        <div class="text--center">
+                            <p>Would you like to import logo and social links?</p>
+                            <div class="ui__btnHolder ui__btnHolder--sub">
+                                <button class="action__btn action__btn--small">Import</button>
+                            </div>
+                        </div>
+
+                        <!-- loading animation -->
+                        <div class="assetLoader ui__connector">
+                            <div class="assetLoader__status">
+                                <div class="assetLoader__status--icon">
+                                    <div class="spinner"></div>
+                                </div>
+                                <div class="assetLoader__status--text text-small">Looking for logo and social links
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- loading success -->
+                        <div class="assetLoader ui__connector">
+                            <div class="assetLoader__status assetLoader__status-success">
+                                    <div class="assetLoader__status--icon">
+                                        <i class="fa fa-check-circle"></i>
+                                    </div>
+                                <div class="assetLoader__status--text text-small">Retrieved logo and 3 social links
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- loading failure -->
+                        <div class="assetLoader ui__connector">
+                            <div class="assetLoader__status assetLoader__status-error">
+                                    <div class="assetLoader__status--icon">
+                                        <i class="fa fa-warning"></i>
+                                    </div>
+                                <div class="assetLoader__status--text text-small">Failed to retrieved logo and social links
+                                </div>
+                            </div>
+                        </div>
+
+<!--website scraping - logo and social links-->
+
+                        
+                    <section class="formSection__group formSection__group--sub">
                         <fieldset class="form__item">
                             <select class="form__selectBox form__selectBox--single">
                                 <option>Use image URL</option>
@@ -257,7 +329,7 @@
                             </select>
                             <label class="form__label" for="c6-sponsor-name">   
                                 <i class="fa fa-times ui--error"></i> 
-                                Sponsor Logo
+                                Advertiser Logo
                             </label>
                             <div class="form__helpBox form__helpBox--right">
                                 <div class="form__helpText">
@@ -303,24 +375,6 @@
                                 <button class="action__btn action__btn--small">Upload Your Image</button>
                             </div>
                         </div><!--.sponsorLogo__wizard-->
-
-                        <fieldset class="form__item">
-                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
-                            <label class="form__label" for="c6-sponsor-name">   
-                                <i class="fa fa-times ui--error"></i> 
-                                <i class="fa fa-link tk--active"></i> Sponsor Website
-                            </label>
-                            <div class="form__helpBox form__helpBox--right">
-                                <div class="form__helpText">
-                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
-                                </div>
-                            </div>
-                            <div class="form__errorBox">
-                                <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                </p>
-                            </div>
-                        </fieldset>
 
                         <fieldset class="form__item ">
                             <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
@@ -411,29 +465,7 @@
                                 </p>
                             </div>
                         </fieldset>
-
-                        <fieldset class="form__item">
-                            <select class="form__selectBox form__selectBox--single">
-                                <option>The first option</option>
-                                <option>The second option</option>
-                                <option>The third option</option>
-                            </select>
-                            <label class="form__label" for="c6-sponsor-name">   
-                                <i class="fa fa-times ui--error"></i> 
-                                Selector Menu Label
-                            </label>
-                            <div class="form__helpBox form__helpBox--right">
-                                <div class="form__helpText">
-                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
-                                </div>
-                            </div>
-                            <div class="form__errorBox">
-                                <p class="form__errorMsg">
-                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
-                                </p>
-                            </div>
-                        </fieldset>
-
+                    </section>
                     </div> 
 
                 </section><!--.formSection__group-->

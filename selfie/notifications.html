@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Notifications - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.30.1.rc3-0-ge122f80/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item mainNav__item--active">
+        <a href="archives.html"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html"><i class="fa fa-bell-o mainNav__iconOnly"></i><span class="notification__count">99+</span></a>
+    </div>
+    <div class="mainNav__settings mainNav__item">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>    
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <div class="grid__item one-half">
+                <h1 class="mainHeader__breadcrumbs tk--hdr">
+                    <a href="#" title="Settings">Notifications</a>
+                </h1>
+            </div>
+            <div class="pageHeader__actions">
+                <a href="campaign-creation-combined.html" class="action__btn action__btn--small" style="color: #fff;"><i class="fa fa-times"></i> Dismiss Notifications</a>
+            </div>
+        </div><!--.mainHeader__group-->
+    </div><!--.pageHeader__group-->
+        <header class="settingsContent__header">
+            <h2 class="settingsContent__title tk--hdr">Notifications</h2>
+            <span class="settingsContent__subtitle">Recent activity on your account</span>
+            <span class="item--right">
+        </header>
+    <div class="gridHolder">               
+
+        <div class="grid grid--center">
+            <div class="grid__item one-whole">
+                <div class="accountSettings">
+                    
+                    <div class="card--item">
+                        <ul class="alertNotifications__box">
+                            <li class="alertNotifications__box-item"><span class="pull-right text-right"><a href="settings-edit-email.html"></a></span><span class="pull-left text-left one-eighth">Today</span><h3 class="tk--hdr">Campaign "Jack in the box" Ended <span class="alertLabel alertLabel__warning alertLabel--small">Ended</span></h3></li>
+                            <li class="alertNotifications__box-item"><span class="pull-left text-left one-eighth">12/23/2015</span><h3 class="tk--hdr">Campaign XYZ got approved <span class="alertLabel alertLabel__success alertLabel--small">Approved</span></h3><span class="pull-right text-right"><a href="settings-edit-email.html">View</a></span></li>
+                            <li class="alertNotifications__box-item"><span class="pull-left text-left one-eighth">12/18/2015</span><h3 class="tk--hdr">Campaign XYZ got rejected <span class="alertLabel alertLabel__failure alertLabel--small">Rejected</span></h3><span class="pull-right text-right"><a href="settings-edit-email.html">View</a></span></li>
+                            <li class="alertNotifications__box-item"><span class="pull-left text-left one-eighth">12/11/2015</span><h3 class="tk--hdr">Credit card used on an active campaign got expired</h3><span class="pull-right text-right"><a href="settings-edit-email.html">View</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div>  
+</div><!--.pageHolder-->
+
+</body>
+</html>

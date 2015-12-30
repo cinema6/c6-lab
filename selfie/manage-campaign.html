@@ -114,58 +114,99 @@
                 <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p> 
         </header>
     <div class="tabContent__gridHolder">
-
-       <div class="grid__items palm--one-whole">
-                
-                <section class="campaignPreview__group">
+        <div class="grid grid--center grid--middle">
+           <div class="grid__item one-half palm--one-whole">
                     
-
-                    <div class="grid grid--full grid--center adPreview__group">
-
-                        <div class="tabHolder">
-                            <button class="one-quarter palm--one-half ui__tab ui__tab--active" data-panel="js-preview-desktop">
-                                Desktop
-                            </button><!--
-                         --><button class="one-quarter palm--one-half ui__tab" data-panel="js-preview-mobile">
-                                Mobile
-                            </button>
-                        </div><!--.tabHolder-->
-
-                        <div class="ui__tabPanel js-preview-desktop adPreview__panel">
-                            <div class="adPreview__desktop">
-                            <!--    <iframe class="adPreview__desktopFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=full-np"></iframe>-->
-                            </div>
-                        </div>
+                    <section class="campaignPreview__group">
                         
-                        <div class="ui__tabPanel js-preview-mobile adPreview__panel" style="display:none;">
-                            <div class="adPreview__mobile">
-                                <iframe class="adPreview__mobileFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=mobile" frameborder="0" allowfullscreen></iframe>
+
+                        <div class="grid grid--full grid--center adPreview__group">
+
+                            <div class="tabHolder">
+                                <button class="one-quarter palm--one-half ui__tab ui__tab--active" data-panel="js-preview-desktop">
+                                    Desktop
+                                </button><!--
+                             --><button class="one-quarter palm--one-half ui__tab" data-panel="js-preview-mobile">
+                                    Mobile
+                                </button>
+                            </div><!--.tabHolder-->
+
+                            <div class="ui__tabPanel js-preview-desktop adPreview__panel">
+                                <div class="adPreview__desktop">
+                                <!--    <iframe class="adPreview__desktopFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=full-np"></iframe>-->
+                                </div>
+                            </div>
+                            
+                            <div class="ui__tabPanel js-preview-mobile adPreview__panel" style="display:none;">
+                                <div class="adPreview__mobile">
+                                    <iframe class="adPreview__mobileFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=mobile" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                        </div> <!--.grid .grid--full .grid--center adPreview__group-->
+                    </section> 
+                </div><!--.grid__item--><!--
+             --><div class="grid__item adManage one-half palm--one-whole">
+                    <div class="grid">
+                        <div class="grid__item grid--center lockedMsg">
+                            <h3 class="lockedMsg__info tk--hdr">Your campaign is <strong class="ng-binding">active</strong></h3>
+                            <!-- ngIf: campaign.updateRequest && campaign.status === 'pending' -->
+                            <!-- ngIf: campaign.updateRequest && campaign.status !== 'pending' --><p class="lockedMsg__info ng-scope" ng-if="campaign.updateRequest &amp;&amp; campaign.status !== 'pending'">Your requested changes are pending approval.</p><!-- end ngIf: campaign.updateRequest && campaign.status !== 'pending' -->
+                        </div>
+                        <!-- ngIf: (campaign.status === 'active' || campaign.status === 'paused') && SelfieManageCampaignCtrl.updateRequest.data.status !== 'canceled' --><div class="grid__item one--whole grid--center ng-scope" ng-if="(campaign.status === 'active' || campaign.status === 'paused') &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status !== 'canceled'">
+                            <div class="action__btnGroup">
+                              <button ng-show="(campaign.status === 'active' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status !== 'paused') || (campaign.status === 'paused' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status === 'active')" ng-click="SelfieManageCampaignCtrl.update('pause')" class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-pause"></i>  Pause</button>
+                              <button ng-show="(campaign.status === 'paused' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status !== 'active') || (campaign.status === 'active' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status === 'paused')" ng-click="SelfieManageCampaignCtrl.update('resume')" class="action__btnSecondary action__btnSecondary--small ng-hide"><i class="fa fa-play"></i>  Resume</button>
+                              <!-- <button ng-click="SelfieManageCampaignCtrl.edit(campaign)" ng-class="{'btn--disabled' : !!campaign.updateRequest }" ng-disabled="!!campaign.updateRequest" class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-pencil-square-o"></i>  Edit</button> -->
+                            </div>
+                        </div><!-- end ngIf: (campaign.status === 'active' || campaign.status === 'paused') && SelfieManageCampaignCtrl.updateRequest.data.status !== 'canceled' -->
+                    </div>
+                </div>
+            </div>
+
+        <!-- campaign summary -->
+        <div class="grid">
+            <div class="grid__item one-half">
+                <div class="campaignSummary__group">
+                    <div class="grid">
+                        <div class="campaignItem__list">                        
+                            <div class="campaignItems">
+                                <ul>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Interests</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">Interests: Arts and Entertainment, Business, Cars, Sports, Education, News, Finance, Hobbies, DIY, Crafts, Photography</div>
+                                    </li>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Demographics</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">Age: 18-24, 25-34, 35-44</div>
+                                    <div class="grid__item one-whole campaignItem__label text--small">Gender: Female</div>
+                                    <div class="grid__item one-whole campaignItem__label text--small">Income: $50,000-$75,000, $75,000-$99,000</div>
+                                    </li>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Location</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">State: New Jersey, New York, Florida</div>
+                                    <div class="grid__item one-whole campaignItem__label text--small">DMA: Atlanta, Philadelhpia, Greater NYC</div>
+                                    </li>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Timeline</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">11/30/2015 until 12/30/2015</div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="grid">
+                        <div class="campaignSummary__item">
+                            <div class="grid">
+                                <div class="grid__item grid--center one-quarter"><span class="campaignItem__label">Total Budget </span><span class="campaignItem__title tk--hdr">$5,000</span></div><!-- --><div class="grid__item one-quarter grid--center"><span class="campaignItem__label">Daily Limit </span><span class="campaignItem__title tk--hdr">$250</span></div><!-- --><div class="grid__item one-quarter grid--center grid--right"><span class="campaignItem__label">Est. Views </span><span class="campaignItem__title tk--hdr">50,000</span></div><!-- --><div class="grid__item grid--center one-quarter"><span class="campaignItem__label ">CPV </span><span class="campaignItem__title tk--hdr">$0.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- campaign summary ends-->
 
-                    </div> <!--.grid .grid--full .grid--center adPreview__group-->
-                </section> 
-            </div><!--.grid__item--> 
-
-           <!-- <div class="grid__item one-third">
-            <h3>Locked</h3>
-            <div class="grid__item  one-third">
-                    <div class="ui__btnHolder">
-                        <button class="action__btn action__btn--small"><i class="fa fa-copy"></i>  copy</button>
-                    </div>
-                </div>
-                <div class="grid__item  one-third">
-                    <div class="ui__btnHolder">
-                        <button class="action__btn action__btn--small"><i class="fa fa-ban"></i>  Cancel</button>
-                    </div>
-                </div>
-                <div class="grid__item  one-third">
-                    <div class="ui__btnHolder">
-                        <button class="action__btn action__btn--small"><i class="fa fa-trash-o"></i>  Delete</button>
-                    </div>
-                </div>
-            </div>--><!--.grid__item--> 
-        </div><!--.grid grid--center-->
 
     </div><!--.gridHolder-->
     </div><!--.tabContent-->

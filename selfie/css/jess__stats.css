@@ -1,0 +1,55 @@
+.grid__item.two-fifths.left {
+	padding-left:0;
+	padding-right: 12px;
+}
+.grid__item.three-fifths.right {
+	padding-left:12px;
+}
+
+
+.tabContent {
+    margin: 12em auto 0;
+    width: 97%;
+    max-width: 84em;
+}
+
+	.tabContent__header {
+	    padding: 0;
+	}
+
+		.tabContent__subtitle {
+		    padding: 0;
+		}
+
+		.action__selection ~ .action__dropdown {
+		    right: 0;
+		}
+
+		.action__selection {
+		    right: 3em;
+		}
+
+
+		.fa-play:before {
+		    margin-left: 0.25rem;
+		}
+
+
+
+		.stats__sub-hdr {
+			padding: 0.25em 0 1.75em 1.5rem;
+    		font-family: "Roboto Condensed";
+		}
+
+		
+
+		.stats__rowClicks {
+		    width:5rem;
+		    text-align: right;
+		}
+
+		.stats__sub-hdr .stats__rowClicks {
+			font-size:1rem;
+			color:#5c5c5c;
+			margin:0 1.5rem 0 0;
+		}

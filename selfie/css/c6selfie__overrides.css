@@ -381,22 +381,22 @@
             vertical-align: middle;
         }
     /*Social links colors*/
-        .linkItem__title .fa-facebook-square:before {
+        .fa-facebook-square, .linkItem__title .fa-facebook-square:before {
             color: #3a5795;
         }
-        .linkItem__title .fa-twitter-square:before {
+        .fa-twitter-square, .linkItem__title .fa-twitter-square:before {
             color: #2caae1;
         }
-        .linkItem__title .fa-instagram-square:before {
+        .fa-instagram, .linkItem__title .fa-instagram:before {
             color: #125688;
         }
-        .linkItem__title .fa-youtube-square:before {
+        .fa-youtube-square, .linkItem__title .fa-youtube-square:before {
             color: #cc181e;
         }
-        .linkItem__title .fa-pinterest-square:before {
+        .fa-pinterest-square, .linkItem__title .fa-pinterest-square:before {
             color: #bb0000;
         }
-        .linkItem__title .fa-vimeo-square:before {
+        .fa-vimeo-square, .linkItem__title .fa-vimeo-square:before {
             color: #162221;
         }
     .logoImport__wrap {
@@ -458,3 +458,66 @@
             .mainNav__item .notification__count:empty {
                 display: none;
             }
+
+/*  ================================================
+    Advertiser profile styles
+    ================================================ */
+    .advertiserList {
+        padding: 1em;
+    }
+    .advertiserList__item {
+        margin-bottom: 1px;
+    }
+        .advertiserItem__logo img{
+            vertical-align: middle;
+            margin: 1em 0;
+        }
+        .advertiserItem__social i.fa{
+            font-size: 1.5em;
+            line-height: 2em;
+            margin-top: -4px;
+        }
+            .advertiserItem__social i.fa--bg--square {
+                background: #000;
+                font-size: 1em;
+                line-height: 1.25em;
+                text-align: center;
+                width: 1.25em;            
+                border-radius: 4px;
+                color: #fff;
+                margin-top: 0 !important;
+            }
+    .advertiserList__actions {
+        text-align: right;
+    }
+        .advertiserList__actions .action__dropdown{
+            float: right;
+            margin-right: 2em;
+        }
+        .advertiserList__actions .action__dropdown ul li button{
+            min-width: 2em;
+            display: block;
+            text-align: center;
+        }
+        .advertiserList__actions .action__dropdown ul ul li, .advertiserList__actions .action__dropdown ul ul li button {
+            float: none;
+            width: 80px;
+            text-align: left;
+        }
+/** override existing replace in basecss*/
+    .logoPreview__group {
+        margin-bottom: 2em;
+    }
+    .assetLoader__status {
+        max-width: 300px;
+    }
+        .assetLoader__status .assetLoader__status--text {
+            max-width: 300px;
+        }
+    
+    .form__item--sub .form__label {
+        font-size: 0.875em;
+        top: -1.4375rem;
+        left: 0;
+        z-index: 10;
+    }

@@ -1,10 +1,4 @@
-.grid__item.two-fifths.left {
-	padding-left:0;
-	padding-right: 12px;
-}
-.grid__item.three-fifths.right {
-	padding-left:12px;
-}
+
 
 
 .tabContent {
@@ -29,9 +23,39 @@
 		    right: 3em;
 		}
 
+		.statsChart__infoBox.stats__quartiles .fa {
+			background:#ED217C;
+			border-color:#ED217C; 
+		}
+		.statsChart__infoBox.stats__quartiles .stats__infoNumber {
+			color:#ED217C;
+		}
 
 		.fa-play:before {
 		    margin-left: 0.25rem;
+		}
+
+		.statsChart__infoBox.stats__linksSummary .fa {
+			background:#5FC2F1;
+			border-color:#5FC2F1; 
+		}
+		.statsChart__infoBox.stats__linksSummary .stats__infoNumber {
+			color:#5FC2F1;
+		}
+
+		.stats__hdr.stats__quartiles {
+			color:#ED217C;
+		}
+
+		.stats__hdr.stats__linksSummary {
+			color:#5FC2F1;
+		}
+
+		.stats__hdr.stats__linksShare {
+			color:#98CE00;
+		}
+		.stats__hdr.stats__linksSocial {
+			color:#16E0BD;
 		}
 
 
@@ -48,8 +72,63 @@
 		    text-align: right;
 		}
 
-		.stats__sub-hdr .stats__rowClicks {
+		.stats__rowGraph {
+			width:50%;
+		    text-align:left;
+		}
+
+		.stats__columnGraph {
+		    width: 50%;
+		    margin-top: 0;
+		    background: #f1f1f1;
+		    margin-right: 1.5rem;
+		}
+
+			.stats__columnGraph--bar {
+			    height: 1.375rem;
+			    background:#5FC2F1;
+			}
+
+		.stats__quartiles ~ .stats__row .stats__rowClicks {
+			color:#ED217C;
+		}
+
+		.stats__linksSummary ~ .stats__row .stats__rowClicks {
+			color:#5FC2F1;
+		}
+
+		
+
+		
+		
+
+		.stats__quartiles ~ .stats__sub-hdr .stats__rowClicks,
+		.stats__linksSummary ~ .stats__sub-hdr .stats__rowClicks,
+		.stats__linksShare ~ .stats__sub-hdr .stats__rowClicks,
+		.stats__linksSocial ~ .stats__sub-hdr .stats__rowClicks,
+		.stats__eps ~ .stats__sub-hdr .stats__rowClicks {
 			font-size:1rem;
 			color:#5c5c5c;
 			margin:0 1.5rem 0 0;
 		}
+
+		.stats__row--share .stats__columnGraph--bar {
+			background:#98CE00;
+		}
+		.stats__linksSummary ~ .stats__row--share .stats__rowClicks {
+			color:#98CE00;
+		}
+
+		.stats__row--social .stats__columnGraph--bar {
+			background:#16E0BD;
+		}
+		.stats__linksSummary ~ .stats__row--social .stats__rowClicks {
+			color:#16E0BD;
+		}
+
+
+		.stats__infoNumber:hover ~ .helpBox,
+        .stats__hdr:hover ~ .helpBox {
+            opacity:1;
+            display:block;
+        }

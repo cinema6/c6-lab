@@ -24,11 +24,11 @@
 		}
 
 		.statsChart__infoBox.stats__quartiles .fa {
-			background:#ED217C;
-			border-color:#ED217C; 
+			background:#AB49B3;
+			border-color:#AB49B3; 
 		}
 		.statsChart__infoBox.stats__quartiles .stats__infoNumber {
-			color:#ED217C;
+			color:#AB49B3;
 		}
 
 		.fa-play:before {
@@ -44,7 +44,7 @@
 		}
 
 		.stats__hdr.stats__quartiles {
-			color:#ED217C;
+			color:#AB49B3;
 		}
 
 		.stats__hdr.stats__linksSummary {
@@ -52,10 +52,10 @@
 		}
 
 		.stats__hdr.stats__linksShare {
-			color:#98CE00;
+			color:#119DA4;
 		}
 		.stats__hdr.stats__linksSocial {
-			color:#16E0BD;
+			color:#13C2A9;
 		}
 
 
@@ -90,7 +90,7 @@
 			}
 
 		.stats__quartiles ~ .stats__row .stats__rowClicks {
-			color:#ED217C;
+			color:#AB49B3;
 		}
 
 		.stats__linksSummary ~ .stats__row .stats__rowClicks {
@@ -113,17 +113,17 @@
 		}
 
 		.stats__row--share .stats__columnGraph--bar {
-			background:#98CE00;
+			background:#119DA4;
 		}
 		.stats__linksSummary ~ .stats__row--share .stats__rowClicks {
-			color:#98CE00;
+			color:#119DA4;
 		}
 
 		.stats__row--social .stats__columnGraph--bar {
-			background:#16E0BD;
+			background:#13C2A9;
 		}
 		.stats__linksSummary ~ .stats__row--social .stats__rowClicks {
-			color:#16E0BD;
+			color:#13C2A9;
 		}
 
 

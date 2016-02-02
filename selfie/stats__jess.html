@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
-    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.34.0.rc3-0-ga1b5b6c/styles/selfie/css/c6selfie__base.css">
     <link rel="stylesheet" type="text/css" href="css/jess__stats.css">
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/select2.min.js"></script>
@@ -111,20 +111,7 @@
         <header class="tabContent__header">
             <h2 class="tabContent__title tk--hdr">Campaign Statistics</h2>
             <span class="tabContent__subtitle">A Story of Technology: the History of What's in Everyone's Pocket</span>
-            <a class="action__selection" href="#">Last 7 Days</a>
-            <nav class="action__dropdown dateRange">
-                <ul>
-                  <li><a href="#"><i class="fa fa-chevron-down"></i><span class="ir">Menu</span></a>
-                    <ul>
-                      <li><a href="#">Lifetime</a></li>
-                      <li><a href="#">Yesterday</a></li>
-                      <li><a href="#">Last 7 Days <i class="action__dropdownItem--selected fa fa-check"></i></a></li>
-                      <li><a href="#">Last 30 Days</a></li>
-                      <li class="dateRange__custom"><a href="#">Custom</a><div class="dateRange__wrap"><input class="form__textBox form__fillCheck" type="text" id="startdate"><input class="form__textBox form__fillCheck" type="text" id="enddate"><br> <label class="checkbox--inline action__btn action__btn--wide text--center"><span class="btn__label faa">Apply</span></label></div></li>
-                    </ul>
-                  </li>                              
-                </ul>
-            </nav>
+            
         </header>
     </div><!--.tabContent .targeting__content container-->
 
@@ -197,11 +184,12 @@
             </div><!--.grid__item .one-whole--><!--.grid__item .three-quarters-->
         </div>
         <div class="grid">
+            <h1 class="tk--hdr stats__hdr stats__quartiles">View Quartiles</h1>
             <div class="grid__item two-fifths interactions__group">
             <div class="grid">
                 <div class="grid__item one-whole">
 
-                    <h1 class="tk--hdr stats__hdr stats__quartiles">View Quartiles</h1>
+                    
 
                     <div class="helpBox helpBox--center">
                         <div class="formhelpText">
@@ -259,18 +247,21 @@
             </div>
             </div><!--
             --><div class="grid__item three-fifths">
-                <canvas id="bar"></canvas>
-                <canvas id="line"></canvas>
+                <div class="grid">
+                    <div class="grid__item one-whole">
+                        <div class="stats__chartGroup">
+                            <canvas id="multi-line-bar" height="300px" width="400px" class="stats__chart"></canvas>
+                        </div>
+                    </div>
+                </div>
                 
-                <canvas id="line-bar"></canvas>
-                <canvas id="multi-line-bar"></canvas>
             </div>
         </div>
         
 
         <div class="grid">
             <div class="grid__item one-whole">
-                <h1 class="tk--hdr stats__hdr stats__linksSummary">Share and Social Interactions Summary</h1>
+                <h1 class="tk--hdr stats__hdr stats__linksSummary">Share and Social Interactions</h1>
                 <div class="helpBox helpBox--center">
                     <div class="formhelpText">
                         Total count of interactions with your website, share, and social links. Click-through rate (CTR) is the ratio of users who click on a specific link to the number of total users who view your ad.
@@ -299,60 +290,72 @@
                     <h2 class="stats__rowClicks">5%</h2>
                     <h2 class="stats__rowClicks">10</h2>
                 </div>
-                <div class="stats__row stats__row--share">
+                <div class="stats__row stats__row--share stats__row--open">
                     <div class="stats__column stats__columnGraph">
                         <div class="stats__columnGraph--bar" style="width:43%;"></div>
                     </div>
-                    <h3 class="stats__label">Share Total</h3>                    
+                    <button class="accordion__btn">
+                        <i class="fa fa-chevron-right"></i>
+                        <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <h3 class="stats__label stats__label--total">Share Total</h3>                    
                     <h2 class="stats__rowClicks">43%</h2>
                     <h2 class="stats__rowClicks">45</h2>
+
+                    <div class="stats__subTable">
+                        <div class="stats__row stats__sub-hdr">
+                            <h3 class="stats__label">Type</h3>
+                            <h3 class="stats__rowClicks stats__rowGraph">Graph</h3>                    
+                            <h3 class="stats__rowClicks">Share Rate</h3>
+
+                            <h3 class="stats__rowClicks">Clicks</h3>
+                        </div>
+                        <div class="stats__row stats__row--share">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:73%;"></div>
+                            </div>
+                            <h3 class="stats__label">Facebook</h3>                    
+                            <h2 class="stats__rowClicks">73%</h2>
+                            <h2 class="stats__rowClicks">33</h2>
+                        </div>
+                        <div class="stats__row stats__row--share">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:25%;"></div>
+                            </div>
+                            <h3 class="stats__label">Twitter</h3>                    
+                            <h2 class="stats__rowClicks">25%</h2>
+                            <h2 class="stats__rowClicks">10</h2>
+                        </div>
+                        <div class="stats__row stats__row--share">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:2%;"></div>
+                            </div>
+                            <h3 class="stats__label">Pinterest</h3>                    
+                            <h2 class="stats__rowClicks">2%</h2>
+                            <h2 class="stats__rowClicks">2</h2>
+                        </div>
+                    </div>
+
+                    
+
+
+
                 </div>
                 <div class="stats__row stats__row--social">
                     <div class="stats__column stats__columnGraph">
                         <div class="stats__columnGraph--bar" style="width:39%;"></div>
                     </div>
-                    <h3 class="stats__label">Social Total</h3>                    
+                    <h3 class="stats__label stats__label--total">Social Total</h3>                    
                     <h2 class="stats__rowClicks">39%</h2>
                     <h2 class="stats__rowClicks">37</h2>
                 </div>
 
-                <h1 class="tk--hdr stats__hdr stats__linksShare">Share Interactions Break-Down</h1>
                 <div class="helpBox helpBox--center">
                     <div class="formhelpText">
                         Detailed count of interactions with your share links. Share Rate is the ratio of users who click on your share button to the number of total users who view your ad.
                     </div>
                 </div> 
-                <div class="stats__row stats__sub-hdr">
-                    <h3 class="stats__label">Type</h3>
-                    <h3 class="stats__rowClicks stats__rowGraph">Graph</h3>                    
-                    <h3 class="stats__rowClicks">Share Rate</h3>
-
-                    <h3 class="stats__rowClicks">Clicks</h3>
-                </div>
-                <div class="stats__row stats__row--share">
-                    <div class="stats__column stats__columnGraph">
-                        <div class="stats__columnGraph--bar" style="width:73%;"></div>
-                    </div>
-                    <h3 class="stats__label">Facebook</h3>                    
-                    <h2 class="stats__rowClicks">73%</h2>
-                    <h2 class="stats__rowClicks">33</h2>
-                </div>
-                <div class="stats__row stats__row--share">
-                    <div class="stats__column stats__columnGraph">
-                        <div class="stats__columnGraph--bar" style="width:25%;"></div>
-                    </div>
-                    <h3 class="stats__label">Twitter</h3>                    
-                    <h2 class="stats__rowClicks">25%</h2>
-                    <h2 class="stats__rowClicks">10</h2>
-                </div>
-                <div class="stats__row stats__row--share">
-                    <div class="stats__column stats__columnGraph">
-                        <div class="stats__columnGraph--bar" style="width:2%;"></div>
-                    </div>
-                    <h3 class="stats__label">Pinterest</h3>                    
-                    <h2 class="stats__rowClicks">2%</h2>
-                    <h2 class="stats__rowClicks">2</h2>
-                </div>
+                
 
                 <h1 class="tk--hdr stats__hdr stats__linksSocial">Social Media Interactions Break-Down</h1>
                 <div class="helpBox helpBox--center">
@@ -505,6 +508,8 @@
 
 </div><!--.pageHolder-->
 <script>
+//new chart type LineBar - its a bit like bar and line were slammed together at high speed, not pretty, but they are part of each other now
+//new chart type LineBar - its a bit like bar and line were slammed together at high speed, not pretty, but they are part of each other now
 //new chart type LineBar - its a bit like bar and line were slammed together at high speed, not pretty, but they are part of each other now
 (function(){
     "use strict";
@@ -1194,48 +1199,22 @@
 }).call(this);
 //here ends the LineBar
 
-var data = {
-    labels: ["25%", "50%", "75%", "100%"],
-    datasets: [{
-        label: "My First dataset",
-        //new option, barline will default to bar as that what is used to create the scale
-        type: "line",
-        fillColor: "rgba(237,33,124,0.5)",
-        strokeColor: "rgba(237,33,124,1)",
-        pointColor: "rgba(237,33,124,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(239,71,111,1)",
-        data: [65, 59, 4, 81]
-    }, {
-        label: "My First dataset",
-        //new option, barline will default to bar as that what is used to create the scale
-        type: "bar",
-        fillColor: "rgba(150,154,151,0.5)",
-        strokeColor: "rgba(150,154,151,1)",
-        pointColor: "rgba(150,154,151,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [32, 25, 33, 88]
-    }]
-};
 
 var data2 = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["25%", "50%", "75%", "100%"],
     datasets: [{
-        label: "My First dataset",
+        label: "Quartiles",
         //new option, barline will default to bar as that what is used to create the scale
-        type: "line",
+        type: "bar",
         fillColor: "rgba(220,220,220,0.2)",
         strokeColor: "rgba(220,220,220,1)",
         pointColor: "rgba(220,220,220,1)",
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [65, 59, 4, 81, 56, 55, 40]
+        data: [65, 59, 4, 100]
     }, {
-        label: "My First dataset",
+        label: "Percentage of Viewers",
         //new option, barline will default to bar as that what is used to create the scale
         type: "bar",
         fillColor: "rgba(220,20,220,0.2)",
@@ -1244,46 +1223,21 @@ var data2 = {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [32, 25, 33, 88, 12, 92, 33]
-    }, {
-        label: "My First dataset",
-        //new option, barline will default to bar as that what is used to create the scale
-        type: "line",
-        fillColor: "rgba(20,20,220,0.2)",
-        strokeColor: "rgba(20,20,220,1)",
-        pointColor: "rgba(20,20,220,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [32, 25, 33, 88, 12, 92, 33]
-    },{
-        label: "My First dataset",
-        //new option, barline will default to bar as that what is used to create the scale
-        type: "bar",
-        fillColor: "rgba(220,220,220,0.2)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [65, 59, 4, 81, 56, 55, 40]
+        data: [32, 25, 33, 88]
     }]
 };
 
 
-
-
-
 //canvases
-var line = document.getElementById("line").getContext("2d");
-var bar = document.getElementById("bar").getContext("2d");
-var lineBar = document.getElementById("line-bar").getContext("2d");
+//var line = document.getElementById("line").getContext("2d");
+//var bar = document.getElementById("bar").getContext("2d");
+//var lineBar = document.getElementById("line-bar").getContext("2d");
 var multiLineBar = document.getElementById("multi-line-bar").getContext("2d");
 
 //charts
-var myLineChart = new Chart(line).Line(data);
-var myBarChart = new Chart(bar).Bar(data);
-var myLineBarChart = new Chart(lineBar).LineBar(data);
+//var myLineChart = new Chart(line).Line(data);
+//var myBarChart = new Chart(bar).Bar(data);
+//var myLineBarChart = new Chart(lineBar).LineBar(data);
 
 //testing to make sure we can add more than 1 of each
 var myMultiLineBarChart = new Chart(multiLineBar).LineBar(data2);

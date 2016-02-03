@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Chart.js demo</title>
+        <!-- import plugin script -->
+    <script src="../Chart.js"></script>
+    </head>
+    
+    <body>
+        <!-- bar chart canvas element -->
+        <canvas id="bar__quartile" width="600" height="400"></canvas>
+        <script>
+            
+            // bar chart data
+            var barData = {
+                labels : ["","","",""],
+                datasets : [
+                    {
+                        fillColor : "#48A497",
+                        strokeColor : "#48A4D1",
+                        data : [56,79,24,40]
+                    },
+                    {
+                        fillColor : "rgba(73,188,170,0.4)",
+                        strokeColor : "rgba(72,174,209,0.4)",
+                        data : [64,4,5,40]
+                    }
+                ]
+            }
+            // get bar chart canvas
+            var bar__quartile = document.getElementById("bar__quartile").getContext("2d");
+            // draw bar chart
+            new Chart(bar__quartile).Bar(barData);
+        </script>
+    </body>
+</html>

@@ -841,7 +841,7 @@
             strokeColor: "#eee",
             pointColor: "#4fc173",
             pointStrokeColor: "#fff",
-            data: [1, 6, 10, 20, 11, 7, 2],
+            data: [1, 6, 10, 20, 11, 7, 2, 9],
             y2axis: false
         }]
     }
@@ -864,6 +864,7 @@
     var ctx = document.getElementById("spend--clicks").getContext("2d");
     var myLine1 = new Chart(ctx).barSkinnySpend(barChartSpend, {
         scaleBeginAtZero: true,
+        responsive: true,
         scaleShowGridLines: true,
         datasetFill:false
     });

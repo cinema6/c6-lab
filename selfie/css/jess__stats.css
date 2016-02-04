@@ -63,11 +63,11 @@
 		}
 
 		.statsChart__infoBox.stats__clicks .fa {
-			background:#FFA62B;
-			border-color:#FFA62B; 
+			background:#F06960;
+			border-color:#F06960; 
 		}
 		.statsChart__infoBox.stats__clicks .stats__infoNumber {
-			color:#EF9228;
+			color:#F06960;
 		}
 
 		.stats__hdr.stats__quartiles {
@@ -105,9 +105,9 @@
 			padding: 0.25em 0 1.75em 1.5rem;
     		font-family: "Roboto Condensed";
     		background:#ECECEC;
-    		/*background: #119DA4;
+    		/*background: #30B3C5;
 		    color: #fff;
-		    border: 1px #119DA4 solid;*/
+		    border: 1px #30B3C5 solid;*/
 		}
 
 			.stats__sub-hdr h3 {
@@ -132,15 +132,19 @@
 			}
 
 			.stats__rowViews {
-				color:#119DA4;
+				color:#30B3C5;
 			}
 
 			.stats__rowClicks {
-				color:#EF9228;
+				color:#F06960;
 			}
 
 			.stats__rowSpend {
 				color:#4fc173;
+			}
+
+			.stats__subTable .stats__row h2.stats__rowData.stats__rowClicks {
+			    color: #5c5c5c;
 			}
 
 
@@ -197,7 +201,7 @@
 
 			.stats__columnGraph--bar {
 			    height: 1.375rem;
-			    background:#FFA62B;
+			    background:#F06960;
 			}
 
 		.stats__quartiles ~ .stats__row .stats__rowData {
@@ -365,8 +369,8 @@
         	}
 
         	.stats__subTable .stats__row {
-    			border-left: 0;
-    			border-right: 0;
+    			/*border-left: 0;
+    			border-right: 0;*/
     			width: calc(100% - 1.5rem);
         	}
 
@@ -394,15 +398,17 @@
 
         		.stats__row--share .stats__subTable .stats__row.stats__sub-hdr {
         			/*background: #60AF6D;*/
-        			background:#ECECEC;
-				    border: none;
+        			/*background:#ECECEC;*/
+        			background:#fff;
+				    /*border: none;*/
 				    margin: 0;
 				}
 
 				.stats__row--social .stats__subTable .stats__row.stats__sub-hdr {
         			/*background:#52AAD3;*/
-        			background:#ECECEC;
-				    border: none;
+        			/*background:#ECECEC;*/
+        			background:#fff;
+				    /*border: none;*/
 				    margin: 0;
 				}
 
@@ -429,6 +435,7 @@
 .stats__vidCalc {
 	padding:1.5rem;
 	background: #fff;
+	border: 1px solid #ddd;
 }
 
 	.stats__vidCalc p {
@@ -535,7 +542,7 @@ input[type=range]:focus {
 	height: 1.5rem;
 	width: 1.5rem;
 	border-radius:50%;
-	background: #119DA4;
+	background: #30B3C5;
 	cursor: pointer;
 	-webkit-appearance: none;
 	margin-top: -0.25rem;
@@ -557,7 +564,7 @@ input[type=range]:focus {
   height: 1.5rem;
   width: 1.5rem;
   border-radius:50%;
-  background: #119DA4;
+  background: #30B3C5;
   cursor: pointer;
 }
 .slider__time::-ms-track {
@@ -588,7 +595,7 @@ input[type=range]:focus {
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
-  background: #119DA4;
+  background: #30B3C5;
   cursor: pointer;
 }
 .slider__time:focus::-ms-fill-lower {

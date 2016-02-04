@@ -1,4 +1,11 @@
-
+.stats__rowData {
+    float: right;
+    margin: -0.5rem 1.5rem 0 0;
+    font-weight: 400;
+    color: #5c5c5c;
+    min-width: 3em;
+    text-align: center;
+}
 .tabContent {
     margin: 12em auto 0;
     width: 97%;
@@ -43,24 +50,24 @@
 		    cursor: default;
 		}
 
-		.statsChart__infoBox.stats__quartiles .fa {
-			background:#AB49B3;
-			border-color:#AB49B3; 
+		.statsChart__infoBox.stats__spend .fa {
+			background:#4fc173;
+			border-color:#4fc173; 
 		}
-		.statsChart__infoBox.stats__quartiles .stats__infoNumber {
-			color:#AB49B3;
+		.statsChart__infoBox.stats__spend .stats__infoNumber {
+			color:#4fc173;
 		}
 
 		.fa-play:before {
 		    margin-left: 0.25rem;
 		}
 
-		.statsChart__infoBox.stats__linksSummary .fa {
-			background:#5FC2F1;
-			border-color:#5FC2F1; 
+		.statsChart__infoBox.stats__clicks .fa {
+			background:#FFA62B;
+			border-color:#FFA62B; 
 		}
-		.statsChart__infoBox.stats__linksSummary .stats__infoNumber {
-			color:#5FC2F1;
+		.statsChart__infoBox.stats__clicks .stats__infoNumber {
+			color:#EF9228;
 		}
 
 		.stats__hdr.stats__quartiles {
@@ -115,15 +122,26 @@
 
 		
 
-		.stats__rowClicks {
+		.stats__rowData {
 		    width:5rem;
 		    text-align: right;
 		}
-			.stats__sub-hdr .stats__rowClicks {
+			.stats__sub-hdr .stats__rowData {
 				margin-top:0;
 		    	font-size:1rem;
 			}
 
+			.stats__rowViews {
+				color:#119DA4;
+			}
+
+			.stats__rowClicks {
+				color:#EF9228;
+			}
+
+			.stats__rowSpend {
+				color:#4fc173;
+			}
 
 
 		.accordion__btn {
@@ -182,11 +200,11 @@
 			    background:#FFA62B;
 			}
 
-		.stats__quartiles ~ .stats__row .stats__rowClicks {
+		.stats__quartiles ~ .stats__row .stats__rowData {
 			
 		}
 
-		.stats__linksSummary ~ .stats__row.stats__sub-hdr .stats__rowClicks {
+		.stats__linksSummary ~ .stats__row.stats__sub-hdr .stats__rowData {
 			/*color:#7A5614;*/
 		}
 
@@ -203,27 +221,21 @@
 		
 		
 
-		.stats__quartiles ~ .stats__sub-hdr .stats__rowClicks,
-		.stats__linksSummary ~ .stats__sub-hdr .stats__rowClicks,
-		.stats__linksShare ~ .stats__sub-hdr .stats__rowClicks,
-		.stats__linksSocial ~ .stats__sub-hdr .stats__rowClicks,
-		.stats__eps ~ .stats__sub-hdr .stats__rowClicks {
+		.stats__quartiles ~ .stats__sub-hdr .stats__rowData,
+		.stats__linksSummary ~ .stats__sub-hdr .stats__rowData,
+		.stats__linksShare ~ .stats__sub-hdr .stats__rowData,
+		.stats__linksSocial ~ .stats__sub-hdr .stats__rowData,
+		.stats__eps ~ .stats__sub-hdr .stats__rowData {
 			font-size:1rem;
 			margin:0 1.5rem 0 0;
 		}
 
-		.stats__row--share .stats__columnGraph--bar {
-			background:#119DA4;
-		}
 
-		.stats__linksSummary ~ .stats__row .stats__rowClicks {
-			color:#EF9228;
-		}
 		.stats__linksSummary ~ .stats__row.stats__sub-hdr h3 {
 			color:#5c5c5c;
 		}
 		.stats__row.stats__row--share .stats__column.stats__columnGraph .stats__columnGraph--bar {
-			background:#7ECF74;
+			/*background:#7ECF74;*/
 		}
 
 		.stats__row.stats__row--open .stats__subTable .stats__column.stats__columnGraph {
@@ -232,15 +244,15 @@
 			margin-top:0.25rem;
 		}
 
-		.stats__linksSummary ~ .stats__row--share .stats__rowClicks {
-			color:#60AF6D;
+		.stats__linksSummary ~ .stats__row--share .stats__rowData {
+			/*color:#60AF6D;*/
 		}
 
 		.stats__row--social .stats__columnGraph--bar {
-			background:#5FC2F1;
+			/*background:#5FC2F1;*/
 		}
-		.stats__linksSummary ~ .stats__row--social .stats__rowClicks {
-			color:#52AAD3;
+		.stats__linksSummary ~ .stats__row--social .stats__rowData {
+			/*color:#52AAD3;*/
 		}
 
 		.stats__row.stats__row--facebook .stats__column.stats__columnGraph .stats__columnGraph--bar {
@@ -281,7 +293,8 @@
 
         .chart {
         	width:100%!important;
-        	height:100%!important;
+        	height: 100%!important;
+        	max-height:427px!important;
         }
 
         .chart__label {
@@ -380,7 +393,8 @@
         	}
 
         		.stats__row--share .stats__subTable .stats__row.stats__sub-hdr {
-        			background: #60AF6D;
+        			/*background: #60AF6D;*/
+        			background:#ECECEC;
 				    border: none;
 				    margin: 0;
 				}
@@ -393,7 +407,7 @@
 				}
 
 				.stats__subTable .stats__row.stats__sub-hdr .stats__label,
-				.stats__subTable .stats__row.stats__sub-hdr .stats__rowClicks {
+				.stats__subTable .stats__row.stats__sub-hdr .stats__rowData {
 					/*color:#fff;*/
 					color:#5c5c5c;
 				}
@@ -403,7 +417,7 @@
     				background: #fff;
         		}
 
-        		.stats__subTable .stats__row .stats__rowClicks {
+        		.stats__subTable .stats__row .stats__rowData {
         			font-size: 1rem;
     				margin-top: 0;
         		}
@@ -480,6 +494,22 @@
 
 
 
+.row__group {
+    max-height:30.6275rem;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    /*position:relative;*/
+}
+
+	/*.row__group .stats__sub-hdr {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	}
+
+	.row__group .stats__row:first-of-type + .stats__row {
+	    margin-top: 2.0625rem;
+	}*/
 
 /* SLIDER STYLES */
 
@@ -523,32 +553,31 @@ input[type=range]:focus {
 	border: 0px solid #000101;
 }
 .slider__time::-moz-range-thumb {
-  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   border: 0px solid #000000;
-  height: 20px;
-  width: 39px;
-  border-radius: 7px;
-  background: #65001c;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius:50%;
+  background: #119DA4;
   cursor: pointer;
 }
 .slider__time::-ms-track {
   width: 100%;
-  height: 12.8px;
+  height: 1rem;
   cursor: pointer;
   animate: 0.2s;
   background: transparent;
   border-color: transparent;
-  border-width: 39px 0;
+  border-width: 1.5rem 0;
   color: transparent;
 }
 .slider__time::-ms-fill-lower {
-  background: #ac51b5;
+  background: #E2E2E2;
   border: 0px solid #000101;
   border-radius: 50px;
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
 }
 .slider__time::-ms-fill-upper {
-  background: #ac51b5;
+  background: #E2E2E2;
   border: 0px solid #000101;
   border-radius: 50px;
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
@@ -556,15 +585,15 @@ input[type=range]:focus {
 .slider__time::-ms-thumb {
   box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   border: 0px solid #000000;
-  height: 20px;
-  width: 39px;
-  border-radius: 7px;
-  background: #65001c;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #119DA4;
   cursor: pointer;
 }
 .slider__time:focus::-ms-fill-lower {
-  background: #ac51b5;
+  background: #E2E2E2;
 }
 .slider__time:focus::-ms-fill-upper {
-  background: #ac51b5;
+  background: #E2E2E2;
 }

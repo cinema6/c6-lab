@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
     <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.34.0.rc3-0-ga1b5b6c/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/hint.min.css">
     <link rel="stylesheet" type="text/css" href="css/jess__stats.css">
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/select2.min.js"></script>
@@ -121,63 +122,48 @@
                 <div class="grid">
                     <div class="grid__item one-fifth">
                         <div class="statsChart__infoBox">
-                            <h3 class="stats__icon"><i class="fa fa-play"></i></h3>
-                            <h1 class="stats__infoNumber tk--hdr">5,930</h1>
-                            <h3 class="stats__label">Views</h3>
-                            <div class="helpBox helpBox--center">
-                                <div class="helpText">
-                                    Number of times video was played.
-                                </div>
-                            </div>
+                            <span class="hint--top hint--text-wrap" data-hint="Number of times video was played.">
+                                <h3 class="stats__icon"><i class="fa fa-play"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">5,930</h1>
+                                <h3 class="stats__label">Views</h3>
+                            </span>
+                            
                         </div>
                     </div><!--
                     --><div class="grid__item one-fifth">
                         <div class="statsChart__infoBox stats__quartiles stats__spend">
-                            <h3 class="stats__icon"><i class="fa fa-usd"></i></h3>
-                            <h1 class="stats__infoNumber tk--hdr">$0.09</h1>
-                            <h3 class="stats__label">Average CPV</h3>
-                            <div class="helpBox helpBox--center">
-                                <div class="helpText">
-                                    Your total cost divided by total views
-                                </div>
-                            </div>
+                            <span class="hint--top hint--text-wrap" data-hint="Your total cost divided by total views.">
+                                <h3 class="stats__icon"><i class="fa fa-usd"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">$0.09</h1>
+                                <h3 class="stats__label">Average CPV</h3>
+                            </span>
                         </div>
                     </div><!--
                     --><div class="grid__item one-fifth">
                         <div class="statsChart__infoBox stats__spend">
-                            <h3 class="stats__icon"><i class="fa fa-credit-card"></i></h3>
-                            <h1 class="stats__infoNumber tk--hdr">$930</h1>
-                            <h3 class="stats__label">Total Cost</h3>
-
-                            <div class="helpBox helpBox--center">
-                                <div class="helpText">
-                                    This is how much you have spent
-                                </div>
-                            </div>
+                            <span class="hint--top hint--text-wrap" data-hint="This is how much you have spent.">
+                                <h3 class="stats__icon"><i class="fa fa-credit-card"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">$930</h1>
+                                <h3 class="stats__label">Total Cost</h3>
+                            </span>
                         </div>
                     </div><!--
                     --><div class="grid__item one-fifth">
                         <div class="statsChart__infoBox stats__clicks">
-                            <h3 class="stats__icon"><i class="fa fa-comments-o"></i></h3>
-                            <h1 class="stats__infoNumber tk--hdr">330</h1>
-                            <h3 class="stats__label">Total Interactions</h3>
-                            <div class="helpBox helpBox--center">
-                                <div class="helpText">
-                                    This is how many times users interacted with links on your ad
-                                </div>
-                            </div>
+                            <span class="hint--top hint--text-wrap" data-hint="This is how many times users interacted with links on your ad.">
+                                <h3 class="stats__icon"><i class="fa fa-comments-o"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">122</h1>
+                                <h3 class="stats__label">Total Interactions</h3>
+                            </span>
                         </div>
                     </div><!--
                     --><div class="grid__item one-fifth">
                         <div class="statsChart__infoBox stats__clicks">
-                            <h3 class="stats__icon"><i class="fa fa-percent"></i></h3>
-                            <h1 class="stats__infoNumber tk--hdr">15%</h1>
-                            <h3 class="stats__label">Interaction Rate</h3>
-                            <div class="helpBox helpBox--center">
-                                <div class="helpText">
-                                    Your total clicks divided by total views
-                                </div>
-                            </div>
+                            <span class="hint--top hint--text-wrap" data-hint="Your total clicks divided by total views.">
+                                <h3 class="stats__icon"><i class="fa percent"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">15%</h1>
+                                <h3 class="stats__label">Interaction Rate</h3>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -185,24 +171,11 @@
         </div>
 
         <div class="grid quartiles">
-            <h1 class="tk--hdr stats__hdr stats__quartiles">View Quartiles</h1>
-            <div class="helpBox helpBox--center">
-                <div class="formhelpText">
-                    See how long viewers watched your ad.
-                </div>
-            </div> 
+            <h1 class="tk--hdr stats__hdr stats__quartiles"><span class="hint--top hint--text-wrap" data-hint="See how long viewers watched your ad.">View Quartiles</span></h1>
+            
             <div class="grid__item two-fifths interactions__group">
             <div class="grid">
                 <div class="grid__item one-whole">
-
-                    
-
-                    <div class="helpBox helpBox--center">
-                        <div class="formhelpText">
-                            Clicks to your main Call to Action/ Button and/or logo and sponsored links.
-                        </div>
-                    </div> 
-
                     <div class="stats__row stats__sub-hdr">
                         <h3 class="stats__label">Duration</h3>                    
                         <h3 class="stats__rowData">Percentage</h3>
@@ -317,12 +290,7 @@
         
         <div class="grid linksSummary">
             <div class="grid__item one-whole">
-                <h1 class="tk--hdr stats__hdr stats__linksSummary">Share and Social Interactions</h1>
-                <div class="helpBox helpBox--center">
-                    <div class="formhelpText">
-                        Total count of interactions with your website, share, and social links. Click-through rate (CTR) is the ratio of users who click on a specific link to the number of total users who view your ad.
-                    </div>
-                </div> 
+                <h1 class="tk--hdr stats__hdr stats__linksSummary"><span class="hint--top hint--text-wrap" data-hint="Total count of interactions with your website, share, and social links. Click-through rate (CTR) is the ratio of users who click on a specific link to the number of total users who view your ad.">Engagement</span></h1>
                 <div class="stats__row stats__sub-hdr">
                     <h3 class="stats__label">Type</h3>
                     <h3 class="stats__rowData stats__rowGraph">Graph</h3>                    
@@ -334,7 +302,7 @@
                     <div class="stats__column stats__columnGraph">
                         <div class="stats__columnGraph--bar" style="width:13%;"></div>
                     </div>
-                    <h3 class="stats__label">CTA</h3>                    
+                    <h3 class="stats__label">Call to Action</h3>                    
                     <h2 class="stats__rowData stats__rowClicks">13%</h2>
                     <h2 class="stats__rowData stats__rowClicks">18</h2>
                 </div>
@@ -346,7 +314,7 @@
                     <h2 class="stats__rowData stats__rowClicks">5%</h2>
                     <h2 class="stats__rowData stats__rowClicks">10</h2>
                 </div>
-                <div class="stats__row stats__row--share stats__row--closed">
+                <div class="stats__row stats__row--share stats__row--open">
                     <div class="stats__column stats__columnGraph">
                         <div class="stats__columnGraph--bar" style="width:43%;"></div>
                     </div>
@@ -369,32 +337,35 @@
                         </div>
                         <div class="stats__row stats__row--facebook">
                             <div class="stats__column stats__columnGraph">
-                                <div class="stats__columnGraph--bar" style="width:73%;"></div>
+                                <div class="stats__columnGraph--bar" style="width:27%;"></div>
                             </div>
+                            <i class="fa fa-facebook"></i>
                             <h3 class="stats__label">Facebook</h3>                    
-                            <h2 class="stats__rowData stats__rowClicks">73%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">27%</h2>
                             <h2 class="stats__rowData stats__rowClicks">33</h2>
                         </div>
                         <div class="stats__row stats__row--twitter">
                             <div class="stats__column stats__columnGraph">
-                                <div class="stats__columnGraph--bar" style="width:25%;"></div>
+                                <div class="stats__columnGraph--bar" style="width:8%;"></div>
                             </div>
+                            <i class="fa fa-twitter"></i>
                             <h3 class="stats__label">Twitter</h3>                    
-                            <h2 class="stats__rowData stats__rowClicks">25%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">8%</h2>
                             <h2 class="stats__rowData stats__rowClicks">10</h2>
                         </div>
                         <div class="stats__row stats__row--pinterest">
                             <div class="stats__column stats__columnGraph">
-                                <div class="stats__columnGraph--bar" style="width:2%;"></div>
+                                <div class="stats__columnGraph--bar" style="width:1.6%;"></div>
                             </div>
+                            <i class="fa fa-pinterest-p"></i>
                             <h3 class="stats__label">Pinterest</h3>                    
-                            <h2 class="stats__rowData stats__rowClicks">2%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">1.6%</h2>
                             <h2 class="stats__rowData stats__rowClicks">2</h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="stats__row stats__row--social stats__row--closed">
+                <div class="stats__row stats__row--social stats__row--open">
                     <div class="stats__column stats__columnGraph">
                         <div class="stats__columnGraph--bar" style="width:52%;"></div>
                     </div>
@@ -412,13 +383,13 @@
                             <h3 class="stats__label">Type</h3>
                             <h3 class="stats__rowData stats__rowGraph">Graph</h3>                    
                             <h3 class="stats__rowData">CTR</h3>
-
                             <h3 class="stats__rowData">Clicks</h3>
                         </div>
                         <div class="stats__row stats__row--facebook">
                             <div class="stats__column stats__columnGraph">
                                 <div class="stats__columnGraph--bar" style="width:73%;"></div>
                             </div>
+                            <i class="fa fa-facebook"></i>
                             <h3 class="stats__label">Facebook</h3>                    
                             <h2 class="stats__rowData stats__rowClicks">73%</h2>
                             <h2 class="stats__rowData stats__rowClicks">33</h2>
@@ -427,6 +398,7 @@
                             <div class="stats__column stats__columnGraph">
                                 <div class="stats__columnGraph--bar" style="width:25%;"></div>
                             </div>
+                            <i class="fa fa-twitter"></i>
                             <h3 class="stats__label">Twitter</h3>                    
                             <h2 class="stats__rowData stats__rowClicks">25%</h2>
                             <h2 class="stats__rowData stats__rowClicks">10</h2>
@@ -435,6 +407,7 @@
                             <div class="stats__column stats__columnGraph">
                                 <div class="stats__columnGraph--bar" style="width:5%;"></div>
                             </div>
+                            <i class="fa fa-instagram"></i>
                             <h3 class="stats__label">Instagram</h3>                    
                             <h2 class="stats__rowData stats__rowClicks">5%</h2>
                             <h2 class="stats__rowData stats__rowClicks">2</h2>
@@ -443,6 +416,7 @@
                             <div class="stats__column stats__columnGraph">
                                 <div class="stats__columnGraph--bar" style="width:12%;"></div>
                             </div>
+                            <i class="fa fa-youtube-play"></i>
                             <h3 class="stats__label">YouTube</h3>                    
                             <h2 class="stats__rowData stats__rowClicks">12%</h2>
                             <h2 class="stats__rowData stats__rowClicks">6</h2>
@@ -451,6 +425,7 @@
                             <div class="stats__column stats__columnGraph">
                                 <div class="stats__columnGraph--bar" style="width:1%;"></div>
                             </div>
+                            <i class="fa fa-vimeo"></i>
                             <h3 class="stats__label">Vimeo</h3>                    
                             <h2 class="stats__rowData stats__rowClicks">1%</h2>
                             <h2 class="stats__rowData stats__rowClicks">1</h2>
@@ -459,6 +434,7 @@
                             <div class="stats__column stats__columnGraph">
                                 <div class="stats__columnGraph--bar" style="width:2%;"></div>
                             </div>
+                            <i class="fa fa-pinterest-p"></i>
                             <h3 class="stats__label">Pinterest</h3>                    
                             <h2 class="stats__rowData stats__rowClicks">2%</h2>
                             <h2 class="stats__rowData stats__rowClicks">2</h2>
@@ -475,14 +451,10 @@
         </div><!-- .grid -->
 
         <div class="grid eps">
-            <h1 class="tk--hdr stats__hdr stats__eps">Engagement Per Spend</h1>
+            <h1 class="tk--hdr stats__hdr stats__eps"><span class="hint--top hint--text-wrap" data-hint="How much you spend in relation to how many clicks and views your ad has.">Engagement Per Spend</span></h1>
         
                 <div class="grid__item one-whole">
-                    <div class="helpBox helpBox--center">
-                        <div class="formhelpText">
-                            Clicks to your main Call to Action/ Button and/or logo and sponsored links.
-                        </div>
-                    </div> 
+                    
                     <div class="row__group">
                         <div class="stats__row stats__sub-hdr">
                             <h3 class="stats__label">Date</h3>                    
@@ -822,11 +794,10 @@
             pointStrokeColor: "#fff",
             data: [150, 550, 1025, 2050, 1010, 510, 185]
         }, {
-            label: "Spend",
             label: "Clicks",
-            fillColor: "rgba(255,166,43,0.5)",
-            strokeColor: "rgba(255,166,43,1)",
-            pointColor: "rgba(255,166,43,1)",
+            fillColor: "rgba(168,63,127,0.5)",
+            strokeColor: "#A83F7F",
+            pointColor: "#A83F7F",
             pointStrokeColor: "#fff",
             data: [75, 246, 550, 1108, 543, 271, 102],
             y2axis: false
@@ -837,9 +808,9 @@
         labels: ["01/12/16", "01/13/16", "01/14/16", "01/15/16", "01/16/16", "01/17/16", "01/18/16"],
         datasets: [{
             label: "Spend",
-            fillColor: "#4fc173",
+            fillColor: "#4FC184",
             strokeColor: "#eee",
-            pointColor: "#4fc173",
+            pointColor: "#4FC184",
             pointStrokeColor: "#fff",
             data: [1, 6, 10, 20, 11, 7, 2],
             y2axis: false

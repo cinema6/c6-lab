@@ -53,8 +53,40 @@ module.exports = function(grunt) {
                     }
                 ]
             }
+        },
+
+        connect: {
+            options: {
+                port: 9000
+            },
+            dev: {
+                options: {
+                    livereload: true,
+                    open: true
+                }
+            }
+        },
+
+        watch: {
+            livereload: {
+                options: {
+                    livereload: {
+                        liveCSS: false
+                    }
+                },
+                files: [
+                    '**/*.*',
+                    '!build/**',
+                    '!node_modules/**'
+                ]
+            }
         }
     });
+
+    grunt.registerTask('server', 'Run a dev server out of the root repo directory', [
+        'connect:dev',
+        'watch:livereload'
+    ]);
 
     grunt.registerTask('build', 'Build into the build folder.', [
         'clean:build',

@@ -1,0 +1,9 @@
+.sponsor__group {
+    -domino-container:.title__group;
+    -domino-order: 1;
+}
+
+.cta__group {
+    -domino-order: 2;
+}
+

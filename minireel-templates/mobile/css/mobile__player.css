@@ -31,7 +31,7 @@ body {
         right:0.75em;
         background:#fff;
         box-shadow: 0 0 3px 3px rgba(0,0,0,.12);
-        margin:0 0 0.75em;
+        margin:0 0 1em;
     }
 
     .sponsor__group {
@@ -288,8 +288,12 @@ body {
     @media only screen and (orientation: landscape) {
 
         .card__group {
-            bottom:0.75em;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
             margin:0;
+
         }
 
             .title__group {

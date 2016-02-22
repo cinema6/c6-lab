@@ -81,8 +81,9 @@
     @media only screen and (orientation: landscape) {
 
         .card__group {
-            bottom:0.75em;
+            bottom:0;
             margin:0;
+            border:0;
         }
 
             .title__group {
@@ -224,7 +225,7 @@
                     width:100%;
                     position:absolute;
                     top:3.125em;
-                    bottom:0;
+                    bottom:0.5em;
                     overflow-y:auto;
                 }
 
@@ -234,7 +235,7 @@
 
             .cta__group {
                 margin:0;
-                width: 9.75rem;
+                width: 10.5rem;
                 position:absolute;
                 top:0;
                 left:inherit;
@@ -256,7 +257,7 @@
 
     }
 
-    @media only screen and (orientation: landscape) and (max-width:567px) {
+    @media only screen and (orientation: landscape) and (max-width:570px) {
 
         .title__group h1 {
             font-size:1em;
@@ -316,5 +317,19 @@
                             font-size: 1.125rem;
                         }
 
+
+    }
+
+    @media only screen and (orientation: landscape) and (max-width:515px) {
+        .title__group h1 {
+            font-size:0.9375em;
+            top:1.25em;
+            left:3.5em; 
+        }
+
+        .cta__group {
+            font-size:0.5625rem;
+            width:8rem;
+        }
 
     }

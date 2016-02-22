@@ -85,7 +85,7 @@
     @media only screen and (orientation: landscape) {
 
         .card__group {
-            bottom:0.75em;
+            bottom:0;
             margin:0;
         }
 
@@ -258,7 +258,7 @@
 
     }
 
-    @media only screen and (orientation: landscape) and (max-width:567px) {
+    @media only screen and (orientation: landscape) and (max-width:570px) {
 
         .cta__group {
             font-size:0.625rem;
@@ -307,10 +307,25 @@
                         }
 
                         
+                    .social__group--share .socialIconFont {
+                        width:4em;
+                    }
 
                         .social__group--icon.social__group--share {
                             font-size: 1.125rem;
                         }
 
+    }
+
+    @media only screen and (orientation: landscape) and (max-width:515px) {
+        .title__group h1 {
+            font-size:1.125em;
+            top:1em;
+            left:2.9375em; 
+        }
+
+        .cta__group {
+            font-size:0.5625rem;
+        }
 
     }

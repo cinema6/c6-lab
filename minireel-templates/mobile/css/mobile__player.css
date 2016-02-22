@@ -31,6 +31,8 @@ body {
         right:0.75em;
         background:#fff;
         box-shadow: 0 0 3px 3px rgba(0,0,0,.12);
+        box-shadow-bottom:none; 
+        border-bottom:1em solid #ddd;
         margin:0 0 1em;
     }
 
@@ -292,8 +294,8 @@ body {
             bottom:0;
             left:0;
             right:0;
+            border:0;
             margin:0;
-
         }
 
             .title__group {
@@ -400,7 +402,7 @@ body {
                     width:100%;
                     position:absolute;
                     top:5.75em;
-                    bottom:0;
+                    bottom:1em;
                     overflow-y:auto;
                 }
 

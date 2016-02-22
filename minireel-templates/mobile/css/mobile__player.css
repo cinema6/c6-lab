@@ -25,14 +25,10 @@ body {
     }
 
     .card__group {
-        position:absolute;
-        top:0.75em;
-        left:0.75em;
-        right:0.75em;
         background:#fff;
         box-shadow: 0 0 3px 3px rgba(0,0,0,.12);
-        border-bottom:1em solid #ddd;
-        margin:0 0 1em;
+        margin:1em 0.25em;
+        padding:0.125em 0 0;
     }
 
     .sponsor__group {
@@ -289,12 +285,14 @@ body {
     @media only screen and (orientation: landscape) {
 
         .card__group {
+            position:absolute;
             top:0;
             bottom:0;
             left:0;
             right:0;
             border:0;
             margin:0;
+            padding:0;
         }
 
             .title__group {
@@ -392,9 +390,6 @@ body {
                         margin:0 0.25em 0 0;
                     }
 
-                    .social__media li:last-child {
-                        margin:0;
-                    }
 
 
                 .description__group {

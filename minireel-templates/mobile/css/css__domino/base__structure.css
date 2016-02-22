@@ -44,6 +44,22 @@
         -domino-order: 2;
     }
 
+    .social__group {
+        -domino-container:.sidebar__group;
+    }
+
+    .description__container {
+        -domino-container:.description__group;
+    }
+
+    .social__media {
+        -domino-container:.social__group;
+    }
+
+    .social__share {
+        -domino-container:.social__group;
+    }
+
 
 @media only screen and (orientation: landscape) {
     .sidebar__group {

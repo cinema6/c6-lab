@@ -1,0 +1,767 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Manage Campaign - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.34.0.rc3-0-ga1b5b6c/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/hint.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jess__stats.css">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script src="../Chart.js"></script>
+<!--Add script below for datepicker -->
+    <script src="js/jquery-ui.min.js"></script>
+    
+    <script>
+      $(function() {
+        $( "#startdate" ).datepicker({
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          minDate: 0,
+          changeMonth: false,
+          onClose: function( selectedDate ) {
+            $( "#enddate" ).datepicker( "option", "minDate", selectedDate );
+          }
+        });
+        
+        $( "#enddate" ).datepicker({
+          defaultDate: "+1m",
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          changeMonth: false,
+          onClose: function( selectedDate ) {
+            $( "#startdate" ).datepicker( "option", "maxDate", selectedDate );
+          }
+        });
+      });
+    </script>
+<!--Add script above for datepicker -->
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>           
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="campaigns.html">Campaigns</a>  /  Captain Morgan Very Important Campaign
+            </h1>
+        </div><!--.mainHeader__group-->
+        <div class="tabBar__group">
+            <ul class="tabBar__list clearfix">
+                <li class="tabBar__item tabBar__item--active">
+                <button class="tabBar__btn" type="button" onclick="location.href='stats.html'">
+                    Stats</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
+                    Manage Campaign</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='targeting.html' ">
+                    Targeting</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='budget.html' ">
+                    Budget</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='payment-options.html' ">
+                    Payment Options</button>
+                </li>
+            </ul><!--.tabBar__list-->     
+            
+        </div><!--.tabBar__group-->
+    </div><!--.pageHeader__group-->
+    
+    <div class="tabContent targeting__content container">
+        <header class="tabContent__header">
+            <h2 class="tabContent__title tk--hdr">Campaign Statistics</h2>
+            <span class="tabContent__subtitle">A Story of Technology: the History of What's in Everyone's Pocket</span>
+            
+        </header>
+    </div><!--.tabContent .targeting__content container-->
+
+    <div class="tabContent__gridHolder">
+        <div class="grid grid--center">
+            <div class="grid__item one-whole">
+                <div class="grid">
+                    <div class="grid__item one-fifth">
+                        <div class="statsChart__infoBox">
+                            <span class="hint--top hint--text-wrap" data-hint="Number of times video was played.">
+                                <h3 class="stats__icon"><i class="fa fa-play"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">5,930</h1>
+                                <h3 class="stats__label">Views</h3>
+                            </span>
+                            
+                        </div>
+                    </div><!--
+                    --><div class="grid__item one-fifth">
+                        <div class="statsChart__infoBox stats__quartiles stats__spend">
+                            <span class="hint--top hint--text-wrap" data-hint="Your total cost divided by total views.">
+                                <h3 class="stats__icon"><i class="fa fa-usd"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">$0.09</h1>
+                                <h3 class="stats__label">Average CPV</h3>
+                            </span>
+                        </div>
+                    </div><!--
+                    --><div class="grid__item one-fifth">
+                        <div class="statsChart__infoBox stats__spend">
+                            <span class="hint--top hint--text-wrap" data-hint="This is how much you have spent.">
+                                <h3 class="stats__icon"><i class="fa fa-credit-card"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">$930</h1>
+                                <h3 class="stats__label">Total Cost</h3>
+                            </span>
+                        </div>
+                    </div><!--
+                    --><div class="grid__item one-fifth">
+                        <div class="statsChart__infoBox stats__clicks">
+                            <span class="hint--top hint--text-wrap" data-hint="This is how many times users interacted with links on your ad.">
+                                <h3 class="stats__icon"><i class="fa fa-comments-o"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">122</h1>
+                                <h3 class="stats__label">Total Interactions</h3>
+                            </span>
+                        </div>
+                    </div><!--
+                    --><div class="grid__item one-fifth">
+                        <div class="statsChart__infoBox stats__clicks">
+                            <span class="hint--top hint--text-wrap" data-hint="Your total clicks divided by total views.">
+                                <h3 class="stats__icon"><i class="fa percent"></i></h3>
+                                <h1 class="stats__infoNumber tk--hdr">15%</h1>
+                                <h3 class="stats__label">Interaction Rate</h3>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div><!--.grid__item .one-whole--><!--.grid__item .three-quarters-->
+        </div>
+
+        <div class="grid quartiles">
+            <h1 class="tk--hdr stats__hdr stats__quartiles"><span class="hint--top hint--text-wrap" data-hint="See how long viewers watched your ad.">View Quartiles</span></h1>
+            
+            <div class="grid__item two-fifths interactions__group">
+            <div class="grid">
+                <div class="grid__item one-whole">
+                    <div class="stats__row stats__sub-hdr">
+                        <h3 class="stats__label">Duration</h3>                    
+                        <h3 class="stats__rowData">Percentage</h3>
+                        <h3 class="stats__rowData">Views</h3>
+                    </div>
+                    <div class="stats__row">
+                        <h3 class="stats__label">25%</h3>                    
+                        <h2 class="stats__rowData stats__rowViews">13%</h2>
+                        <h2 class="stats__rowData stats__rowViews">18</h2>
+                    </div>
+                    <div class="stats__row">
+                        <h3 class="stats__label">50%</h3>                    
+                        <h2 class="stats__rowData stats__rowViews">12%</h2>
+                        <h2 class="stats__rowData stats__rowViews">15</h2>
+                    </div>
+                    <div class="stats__row">
+                        <h3 class="stats__label">75%</h3>                    
+                        <h2 class="stats__rowData stats__rowViews">8%</h2>
+                        <h2 class="stats__rowData stats__rowViews">5</h2>
+                    </div>
+                    <div class="stats__row">
+                        <h3 class="stats__label">100%</h3>                    
+                        <h2 class="stats__rowData stats__rowViews">2%</h2>
+                        <h2 class="stats__rowData stats__rowViews">1</h2>
+                    </div>
+                </div><!--
+                --><div class="grid__item one-whole">
+                    <h1 class="tk--hdr stats__hdr--tool">View Calculator</h1>
+
+                    
+
+                    <div class="stats__vidCalc stats__vidCalc--noData"><!--stats__vidCalc--noData is for when there is no data yet-->
+                        <p>See how many people would see your whole video if it was shorter.</p>
+                        <form action="" method="get" class="vidCalc__slider">
+                            <input type="range" name="seconds" min="15" max="96" class="slider__time">
+                        </form>
+                        <div class="slider__scale">
+                            <span class="slider__range slider__range--min">--</span>
+                            <form action="" method="get" class="slider__range slider__range--input">
+                                <fieldset class="form__item form__center form__item--miniInput">
+                                    <input class="form__textBox form__textBox--units form__fillCheck" type="number" id="c6-sponsor-name" placeholder="--">
+                                    <label class="slider-label" for="c6-label">
+                                        <i class="fa fa-times ui--error">Seconds</i> 
+                                        
+                                    </label>
+                                    
+                                    <div class="form__errorBox">
+                                        <p class="form__errorMsg">
+                                            <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                        </p>
+                                    </div>
+                                </fieldset>
+                        </form>
+                            <span class="slider__range slider__range--max">--</span>
+                        </div>
+                        
+                        <!--
+                        <button class="action__btn action__btn--small">Calculate</button>
+                        -->
+
+                    </div>
+
+                    
+
+                </div><!--
+            -->
+            </div>
+            </div><!--
+            --><div class="grid__item three-fifths">
+                <div class="grid">
+                    <div class="grid__item one-whole">
+                        <div class="chart__group chart__group--noData"><!--chart__group--noData is for when there is no data yet-->
+                            <canvas id="bar__quartile" height="300px" width="400px" class="chart"></canvas>
+                            <div class="chart__label chart__label--noData">
+                                <div class="grid">
+                                    <div class="grid__item one-quarter">
+                                        <div class="chart__labelBox">
+                                            <p class="chart__labelItem chart__labelItem--quartile">25%</p>
+                                            <span class="chart__labelItem chart__labelItem--sec">--</span><!--
+                                            --><span class="chart__labelItem chart__labelItem--secCalc">--</span>
+                                        </div>
+                                    </div><!--
+                                    --><div class="grid__item one-quarter">
+                                        <div class="chart__labelBox">
+                                            <p class="chart__labelItem chart__labelItem--quartile">50%</p>
+                                            <span class="chart__labelItem chart__labelItem--sec">--</span><!--
+                                            --><span class="chart__labelItem chart__labelItem--secCalc">--</span>
+                                        </div>
+                                    </div><!--
+                                    --><div class="grid__item one-quarter">
+                                        <div class="chart__labelBox">
+                                            <p class="chart__labelItem chart__labelItem--quartile">75%</p>
+                                            <span class="chart__labelItem chart__labelItem--sec">--</span><!--
+                                            --><span class="chart__labelItem chart__labelItem--secCalc">--</span>
+                                        </div>
+                                    </div><!--
+                                    --><div class="grid__item one-quarter">
+                                        <div class="chart__labelBox">
+                                            <p class="chart__labelItem chart__labelItem--quartile">100%</p>
+                                            <span class="chart__labelItem chart__labelItem--sec">--</span><!--
+                                            --><span class="chart__labelItem chart__labelItem--secCalc">--</span>
+                                        </div>
+                                    </div>
+                                </div><!-- .grid -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="grid linksSummary">
+            <div class="grid__item one-whole">
+                <h1 class="tk--hdr stats__hdr stats__linksSummary"><span class="hint--top hint--text-wrap" data-hint="Total count of interactions with your website, share, and social links. Click-through rate (CTR) is the ratio of users who click on a specific link to the number of total users who view your ad.">Engagement</span></h1>
+                <div class="stats__row stats__sub-hdr">
+                    <h3 class="stats__label">Type</h3>
+                    <h3 class="stats__rowData stats__rowGraph">Graph</h3>                    
+                    <h3 class="stats__rowData">CTR</h3>
+
+                    <h3 class="stats__rowData">Clicks</h3>
+                </div>
+                <div class="stats__row">
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:13%;"></div>
+                    </div>
+                    <h3 class="stats__label">Call to Action</h3>                    
+                    <h2 class="stats__rowData stats__rowClicks">13%</h2>
+                    <h2 class="stats__rowData stats__rowClicks">18</h2>
+                </div>
+                <div class="stats__row">
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:5%;"></div>
+                    </div>
+                    <h3 class="stats__label">Website</h3>                    
+                    <h2 class="stats__rowData stats__rowClicks">5%</h2>
+                    <h2 class="stats__rowData stats__rowClicks">10</h2>
+                </div>
+                <div class="stats__row stats__row--noData stats__row--share stats__row--open"><!--stats__row--noData is for when there is no data yet-->
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:43%;"></div>
+                    </div>
+                    <button class="accordion__btn">
+                        <i class="fa fa-chevron-right"></i>
+                        <i class="fa fa-chevron-down"></i>
+                        <h3 class="stats__label stats__label--total">Share Total</h3>
+                    </button>
+                                        
+                    <h2 class="stats__rowData stats__rowClicks">43%</h2>
+                    <h2 class="stats__rowData stats__rowClicks">45</h2>
+
+                    <div class="stats__subTable">
+                        <div class="stats__row stats__sub-hdr">
+                            <h3 class="stats__label">Type</h3>
+                            <h3 class="stats__rowData stats__rowGraph">Graph</h3>                    
+                            <h3 class="stats__rowData">Share Rate</h3>
+
+                            <h3 class="stats__rowData">Clicks</h3>
+                        </div>
+                        <div class="stats__row stats__row--facebook">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:27%;"></div>
+                            </div>
+                            <i class="fa fa-facebook"></i>
+                            <h3 class="stats__label">Facebook</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">27%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">33</h2>
+                        </div>
+                        <div class="stats__row stats__row--twitter">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:8%;"></div>
+                            </div>
+                            <i class="fa fa-twitter"></i>
+                            <h3 class="stats__label">Twitter</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">8%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">10</h2>
+                        </div>
+                        <div class="stats__row stats__row--pinterest">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:1.6%;"></div>
+                            </div>
+                            <i class="fa fa-pinterest-p"></i>
+                            <h3 class="stats__label">Pinterest</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">1.6%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">2</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats__row stats__row--noData stats__row--social stats__row--closed">
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:52%;"></div>
+                    </div>
+                    <button class="accordion__btn">
+                        <i class="fa fa-chevron-right"></i>
+                        <i class="fa fa-chevron-down"></i>
+                        <h3 class="stats__label stats__label--total">Social Total</h3> 
+                    </button>
+                                       
+                    <h2 class="stats__rowData stats__rowClicks">52%</h2>
+                    <h2 class="stats__rowData stats__rowClicks">49</h2>
+
+                    <div class="stats__subTable">
+                        <div class="stats__row stats__sub-hdr">
+                            <h3 class="stats__label">Type</h3>
+                            <h3 class="stats__rowData stats__rowGraph">Graph</h3>                    
+                            <h3 class="stats__rowData">CTR</h3>
+                            <h3 class="stats__rowData">Clicks</h3>
+                        </div>
+                        <div class="stats__row stats__row--facebook">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:73%;"></div>
+                            </div>
+                            <i class="fa fa-facebook"></i>
+                            <h3 class="stats__label">Facebook</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">73%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">33</h2>
+                        </div>
+                        <div class="stats__row stats__row--twitter">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:25%;"></div>
+                            </div>
+                            <i class="fa fa-twitter"></i>
+                            <h3 class="stats__label">Twitter</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">25%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">10</h2>
+                        </div>
+                        <div class="stats__row stats__row--instagram">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:5%;"></div>
+                            </div>
+                            <i class="fa fa-instagram"></i>
+                            <h3 class="stats__label">Instagram</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">5%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">2</h2>
+                        </div>
+                        <div class="stats__row stats__row--youtube">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:12%;"></div>
+                            </div>
+                            <i class="fa fa-youtube-play"></i>
+                            <h3 class="stats__label">YouTube</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">12%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">6</h2>
+                        </div>
+                        <div class="stats__row stats__row--vimeo">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:1%;"></div>
+                            </div>
+                            <i class="fa fa-vimeo"></i>
+                            <h3 class="stats__label">Vimeo</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">1%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">1</h2>
+                        </div>
+                        <div class="stats__row stats__row--pinterest">
+                            <div class="stats__column stats__columnGraph">
+                                <div class="stats__columnGraph--bar" style="width:2%;"></div>
+                            </div>
+                            <i class="fa fa-pinterest-p"></i>
+                            <h3 class="stats__label">Pinterest</h3>                    
+                            <h2 class="stats__rowData stats__rowClicks">2%</h2>
+                            <h2 class="stats__rowData stats__rowClicks">2</h2>
+                        </div>
+                    </div>
+
+ 
+                </div>
+                
+
+                
+                
+            </div><!-- .grid__item .one-whole -->
+        </div><!-- .grid -->
+
+        
+        
+
+    </div><!--.grid .grid--center-->
+
+
+  
+            
+
+
+    </div><!--.tabContent__gridHolder-->
+
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+</div><!--.pageHolder-->
+<script>
+
+    Chart.defaults.global = {
+    // Boolean - Whether to animate the chart
+    animation: true,
+
+    // Number - Number of animation steps
+    animationSteps: 60,
+
+    // String - Animation easing effect
+    // Possible effects are:
+    // [easeInOutQuart, linear, easeOutBounce, easeInBack, easeInOutQuad,
+    //  easeOutQuart, easeOutQuad, easeInOutBounce, easeOutSine, easeInOutCubic,
+    //  easeInExpo, easeInOutBack, easeInCirc, easeInOutElastic, easeOutBack,
+    //  easeInQuad, easeInOutExpo, easeInQuart, easeOutQuint, easeInOutCirc,
+    //  easeInSine, easeOutExpo, easeOutCirc, easeOutCubic, easeInQuint,
+    //  easeInElastic, easeInOutSine, easeInOutQuint, easeInBounce,
+    //  easeOutElastic, easeInCubic]
+    animationEasing: "easeOutBounce",
+
+    // Boolean - If we should show the scale at all
+    showScale: true,
+
+    // Boolean - If we want to override with a hard coded scale
+    scaleOverride: false,
+
+    // ** Required if scaleOverride is true **
+    // Number - The number of steps in a hard coded scale
+    scaleSteps: null,
+    // Number - The value jump in the hard coded scale
+    scaleStepWidth: null,
+    // Number - The scale starting value
+    scaleStartValue: null,
+
+    // String - Colour of the scale line
+    scaleLineColor: "rgba(0,0,0,.1)",
+
+    // Number - Pixel width of the scale line
+    scaleLineWidth: 1,
+
+    // Boolean - Whether to show labels on the scale
+    scaleShowLabels: true,
+
+    // Interpolated JS string - can access value
+    scaleLabel: "<%=value%>",
+
+    // Boolean - Whether the scale should stick to integers, not floats even if drawing space is there
+    scaleIntegersOnly: true,
+
+    // Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+    scaleBeginAtZero: false,
+
+    // String - Scale label font declaration for the scale label
+    scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+    // Number - Scale label font size in pixels
+    scaleFontSize: 12,
+
+    // String - Scale label font weight style
+    scaleFontStyle: "normal",
+
+    // String - Scale label font colour
+    scaleFontColor: "#666",
+
+    // Boolean - whether or not the chart should be responsive and resize when the browser does.
+    responsive: false,
+
+    // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+    maintainAspectRatio: true,
+
+    // Boolean - Determines whether to draw tooltips on the canvas or not
+    showTooltips: true,
+
+    // Function - Determines whether to execute the customTooltips function instead of drawing the built in tooltips (See [Advanced - External Tooltips](#advanced-usage-custom-tooltips))
+    customTooltips: false,
+
+    // Array - Array of string names to attach tooltip events
+    tooltipEvents: ["mousemove", "touchstart", "touchmove"],
+
+    // String - Tooltip background colour
+    tooltipFillColor: "rgba(0,0,0,0.8)",
+
+    // String - Tooltip label font declaration for the scale label
+    tooltipFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+    // Number - Tooltip label font size in pixels
+    tooltipFontSize: 14,
+
+    // String - Tooltip font weight style
+    tooltipFontStyle: "normal",
+
+    // String - Tooltip label font colour
+    tooltipFontColor: "#fff",
+
+    // String - Tooltip title font declaration for the scale label
+    tooltipTitleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+    // Number - Tooltip title font size in pixels
+    tooltipTitleFontSize: 14,
+
+    // String - Tooltip title font weight style
+    tooltipTitleFontStyle: "bold",
+
+    // String - Tooltip title font colour
+    tooltipTitleFontColor: "#fff",
+
+    // Number - pixel width of padding around tooltip text
+    tooltipYPadding: 6,
+
+    // Number - pixel width of padding around tooltip text
+    tooltipXPadding: 6,
+
+    // Number - Size of the caret on the tooltip
+    tooltipCaretSize: 8,
+
+    // Number - Pixel radius of the tooltip border
+    tooltipCornerRadius: 6,
+
+    // Number - Pixel offset from point x to tooltip edge
+    tooltipXOffset: 10,
+
+    // String - Template string for single tooltips
+    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+
+    // String - Template string for multiple tooltips
+    multiTooltipTemplate: "<%= value %>",
+
+    // Function - Will fire on animation progression.
+    onAnimationProgress: function(){},
+
+    // Function - Will fire on animation completion.
+    onAnimationComplete: function(){}
+}
+
+
+// bar chart data
+    var barData = {
+        labels : ["","","",""],
+        datasets : [
+            {
+                fillColor : "rgba(17, 157, 164, 0.75)",
+                strokeColor : "rgba(17, 157, 164, 1)",
+                data : [15,70,15,0]
+            },
+            {
+                fillColor : "rgba(0, 0, 0, 0.1)",
+                strokeColor : "rgba(0, 0, 0, 0.25)",
+                data : [5,10,80,5]
+            }
+        ]
+    }
+
+    Chart.types.Bar.extend({
+        name: "barSkinny",
+        draw: function(){
+            this.options.barValueSpacing = this.chart.width / 20;
+            Chart.types.Bar.prototype.draw.apply(this, arguments);
+        }
+    });
+
+    // get bar chart canvas
+    var bar__quartile = document.getElementById("bar__quartile").getContext("2d");
+    // draw bar chart
+    new Chart(bar__quartile).barSkinny(barData);
+
+
+//multi-line
+
+    Chart.types.Line.extend({
+    name: "Line2Y",
+    getScale: function(data) {
+        var startPoint = this.options.scaleFontSize;
+        var endPoint = this.chart.height - (this.options.scaleFontSize * 1.5) - 5;
+        return Chart.helpers.calculateScaleRange(
+            data,
+            endPoint - startPoint,
+            this.options.scaleFontSize,
+            this.options.scaleBeginAtZero,
+            this.options.scaleIntegersOnly);
+        },
+        initialize: function (data) {
+            var y2datasetLabels = [];
+            var y2data = [];
+            var y1data = [];
+            data.datasets.forEach(function (dataset, i) {
+                if (dataset.y2axis == true) {
+                    y2datasetLabels.push(dataset.label);
+                    y2data = y2data.concat(dataset.data);
+                } else {
+                    y1data = y1data.concat(dataset.data);
+                }
+            });
+            
+            // use the helper function to get the scale for both datasets
+            var y1Scale = this.getScale(y1data);
+            this.y2Scale = this.getScale(y2data);
+            var normalizingFactor = y1Scale.max / this.y2Scale.max;
+
+            // update y2 datasets
+            data.datasets.forEach(function(dataset) {
+                if (y2datasetLabels.indexOf(dataset.label) !== -1) {
+                    dataset.data.forEach(function (e, j) {
+                        dataset.data[j] = e * normalizingFactor;
+                    })
+                }
+            })
+
+            // denormalize tooltip for y2 datasets
+            this.options.multiTooltipTemplate = function (d) {
+                if (y2datasetLabels.indexOf(d.datasetLabel) !== -1) 
+                    return Math.round(d.value / normalizingFactor, 6);
+                else 
+                    return d.value;
+            }
+
+            Chart.types.Line.prototype.initialize.apply(this, arguments);
+        },
+        draw: function () {
+            this.scale.xScalePaddingRight = this.scale.xScalePaddingLeft;
+            Chart.types.Line.prototype.draw.apply(this, arguments);
+
+            this.chart.ctx.textAlign = 'left';
+            this.chart.ctx.textBaseline = "middle";
+            this.chart.ctx.fillStyle = "#666";
+            var yStep = (this.scale.endPoint - this.scale.startPoint) / this.y2Scale.steps
+            for (var i = 0, y = this.scale.endPoint, label = this.y2Scale.min; 
+                 i <= this.y2Scale.steps; 
+                 i++) {
+                    this.chart.ctx.fillText(label, this.chart.width - this.scale.xScalePaddingRight + 10, y);
+                    y -= yStep;
+                    label += this.y2Scale.stepValue
+            }
+        }
+    });
+
+
+    var lineChartViews = {
+        labels: ["01/12/16", "01/13/16", "01/14/16", "01/15/16", "01/16/16", "01/17/16", "01/18/16"],
+        datasets: [{
+            label: "Views",
+            fillColor: "rgba(48,179,197, 0.5)",
+            strokeColor: "rgba(48,179,197, 1)",
+            pointColor: "rgba(48,179,197, 1)",
+            pointStrokeColor: "#fff",
+            data: [150, 550, 1025, 2050, 1010, 510, 185]
+        }, {
+            label: "Clicks",
+            fillColor: "rgba(168,63,127,0.5)",
+            strokeColor: "#A83F7F",
+            pointColor: "#A83F7F",
+            pointStrokeColor: "#fff",
+            data: [75, 246, 550, 1108, 543, 271, 102],
+            y2axis: false
+        }]
+    }
+
+    var barChartSpend = {
+        labels: ["01/12/16", "01/13/16", "01/14/16", "01/15/16", "01/16/16", "01/17/16", "01/18/16"],
+        datasets: [{
+            label: "Spend",
+            fillColor: "#4FC184",
+            strokeColor: "#eee",
+            pointColor: "#4FC184",
+            pointStrokeColor: "#fff",
+            data: [1, 6, 10, 20, 11, 7, 2],
+            y2axis: false
+        }]
+    }
+
+    Chart.types.Bar.extend({
+        name: "barSkinnySpend",
+        draw: function(){
+            this.options.barValueSpacing = this.chart.width / 40;
+            Chart.types.Bar.prototype.draw.apply(this, arguments);
+        }
+    });
+
+    var ctx = document.getElementById("spend--views").getContext("2d");
+    var myLine1 = new Chart(ctx).Line2Y(lineChartViews, {
+        scaleBeginAtZero: true,
+        scaleShowGridLines: true,
+        datasetFill:false
+    });
+
+    var ctx = document.getElementById("spend--clicks").getContext("2d");
+    var myLine1 = new Chart(ctx).barSkinnySpend(barChartSpend, {
+        scaleBeginAtZero: true,
+        responsive: true,
+        scaleShowGridLines: true,
+        datasetFill:false
+    });
+
+</script>
+
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

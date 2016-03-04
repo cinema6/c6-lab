@@ -295,6 +295,16 @@
 						    color: #5c5c5c;
 						}
 
+						/*	no data 	*/
+						.stats__row--noData .stats__subTable:after {
+							content:"No Data Available";
+							font-style: italic;
+						}
+						.stats__row--noData .stats__subTable .stats__row {
+							display:none;
+						}
+						/*	no data 	*/
+
 
 		/*  Stats EPS Section Classes
 		    ================================================ */
@@ -452,6 +462,18 @@
 					  background: #E2E2E2;
 					}
 
+					/*	no data 	*/
+					.stats__vidCalc--noData .slider__time::-webkit-slider-thumb {
+						background: #eee;
+					}
+					.stats__vidCalc--noData .slider__time::-moz-range-thumb {
+						background: #eee;
+					}
+					.stats__vidCalc--noData .slider__time::-ms-thumb {
+						background: #eee;
+					}
+					/*	no data 	*/
+
 
 
 			/*  Stats Form Classes
@@ -485,6 +507,29 @@
 	        	height: 100%!important;
 	        	max-height:427px!important;
 	        }
+
+	        /*	no data 	*/
+	        .chart__group--noData {
+	        	position:relative;
+	        }
+
+			.chart__group--noData .chart {
+				-webkit-filter: grayscale(0.55) blur(2px);
+				opacity:0.25;
+			}
+			.chart__group--noData:after {
+			    content: "No Data Available";
+			    font-family: "Roboto Condensed", arial, sans-serif;
+			    font-style: italic;
+			    font-size: 2em;
+			    color: #5c5c5c;
+			    position: absolute;
+			    top: 2em;
+			    left: 22%;
+			    width: 56%;
+			    text-align: center;
+			}
+			/*	no data 	*/
 
 
 	        /*  Stats Custom Chart Labeling Classes

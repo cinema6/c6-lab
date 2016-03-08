@@ -8,21 +8,26 @@
   <meta name="author" content="name">
   <meta name="description" content="description here">
   <meta name="keywords" content="keywords,here">
-  <link rel="stylesheet" href="css/desktop__base.css" type="text/css">
-  <link rel="stylesheet" href="css/social__player.css" type="text/css">
+  <link rel="stylesheet" href="../../../public/css/desktop-click/desktop__base.css" type="text/css">
+  <link rel="stylesheet" href="../../../public/css/desktop-click/desktop-click__player.css" type="text/css">
   </head>
-  <body>
+<body>
 
     <div class="card__group">
-      <div class="social__group">
-      	<div class="sponsor__group">
-  	    	<span class="sponsor__label">Sponsor:</span>
-  	    	<a href="" class="sponsor__logo">
-  	    		<img src="http://33.media.tumblr.com/avatar_905bc304b925_128.png">
-  	    	</a>
-  	    	<span class="sponsor__name">Pop Mech</span>
-  	    </div>
-          <ul data-view="links:LinksListView" data-model="links"><!-- social network links and the share button-->
+
+      <input type="checkbox" id="toggle__btn" name="toggle__btn">
+
+      <div class="sidebar__group">
+        <div class="sponsor__group">
+          <span class="sponsor__label">Sponsor:</span>
+          <a href="" class="sponsor__logo">
+            <img src="http://33.media.tumblr.com/avatar_905bc304b925_128.png">
+          </a>
+          <span class="sponsor__name">Pop Mech</span>
+        </div><!-- .sponsor__group -->
+
+        <div class="social__group">
+          <ul data-view="links:LinksListView" data-model="links" class="social__media"><!-- social network links and the share button-->
               <li data-target="controller" data-action="clickthrough">
                   <a href="{{href}}" target="_blank" title="{{label}}" class="social__group--icon social__group--facebook">
                       <span class="socialIconFont">
@@ -60,7 +65,7 @@
               </li>            
           </ul>
 
-          <ul data-if="canShare">
+          <ul data-if="canShare" class="social__share">
               <li data-target="controller" data-action="clickthrough">
                   <button href="{{href}}" target="_blank" title="{{label}}" class="social__group--icon social__group--share">
                       <span class="socialIconFont">
@@ -69,18 +74,18 @@
                   </button>
               </li>
           </ul>
+        </div><!-- .social__group-->
+      </div><!-- .sidebar__group-->
 
-      </div><!-- .social__group-->
-      <div class="toggle__group">
-        <label for="toggle-1" class="description__btn">
-          <span class="description__label">Expand</span>
-        </label>
-        <input type="checkbox" id="toggle-1">
-      </div><!-- .toggle__group-->
-      
+      <div class="expand__group">
+        <div class="expand__box">
+          <label for="toggle__btn" class="expand__btn"><span class="expand__label">Expand</span></label>
+        </div><!-- .expand__box -->
+      </div><!-- .expand__group-->
+
       <div class="description__group">
+        <label for="toggle__btn" class="description__close"></label>
         <div class="description__container">
-          <a href="#" class="description__close">&nbsp;</a>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis ligula vitae ante congue luctus. Sed cursus massa ut dolor mattis vehicula quis vitae diam. Vivamus facilisis ligula eu diam suscipit, vitae vulputate justo finibus. Aliquam tempor non ante ac rhoncus. Vestibulum tristique mi vitae tortor ullamcorper sodales. Quisque finibus tortor eget magna ultrices, in tincidunt nibh laoreet.</p>
         </div>
       </div><!-- .description__group -->
@@ -88,13 +93,17 @@
       <div class="video__group">
         <iframe class="video__player" src="https://www.youtube.com/embed/18MrsJ0bjAY?rel=0" frameborder="0" allowfullscreen></iframe>
       </div><!-- .video__group-->
-    </div><!-- .card__group-->
 
-    <div class="title__group">
-      <h1 class="tk--hdr">Holy cow this is a characters right here</h1>
-      <a href="#" target="_blank" class="cta__group">
-        <span class="sponsoredBtn">This is 25 characters wow</span>
-      </a><!-- .cta__group-->
-    </div>
+      <div class="title__group">
+        <h1 class="tk--hdr">Holy cow this is a characters right here</h1>
+        <div class="cta__group">
+          <a href="#" target="_blank" class="cta__box">
+            <span class="sponsoredBtn">This is 25 characters wow</span>
+          </a>
+        </div><!-- .cta__group-->
+      </div><!-- .title__group -->
+
+    </div><!-- .card__group-->
+    <script>window.dominoCSS.bootstrap(document.documentElement);</script>
   </body>
 </html>

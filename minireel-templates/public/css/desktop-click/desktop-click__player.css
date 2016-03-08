@@ -115,7 +115,7 @@
     }
 
     
-    /*  Starts out open on page load    */
+    /*  Starts out open on page load    
     .description__group {
         width:95%;
         position:absolute;
@@ -125,9 +125,9 @@
         -moz-transition:0.7s ease;
         -o-transition:0.7s ease;
         transition:0.7s ease;
-    }
+    }*/
 
-    /*  Starts out closed on page load    
+    /*  Starts out closed on page load   */ 
     .description__group {
         width:95%;
         position:absolute;
@@ -138,7 +138,7 @@
         -moz-transition:0.7s ease;
         -o-transition:0.7s ease;
         transition:0.7s ease;
-    }*/
+    }
     
 
         .expand__btn {
@@ -197,15 +197,15 @@
             border:2px solid #000;
         }
 
-        /*  Closes already open description   */ 
+        /*  Closes already open description    
         #toggle__btn:checked ~ .description__group {
             transform:translateX(-200%);
-        }
+        }*/
 
-        /*  Opens hidden description    
+        /*  Opens hidden description    */
         #toggle__btn:checked ~ .description__group {
             transform:translateX(0);
-        }*/
+        }
 
 
             .description__close,

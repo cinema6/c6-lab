@@ -4,11 +4,11 @@
 
     @font-face {
       font-family: 'fontello';
-      src: url('../fonts/SocialIcons/font/fontello.eot'); /* IE9 Compat Modes */
-      src: url('../fonts/SocialIcons/font/fontello.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-           url('../fonts/SocialIcons/font/fontello.woff') format('woff'), /* Pretty Modern Browsers */
-           url('../fonts/SocialIcons/font/fontello.ttf')  format('truetype'), /* Safari, Android, iOS */
-           url('../fonts/SocialIcons/font/fontello.svg#svgfontello') format('svg'); /* Legacy iOS */
+      src: url('../../fonts/SocialIcons/font/fontello.eot'); /* IE9 Compat Modes */
+      src: url('../../fonts/SocialIcons/font/fontello.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+           url('../../fonts/SocialIcons/font/fontello.woff') format('woff'), /* Pretty Modern Browsers */
+           url('../../fonts/SocialIcons/font/fontello.ttf')  format('truetype'), /* Safari, Android, iOS */
+           url('../../fonts/SocialIcons/font/fontello.svg#svgfontello') format('svg'); /* Legacy iOS */
     }
 
 /*  ================================================

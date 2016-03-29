@@ -13,7 +13,7 @@
     .sponsor__group {
     }
 
-    .sponsor__logo {
+    .sponsor__img {
         width:3em;
         height:3em;
         display:block;
@@ -339,7 +339,7 @@
     ================================================ */
 
     @media screen and (min-width: 901px) {
-        .sponsor__logo {
+        .sponsor__img {
             width:3em;
             height:3em;
         }
@@ -350,7 +350,7 @@
     }
 
     @media screen and (min-width: 1200px) {
-        .sponsor__logo {
+        .sponsor__img {
             width:4.5em;
             height:4.5em;
         }
@@ -588,7 +588,7 @@
             min-height:auto;
         }
 
-        .sponsor__logo {
+        .sponsor__img {
             width: 2.75em;
             height: 2.75em;
         }
@@ -615,7 +615,7 @@
             font-size: 0.75em;
         }
 
-        .sponsor__logo {
+        .sponsor__img {
             width: 1.75em;
             height: 1.75em;
         }

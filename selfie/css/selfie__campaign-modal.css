@@ -1,4 +1,5 @@
 
+
 .modal__subTitle {
     text-align:center;
     color:#5c5c5c;
@@ -6,47 +7,167 @@
     font-size:1rem;
     margin:0.125em 0 0;
 }
+    
+/*  ================================================
+    Review Campaign and campaign summary modal styles
+    ================================================ */
     .reviewOrder__group {
-        margin:0 0 4rem 0;
+        margin:1.5rem 0 0.5rem;
+        overflow-y:auto;
+        max-height:28.5rem;
     }
-
-    .orderItem__title {
-        font-weight: 700;
-    }
-    .orderItem__label {
-        font-weight: 400;
-    }
-    .orderItem__cost {
-        font-weight: 700;
-    }
-    .orderItems {
-        padding: 24px;
-    }
-        .orderItems .grid__item {
-            padding-left: 0;
+        .reviewOrder__group .grid, .campaignSummary__group .grid{
+            margin: 0;
         }
-            .orderItem__cost--total {
-                font-weight: 700;
+        .reviewOrder__group .grid {
+            height:100%;
+        }
+        .reviewOrder__group .grid .one-half:first-child {
+            border-right:1px dotted #ccc;
+            height:100%;
+            min-height:28.5rem;
+        }
+        .reviewOrder__item h2, .campaignSummary__item h2 {
+            margin-bottom: 0;
+        }
+            .reviewOrder__item .orderItem__title, .campaignSummary__item .campaignItem__title{
+                vertical-align: middle;
             }
         .orderItem__title {
-            
+            font-weight: 700;
         }
-    .orderItems ul{
-        padding-left: 0;
-        margin: 0 24px 0 0;
-    }
-        .orderItems ul li {
-            list-style-type: none;
-            border-bottom: 1px dotted #ccc;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
+        .campaignItem__title, .campaignSummary__group h3.tk--hdr {
+            font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 1.25em;
         }
-        .orderItems ul li:last-child {
-            border-bottom: 0;
+        .campaignSummary__group h3 {
+            margin-bottom: 0.5em;
+            margin-top: 0.75em;
+        }
+        .orderItem__label, .campaignItem__label {
+            font-weight: 400;
+            font-size: 1em;
+        }
+        .orderItem__cost {
+            font-weight: 700;
         }
 
-    .modalFooter__group {
-        position:absolute; bottom:0; left:0; right:0; z-index:5;
-        background:#eee; border-top:1px solid #ddd;
-        height:3.75em;
-    }
+            .orderItems .grid__item {
+                padding-left: 0;
+            }
+                .orderItem__cost--total {
+                    font-weight: 700;
+                }
+        .campaignItem__title {
+            display: block;
+        }
+        .campaignItem__list {
+            margin-top: 0;
+        }
+        .orderItems ul, .campaignItems ul{
+            padding-left: 0;
+            margin: 0;
+        }
+            .orderItems ul li, .campaignItems ul li {
+                list-style-type: none;
+                border-top:0;
+                padding:0.25em 0 0 0.75em;
+                margin-bottom: 0;
+            }
+            .campaignSummary__item {
+                border-top: 1px dotted #ccc;
+                padding: 20px 0;
+            }
+            .orderItems ul li:first-child {
+               
+            }
+        .campaignSummary__group h3 {
+            margin-top: 1em;
+            padding-left: 1em;
+        }
+            .campaignItems ul li {
+                padding-left: 1em;
+                margin-bottom: 0.25em;
+            }
+        .campaignItem__list > h3 {
+            padding-left: 0;
+        }
+
+
+
+
+        .orderItem__title {
+            font-weight: 700;
+        }
+        .orderItem__label {
+            font-weight: 400;
+        }
+        .orderItem__cost {
+            font-weight: 700;
+        }
+        .orderItems {
+            padding:0;
+        }
+            .orderItems .grid__item {
+                padding-left: 0;
+            }
+                .orderItem__cost--total {
+                    font-weight: 700;
+                }
+            .orderItem__title {
+                
+            }
+        .orderItems ul{
+            padding-left: 0;
+            margin: 0 1.5em 1em 0;
+        }
+            .orderItems ul li {
+                list-style-type: none;
+                border-bottom:0;
+                margin-bottom:0;
+            }
+            .orderItems ul li:last-child {
+                background:none;
+                font-weight:normal;
+                padding-left: 0.75rem;
+                padding-right:0;
+            }
+            .orderItems ul li:first-child {
+                background:none;
+                padding:0 0 0.25em 0;
+                margin:0 0 0.25em;
+                border-bottom:1px dotted #ccc;
+            }
+                .orderItems ul li:first-child h1 {
+                    font-size:1.25em;
+                    margin:0;
+                    font-weight:600;
+                }
+                .grid__item.two-thirds.orderItem__label h1 {
+                    text-align:left;
+                }
+                .orderItem__label:first-child h1 {
+                   text-align:left;
+                }
+                .orderItem__label:last-child h1 {
+                    text-align:right;
+                }
+                ul li.orderItem__subHdr div:first-child {
+                    border-bottom:1px dotted #ccc;
+                }
+                ul li.orderItem__subItem {
+                    font-size:0.875em;
+                }
+                ul li.orderItem__subItem div:last-child {
+                    border-bottom:1px dotted #ccc;
+                }
+                ul li.orderItem__subItem:last-child div:last-child {
+                    border-bottom:0;
+                }
+
+        .modalFooter__group {
+            position:absolute; bottom:0; left:0; right:0; z-index:5;
+            background:#eee; border-top:0
+        }
+

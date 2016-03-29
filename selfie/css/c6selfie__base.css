@@ -342,21 +342,6 @@ fa,
             width: 100%;
         }
 
-        .action__btn--balance {
-            background:#fff;
-            color:#4fc184;
-            border:2px solid #4fc184;
-            font-weight:600;
-        }
-        .action__btn--balance:hover {
-            background:#4fc184;
-            color:#fff;
-            border-color:#4fc184;
-        }
-            .action__btn--balance span {
-                font-weight:normal;
-            }
-
     .action__btnSecondary {
         background:#546475;
         color:#fff;
@@ -3752,9 +3737,7 @@ fa,
         display: inline-block;
         margin-right: 1em;
     }
-    .paymentOptions__box-item.paymentOptions__box-third {
-        padding:0.1875em 1em 1em 1em;
-    }
+
 
     /*  Payment screen sortbar classes
         Jess
@@ -4540,7 +4523,6 @@ fa,
             left: 0;
             top: 0em;
             margin-bottom: 60px;
-            max-height: 30em;
         }
 
 
@@ -6614,39 +6596,6 @@ div.tree-multiselect span.remove-selected {
                             color:#5c5c5c;
                             font-family:"Roboto Condensed";
                         }
-
-/*  ================================================
-    Payment Details Page
-    ================================================ */
-    .paymentChart__infoBox {
-        min-height:12rem;
-    }
-
-        .paymentChart__infoBox .stats__infoNumber {
-            color:#4fc184;
-        }
-        .paymentChart__infoBox .stats__icon i.fa {
-            background:#4fc184;
-            border-color:#4fc184;
-        }
-    .payment__table {
-        margin:0 0 0 0.75em;
-    }
-
-        .payment__table ~ .grid__item .row__group .stats__sub-hdr .stats__rowData,
-        .payment__table ~ .grid__item .row__group .stats__row .stats__rowData {
-            width:22rem;
-        }
-
-        .payment__table ~ .grid__item .row__group .stats__row .stats__rowData.stats__rowMethod {
-            color:#5c5c5c;
-            font-size:1rem;
-            margin-top:0;
-            text-align:left;
-        }
-            .stats__rowMethod span {
-                font-style:italic;
-            }
 
 /*  ================================================
     Sign up form - Landing Page Styles

@@ -179,7 +179,7 @@
         margin-bottom: 0.25em;
     }
     .depositFunds .form__textBox,
-    .paymentForm  .form__textBox{
+    .paymentForm .form__textBox{
         border: 1px solid #ddd;
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
@@ -203,7 +203,28 @@
     .paymentMethod__optionTypes {
         margin-bottom: 2em;
     }
-    
+    .paymentForm .pmtDropdown .pmtDropdown__btn,
+    .paymentForm .pmtDropdown .ui__clickDropMenu,
+    .paymentForm .pmtDropdown .ui__clickDropBtn {
+        box-sizing: border-box;
+    }
+    .paymentForm .pmtDropdown__btn {
+        border: 1px solid #ddd;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background: #f5f5f5;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+        .paymentForm .pmtDropdown__btn:focus {
+            border: 1px solid #49B8B9;
+            background: #ffffff;
+        }
+    .paymentForm .pmtDropdown__menu {
+        border: 1px solid #eee;
+        background: #f5f5f5;
+    }
 /*** Replace existing styles ***/
     .payment__seals {
         padding-left: 0; /*<-- update this*/

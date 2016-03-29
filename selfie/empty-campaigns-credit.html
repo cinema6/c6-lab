@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>C6 Selfie UI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>        
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+        <div class="grid">
+            <div class="grid__item one-third">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                Campaigns
+            </h1>
+            </div>
+            <div class="grid__item one-third search__group">            
+                <input type="text" placeholder="Search" class="form__textBox form__searchBox">
+                <button class="searchBtn action__btnSecondary action__btnSecondary--small"><i class="fa fa-search"></i></button>
+            </div>
+        <div class="pageHeader__actions">
+                <a href="payment-history.html" class="action__btn action__btn--small action__btn--balance"><span class="">Balance:</span> $50</a>
+                <a href="campaign-creation-combined.html" class="action__btn action__btn--small" style="color: #fff;"><i class="fa fa-plus"></i> New Campaign</a>
+        </div>
+            
+        </div>    
+        </div><!--.mainHeader__group-->
+        <div class="sortBar__group">
+            <ul class="sortBar__list clearfix">
+                <li class="sortBar__item column__status">
+                    <button class="sortBar__btn sortBar__btn--asc" type="button">Status</button>
+                </li>
+                <li class="sortBar__item column__sponsor">
+                    <button class="sortBar__btn" type="button">Sponsor</button>
+                </li>
+                <li class="sortBar__item column__campaignName">
+                    <button class="sortBar__btn" type="button">Campaign Name</button>
+                </li>
+                <li class="sortBar__item column__totalViews">
+                    <button class="sortBar__btn" type="button">Total Views</button>
+                </li>
+                <li class="sortBar__item column__totalSpending">
+                    <button class="sortBar__btn" type="button">Total Spending</button>
+                </li>
+                <li class="sortBar__item column__budget">
+                    <button class="sortBar__btn" type="button">Budget</button>
+                </li>
+                <li class="sortBar__item column__summaryTotals">
+                    <button class="sortBar__btn" type="button">Views</button> /
+                    <button class="sortBar__btn" type="button">Spend</button> /
+                    <button class="sortBar__btn" type="button">Budget</button>
+                </li>
+            </ul><!--.sortBar__list-->
+        </div><!--.sortBar__group-->
+    </div><!--.pageHeader__group-->
+
+
+    <div class="grid__item grid--center">
+        <div class="grid__item one-half  campaigns__list">
+        
+        <ul class="campaigns__list">
+            <!-- add this li with the classes used below when campaign list is empty-->
+            <li class="campaign__item--empty campaign__item--emptyCredit text--center">
+                <div class="campaign__creditIcon">
+                    <i class="fa fa-dollar"></i> 
+                </div>
+                <h1 class="tk--hdr">Enjoy $50 on us!</h1>
+                <h2 class="tk--subHdr">Get started by making your first campaign</h2>
+                
+                <div>
+                <a href="campaign-creation-combined.html" class="action__btn action__btn--small" style="color: #fff;"><i class="fa fa-plus"></i> New Campaign</a>
+                </div>
+            </li>
+            <!-- empty campaign list li ends -->
+        </ul>
+    </div>
+
+
+
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

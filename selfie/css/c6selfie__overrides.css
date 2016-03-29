@@ -111,21 +111,7 @@
     .card--item .tk--hdr {
         font-weight: normal;
     }
-    .accountSettings__box-item, .paymentOptions__box-item {
-        list-style-type: none;
-        padding: 1em 1em 2em 1em;
-        border-bottom: 1px solid #eee;
-    }
-    .accountSettings__box-item li, .paymentOptions__box-item li {
-        padding: 0;
-    }
-    .accountSettings__box-item li h2, .accountSettings__box-item li h3, .paymentOptions__box-item li h2, .paymentOptions__box-item li h3{
-        margin: 0;
-    }
-    .accountSettings__box-item li h2, .paymentOptions__box-item li h2 {
-        display: inline-block;
-        margin-right: 1em;
-    }
+
 
 /*  ================================================
     Support screen styles
@@ -263,18 +249,21 @@
 /*Modal tall*/
     .modalBody__group--tall {
         height: auto;
-        width: 40em;
-        top: 34%;
-        overflow: hidden;
+        max-height:40rem;
+        width: auto;
+        margin:0;
+        top: 15%;
+        left:20%;
+        right:20%;
     }
         .modalBody__group--tall .modalBody__group {
             padding-top: 0;
             position: relative;
+            overflow-y:auto;
             left: 0;
             top: 0em;
             margin-bottom: 60px;
-            max-height: calc(100vh - 210px);
-            overflow-y: auto;
+            max-height: calc(100vh - 410px);
         }
 /*  Loading content spinner  */
     .spinnerWrap {

@@ -1,0 +1,52 @@
+
+.modal__subTitle {
+    text-align:center;
+    color:#5c5c5c;
+    font-weight:400;
+    font-size:1rem;
+    margin:0.125em 0 0;
+}
+    .reviewOrder__group {
+        margin:0 0 4rem 0;
+    }
+
+    .orderItem__title {
+        font-weight: 700;
+    }
+    .orderItem__label {
+        font-weight: 400;
+    }
+    .orderItem__cost {
+        font-weight: 700;
+    }
+    .orderItems {
+        padding: 24px;
+    }
+        .orderItems .grid__item {
+            padding-left: 0;
+        }
+            .orderItem__cost--total {
+                font-weight: 700;
+            }
+        .orderItem__title {
+            
+        }
+    .orderItems ul{
+        padding-left: 0;
+        margin: 0 24px 0 0;
+    }
+        .orderItems ul li {
+            list-style-type: none;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .orderItems ul li:last-child {
+            border-bottom: 0;
+        }
+
+    .modalFooter__group {
+        position:absolute; bottom:0; left:0; right:0; z-index:5;
+        background:#eee; border-top:1px solid #ddd;
+        height:3.75em;
+    }

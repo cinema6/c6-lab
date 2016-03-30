@@ -175,6 +175,11 @@
                 font-style:italic;
             }
 
+            .stats__row.stats__reward i {
+                margin:0 0.5em 0 0;
+                color:#FFAF00;
+            }
+
 
 /*  ================================================
     Support screen styles
@@ -650,6 +655,11 @@
         border:4px solid #fff;
     }
 
+    .paginator__group {
+        border: 1px solid #ddd;
+        border-top:0;
+    }
+
     
 /*  ================================================
     Review Campaign and campaign summary modal styles
@@ -657,7 +667,6 @@
         .campaignSummary__group h3 {
             margin-top: 1em;
             margin-bottom: 0.5em;
-            padding-left: 1em;
         }
         .orderItem__label, .campaignItem__label {
             font-weight: 400;
@@ -669,25 +678,21 @@
         .campaignItem__list {
             margin-top: 0;
         }
-        .orderItems ul, .campaignItems ul{
+        .orderItems ul {
             padding-left: 0;
             margin: 0;
         }
-            .orderItems ul li, .campaignItems ul li {
+            .orderItems ul li {
                 list-style-type: none;
                 border-top:0;
                 padding:0.25em 0 0 0.75em;
                 margin-bottom: 0;
             }
             .campaignSummary__item {
-                border-top: 1px dotted #ccc;
                 padding: 20px 0;
             }
 
-            .campaignItems ul li {
-                padding-left: 1em;
-                margin-bottom: 0.25em;
-            }
+
         .campaignItem__list > h3 {
             padding-left: 0;
         }

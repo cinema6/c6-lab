@@ -176,8 +176,11 @@
             }
 
             .stats__row.stats__reward i {
-                margin:0 0.5em 0 0;
+                margin:0 0.5em 0;
                 color:#FFAF00;
+            }
+            .stats__row.stats__reward i:first-child {
+                margin-left:0;
             }
 
 
@@ -334,10 +337,11 @@
 /*Modal tall*/
     .modalBody__group--tall {
         width:55rem;
+        margin-left: -27em;
 }
     }
-        .modalBody__group--tall.modalDialog__group {
-            margin-left: -27em;
+        .modalDialog__group--confirm.modalBody__group--tall {
+            
         }
 
 /*  Loading content spinner  */

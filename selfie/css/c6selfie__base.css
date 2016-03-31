@@ -75,10 +75,6 @@
         font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
         font-weight:300;
     }
-    .tk--subHdr {
-        font-family:'Open Sans', Arial, Helvetica, sans-serif;
-        font-weight:300;
-    }
     .tk--copy {
         font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
     }
@@ -319,15 +315,13 @@ fa,
         margin:0 0 1.125rem;
         font-size:1.125em;
         line-height:1.5rem;
-        transition:color 0.3s, background 0.3s, border-color 0.3s;
-        border:2px solid #119DA3;
+        transition:color 0.3s, background 0.3s;
         border-radius:3px;
         /*box-shadow:0 1px 3px rgba(0, 0, 0, 0.25);*/
         display:inline-block;
     }
         .action__btn:hover {
             background:#0E7D81;
-            border-color:#0E7D81;
         }
 
         .action__btn--small {
@@ -341,7 +335,6 @@ fa,
         .action__btn--full, .action__btn--wide {
             width: 100%;
         }
-
     .action__btnSecondary {
         background:#546475;
         color:#fff;
@@ -1186,11 +1179,8 @@ fa,
         margin: 0 auto;
         padding: 4em 0 0 0;
     }
-    .supportContent__gridHolder {
-        padding:5em 0 0 0;
-    }
     .settingsContent__gridHolder,.supportContent__gridHolder {
-        padding:2em 0 0 0;
+        padding:5em 0 0 0;
     }
 
     .footer__group {
@@ -2316,30 +2306,6 @@ fa,
                 }
                 .campaign__item--empty .huge--icon {
                     color: #ccc;
-                }
-            .campaign__item--emptyCredit {
-                margin-top:6rem;
-            }
-                .campaign__creditIcon {
-                    width:8rem;
-                    height:8rem;
-                    background:#4fc184;
-                    border-radius:50%;
-                    border:4px solid #fff;
-                    margin:0 auto;
-                }
-                .campaign__creditIcon i {
-                    font-size:3em;
-                    color:#fff;
-                    margin:30% auto;
-                }
-                .campaign__item--emptyCredit .tk--hdr {
-                    color:#4fc184;
-                    margin-bottom:0;
-                }
-                .campaign__item--emptyCredit .tk--subHdr {
-                    font-size:1rem;
-                    margin:0.125em 0 1.25em;
                 }
             .campaign__status {
                 display: block;
@@ -3738,7 +3704,6 @@ fa,
         margin-right: 1em;
     }
 
-
     /*  Payment screen sortbar classes
         Jess
     ================================================ */
@@ -4411,6 +4376,7 @@ fa,
         background-color: #eee;
         border: 1px solid #ccc;
         padding-top: 2em;
+        overflow-y:auto;
     }
     .modalPayment__group .form__item {
         margin: 0 0 0.125em 0;
@@ -4523,6 +4489,8 @@ fa,
             left: 0;
             top: 0em;
             margin-bottom: 60px;
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
         }
 
 
@@ -5935,6 +5903,8 @@ div.tree-multiselect span.remove-selected {
     margin-bottom: 0;
 }
 
+/* JESS STATS CSS OVERRIDES*/
+
 /*  ================================================
     Stats Page Overrides
     ================================================ */
@@ -6596,7 +6566,6 @@ div.tree-multiselect span.remove-selected {
                             color:#5c5c5c;
                             font-family:"Roboto Condensed";
                         }
-
 /*  ================================================
     Sign up form - Landing Page Styles
     ================================================ */

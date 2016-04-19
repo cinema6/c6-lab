@@ -1,0 +1,393 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Manage Campaign - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script src="../Chart.js"></script>
+<!--Add script below for datepicker -->
+    <script src="js/jquery-ui.min.js"></script>
+    
+    <script>
+      $(function() {
+        $( "#startdate" ).datepicker({
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          minDate: 0,
+          changeMonth: false,
+          onClose: function( selectedDate ) {
+            $( "#enddate" ).datepicker( "option", "minDate", selectedDate );
+          }
+        });
+        
+        $( "#enddate" ).datepicker({
+          defaultDate: "+1m",
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          changeMonth: false,
+          onClose: function( selectedDate ) {
+            $( "#startdate" ).datepicker( "option", "maxDate", selectedDate );
+          }
+        });
+      });
+    </script>
+<!--Add script above for datepicker -->
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>           
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="campaigns.html">Campaigns</a>  /  Captain Morgan Very Important Campaign
+            </h1>
+        </div><!--.mainHeader__group-->
+        <div class="tabBar__group">
+            <ul class="tabBar__list clearfix">
+                <li class="tabBar__item tabBar__item--active">
+                <button class="tabBar__btn" type="button" onclick="location.href='stats.html'">
+                    Stats</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
+                    Manage Campaign</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='targeting.html' ">
+                    Targeting</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='budget.html' ">
+                    Budget</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='payment-options.html' ">
+                    Payment Options</button>
+                </li>
+            </ul><!--.tabBar__list-->     
+            
+        </div><!--.tabBar__group-->
+    </div><!--.pageHeader__group-->
+    
+    <div class="tabContent targeting__content container">
+        <header class="tabContent__header">
+            <h2 class="tabContent__title tk--hdr">Campaign Statistics</h2>
+            <span class="tabContent__subtitle">A Story of Technology: the History of What's in Everyone's Pocket</span>
+            <a class="action__selection" href="#">Last 7 Days</a>
+            <nav class="action__dropdown dateRange">
+                <ul>
+                  <li><a href="#"><i class="fa fa-chevron-down"></i><span class="ir">Menu</span></a>
+                    <ul>
+                      <li><a href="#">Lifetime</a></li>
+                      <li><a href="#">Yesterday</a></li>
+                      <li><a href="#">Last 7 Days <i class="action__dropdownItem--selected fa fa-check"></i></a></li>
+                      <li><a href="#">Last 30 Days</a></li>
+                      <li class="dateRange__custom"><a href="#">Custom</a><div class="dateRange__wrap"><input class="form__textBox form__fillCheck" type="text" id="startdate"><input class="form__textBox form__fillCheck" type="text" id="enddate"><br> <label class="checkbox--inline action__btn action__btn--wide text--center"><span class="btn__label faa">Apply</span></label></div></li>
+                    </ul>
+                  </li>                              
+                </ul>
+            </nav>
+        </header>
+    </div><!--.tabContent .targeting__content container-->
+
+    <div class="tabContent__gridHolder">
+        <div class="grid grid--center">
+            <div class="grid__item one-quarter">
+                <div class="statsChart__infoBox statsChart__infoBox--views">
+                    <h3 class="stats__label ">Views</h3>
+                    <h1 class="stats__infoNumber tk--hdr">5,930</h1>
+                    <h3 class="stats__label">1,222,983 Lifetime</h3>
+                    <div class="helpBox helpBox--center">
+                        <div class="helpText">
+                            This is how many views you've had. The lifetime is confusing.
+                        </div>
+                    </div>
+                </div>
+                <div class="statsChart__infoBox statsChart__infoBox--interactions">
+                    <h3 class="stats__label">Interactions</h3>
+                    <h1 class="stats__infoNumber tk--hdr">330</h1>
+                    <h3 class="stats__label">22,983 Lifetime</h3>
+                    <div class="helpBox helpBox--center">
+                        <div class="helpText">
+                            This is how many times you've had strangers click things. The lifetime is confusing.
+                        </div>
+                    </div>
+                </div>
+                <div class="statsChart__infoBox statsChart__infoBox--cost">
+                    <h3 class="stats__label">Cost</h3>
+                    <h1 class="stats__infoNumber tk--hdr">$930</h1>
+                    <h3 class="stats__label">$1,983 Lifetime</h3>
+                    <div class="helpBox helpBox--center">
+                        <div class="helpText">
+                            This is how much you've payed so far. Lifetime is your total budget.
+                        </div>
+                    </div>
+                </div>
+            </div><!--.grid__item .one-quarter--><!--
+            --><div class="grid__item three-quarters">
+
+                <div style="width:100%; text-align:center; padding:0.375em 0.25em 0 0.125em; margin-bottom: 0; background-color: #fff;height: 30.875em;overflow: hidden;">
+                <span>Engagement Per Spend</span>
+                <div>
+                    <canvas id="canvas" height="45%" width="100%" style="width: 100%; height:29em;"></canvas>
+                </div>
+            </div>
+            </div><!--.grid__item .three-quarters-->
+            <div class="statsBreakdown__group">
+                <div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Impressions</h3>
+                    <h1 class="tk--hdr stats__infoNumber">2,404,783</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="helpText">
+                            Impressions are when you move a viewer to tears.
+                        </div>
+                    </div>
+                </div><!--.grid__item .one-quarter--><!--
+                --><div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Views</h3>
+                    <h1 class="tk--hdr stats__infoNumber">1,323,783</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="formhelpText">
+                            How many times a person has watched any portion of your video.
+                        </div>
+                    </div>
+                </div><!--.grid__item .one-quarter--><!--
+                --><div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Avg. CPV</h3>
+                    <h1 class="tk--hdr stats__infoNumber">$0.87</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="formhelpText">
+                            This is the average cost per view for your ad.
+                        </div>
+                    </div>
+                </div><!--.grid__item .one-quarter--><!--
+                --><div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Avg. View Time</h3>
+                    <h1 class="tk--hdr stats__infoNumber">0:12</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="formhelpText">
+                            This is the average time the viewer watched your video before they got bored.
+                        </div>
+                    </div> 
+                </div><!--.grid__item .one-quarter--><!--
+                --><div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Avg. View Rate</h3>
+                    <h1 class="tk--hdr stats__infoNumber">12%</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="helpText">
+                            This is the percentage of people that watch the video.
+                        </div>
+                    </div>
+                </div><!--.grid__item .one-quarter--><!--
+                --><div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Video Duration</h3>
+                    <h1 class="tk--hdr stats__infoNumber">0:50</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="formhelpText">
+                            This is the length of your video.
+                        </div>
+                    </div>
+                </div><!--.grid__item .one-quarter--><!--
+                --><div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Completion Rate</h3>
+                    <h1 class="tk--hdr stats__infoNumber">5%</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="formhelpText">
+                            This is the percentage of people that watch the whole video.
+                        </div>
+                    </div>
+                </div><!--.grid__item .one-quarter--><!--
+                --><div class="grid__item one-quarter statsBreakdown__item">
+                    <h3 class="stats__label">Total Cost</h3>
+                    <h1 class="tk--hdr stats__infoNumber">$3,587</h1>
+                    <div class="helpBox helpBox--center">
+                        <div class="formhelpText">
+                            This is how much money you've spent so far.
+                        </div>
+                    </div> 
+                </div><!--.grid__item .one-quarter--><!--
+                -->
+            </div><!--.statsBreakdown__group-->
+            <div class="grid__item one-quarter interactions__group">
+                <h1 class="tk--hdr stats__hdr">Interactions</h1>
+                <div class="helpBox helpBox--center">
+                    <div class="formhelpText">
+                        An interaction is when a viewer clicks on a link. Below are the kinds of links you provided.
+                    </div>
+                </div> 
+                <div class="stats__row">
+                    <h3 class="stats__label">Call to Action</h3>
+                    <h1 class="stats__rowClicks">1,303</h1>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label">Website</h3>
+                    <h1 class="stats__rowClicks">983</h1>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label">Share</h3>
+                    <h1 class="stats__rowClicks">303</h1>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label">Facebook</h3>
+                    <h1 class="stats__rowClicks">7,329</h1>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label">Twitter</h3>
+                    <h1 class="stats__rowClicks">129</h1>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label">YouTube</h3>
+                    <h1 class="stats__rowClicks">34</h1>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label">Vimeo</h3>
+                    <h1 class="stats__rowClicks">0</h1>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label">Instagram</h3>
+                    <h1 class="stats__rowClicks">527</h1>
+                </div>
+            </div><!--
+            --><div class="grid__item three-quarters quartile__group">
+                <h1 class="tk--hdr stats__hdr">Quartile</h1><div class="helpBox helpBox--center">
+                    <div class="formhelpText">
+                        This table shows how many viewers watched what percentage of your video.
+                    </div>
+                </div>            
+                <div class="stats__row stats__row--labels">
+                    <h3 class="stats__label stats__column stats__column--duration">Duration Played</h3>
+                    <h3 class="stats__label stats__column stats__column--views">Views</h3>
+                    <h3 class="stats__label stats__column stats__column--percent">Percentage</h3>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label stats__column stats__column--duration">0 - 25%</h3>
+                    <h3 class="stats__label stats__column stats__column--views">409</h3>
+                    <h3 class="stats__label stats__column stats__column--percent">5.78%</h3>
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:5.78%;"></div>
+                    </div>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label stats__column stats__column--duration">25% - 50%</h3>
+                    <h3 class="stats__label stats__column stats__column--views">9,780</h3>
+                    <h3 class="stats__label stats__column stats__column--percent">90.67%</h3>
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:90.67%;"></div>
+                    </div>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label stats__column stats__column--duration">50% - 75%</h3>
+                    <h3 class="stats__label stats__column stats__column--views">223</h3>
+                    <h3 class="stats__label stats__column stats__column--percent">3%</h3>
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:3%;"></div>
+                    </div>
+                </div>
+                <div class="stats__row">
+                    <h3 class="stats__label stats__column stats__column--duration">75% - 100%</h3>
+                    <h3 class="stats__label stats__column stats__column--views">16</h3>
+                    <h3 class="stats__label stats__column stats__column--percent">0.55%</h3>
+                    <div class="stats__column stats__columnGraph">
+                        <div class="stats__columnGraph--bar" style="width:0.55%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--.grid .grid--center-->
+        
+    </div><!--.tabContent__gridHolder-->
+
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+</div><!--.pageHolder-->
+<script>
+        var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+        var lineChartData = {
+            labels : ["Aug 11","Aug 12","Aug 13","Aug 14","Aug 15","Aug 16","Aug 17"],
+            datasets : [
+                {
+                    label: "Views",
+                    fillColor : "rgba(0,192,255,0.2)",
+                    strokeColor : "rgba(0,192,255,1)",
+                    pointColor : "rgba(0,192,255,1)",
+                    pointStrokeColor : "#fff",
+                    pointHighlightFill : "#fff",
+                    pointHighlightStroke : "rgba(0,192,255,1)",
+                    data : [350, 490, 580, 590, 645, 621, 760]
+                },
+                {
+                    label: "Interactions",
+                    fillColor : "rgba(255,192,0,0.2)",
+                    strokeColor : "rgba(255,192,0,1)",
+                    pointColor : "rgba(255,192,0,0,1)",
+                    pointStrokeColor : "#fff",
+                    pointHighlightFill : "#fff",
+                    pointHighlightStroke : "rgba(255,192,0,0,1)",
+                    data : [30, 49, 70, 75, 68, 80, 120]
+                },
+                {
+                    label: "Cost",
+                    fillColor : "rgba(32,215,131,0.2)",
+                    strokeColor : "rgba(32,215,131,1)",
+                    pointColor : "rgba(32,215,131,1)",
+                    pointStrokeColor : "#fff",
+                    pointHighlightFill : "#fff",
+                    pointHighlightStroke : "rgba(32,215,131,1)",
+                    data : [300, 360, 480, 520, 540, 600, 615]
+                }
+            ]
+
+        }
+
+    window.onload = function(){
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myLine = new Chart(ctx).Line(lineChartData, {
+            responsive: true
+        });
+    }
+
+
+</script>
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

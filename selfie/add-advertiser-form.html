@@ -1,0 +1,309 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add New Advertiser - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.30.1.rc3-0-ge122f80/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item mainNav__item--active">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>       
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="settings.html" title="Settings">Advertisers</a> &nbsp; / &nbsp; Add Advertiser
+                
+            </h1>
+        </div><!--.mainHeader__group-->
+    </div><!--.pageHeader__group-->
+        <header class="settingsContent__header">
+            <h2 class="settingsContent__title tk--hdr">Advertiser Details</h2>
+            <span class="settingsContent__subtitle">Add new advertiser information</span>
+        </header>
+    <div class="settingsContent__gridHolder">
+
+         <div class="grid grid--center">
+             <div class="grid__item one-half">                
+                <section class="formSection__group" id="section_2">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Advertiser Details</span>
+                    </h1>
+                    <div class="form__items">
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Advertiser Name
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-link tk--active"></i> Advertiser Website
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        
+<!--website scraping - logo and social links-->
+                        
+                        <!-- import button and message -->                        
+                        <div class="text--center">
+                            <p>Would you like to import logo and social links?</p>
+                            <div class="ui__btnHolder ui__btnHolder--sub">
+                                <button class="action__btn action__btn--small">Import</button>
+                            </div>
+                        </div>
+<!-- show or hide based on scraping state -->
+                        <!-- loading animation -->
+                        <div class="assetLoader ui__connector">
+                            <div class="assetLoader__status">
+                                <div class="assetLoader__status--icon">
+                                    <div class="spinner"></div>
+                                </div>
+                                <div class="assetLoader__status--text text-small">Looking for logo and social links
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- loading success -->
+                        <div class="assetLoader ui__connector">
+                            <div class="assetLoader__status assetLoader__status-success">
+                                    <div class="assetLoader__status--icon">
+                                        <i class="fa fa-check-circle"></i>
+                                    </div>
+                                <div class="assetLoader__status--text text-small">Retrieved logo and 3 social links
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- loading failure -->
+                        <div class="assetLoader ui__connector">
+                            <div class="assetLoader__status assetLoader__status-error">
+                                    <div class="assetLoader__status--icon">
+                                        <i class="fa fa-warning"></i>
+                                    </div>
+                                <div class="assetLoader__status--text text-small">Failed to retrieved logo and social links
+                                </div>
+                            </div>
+                        </div>
+
+<!--website scraping - logo and social links-->
+
+<!-- hide the items below unless there is data to show -->
+
+                    <section class="formSection__group formSection__group--sub">
+                        <fieldset class="form__item form__item--shortInput">
+                            <select class="form__selectBox form__selectBox--single">
+                                <option>Use image URL</option>
+                                <option>Upload your image</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Advertiser Logo
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <div class="sponsorLogo__wizard ui__connector">
+                            <div class="logoPreview__group">
+                                <div class="logoPreview__thumbnail">
+                                    <span class="thumbnail__box thumbnail__box--square">
+                                        <span class="thumbnail">
+                                            <img class="thumbnail__img" src="img/cupcake4.jpg">
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="thumbnail__label">Thumbnail Preview</span>
+                            </div>
+                            <fieldset class="form__item form__item--shortInput form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    URL to image
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        The text is what the link will be attached to for the button or the link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <div class="ui__btnHolder">
+                                <button class="action__btn action__btn--small">Upload Your Image</button>
+                            </div>
+                        </div><!--.sponsorLogo__wizard-->
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-facebook tk--facebook"></i> Facebook Page
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-twitter tk--twitter"></i> Twitter Account
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-pinterest-p tk--pinterest"></i> Pinterest Page
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-youtube-play tk--youtube"></i> YouTube Channel
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-instagram tk--instagram"></i> Instagram Page
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+                        <div class="ui__btnHolder form__item--shortInput">
+                                <button class="action__btn action__btn--full">Save Changes</button>
+                            </div>
+                    </section>
+                    </div> 
+
+                </section><!--.formSection__group-->
+                </div>
+            </div>
+    </div>  
+</div><!--.pageHolder-->
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

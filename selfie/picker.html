@@ -1,0 +1,989 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>C6 Selfie UI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script>
+	if (top.location != location) {
+    top.location.href = document.location.href ;
+  }
+		$(function(){
+			window.prettyPrint && prettyPrint();
+			$('#dp1').datepicker({
+				format: 'mm-dd-yyyy'
+			});
+			$('#dp2').datepicker();
+			$('#dp3').datepicker();
+			$('#dp3').datepicker();
+			$('#dpYears').datepicker();
+			$('#dpMonths').datepicker();
+			
+			
+			var startDate = new Date(2012,1,20);
+			var endDate = new Date(2012,1,25);
+			$('#dp4').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() > endDate.valueOf()){
+						$('#alert').show().find('strong').text('The start date can not be greater then the end date');
+					} else {
+						$('#alert').hide();
+						startDate = new Date(ev.date);
+						$('#startDate').text($('#dp4').data('date'));
+					}
+					$('#dp4').datepicker('hide');
+				});
+			$('#dp5').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() < startDate.valueOf()){
+						$('#alert').show().find('strong').text('The end date can not be less then the start date');
+					} else {
+						$('#alert').hide();
+						endDate = new Date(ev.date);
+						$('#endDate').text($('#dp5').data('date'));
+					}
+					$('#dp5').datepicker('hide');
+				});
+
+        // disabling dates
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+        var checkin = $('#dpd1').datepicker({
+          onRender: function(date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+          }
+        }).on('changeDate', function(ev) {
+          if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate() + 1);
+            checkout.setValue(newDate);
+          }
+          checkin.hide();
+          $('#dpd2')[0].focus();
+        }).data('datepicker');
+        var checkout = $('#dpd2').datepicker({
+          onRender: function(date) {
+            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+          }
+        }).on('changeDate', function(ev) {
+          checkout.hide();
+        }).data('datepicker');
+		});
+	</script>
+
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+      $(function() {
+        $( "#startdate" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          onClose: function( selectedDate ) {
+            $( "#enddate" ).datepicker( "option", "minDate", selectedDate );
+          }
+        });
+        
+        $( "#enddate" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1,
+          prevText: '',
+          nextText: '',
+          onClose: function( selectedDate ) {
+            $( "#startdate" ).datepicker( "option", "maxDate", selectedDate );
+          }
+        });
+      });
+    </script>-->
+
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>        
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="campaigns.html" title="Campaigns">Campaigns</a> &nbsp;/&nbsp; New Campaign
+            </h1>
+        </div><!--.mainHeader__group-->
+    </div><!--.pageHeader__group-->
+
+    <nav class="tocNav__group">
+        <ul class="tocNav__list">
+            <li class="tocNav__item">
+                <a href="#section_1" class="tocNav__link">1</a>
+                <div class="tocNav__label tk--hdr">Create Your Campaign</div>
+            </li>
+            <li class="tocNav__item">
+                <a href="#section_2" class="tocNav__link">2</a>
+                <div class="tocNav__label tk--hdr">Sponsor Details</div>
+            </li>
+            <li class="tocNav__item">
+                <a href="#section_3" class="tocNav__link">3</a>
+                <div class="tocNav__label tk--hdr">Add Your Video</div>
+            </li>
+            <li class="tocNav__item">
+                <a href="#section_4" class="tocNav__link">4</a>
+                <div class="tocNav__label tk--hdr">Add Some Text</div>
+            </li>
+            <li class="tocNav__item">
+                <a href="#section_5" class="tocNav__link">5</a>
+                <div class="tocNav__label tk--hdr">Choose Your Audience</div>
+            </li>
+            <li class="tocNav__item">
+                <a href="#section_6" class="tocNav__link">6</a>
+                <div class="tocNav__label tk--hdr">Preview Your Ad</div>
+            </li>
+            <li class="tocNav__item">
+                <a href="#section_7" class="tocNav__link">7</a>
+                <div class="tocNav__label tk--hdr">Submit Your Ad</div>
+            </li>
+        </ul>
+    </nav>
+    <div class="softAlert softAlert__success">
+        <span><span class="softAlert__success--icon"><i class="fa fa-check-circle animateBounce"></i></span> Saving Draft</span>
+        <span><span class="softAlert__success--icon"><i class="fa fa-check-circle"></i></span> Saved as Draft</span>
+    </div>
+    <div class="softAlert softAlert__failure">
+        <span><span class="softAlert__failure--icon"><i class="fa fa-exclamation-triangle"></i></span> Saving Draft Failed</span>
+    </div>
+    <div class="gridHolder">
+
+        <div class="grid grid--center">
+            
+
+            <div class="grid__item three-quarters">
+                
+                <section class="formSection__group" id="section_1">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__number">
+                            <span class="formSection__numberText">1</span>
+                        </span>
+                        <span class="formSection__titleText tk--hdr">Create Your Campaign</span>
+                    </h1>
+                    <div class="form__items">
+
+                        <fieldset class="form__item form__item--bigInput">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-campaign-name">
+                            <label class="form__label" for="c6-campaign-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Enter a campaign name (for your reference only)
+                            </label>
+                            <div class="form__helpBox form__helpBox--center">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                                
+                        </fieldset>
+
+                    </div>
+                </section><!--.formSection__group-->
+            </div><!--.grid__item-->
+            <div class="grid__item two-thirds">
+                <section class="formSection__group formSection__group--sub">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Set Your Timeline</span>
+                    </h1>
+                    <p class="formSection__introText">Choose your start and end dates</p>
+
+                    <div class="form__items">
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="dpd1">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Start date
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This is when your campaign would start.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="dpd2">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                End date
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This is when your campaign would end.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+                        <!--<fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="startdate">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Start date
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This is when your campaign would start.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="enddate">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                End date
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This is when your campaign would end.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>-->
+
+                    </div>
+                </section><!--.formSection__group-->
+
+            </div><!--.grid__item-->
+
+
+
+            <div class="grid__item one-half">
+                
+                <section class="formSection__group" id="section_2">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__number">
+                            <span class="formSection__numberText">2</span>
+                        </span>
+                        <span class="formSection__titleText tk--hdr">Sponsor Details</span>
+                    </h1>
+                    <p class="formSection__introText">This information will be displayed on your sponsored card</p>
+
+                    <div class="form__items">
+
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Sponsor Name
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <select class="form__selectBox form__selectBox--single">
+                                <option>Use image URL</option>
+                                <option>Upload your image</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Sponsor Logo
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <div class="sponsorLogo__wizard ui__connector">
+                            <div class="logoPreview__group">
+                                <div class="logoPreview__thumbnail">
+                                    <span class="thumbnail__box thumbnail__box--square">
+                                        <span class="thumbnail">
+                                            <img class="thumbnail__img" src="img/cupcake4.jpg">
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="thumbnail__label">Thumbnail Preview</span>
+                            </div>
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    URL to image
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        The text is what the link will be attached to for the button or the link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <div class="ui__btnHolder ui__btnHolder--sub">
+                                <button class="action__btn action__btn--small">Upload Your Image</button>
+                            </div>
+                        </div><!--.sponsorLogo__wizard-->
+
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-link tk--active"></i> Sponsor Website
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item ">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-facebook tk--facebook"></i> Facebook Page
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-twitter tk--twitter"></i> Twitter Account
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-pinterest-p tk--pinterest"></i> Pinterest Page
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-youtube-play tk--youtube"></i> YouTube Channel
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name">
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                <i class="fa fa-instagram tk--instagram"></i> Instagram Page
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <select class="form__selectBox form__selectBox--single">
+                                <option>The first option</option>
+                                <option>The second option</option>
+                                <option>The third option</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Selector Menu Label
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                    </div> 
+
+                </section><!--.formSection__group-->
+            </div> 
+
+
+
+            <div class="grid__item one-half">
+                <section class="formSection__group" id="section_3">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__number">
+                            <span class="formSection__numberText">3</span>
+                        </span>
+                        <span class="formSection__titleText tk--hdr">Add Your Video</span>
+                    </h1>
+                    <p class="formSection__introText">Paste in a link or embed code from YouTube, Vimeo, or DailyMotion. You can also paste in a VAST tag.</p>
+
+                    <div class="form__items">
+
+                        <fieldset class="form__item ">
+                            <textarea class="form__textBox form__textArea form__fillCheck" type="text" id="c6-video-input"></textarea>
+                            <label class="form__label" for="c6-video-input">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Video URL or Embed Code
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Paste in a link or embed code from YouTube, Vimeo, or DailyMotion. You can also paste in a VAST tag.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Your URL is porn and we don't do that!
+                                </p>
+                            </div>
+                        </fieldset>
+
+
+                    </div><!--.form__items-->
+
+
+
+                    <div class="videoPreview__wizard ui__connector">
+
+                        <div class="videoPreview__group">
+                            <div class="videoPreview">
+                                <iframe class="videoPreview__iframe" src="https://www.youtube.com/embed/UOjY61tlh98?rel=0" frameborder="0" allowfullscreen></iframe>
+                            </div><!--.videoPreview-->
+
+
+                            <div class="videoDescription__group">
+                                <h1 class="videoDescription__title">The Chocolate Ball | Byron Talbott and the Funkiest Cookie Bunch &#151; <a href="#" class="videoDescription__source">YouTube</a></h1>
+
+                                <div class="videoDescription__metaData">
+                                    <span class="videoDescription__metaDatum">
+                                        <span class="videoDescription__metaDatumFa fa fa-clock-o"></span>&nbsp;<span>6:00</span>
+                                    </span>
+
+                                    <span class="videoDescription__metaDatum">
+                                        <span class="videoDescription__metaDatumFa fa fa-eye"></span>&nbsp;<span>1,431,014</span>
+                                    </span>
+                                </div><!--videoDescription__metaData-->
+                            </div><!--.videoDescription__group-->
+                        </div><!--.videoPreview__group-->
+
+                        <div class="grid">
+
+                            <div class="grid__item one-half portable--one-whole">
+                                <button class="thumbnail__btn">
+                                    <span class="thumbnail__box">
+                                        <span class="thumbnail">
+                                            <img class="thumbnail__img" src="img/cupcake4.jpg">
+                                        </span>
+                                    </span>
+                                    <span class="thumbnail__label">Default thumbnail</span>
+                                </button>
+                            </div><!--
+        
+                            
+                         --><div class="grid__item one-half portable--one-whole">
+                                <button class="thumbnail__btn thumbnail__btn--selected">
+                                    
+                                    <span class="thumbnail__box thumbnail__box--uploader">
+                                        <span class="thumbnail">
+                                            
+                                        </span>
+                                    </span>
+
+                                    <span class="thumbnail__label">Custom thumbnail</span>
+
+                                </button>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Your image is greater than 30mb and you suck at hockey
+                                    </p>
+                                </div>
+                            </div><!-- .grid__item-->
+
+                        </div><!--.grid-->
+
+                    </div><!--.videoPreview__group-->
+
+                </section><!--.formSection__group-->
+
+            </div><!--.grid__item-->
+
+
+
+
+
+
+
+
+
+
+            <div class="grid__item one-whole">
+                
+                <section class="formSection__group" id="section_4">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__number">
+                            <span class="formSection__numberText">4</span>
+                        </span>
+                        <span class="formSection__titleText tk--hdr">Add Title, Description and more</span>
+                    </h1>
+                    <p class="formSection__introText">This information will be displayed on your sponsored card</p>
+                    </section>
+            </div>
+            <div class="grid__item one-third">
+                <div class="grid">
+
+                    <div class="form__items">
+
+                        <fieldset class="form__item">
+                            <input class="form__textBox form__fillCheck" type="text" id="c6-video-title">
+                            <label class="form__label" for="c6-video-title">
+                                <i class="fa fa-times ui--error"></i> 
+                                Video Title
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    The video title is for your ad. Changing the title here will not affect the original video.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item">
+                            <textarea class="form__textBox form__textArea form__textArea--large form__fillCheck" type="text" id="c6-video-description"></textarea>
+                            <label class="form__label" for="c6-video-description">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Video Description
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    This step is optional. The description is the last thing anyone will ever read so good luck being pithy.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item ">
+                            <select class="form__selectBox form__selectBox--single">
+                                <option>None</option>
+                                <option>Button</option>
+                                <option>Text link</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Call to Action
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    A call to action is a prompt for the user to do an action. For instance, “Learn more,” or “Shop now!”
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                    <div class="ctaPreview__wizard">
+                        <div class="ctaPreview__group ui__connector">
+
+                            <h2 class="ctaPreview__title">Preview</h2>
+                            <div class="ctaPreview__container">
+                                <button class="ctaPreview__btn">Learn More</button>
+                                <a href="#" class="ctaPreview__link" style="display:none;">Learn More</a>
+                            </div>
+
+                        </div><!--ctaPreview__group--> 
+
+                        
+                        <div class="form__items">
+
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText" value="Learn More">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Label Text
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        The text is what the link will be attached to for the button or the link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__item form__item--sub">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-video-ctaText">
+                                <label class="form__label" for="c6-video-ctaText">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Link/URL
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Paste in your link.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div><!--.ctaPreview__wizard-->
+                 </div>
+                 </div><!--
+
+            --><div class="grid__item two-thirds">
+                <section class="formSection__group" id="section_6">
+
+                    <div class="grid grid--full grid--center adPreview__group">
+
+                        <div class="tabHolder">
+                            <button class="one-quarter palm--one-half ui__tab ui__tab--active" data-panel="js-preview-desktop">
+                                Desktop
+                            </button><!--
+                         --><button class="one-quarter palm--one-half ui__tab" data-panel="js-preview-mobile">
+                                Mobile
+                            </button>
+                        </div><!--.tabHolder-->
+
+                        <div class="ui__tabPanel js-preview-desktop adPreview__panel">
+                            <div class="adPreview__desktop">
+                                <!--<iframe class="adPreview__desktopFrame" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=full-np"></iframe>-->
+                            </div>
+                        </div>
+                        
+                        <div class="ui__tabPanel js-preview-mobile adPreview__panel" style="display:none;">
+                            <div class="adPreview__mobile">
+                                <iframe class="adPreview__mobileFrame" src="http://cinema6.com/solo?id=e-47819a19d6fe24&mode=mobile" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div> 
+                 </section> 
+                    
+       
+            </div><!--.grid__item--><!--.grid .grid--full .grid--center adPreview__group-->
+
+
+            <div class="grid__item one-half">
+                
+                <section class="formSection__group" id="section_5">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__number">
+                            <span class="formSection__numberText">5</span>
+                        </span>
+                        <span class="formSection__titleText tk--hdr">Choose Your Audience</span>
+                    </h1>
+
+
+                    <div class="form__items">
+
+                        
+
+                        <fieldset class="form__item">
+                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
+                                <option>Entertainment</option>
+                                <option>Food</option>
+                                <option>Gaming</option>
+                                <option>Music</option>
+                                <option>Sports</option>
+                                <option>Travel</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Content Categories
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    If possible, we will try to match your ad to relevant content. Please choose your category preferences here.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form__item">
+                            <select class="form__selectBox form__selectBox--single">
+                                <option>Choose States</option>
+                                <option>Choose Metropolitian Area</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Geography
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>            
+                        <!-- show either metro or state based on selection above-->
+                        <fieldset class="form__item">
+                            <select class="form__selectBox form__selectBox--multiple" multiple="multiple">
+                                <option>Greater NYC Area</option>
+                                <option>Philadelphia Metro</option>
+                                <option>Washington DC</option>
+                            </select>
+                            <label class="form__label" for="c6-sponsor-name">   
+                                <i class="fa fa-times ui--error"></i> 
+                                Metropolitian Area
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    You can use geographic data to target viewers from a specific state.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                            <p class="tk--fineprint tk--warning">
+                                <i class="fa fa-asterisk"></i> Using this feature will add an additional cost of $0.50 per 1000 video plays.
+                            </p>
+                        </fieldset>
+
+                    </div>
+                </section><!--.formSection__group-->
+
+
+                <section class="formSection__group formSection__group--sub">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__titleText tk--hdr">Set Your Budget</span>
+                    </h1>
+                    <p class="formSection__introText">Your calculated cost per 1000 video plays is : <strong>$50</strong>. A video must play for a minimum of 3 seconds to count as a play.</p>
+
+
+                    <div class="form__items">
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="c6-sponsor-name">
+                            <span class="input__unit">$</span>
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Campaign Budget
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__item form__item--shortInput">
+                            <input class="form__textBox form__textBox--units form__fillCheck" type="text" id="c6-sponsor-name">
+                            <span class="input__unit">$</span>
+                            <label class="form__label" for="c6-sponsor-name">
+                                <i class="fa fa-times ui--error"></i> 
+                                Daily Max
+                            </label>
+                            <div class="form__helpBox form__helpBox--right">
+                                <div class="form__helpText">
+                                    Provide a unique identifier for your campaign. This is not displayed within the ad unit and is for internal tracking purposes.
+                                </div>
+                            </div>
+                            <div class="form__errorBox">
+                                <p class="form__errorMsg">
+                                    <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                </p>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </section><!--.formSection__group-->
+
+            </div><!--.grid__item-->
+            
+
+            <div class="grid__item one-half">
+                <section class="formSection__group" id="section_7">
+                    
+                    <h1 class="formSection__title">
+                        <span class="formSection__number">
+                            <span class="formSection__numberText">7</span>
+                        </span>
+                        <span class="formSection__titleText tk--hdr">Submit Your Ad</span>
+                    </h1>
+                    <p class="formSection__introText">When you are finished building your ad, blah blah bloop. Your ad will go live once it is approved.</p>
+                    <div class="ui__btnHolder">
+                        <button class="action__btn action__btn--big">Submit</button>
+                    </div>
+                </section>
+            </div>
+
+
+
+        </div><!--.grid grid--center-->
+
+    </div><!--.gridHolder-->
+
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

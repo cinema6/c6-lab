@@ -1,0 +1,190 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Payment Options - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewportable" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.30.1.rc3-0-ge122f80/styles/selfie/css/c6selfie__base.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item mainNav__item--active">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>        
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="settings.html">Settings</a>  /  Manage Payment Methods
+            </h1>
+        </div><!--.mainHeader__group-->
+        
+    </div><!--.pageHeader__group-->
+    
+    <div class="grid grid--center">
+        <div class="grid__item">
+            <header class="settingsContent__header">
+                <h2 class="settingsContent__title tk--hdr">Payment Methods</h2>
+                <span class="settingsContent__subtitle">Your campaigns would use the primary payment method provided in the account settings unless you choose to use a different option.</span>
+            </header>
+        </div>
+        
+    </div> 
+    <div class="settingsContent__gridHolder">
+
+        <div class="grid grid--center">
+        <div class="grid__item one-whole">
+        <div class="grid">                
+            <div class="grid__item one-third lap--one-third palm--one-whole">
+            
+                <div class="payment__group payment__group--default"><!--.payment__group--default class added when the payment option is the default method-->
+                    <ul class="action__row">
+                        <li class="action__row--item"><i class="faa fa-check-circle payment__default"></i></li>
+                        <!-- Right aligned menu on top of button  -->
+                        <li class="action__row--item">
+                        <nav class="action__dropdown">
+                            <ul>
+                              <li><a href="#"><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></a>
+                                <ul>
+                                  <li><a href="#">Make Primary</a></li>
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Delete</a></li>
+                                </ul>
+                              </li>                              
+                            </ul>
+                        </nav>
+                        </li>
+                    </ul>
+                    <div class="payment__group--info">
+                        <span class="tk--hdr payment__type">MC</span>
+                        <span class="tk--hdr payment__id">*** 6666</span>
+                        <span class="tk--copy payment__exp">Expires&nbsp;06/2666</span>
+                        <span class="tk--copy payment__label">Beelzebub Media</span>
+                    </div>
+                    </div>
+                
+            </div><!--.grid__item--><!--
+
+            --><div class="grid__item one-third lap--one-third palm--one-whole">
+                
+                <div class="payment__group">
+                    <ul class="action__row">
+                        <li class="action__row--item"><i class="faa fa-check-circle payment__default"></i></li>
+                        <!-- Right aligned menu on top of button  -->
+                        <li class="action__row--item">
+                        <nav class="action__dropdown">
+                            <ul>
+                              <li><a href="#"><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></a>
+                                <ul>
+                                  <li><a href="#">Make Primary</a></li>
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Delete</a></li>
+                                </ul>
+                              </li>                              
+                            </ul>
+                        </nav>
+                        </li>
+                    </ul>
+                    <div class="payment__group--info">
+                        <span class="tk--hdr payment__type">Visa</span>
+                        <span class="tk--hdr payment__id">*** 3239</span>
+                        <span class="tk--copy payment__exp">Expires&nbsp;07/2018</span>
+                        <span class="tk--copy payment__label">Genesis Media</span>
+                    </div>
+                </div>
+                
+            </div><!--.grid__item--><!--
+
+            --><div class="grid__item one-third lap--one-third palm--one-whole">
+                
+                <div class="payment__group">
+                    <ul class="action__row">
+                        <li class="action__row--item"><i class="faa fa-check-circle payment__default"></i></li>
+                        <!-- Right aligned menu on top of button  -->
+                        <li class="action__row--item">
+                        <nav class="action__dropdown">
+                            <ul>
+                              <li><a href="#"><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></a>
+                                <ul>
+                                  <li><a href="#">Make Primary</a></li>
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Delete</a></li>
+                                </ul>
+                              </li>                              
+                            </ul>
+                        </nav>
+                        </li>
+                    </ul>
+                    <i class="faa fa-check-circle payment__default"></i>
+                    <div class="payment__group--info">
+                        <span class="tk--hdr payment__type">Amex</span>
+                        <span class="tk--hdr payment__id">*** 3239</span>
+                        <span class="tk--copy payment__exp">Expires&nbsp;07/2018</span>
+                        <span class="tk--copy payment__label">Genesis Media</span>
+                    </div>
+                </div>
+            </div><!--.grid__item-->
+
+            <div class="grid grid--center payment__btn--spacing">
+                <div class="grid__item one-whole">
+                <div class="text--center">
+                    <button class="action__btnSecondary action__btnSecondary--big palm--one-whole">
+                        <a href="https://www.paypal.com/signin/?country.x=US&locale.x=en_US" target="_blank"style="color: #fff;"><i class="faa fa-plus"></i>
+                        PayPal
+                    </button><!--
+                -->
+                    <button class="action__btnSecondary action__btnSecondary--big palm--one-whole">
+                        <a href="payment-modal.html" style="color: #fff;"><i class="faa fa-plus"></i>
+                        Credit Card</a>
+                    </button>
+                </div>
+                </div>
+            </div>
+                
+        </div>
+        </div><!--.grid one-whole-->
+
+            
+        </div><!--.grid .grid--center-->
+    </div><!--.settingsContent__gridHolder-->
+</div><!--.pageHolder-->
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+    
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

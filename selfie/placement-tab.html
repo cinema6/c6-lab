@@ -1,0 +1,478 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>C6 Selfie UI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.38.0.rc2-0-g04908d6/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__new-overrides.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+</head>
+<body>
+
+<nav class="mainNav__group ng-scope">
+    <div class="mainNav__dashboard">
+        <a c6-sref="Selfie:CampaignDashboard" title="Campaigns" class="mainNav__campaigns" href="/#/apps/selfie/pending?pending=true&amp;limit=50&amp;page=1&amp;filter=error%2Cdraft%2Cpending%2Cactive%2Cpaused%2Ccanceled%2Ccompleted%2CoutOfBudget%2Cexpired&amp;filterBy=statuses&amp;sort=lastUpdated%2C-1&amp;excludeOrgs=o-b2c617abe4d6a" style=""><span class="rc__logo--square"><span class="ir">Reelcontent</span></span></a>
+    </div>
+    <!--<div class=" mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+    <!-- ngIf: SelfieCtrl.isAdmin --><a ng-if="SelfieCtrl.isAdmin" c6-sref="Selfie:Pending:CampaignDashboard" c6-params="{pending: 'true'}" title="Pending Tasks" class="mainNav__campaigns mainNav__item ng-scope" href="/#/apps/selfie/pending?pending=true" style=""><i class="fa fa-clock-o mainNav__iconOnly"></i><span class="mainNav__label">Awaiting Approval</span></a><!-- end ngIf: SelfieCtrl.isAdmin -->
+    <a c6-sref="Selfie:All:CampaignDashboard" c6-params="{}" title="Campaigns" class="mainNav__campaigns mainNav__item" href="/#/apps/selfie/campaigns" style=""><i class="fa fa-flag mainNav__iconOnly"></i><span class="mainNav__label">Campaigns</span></a>
+    <a href="http://www.reelcontent.com/support/" target="_blank" c6-params="{}" title="Manae DSPs" class="mainNav__settings mainNav__item c6-active"><i class="fa fa-newspaper-o mainNav__iconOnly"></i><span class="mainNav__label">Manage DSPs</span></a>
+    <a c6-sref="Selfie:Account" c6-params="{}" title="Account Settings" class="mainNav__settings mainNav__item" href="/#/apps/selfie/account" style=""><i class="fa fa-cog mainNav__iconOnly"></i><span class="mainNav__label">Account Settings</span></a>    
+    <a href="http://www.reelcontent.com/support/" target="_blank" c6-params="{}" title="Support" class="mainNav__settings mainNav__item"><i class="fa fa-question-circle mainNav__iconOnly"></i><span class="mainNav__label">Support</span></a>
+    
+
+    <!-- <a href="archives.html" title="Archives" class="mainNav__archives mainNav__item"><i class="fa fa-archive mainNav__iconOnly"></i><span class="mainNav__label">Archives</span></a> -->
+
+    <div class="mainNav__logout mainNav__item" title="Logout">
+        <button class="mainNav__btn" ng-click="SelfieCtrl.logout()"> <i class="fa fa-power-off mainNav__iconOnly"></i>Logout</button>
+    </div>
+
+</nav>
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr ng-binding">
+                <button ng-click="SelfieManageCampaignCtrl.backToDashboard()" style="cursor:pointer" class="btn--link">Back to Campaigns</button> &nbsp;/&nbsp;
+                My New Shop
+            </h1>
+            <div class="pageHeader__actions">
+                <div class="btnGroup">
+                    <button class="btn btn--primary btn--small btn__nav btn__nav--primary"><i class="fa fa-pencil-square-o"></i> Edit</button>
+                    <button class="btn btn--primary btn--small btn__nav btn__nav--primary"><i class="fa fa-copy"></i> Copy</button>
+                    <button class="btn btn--primary btn--small btn__nav btn__nav--primary ng-scope"><i class="fa fa-trash-o"></i> Delete</button>
+                </div>
+            </div>
+        </div><!--.mainHeader__group-->
+        <div class="tabBar__group">
+            <ul class="tabBar__list clearfix">
+                <li class="tabBar__item">
+                    <a class="tabBar__btn" type="button" c6-sref="Selfie:Manage:Campaign:Manage" href="/#/apps/selfie/campaigns/manage/c-b76ecf45af71cd/manage" style="">Manage Campaign</a>
+                </li>
+                <li class="tabBar__item">
+                    <a class="tabBar__btn" type="button" c6-sref="Selfie:Manage:Campaign:Payment" href="/#/apps/selfie/campaigns/manage/c-b76ecf45af71cd/payment">Payment Options</a>
+                </li>
+                <li class="tabBar__item">
+                    <a class="tabBar__btn" type="button" c6-sref="Selfie:Manage:Campaign:Stats" href="/#/apps/selfie/campaigns/manage/c-b76ecf45af71cd/stats">Stats</a>
+                </li>
+                <!-- ngIf: SelfieManageCampaignCtrl.showAdminTab --><li ng-if="SelfieManageCampaignCtrl.showAdminTab" class="tabBar__item ng-scope">
+                    <a class="tabBar__btn" type="button" c6-sref="Selfie:Manage:Campaign:Admin" href="/#/apps/selfie/campaigns/manage/c-b76ecf45af71cd/admin">Administration</a>
+                </li><!-- end ngIf: SelfieManageCampaignCtrl.showAdminTab -->
+                <li class="tabBar__item">
+                    <a class="tabBar__btn c6-active" type="button" c6-sref="Selfie:Manage:Campaign:Placements" href="">Placements</a>
+                </li>
+            </ul><!--.tabBar__list-->
+        </div><!--.tabBar__group-->
+    </div><!--.pageHeader__group-->
+    <div class="tabContent targeting__content container">
+        <header class="tabContent__header">
+            <h2 class="tabContent__title tk--hdr">Placement</h2>
+            <span class="tabContent__subtitle">Select ad placement options</span>
+        </header>
+        <div class="tabContent__gridHolder">
+            <div class="grid grid--center">
+                <div class="grid__item one-third">
+                    <div class="form__items form--narrow">
+                        <section class="formSection__group formSection__group--sub">
+                            <div class="formSection__group--sub">
+                                <h1 class="formSection__title">
+                                    <span class="formSection__titleText tk--hdr">Placement Settings</span>
+                                </h1>
+                            </div>
+                            <fieldset class="form__item">
+                                <select class="form__selectBox form__selectBox--single" id="c6-placement-dsp">
+                                    <option>Brightroll</option>
+                                    <option>Tubemogul</option>
+                                    <option>Beeswax</option>
+                                </select>
+                                <label class="form__label" for="c6-mraid-prebuffer">   
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Select a DSP
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Select a DSP where you want to run the placement.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <select class="form__selectBox form__selectBox--single" id="c6-placement-tagType">
+                                    <option>MRAID</option>
+                                    <option>VPAID</option>
+                                </select>
+                                <label class="form__label" for="c6-placement-tagType">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Placement Type
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Select the type of placement you need to run.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <select class="form__selectBox form__selectBox--single" id="c6-placement-autoplay">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                                <label class="form__label" for="c6-placement-autoplay">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Autoplay
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Should your video play automatically on load?
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <select class="form__selectBox form__selectBox--single" id="c6-placement-orientation">
+                                    <option>None</option>
+                                    <option>Landscape</option>
+                                    <option>Portrait</option>
+                                </select>
+                                <label class="form__label" for="c6-placement-orientation">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Orientation Lock
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Select the orientation of ad you want to use.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <select class="form__selectBox form__selectBox--single" id="c6-placement-playerType">
+                                    <option>Desktop Card</option>
+                                    <option>Mobile</option>
+                                    <option>Light</option>
+                                    <option>Full No Playlist</option>
+                                </select>
+                                <label class="form__label" for="c6-placement-playerType">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Player Type
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        What type of player do you want to use?
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-branding">
+                                <label class="form__label" for="c6-container-branding">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Branding
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Branding/Domino Template name.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <select class="form__selectBox form__selectBox--single" id="c6-placement-skipTimer">
+                                    <option>5 Seconds</option>
+                                    <option>10 Seconds</option>
+                                    <option>15 Seconds</option>
+                                    <option>30 Seconds</option>
+                                    <option>Video Length</option>
+                                </select>
+                                <label class="form__label" for="c6-container-skipTimer">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Skip Timer
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Set the length of the Skip Timer. Should be less than or equal to video length.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid name
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <div class="formSection__group--sub">
+                                <h1 class="formSection__title">
+                                    <span class="formSection__titleText tk--hdr">Tracking</span>
+                                </h1>
+                                <p class="formSection__introText">Video Tracking Options</p>
+                            </div>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-pixelUrlPlay">
+                                <label class="form__label" for="c6-container-pixelUrlPlay">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Pixel URL (Play)
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Place a pixel to track "Plays".
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-pixelUrlCount">
+                                <label class="form__label" for="c6-container-pixelUrlCount">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Pixel URL (Count)
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Place a pixel to track count of "Minimum View Time".
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-pixelUrlClick">
+                                <label class="form__label" for="c6-container-pixelUrlClick">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Pixel URL (Click)
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Place a pixel to track count of "Clicks" on non-url buttons like share or expand/collapse.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-pixelUrlLaunch">
+                                <label class="form__label" for="c6-container-pixelUrlLaunch">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Pixel URL (Launch)
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Place a pixel to track  when player launches.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-pixelTypeLabel">
+                                <label class="form__label" for="c6-container-pixelTypeLabel">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Pixel Type
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Add Name for new pixel type
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-pixelTypeURL">
+                                <label class="form__label" for="c6-container-pixelTypeURL">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Pixel URL
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Add URL for new pixel type
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item form__item--clone">
+                                <div class="field--inline">
+                                    <select class="form__selectBox form__selectBox--single" id="c6-mraid-prebuffer">
+                                        <option>Prebuffer</option>
+                                        <option>Debug</option>
+                                        <option>Add New</option>
+                                    </select>
+                                    <label class="form__label" for="c6-mraid-prebuffer">   
+                                        <i class="fa fa-times ui--error"></i> 
+                                        Select Parameter
+                                    </label>
+                                </div>
+                                <div class="btns--inline">
+                                    <button class="btn--link"><i class="fa fa-plus-circle"></i></button>
+                                    <button class="btn--link"><i class="fa fa-times-circle"></i></button>
+                                </div>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Should the player attempt to buffer its videos after they are loaded?
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <!-- show Param "Name"  & "value" inputs when the field value is "Add New". Show only "value" field if user selects existing params -->
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="tel" id="c6-vpaid-paramName">
+                                <label class="form__label" for="c6-vpaid-paramName">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Parameter Name
+                                </label>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid ParameterName
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <!-- show label option when the field value is "Add New" -->
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="tel" id="c6-vpaid-paramValue">
+                                <label class="form__label" for="c6-vpaid-paramValue">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Parameter Value
+                                </label>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid ParameterName
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <select class="form__selectBox form__selectBox--single" id="c6-placement-previewMode">
+                                    <option>No</option>
+                                    <option>Yes</option>
+                                </select>
+                                <label class="form__label" for="c6-placement-previewMode">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Preview Mode
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Is the generated tag being used for preview mode? Warning! Tracking pixels won't be fired and activities won't be tracked if selected to yes.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <div class="formSection__group--sub">
+                                <h1 class="formSection__title">
+                                    <span class="formSection__titleText tk--hdr">Budget Settings</span>
+                                </h1>
+                                <p class="formSection__introText">Set the campaign budget for DSP</p>
+                            </div>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-dailyBudget">
+                                <label class="form__label" for="c6-container-dailyBudget">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Daily Budget
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Enter the daily limit for which you want to run on this DSP.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form__item">
+                                <input class="form__textBox form__fillCheck" type="text" id="c6-container-totalBudget">
+                                <label class="form__label" for="c6-container-totalBudget">
+                                    <i class="fa fa-times ui--error"></i> 
+                                    Total Budget
+                                </label>
+                                <div class="form__helpBox form__helpBox--right">
+                                    <div class="form__helpText">
+                                        Enter the Total Budget Limit for which you want to run on this DSP.
+                                    </div>
+                                </div>
+                                <div class="form__errorBox">
+                                    <p class="form__errorMsg">
+                                        <i class="fa fa-exclamation-triangle"></i> Invalid Value
+                                    </p>
+                                </div>
+                            </fieldset>
+                            <div class="ui__btnHolder">
+                                <button class="action__btn action__btn--wide">Save</button>
+                            </div>
+                        </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div><!-- .settingsContent__gridHolder -->
+    </div>
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

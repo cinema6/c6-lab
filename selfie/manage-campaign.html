@@ -1,0 +1,222 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Manage Campaign - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__base.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <style type="text/css">
+    .adPreview__desktop {
+        width: 100%;
+        background-color: #e1e1e1;
+        position: relative;
+        height: 36em;
+    }
+    .btnGroup
+    </style>
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html" title="Campaigns"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html" title="Archives"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item" title="Settings">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>           
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="campaigns.html">Campaigns</a>  /  Captain Morgan Very Important Campaign
+            </h1>
+            <div class="pageHeader__actions">
+                <!--<button c6-sref="Selfie:NewCampaign" title="New Campaign" class="action__btn action__btn--small" type="button">
+                    
+                    New Campaign
+                </button>-->
+                <!--<div class="btnGroup">
+                    <button class="btn action__btn action__btn--small" title="Copy"><i class="fa fa-copy"></i></button>
+                    <button class="btn action__btn action__btn--small" title="Cancel"><i class="fa fa-ban"></i></button>
+                    <button class="btn action__btn action__btn--small" title="Delete"><i class="fa fa-trash-o"></i></button>
+                </div>
+                <div class="btnGroup">
+                    <button class="btn action__btnSecondary action__btnSecondary--small" title="Copy"><i class="fa fa-copy"></i></button>
+                    <button class="btn action__btnSecondary action__btnSecondary--small" title="Cancel"><i class="fa fa-ban"></i></button>
+                    <button class="btn action__btnSecondary action__btnSecondary--small" title="Delete"><i class="fa fa-trash-o"></i></button>
+                </div>-->
+                <div class="btnGroup">
+                    <button class="btn btn--primary btn--small btn--nav" title="Edit"><i class="fa fa-pencil-square-o"></i><span class="hide--palm"> Edit</span></button>
+                    <button class="btn btn--primary btn--small btn--nav" title="Copy"><i class="fa fa-copy"></i><span class="hide-mobile"> Copy</span></button>
+                    <button class="btn btn--primary btn--small btn--nav" title="Cancel"><i class="fa fa-ban"></i><span class="hide--palm"> Cancel</span></button>
+                    <button class="btn btn--primary btn--small btn--nav btn--disabled" title="Pause"><i class="fa fa-pause"></i><span class="hide--palm"> Pause</span></button>
+                    <button class="btn btn--primary btn--small btn--nav btn--disabled" title="Resume"><i class="fa fa-play"></i><span class="hide--palm"> Resume</span></button>
+                    <button class="btn btn--primary btn--small btn--nav" title="Delete"><i class="fa fa-trash-o"></i><span class="hide--palm"> Delete</span></button>
+                </div>
+            </div>
+        </div><!--.mainHeader__group-->
+        <div class="tabBar__group">
+            <ul class="tabBar__list clearfix">
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='stats.html'">
+                    Stats</button>
+                </li>
+                <li class="tabBar__item tabBar__item--active">
+                <button class="tabBar__btn" type="button" onclick="location.href='manage-campaign.html' ">
+                    Manage Campaign</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='targeting.html' ">
+                    Targeting</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='budget.html' ">
+                    Budget</button>
+                </li>
+                <li class="tabBar__item">
+                <button class="tabBar__btn" type="button" onclick="location.href='payment-options.html' ">
+                    Payment Options</button>
+                </li>
+            </ul><!--.tabBar__list-->            
+        </div><!--.tabBar__group-->
+    </div><!--.pageHeader__group-->
+    
+    <div class="tabContent targeting__content container">
+        <header class="tabContent__header">
+            <h2 class="tabContent__title tk--hdr">Your campaign is currently Pending Approval</h2>
+            <span class="tabContent__subtitle">Captain Morgan Very Important Campaign</span>
+                <p class="lockedMsg__info">You have one change request pending. You cannot make changes to the campaign until it's processed. </p> 
+        </header>
+    <div class="tabContent__gridHolder">
+        <div class="grid grid--center grid--middle">
+           <div class="grid__item one-half palm--one-whole">
+                    
+                    <section class="campaignPreview__group">
+                        
+
+                        <div class="grid grid--full grid--center adPreview__group">
+
+                            <div class="tabHolder">
+                                <button class="one-quarter palm--one-half ui__tab ui__tab--active" data-panel="js-preview-desktop">
+                                    Desktop
+                                </button><!--
+                             --><button class="one-quarter palm--one-half ui__tab" data-panel="js-preview-mobile">
+                                    Mobile
+                                </button>
+                            </div><!--.tabHolder-->
+
+                            <div class="ui__tabPanel js-preview-desktop adPreview__panel">
+                                <div class="adPreview__desktop">
+                                <!--    <iframe class="adPreview__desktopFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=full-np"></iframe>-->
+                                </div>
+                            </div>
+                            
+                            <div class="ui__tabPanel js-preview-mobile adPreview__panel" style="display:none;">
+                                <div class="adPreview__mobile">
+                                    <iframe class="adPreview__mobileFrame" src="http://cinema6.com/solo?id=e-e01542546a2306&mode=mobile" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                        </div> <!--.grid .grid--full .grid--center adPreview__group-->
+                    </section> 
+                </div><!--.grid__item--><!--
+             --><div class="grid__item adManage one-half palm--one-whole">
+                    <div class="grid">
+                        <div class="grid__item grid--center lockedMsg">
+                            <h3 class="lockedMsg__info tk--hdr">Your campaign is <strong class="ng-binding">active</strong></h3>
+                            <!-- ngIf: campaign.updateRequest && campaign.status === 'pending' -->
+                            <!-- ngIf: campaign.updateRequest && campaign.status !== 'pending' --><p class="lockedMsg__info ng-scope" ng-if="campaign.updateRequest &amp;&amp; campaign.status !== 'pending'">Your requested changes are pending approval.</p><!-- end ngIf: campaign.updateRequest && campaign.status !== 'pending' -->
+                        </div>
+                        <!-- ngIf: (campaign.status === 'active' || campaign.status === 'paused') && SelfieManageCampaignCtrl.updateRequest.data.status !== 'canceled' --><div class="grid__item one--whole grid--center ng-scope" ng-if="(campaign.status === 'active' || campaign.status === 'paused') &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status !== 'canceled'">
+                            <div class="action__btnGroup">
+                              <button ng-show="(campaign.status === 'active' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status !== 'paused') || (campaign.status === 'paused' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status === 'active')" ng-click="SelfieManageCampaignCtrl.update('pause')" class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-pause"></i>  Pause</button>
+                              <button ng-show="(campaign.status === 'paused' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status !== 'active') || (campaign.status === 'active' &amp;&amp; SelfieManageCampaignCtrl.updateRequest.data.status === 'paused')" ng-click="SelfieManageCampaignCtrl.update('resume')" class="action__btnSecondary action__btnSecondary--small ng-hide"><i class="fa fa-play"></i>  Resume</button>
+                              <!-- <button ng-click="SelfieManageCampaignCtrl.edit(campaign)" ng-class="{'btn--disabled' : !!campaign.updateRequest }" ng-disabled="!!campaign.updateRequest" class="action__btnSecondary action__btnSecondary--small"><i class="fa fa-pencil-square-o"></i>  Edit</button> -->
+                            </div>
+                        </div><!-- end ngIf: (campaign.status === 'active' || campaign.status === 'paused') && SelfieManageCampaignCtrl.updateRequest.data.status !== 'canceled' -->
+                    </div>
+                </div>
+            </div>
+
+        <!-- campaign summary -->
+        <div class="grid">
+            <div class="grid__item one-half">
+                <div class="campaignSummary__group">
+                    <div class="grid">
+                        <div class="campaignItem__list">                        
+                            <div class="campaignItems">
+                                <ul>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Interests</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">Interests: Arts and Entertainment, Business, Cars, Sports, Education, News, Finance, Hobbies, DIY, Crafts, Photography</div>
+                                    </li>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Demographics</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">Age: 18-24, 25-34, 35-44</div>
+                                    <div class="grid__item one-whole campaignItem__label text--small">Gender: Female</div>
+                                    <div class="grid__item one-whole campaignItem__label text--small">Income: $50,000-$75,000, $75,000-$99,000</div>
+                                    </li>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Location</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">State: New Jersey, New York, Florida</div>
+                                    <div class="grid__item one-whole campaignItem__label text--small">DMA: Atlanta, Philadelhpia, Greater NYC</div>
+                                    </li>
+                                    <li>
+                                    <div class="grid__item two-thirds campaignItem__title">Timeline</div><!--
+                                    --><div class="grid__item one-whole campaignItem__label text--small">11/30/2015 until 12/30/2015</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="campaignSummary__item">
+                            <div class="grid">
+                                <div class="grid__item grid--center one-quarter"><span class="campaignItem__label">Total Budget </span><span class="campaignItem__title tk--hdr">$5,000</span></div><!-- --><div class="grid__item one-quarter grid--center"><span class="campaignItem__label">Daily Limit </span><span class="campaignItem__title tk--hdr">$250</span></div><!-- --><div class="grid__item one-quarter grid--center grid--right"><span class="campaignItem__label">Est. Views </span><span class="campaignItem__title tk--hdr">50,000</span></div><!-- --><div class="grid__item grid--center one-quarter"><span class="campaignItem__label ">CPV </span><span class="campaignItem__title tk--hdr">$0.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- campaign summary ends-->
+
+
+    </div><!--.gridHolder-->
+    </div><!--.tabContent-->
+
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

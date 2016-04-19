@@ -1,0 +1,532 @@
+/*  ================================================
+    Selfie overrides
+    ================================================ */
+    /*generic styles*/
+    .brandingHead {
+        margin-top: 5em;
+    }
+    /*helper classes*/
+    .item--left {
+        float: left;
+    }
+    .item--right {
+        float: right;
+    }
+    .text--center {
+        text-align: center;
+    }
+    .text--left {
+        text-align: left;
+    }
+    .text--right {
+        text-align: right;
+    }
+    /*form elements change to white background*/
+    .form__textBox {
+        background: #fff;
+        border-bottom: 2px solid #eee;
+        box-shadow: inset 0 0 3px #bbb;
+                -moz-box-shadow: inset 0 0 3px #bbb;
+                -webkit-box-shadow: inset 0 0 3px #bbb;
+        padding: 0.5em;
+    }
+    .form__label {
+        z-index: 1;
+    }
+    .form__textArea {
+        border: none;
+    }
+    .form__item--sub .form__textBox {
+        background: #f5f5f5;
+        color: #1c1c1c;
+    }
+    .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple {
+        padding: 0.5em;
+    }
+
+/*  ================================================
+    Sign up and Pre-Login screen styles
+    ================================================ */    
+    
+    /*grid layout classes for prelogin screens*/
+    .prelogin__gridHolder {
+        width: 24em;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 4em 0 0 0;
+    }
+    .signup__gridHolder {
+        width: 96%;
+        max-width: 64em;
+        min-width: 47em;
+        margin: 0 auto;
+        padding: 4em 0 0 0;        
+    }
+    .signup__gridHolder .form--narrow {
+        width: 80%;
+        margin-left: 3em;
+    }
+    /*sign up features*/
+    .productFeatures {
+        margin-top: 4.75em;
+        padding-left: 4.5em;
+    }
+    .productFeatures_list {
+        padding: 0;
+    }
+    .border--left {
+        border-left: 1px dotted #ccc;
+    }
+    .productFeatured_itemInfo ul {
+        padding-left: 1em;
+    }
+    .productFeatured_item {
+        margin-bottom: 1.5em;
+    }
+    .productFeatures_list li {
+        list-style-type: none;
+        padding: 0;
+    }
+    .productFeatured_itemIcon {
+        display: inline-block;
+        float: left;
+    }
+    .productFeatured_itemInfo {
+        display: inline-block;
+    }
+    .productFeatured_itemInfo .productFeatured_item--header {
+        font-size: 1.25em;
+        margin-top: 0;
+        margin-left: 0.5em;
+        margin-bottom: 0;
+    }
+/*  ================================================
+    Account Settings and Payment screen styles
+    ================================================ */    
+    
+    /*display boxes for account settings*/
+    .card--item {
+        background: #fff;
+    }
+    .card--item .tk--hdr {
+        font-weight: normal;
+    }
+    .accountSettings__box-item, .paymentOptions__box-item {
+        list-style-type: none;
+        padding: 1em 1em 2em 1em;
+        border-bottom: 1px solid #eee;
+    }
+    .accountSettings__box-item li, .paymentOptions__box-item li {
+        padding: 0;
+    }
+    .accountSettings__box-item li h2, .accountSettings__box-item li h3, .paymentOptions__box-item li h2, .paymentOptions__box-item li h3{
+        margin: 0;
+    }
+    .accountSettings__box-item li h2, .paymentOptions__box-item li h2 {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+/*  ================================================
+    Support screen styles
+    ================================================ */   
+
+    .supportContent__step {
+        margin-top:2em;
+    }
+
+/*  ================================================
+    Datepicker styles
+    ================================================ */   
+    .ui-datepicker {
+        background: #fff;
+        z-index: 1;
+        box-shadow: 0 0 10px #ccc;
+    }
+        .ui-datepicker-header {
+            text-align: center;
+            margin: 0.5em 0.5em 0 0.5em;
+        }
+        .ui-datepicker-title {
+            text-align: center;
+            display: inline-block;
+        }
+        .ui-datepicker-prev {
+            cursor: pointer;
+            float: left;
+        }
+        .ui-datepicker-next {
+            cursor: pointer;
+            float: right;
+        }
+        .ui-state-default {
+            color: #4AB8BA;
+            transition: color 0.3s;
+        }
+            .ui-state-default:hover {
+                background: #75dbcd;
+                color: #fff;
+            }
+        .ui-state-highlight {
+            background: #49B8B9;
+            color: #fff;
+            border-radius: 50%;
+        }
+        ..ui-datepicker-calendar {
+            margin: 0.5em;
+        }
+            .ui-datepicker-calendar td {
+                text-align: center;
+                width: 2em;
+                height: 2em;
+                padding: 0;
+            }
+        /*.ui-datepicker-calendar td:hover {
+            
+        }*/
+            .ui-datepicker-calendar td a {
+                display: block;
+                vertical-align: middle;
+                line-height: 2em;
+                width: 100%;
+                height: 100%;
+            }
+                .ui-datepicker-calendar td a:hover {
+                    background: #75dbcd;
+                    color: #fff;
+                    border-radius: 50%;
+                }
+        .ui-datepicker-calendar td.ui-datepicker-unselectable:hover {
+            background: #fff;
+        }
+            .ui-datepicker-unselectable.ui-state-disabled .ui-state-default {
+                color: #ccc;
+            }
+            .ui-datepicker-unselectable.ui-state-disabled .ui-state-default:hover {
+                background: #fff;
+                color: #ccc;
+                cursor: not-allowed;
+            }
+        span.ui-icon.ui-icon-circle-triangle-w:before {
+            content: '\f137';
+            font-family: 'FontAwesome';
+        }
+        span.ui-icon.ui-icon-circle-triangle-e:before {
+            content: '\f138';
+            font-family: 'FontAwesome';
+        }
+/*  ================================================
+    Review Order & Restart campaign modal styles
+    ================================================ */
+    .reviewOrder__group,
+    .restartCampaign__group {
+        margin:1.5rem 0 0.5rem;
+        overflow-y:auto;
+        max-height:28.5rem;
+    }
+        .reviewOrder__group .grid,
+        .restartCampaign__group .grid{
+            margin: 0;
+            height:100%;
+        }
+        .reviewOrder__group .grid,
+        .campaignSummary__group .grid,
+        .restartCampaign__group .grid {
+            margin: 0;
+        }
+        .reviewOrder__group .grid .one-half:first-child,
+        .restartCampaign__group .grid .one-half:first-child {
+            border-right:1px dotted #ccc;
+            height:100%;
+            min-height:28.5rem;
+        }
+    .reviewOrder__item h2, 
+    .campaignSummary__item h2,
+    .restartCampaign__group h2 {
+        margin-bottom: 0;
+    }
+    .orderItem__label {
+        font-weight: 400;
+    }
+    .orderItem__cost {
+        font-weight: 700;
+    }
+    .orderItems {
+        padding: 24px 24px 0 24px;
+    }
+        .orderItems .grid__item {
+            padding-left: 0;
+        }
+            .orderItem__cost--total {
+                font-weight: 700;
+            }
+            .orderItem__title {
+                font-weight: 700;
+            }
+            .reviewOrder__item .orderItem__title, 
+            .campaignSummary__item .campaignItem__title,
+            .restartCampaign__group .campaignItem__title {
+                vertical-align: middle;
+            }
+        .campaignItem__title, .campaignSummary__group h3.tk--hdr {
+            font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 1.25em;
+        }
+        .orderItems ul li {
+            list-style-type: none;
+            border-bottom: 1px dotted #ccc;
+            padding: 5px 0;
+            margin-bottom: 0;
+        }
+    .modalBody__group--tall {
+        width:55rem;
+        margin-left: -27em;
+    }
+    .restartCampaign__group .form__textBox:focus ~ .form__label,
+    .restartCampaign__group .form__fillCheck--filled ~ .form__label {
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+        opacity: 0;
+        text-align: right;
+        left: 0;
+    }
+/*  ================================================
+    Campaign List Styles
+    ================================================ */
+    .campaign__creditIcon {
+        width:8rem;
+        height:8rem;
+        border-radius:50%;
+        border:4px solid #fff;
+        background:#4fc184;
+        margin:0 auto;
+    }
+        .campaign__creditIcon i {
+            font-size:3rem;
+            color:#fff;
+            margin:2rem 0;
+        }
+    .campaign__item--emptyCredit .tk--hdr {
+        margin:0.5em 0 0.125em;
+        color:#4fc184;
+    }
+    .campaign__item--emptyCredit .tk--subHdr {
+        font-size:1.125rem;
+        margin:0 0 1.5em;
+    }
+    .paginator__group {
+        border: 1px solid #ddd;
+        border-top:0;
+    }
+    
+/*  ================================================
+    Review Campaign and campaign summary modal styles
+    ================================================ */
+        .campaignSummary__group h3 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        .orderItem__label, .campaignItem__label {
+            font-weight: 400;
+            font-size: 1em;
+        }
+        .campaignItem__title {
+            display: block;
+        }
+        .campaignItem__list {
+            margin-top: 0;
+        }
+        .orderItems ul {
+            padding-left: 0;
+            margin: 0;
+        }
+            .orderItems ul li {
+                list-style-type: none;
+                border-top:0;
+                padding:0.25em 0 0 0.75em;
+                margin-bottom: 0;
+            }
+            .campaignSummary__item {
+                padding: 20px 0;
+            }
+        .campaignItem__list > h3 {
+            padding-left: 0;
+        }
+        .orderItems {
+            padding:0;
+        }
+            .orderItems .grid__item {
+                padding-left: 0;
+            }
+        .orderItems ul{
+            padding-left: 0;
+            margin: 0 1.5em 1em 0;
+        }
+            .orderItems ul li {
+                list-style-type: none;
+                border-bottom:0;
+                margin-bottom:0;
+            }
+            .orderItems ul li:last-child {
+                background:none;
+                font-weight:normal;
+                padding-left: 0.75rem;
+                padding-right:0;
+            }
+            .orderItems ul li:first-child {
+                background:none;
+                padding:0 0 0.25em 0;
+                margin:0 0 0.25em;
+                border-bottom:1px dotted #ccc;
+            }
+                .orderItems ul li:first-child h1 {
+                    font-size:1.25em;
+                    margin:0;
+                    font-weight:600;
+                }
+                .grid__item.two-thirds.orderItem__label h1 {
+                    text-align:left;
+                }
+                .orderItem__label:first-child h1 {
+                   text-align:left;
+                }
+                .orderItem__label:last-child h1 {
+                    text-align:right;
+                }
+                ul li.orderItem__subHdr div:first-child {
+                    border-bottom:1px dotted #ccc;
+                }
+                ul li.orderItem__subItem {
+                    font-size:0.875em;
+                }
+                ul li.orderItem__subItem div:last-child {
+                    border-bottom:1px dotted #ccc;
+                }
+                ul li.orderItem__subItem:last-child div:last-child {
+                    border-bottom:0;
+                }
+        .modalFooter__group {
+            position:absolute; bottom:0; left:0; right:0; z-index:5;
+            background:#eee; border-top:0
+        }
+    .paymentForm .pmtDropdown .pmtDropdown__btn,
+    .paymentForm .pmtDropdown .ui__clickDropMenu,
+    .paymentForm .pmtDropdown .ui__clickDropBtn {
+        box-sizing: border-box;
+    }
+    .paymentForm .pmtDropdown__btn {
+        border: 1px solid #ddd;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background: #f5f5f5;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+        .paymentForm .pmtDropdown__btn:focus {
+            border: 1px solid #49B8B9;
+            background: #ffffff;
+        }
+    .paymentForm .pmtDropdown__menu {
+        border: 1px solid #eee;
+        background: #f5f5f5;
+    }
+
+/*  ================================================
+    Payment and Funding Styles
+    ================================================ */
+    .addFunds__form {
+        overflow: hidden;
+    }
+    .paymentForm .form__item {
+        margin-bottom: 0.25em;
+    }
+    .paymentForm .timeline__selectOption {
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+    .paymentForm .orderItem__input--group {
+        vertical-align: middle;
+    }
+    .form__textBox:focus ~ .form__label, .form__fillCheck--filled ~ .form__label {
+        
+    }
+    .depositFunds .form__textBox,
+    .paymentForm  .form__textBox{
+        border: 1px solid #ddd;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background: #f5f5f5;
+        border-radius: 4px;
+    }
+        .depositFunds .form__textBox:focus,
+        .paymentForm  .form__textBox:focus {
+            border: 1px solid #49B8B9;
+            outline: 0;
+            background: #ffffff;
+        }
+        .depositFunds .form__textBox:focus ~ .form__label,
+        .paymentForm .form__textBox:focus ~ .form__label,
+        .depositFunds .form__fillCheck--filled ~ .form__label,
+        .paymentForm .form__fillCheck--filled ~ .form__label {
+            opacity: 0;
+        }
+    .modal__payment-history .modalBody__group .form__item--shortInput,
+    .modalBody__one-col .form__item--shortInput {
+        width:100%;
+        margin-bottom:1.5rem;
+    }
+    .modalBody__group .form__item--shortInput {
+        margin-right:0;
+        margin-bottom:0.5em;
+        margin-left:auto;
+    } 
+    .paymentMethod__optionTypes {
+        margin-top:0.5em;
+        margin-bottom:1em;
+    }
+        .paymentMethod__optionTypes label {
+            margin-right:2em;
+        }
+/*** Replace existing styles ***/
+    .modalDialog__group--confirm .payment__seals {
+        padding-left: 0; /*<-- update this*/
+    }
+    .modalDialog__group--confirm .payment__sealItem {
+        display: inline-block;
+        padding-left: 0; /*<-- update this*/
+        text-align: left; /*<-- update this*/
+        margin-bottom: 0; /*<-- update this*/
+        margin-top: 0.5em; /*<-- add this*/
+    }
+    .modalDialog__group--confirm.modalBody__one-col .payment__sealItem {
+        padding:0.25em;
+    }
+        .modalDialog__group--confirm .payment__sealItem .payment__itemText {
+            display:block;
+            margin-bottom:0.25em;
+            font-style:italic;
+        }
+    .modalDialog__group--confirm .payment__sealItem.braintree--seal img {
+        border: none; /*<-- update this*/
+        width: 80%;
+    }
+/*** modal styles ***/
+    .modalBody__one-col.modalBody__group--narrow {
+        width: 34em;
+        margin-left:-16em;
+    }
+        .modalBody__one-col.modalBody__group--narrow .modalBody__group {
+            margin-bottom:4em;
+            max-height:30rem;
+            overflow-y:auto;
+        }
+    .modal__subTitle {
+        text-align:center;
+        color:#5c5c5c;
+        font-weight:400;
+        font-size:1rem;
+        margin:0.125em 0 0;
+    }

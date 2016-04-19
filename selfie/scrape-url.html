@@ -1,0 +1,223 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Confirm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.28.0.rc1-0-g15220d2/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    
+   
+</head>
+<body>
+<div style="margin-top: 100px;"> 
+<!-- spinner loading -->
+<div class="assetLoader ui__connector">
+    <div class="assetLoader__status">
+        <div>
+            <div class="assetLoader__status--icon"><div class="spinner"></div></div>
+        </div>
+        <div class="assetLoader__status--text text-small">Looking for logo and social links
+        </div>
+    </div>
+</div>
+
+<!-- loading failed -->
+<div class="assetLoader ui__connector">
+    <div class="assetLoader__status assetLoader__status-success">
+        <div>
+            <div class="assetLoader__status--icon"><i class="fa fa-check-circle"></i></div>
+        </div>
+        <div class="assetLoader__status--text text-small">Retrieved logo and 3 social links
+        </div>
+    </div>
+</div>
+
+<!-- loading success -->
+<div class="assetLoader ui__connector">
+    <div class="assetLoader__status assetLoader__status-error">
+        <div>
+            <div class="assetLoader__status--icon"><i class="fa fa-warning"></i></div>
+        </div>
+        <div class="assetLoader__status--text text-small">Failed to retrieved logo and social links
+        </div>
+    </div>
+</div>
+</div>
+<section class="formSection__group formSection__group--sub">
+
+        <h1 class="formSection__title">
+            <span class="formSection__titleText tk--hdr">Logo and Social Links</span>
+        </h1>
+        
+  <fieldset class="form__item" ng-class="{ 'ui--hasError': SelfieCampaignSponsorCtrl.uploadError }">
+                <!-- <input c6-fill-check class="form__textBox form__fillCheck" type="text" id="c6-sponsor-name" ng-model="card.collateral.logo"> -->
+
+                <select c6-select-box="" data-options="SelfieCampaignSponsorCtrl.logoOptions" thumbnails="true" preselected="true" class="form__selectBox form__selectBox--single ng-pristine ng-valid select2-hidden-accessible form__fillCheck--filled" ng-model="SelfieCampaignSponsorCtrl.logoType" ng-options="option.label for option in SelfieCampaignSponsorCtrl.logoOptions" tabindex="-1" aria-hidden="true"><option value="0">None</option><option value="1" selected="selected">Upload from URL</option><option value="2">Upload from File</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 129px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-gtrv-container"><span class="select2-selection__rendered" id="select2-gtrv-container" title="Upload from URL">None</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><!-- TO DO: big time selector customization -->
+
+                <label class="form__label" for="c6-sponsor-logo">
+                    <i class="fa fa-times ui--error"></i>
+                    Advertiser Logo
+                </label>
+                <!--<div class="form__helpBox form__helpBox--right">
+                    <div class="form__helpText">
+                        Add a recogognizable logo to reinforce association with the advertiser.  This is a proven strategy to increase brand awareness and recall.  This field is optional.
+                    </div>
+                </div>-->
+                <div class="form__errorBox">
+                    <p class="form__errorMsg">
+                        <i class="fa fa-exclamation-triangle"></i> Error uploading logo
+                    </p>
+                </div>
+  </fieldset>
+  <div ng-repeat="link in SelfieCampaignSponsorCtrl.links" class="ng-scope">
+                <fieldset class="form__item" ng-class="{'ui--hasError': !link.href &amp;&amp; link.required &amp;&amp; SelfieCampaignCtrl.validation.show }">
+                    <!-- ngIf: link.name === 'Sharing' --><div ng-if="link.name === 'Sharing'" class="ng-scope">
+                        <input c6-fill-check="" class="form__textBox form__fillCheck ng-pristine ng-valid" type="text" id="c6-sponsor-sharing" ng-model="SelfieCampaignSponsorCtrl.sharing" ng-blur="SelfieCampaignSponsorCtrl.updateLinks()">
+                        <label class="form__label" for="c6-sponsor-sharing">
+                            <i class="fa fa-times ui--error"></i>
+                            <i class="fa fa-share-alt-square tk--active tk--share"></i> Share Link
+                        </label>
+                        <div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                Add a link for users to share
+                            </div>
+                        </div>
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg">
+                                <i class="fa fa-exclamation-triangle"></i> Error message goes here
+                            </p>
+                        </div>
+                    </div><!-- end ngIf: link.name === 'Sharing' -->
+
+                    <!-- ngIf: link.name !== 'Sharing' -->
+                </fieldset>
+            </div>
+  <div ng-repeat="link in SelfieCampaignSponsorCtrl.links" class="ng-scope">
+                <fieldset class="form__item" ng-class="{'ui--hasError': !link.href &amp;&amp; link.required &amp;&amp; SelfieCampaignCtrl.validation.show }">
+                    <!-- ngIf: link.name === 'Sharing' -->
+
+                    <!-- ngIf: link.name !== 'Sharing' --><div ng-if="link.name !== 'Sharing'" class="ng-scope">
+                        <input c6-fill-check="" class="form__textBox form__fillCheck ng-valid ng-dirty" type="text" id="c6-sponsor-Facebook" ng-model="link.href" ng-blur="SelfieCampaignSponsorCtrl.updateLinks()" style="">
+                        <label class="form__label ng-binding" for="c6-sponsor-Facebook">
+                            <i class="fa fa-times ui--error"></i>
+                            <i class="fa fa-facebook tk--active tk--facebook"></i> Facebook <!-- ngIf: link.required -->
+                        </label>
+                        <!--<div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                This link will be added to your video card.
+                            </div>
+                        </div>-->
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg ng-binding">
+                                <i class="fa fa-exclamation-triangle"></i> Facebook is required
+                            </p>
+                        </div>
+                    </div><!-- end ngIf: link.name !== 'Sharing' -->
+                </fieldset>
+            </div>
+<div ng-repeat="link in SelfieCampaignSponsorCtrl.links" class="ng-scope">
+                <fieldset class="form__item" ng-class="{'ui--hasError': !link.href &amp;&amp; link.required &amp;&amp; SelfieCampaignCtrl.validation.show }">
+                    <!-- ngIf: link.name === 'Sharing' -->
+
+                    <!-- ngIf: link.name !== 'Sharing' --><div ng-if="link.name !== 'Sharing'" class="ng-scope">
+                        <input c6-fill-check="" class="form__textBox form__fillCheck ng-valid ng-dirty" type="text" id="c6-sponsor-Twitter" ng-model="link.href" ng-blur="SelfieCampaignSponsorCtrl.updateLinks()" style="">
+                        <label class="form__label ng-binding" for="c6-sponsor-Twitter">
+                            <i class="fa fa-times ui--error"></i>
+                            <i class="fa fa-twitter tk--active tk--twitter"></i> Twitter <!-- ngIf: link.required -->
+                        </label>
+                        <!--<div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                This link will be added to your video card.
+                            </div>
+                        </div>-->
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg ng-binding">
+                                <i class="fa fa-exclamation-triangle"></i> Twitter is required
+                            </p>
+                        </div>
+                    </div><!-- end ngIf: link.name !== 'Sharing' -->
+                </fieldset>
+            </div>
+<div ng-repeat="link in SelfieCampaignSponsorCtrl.links" class="ng-scope">
+                <fieldset class="form__item" ng-class="{'ui--hasError': !link.href &amp;&amp; link.required &amp;&amp; SelfieCampaignCtrl.validation.show }">
+                    <!-- ngIf: link.name === 'Sharing' -->
+
+                    <!-- ngIf: link.name !== 'Sharing' --><div ng-if="link.name !== 'Sharing'" class="ng-scope">
+                        <input c6-fill-check="" class="form__textBox form__fillCheck ng-pristine ng-valid" type="text" id="c6-sponsor-Instagram" ng-model="link.href" ng-blur="SelfieCampaignSponsorCtrl.updateLinks()">
+                        <label class="form__label ng-binding" for="c6-sponsor-Instagram">
+                            <i class="fa fa-times ui--error"></i>
+                            <i class="fa fa-instagram tk--active tk--instagram"></i> Instagram <!-- ngIf: link.required -->
+                        </label>
+                        <!--<div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                This link will be added to your video card.
+                            </div>
+                        </div>-->
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg ng-binding">
+                                <i class="fa fa-exclamation-triangle"></i> Instagram is required
+                            </p>
+                        </div>
+                    </div><!-- end ngIf: link.name !== 'Sharing' -->
+                </fieldset>
+            </div>
+<div ng-repeat="link in SelfieCampaignSponsorCtrl.links" class="ng-scope">
+                <fieldset class="form__item" ng-class="{'ui--hasError': !link.href &amp;&amp; link.required &amp;&amp; SelfieCampaignCtrl.validation.show }">
+                    <!-- ngIf: link.name === 'Sharing' -->
+
+                    <!-- ngIf: link.name !== 'Sharing' --><div ng-if="link.name !== 'Sharing'" class="ng-scope">
+                        <input c6-fill-check="" class="form__textBox form__fillCheck ng-pristine ng-valid" type="text" id="c6-sponsor-YouTube" ng-model="link.href" ng-blur="SelfieCampaignSponsorCtrl.updateLinks()">
+                        <label class="form__label ng-binding" for="c6-sponsor-YouTube">
+                            <i class="fa fa-times ui--error"></i>
+                            <i class="fa fa-youtube tk--active tk--youtube"></i> YouTube <!-- ngIf: link.required -->
+                        </label>
+                        <!--<div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                This link will be added to your video card.
+                            </div>
+                        </div>-->
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg ng-binding">
+                                <i class="fa fa-exclamation-triangle"></i> YouTube is required
+                            </p>
+                        </div>
+                    </div><!-- end ngIf: link.name !== 'Sharing' -->
+                </fieldset>
+            </div>
+<div ng-repeat="link in SelfieCampaignSponsorCtrl.links" class="ng-scope">
+                <fieldset class="form__item" ng-class="{'ui--hasError': !link.href &amp;&amp; link.required &amp;&amp; SelfieCampaignCtrl.validation.show }">
+                    <!-- ngIf: link.name === 'Sharing' -->
+
+                    <!-- ngIf: link.name !== 'Sharing' --><div ng-if="link.name !== 'Sharing'" class="ng-scope">
+                        <input c6-fill-check="" class="form__textBox form__fillCheck ng-pristine ng-valid" type="text" id="c6-sponsor-Pinterest" ng-model="link.href" ng-blur="SelfieCampaignSponsorCtrl.updateLinks()">
+                        <label class="form__label ng-binding" for="c6-sponsor-Pinterest">
+                            <i class="fa fa-times ui--error"></i>
+                            <i class="fa fa-pinterest tk--active tk--pinterest"></i> Pinterest <!-- ngIf: link.required -->
+                        </label>
+                        <!--<div class="form__helpBox form__helpBox--right">
+                            <div class="form__helpText">
+                                This link will be added to your video card.
+                            </div>
+                        </div>-->
+                        <div class="form__errorBox">
+                            <p class="form__errorMsg ng-binding">
+                                <i class="fa fa-exclamation-triangle"></i> Pinterest is required
+                            </p>
+                        </div>
+                    </div><!-- end ngIf: link.name !== 'Sharing' -->
+                </fieldset>
+            </div>
+  </section>
+  </body>
+  </html>

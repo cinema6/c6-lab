@@ -1,0 +1,274 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Advertisers - C6 Selfie UI </title>
+    <meta name="description" content="">
+    <meta name="viewportable" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.30.1.rc3-0-ge122f80/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__overrides.css">
+    <link rel="stylesheet" type="text/css" href="css/hint.min.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+<style>
+.advertiserList li {
+    margin-bottom: 1em;
+}
+.advertiserList__actions .action__dropdown {
+    margin-right: 0;
+}
+.advertiserList__item {
+    position: relative;
+}
+.advertiserItem__name h3 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.advertiserItem__social-links i.fa {
+    font-size: 1em;
+    background: #fff;
+    padding: 0;
+    line-height: 2em;
+    width: 2em;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+.advertiserItem__logo img {
+    vertical-align: middle;
+    margin: 1em 0 1em -6px;
+}
+.advertiserList__actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+</style>
+    
+</head>
+<body>
+
+<nav class="mainNav__group">
+    <div class="mainNav__dashboard mainNav__item">
+        <img src="img/c6-logo-square.png">
+    </div>
+    <div class="mainNav__campaigns mainNav__item"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+        <a href="campaigns.html"><i class="fa fa-flag mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html"><i class="fa fa-archive mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__archives mainNav__item">
+        <a href="archives.html"><i class="fa fa-television mainNav__iconOnly"></i></a>
+    </div>
+    <div class="mainNav__settings mainNav__item mainNav__item--active">
+        <i class="fa fa-cog mainNav__iconOnly"></i>
+        <ul class="mainNav__dropDownGroup">
+            <a href="settings.html"><li class="mainNav__dropDownItem">Settings</li></a>
+            <a href="login.html"><li class="mainNav__dropDownItem">Logout</li></a>
+        </ul>
+    </div>        
+</nav>
+
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <div class="grid">
+                <div class="grid__item two-thirds">
+                    <h1 class="mainHeader__breadcrumbs tk--hdr">
+                        <a href="settings.html">Advertisers</a>
+                    </h1>
+                </div>
+            
+                <div class="pageHeader__actions">
+                    <!--<button c6-sref="Selfie:NewCampaign" title="New Campaign" class="action__btn action__btn--small" type="button">
+                        
+                        New Campaign
+                    </button>-->
+                    <a href="campaign-creation-combined.html" class="action__btn action__btn--small" style="color: #fff;"><i class="fa fa-plus"></i> New Advertiser</a>
+                </div>
+            </div>
+        </div><!--.mainHeader__group-->
+        
+    </div><!--.pageHeader__group-->
+    
+    <div class="grid grid--center">
+        <div class="grid__item">            
+                <header class="settingsContent__header">
+                    <h2 class="settingsContent__title tk--hdr">Advertisers</h2>
+                    <span class="settingsContent__subtitle">Manage your advertiser assets and profiles</span>
+                </header>
+        </div>
+        
+    </div> 
+    <div class="settingsContent__gridHolder">
+
+        <div class="grid grid--center">
+        <div class="grid__item one-whole">
+        <div class="grid">                
+            <div class="grid__item one-whole palm--one-whole">
+                <div class="advertiser__group">
+                    <ul class="advertiserList grid">
+                        <li class="grid__item one-third">
+                            <div class="advertiserList__item card--item grid--middle">
+                                <div class="grid__item one-quarter advertiserItem__logo">
+                                    <img src="https://yt3.ggpht.com/-Rf4ifXpKKs4/AAAAAAAAAAI/AAAAAAAAAAA/c32HZW2JMNk/s100-c-k-no/photo.jpg"/>
+                                </div><!--
+                             --><div class="grid__item two-thirds advertiserItem__name text--left">
+                                    <h3 class="tk--hdr">Shell North America</h3>
+                                    <div class="advertiserItem__social-links">
+                                        <a href="#" class="hint--bottom" data-hint="http://youtube.com/something-really-long"><i class="fa fa-youtube-square"> </i></a>                                    
+                                        <a href="#" class="hint--bottom" data-hint="http://facebook.com/something-really-long"><i class="fa fa-facebook-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://twitter.com/something-really-long"><i class="fa fa-twitter-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://pinterest.com/something-really-long"><i class="fa fa-pinterest-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://instagram.com/something-really-long"><i class="fa fa-instagram"> </i></a>
+                                    </div>
+                                </div><!--
+                             --><div class="grid__item  one-tenth advertiserList__actions text--right pull-right">
+                                    <nav class="action__dropdown">
+                                        <ul>
+                                          <li><button><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></button>
+                                            <ul>
+                                              <li><button>Edit</button></li>
+                                              <li><button>Delete</button></li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </li><!--
+                     --><li class="grid__item one-third">
+                            <div class="advertiserList__item card--item grid--middle">
+                                <div class="grid__item one-quarter advertiserItem__logo">
+                                    <img src="https://yt3.ggpht.com/-_5h1QPaAc1M/AAAAAAAAAAI/AAAAAAAAAAA/bEf1AsHBtzI/s100-c-k-no/photo.jpg"/>
+                                </div><!--
+                             --><div class="grid__item two-thirds advertiserItem__name text--left">
+                                    <h3 class="tk--hdr">Fandango Movieclips Originals Channel</h3>
+                                    <div class="advertiserItem__social-links">
+                                        <a href="#" class="hint--bottom" data-hint="http://youtube.com/something-really-long"><i class="fa fa-youtube-square"> </i></a>                                    
+                                        <a href="#" class="hint--bottom" data-hint="http://facebook.com/something-really-long"><i class="fa fa-facebook-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://twitter.com/something-really-long"><i class="fa fa-twitter-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://pinterest.com/something-really-long"><i class="fa fa-pinterest-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://instagram.com/something-really-long"><i class="fa fa-instagram"> </i></a>
+                                    </div>
+                                </div><!--
+                             --><div class="grid__item  one-tenth advertiserList__actions text--right pull-right">
+                                    <nav class="action__dropdown">
+                                        <ul>
+                                          <li><button><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></button>
+                                            <ul>
+                                              <li><button>Edit</button></li>
+                                              <li><button>Delete</button></li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </li><!--
+                     --><li class="grid__item one-third">
+                            <div class="advertiserList__item card--item grid--middle">
+                                <div class="grid__item one-quarter advertiserItem__logo">
+                                    <img src="https://yt3.ggpht.com/-c7vSsbZfhx8/AAAAAAAAAAI/AAAAAAAAAAA/1OzGRcsOiFE/s88-c-k-no/photo.jpg"/>
+                                </div><!--
+                             --><div class="grid__item two-thirds advertiserItem__name text--left">
+                                    <h3 class="tk--hdr">GE</h3>
+                                    <div class="advertiserItem__social-links">
+                                        <a href="#" class="hint--bottom" data-hint="http://youtube.com/something-really-long"><i class="fa fa-youtube-square"> </i></a>                                    
+                                        <a href="#" class="hint--bottom" data-hint="http://facebook.com/something-really-long"><i class="fa fa-facebook-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://twitter.com/something-really-long"><i class="fa fa-twitter-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://pinterest.com/something-really-long"><i class="fa fa-pinterest-square"> </i></a>
+                                    </div>
+                                </div><!--
+                             --><div class="grid__item  one-tenth advertiserList__actions text--right pull-right">
+                                    <nav class="action__dropdown">
+                                        <ul>
+                                          <li><button><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></button>
+                                            <ul>
+                                              <li><button>Edit</button></li>
+                                              <li><button>Delete</button></li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </li><!--
+                     --><li class="grid__item one-third">
+                            <div class="advertiserList__item card--item grid--middle">
+                                <div class="grid__item one-quarter advertiserItem__logo">
+                                    <img src="https://yt3.ggpht.com/-ApNLZ2_15_U/AAAAAAAAAAI/AAAAAAAAAAA/12GouyuqIwo/s100-c-k-no/photo.jpg"/>
+                                </div><!--
+                             --><div class="grid__item two-thirds advertiserItem__name text--left">
+                                    <h3 class="tk--hdr">IBM</h3>
+                                    <div class="advertiserItem__social-links">
+                                        <a href="#" class="hint--bottom" data-hint="http://youtube.com/something-really-long"><i class="fa fa-youtube-square"> </i></a>                                    
+                                        <a href="#" class="hint--bottom" data-hint="http://facebook.com/something-really-long"><i class="fa fa-facebook-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://twitter.com/something-really-long"><i class="fa fa-twitter-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://pinterest.com/something-really-long"><i class="fa fa-pinterest-square"> </i></a>
+                                        <a href="#" class="hint--bottom" data-hint="http://instagram.com/something-really-long"><i class="fa fa-instagram"> </i></a>
+                                    </div>
+                                </div><!--
+                             --><div class="grid__item  one-tenth advertiserList__actions text--right pull-right">
+                                    <nav class="action__dropdown">
+                                        <ul>
+                                          <li><button><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></button>
+                                            <ul>
+                                              <li><button>Edit</button></li>
+                                              <li><button>Delete</button></li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div><!--.grid__item--><!--
+
+
+            <div class="grid grid--center payment__btn--spacing">
+                <div class="grid__item one-whole">
+                <div class="text--center">
+                    <button class="action__btnSecondary action__btnSecondary--big palm--one-whole">
+                        <a href="payment-modal.html" style="color: #fff;"><i class="faa fa-plus"></i>
+                        New Advertiser</a>
+                    </button>
+                </div>
+                </div>
+            </div>
+                
+        </div>
+        </div><!--.grid one-whole-->
+
+            
+        </div><!--.grid .grid--center-->
+    </div><!--.settingsContent__gridHolder-->
+</div><!--.pageHolder-->
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+    
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>

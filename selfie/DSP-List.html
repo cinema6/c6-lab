@@ -1,0 +1,216 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>C6 Selfie UI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Condensed:300italic,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css-wizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="https://platform-staging.reelcontent.com/v1.38.0.rc2-0-g04908d6/styles/selfie/css/c6selfie__base.css">
+    <link rel="stylesheet" type="text/css" href="css/c6selfie__new-overrides.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+</head>
+<body>
+
+<nav class="mainNav__group ng-scope">
+    <div class="mainNav__dashboard">
+        <a c6-sref="Selfie:CampaignDashboard" title="Campaigns" class="mainNav__campaigns" href="/#/apps/selfie/pending?pending=true&amp;limit=50&amp;page=1&amp;filter=error%2Cdraft%2Cpending%2Cactive%2Cpaused%2Ccanceled%2Ccompleted%2CoutOfBudget%2Cexpired&amp;filterBy=statuses&amp;sort=lastUpdated%2C-1&amp;excludeOrgs=o-b2c617abe4d6a" style=""><span class="rc__logo--square"><span class="ir">Reelcontent</span></span></a>
+    </div>
+    <!--<div class=" mainNav__item--active"><!-- add "mainNav__item--active" class to div to highlight current nav item-->
+    <!-- ngIf: SelfieCtrl.isAdmin --><a ng-if="SelfieCtrl.isAdmin" c6-sref="Selfie:Pending:CampaignDashboard" c6-params="{pending: 'true'}" title="Pending Tasks" class="mainNav__campaigns mainNav__item ng-scope" href="/#/apps/selfie/pending?pending=true" style=""><i class="fa fa-clock-o mainNav__iconOnly"></i><span class="mainNav__label">Awaiting Approval</span></a><!-- end ngIf: SelfieCtrl.isAdmin -->
+    <a c6-sref="Selfie:All:CampaignDashboard" c6-params="{}" title="Campaigns" class="mainNav__campaigns mainNav__item" href="/#/apps/selfie/campaigns" style=""><i class="fa fa-flag mainNav__iconOnly"></i><span class="mainNav__label">Campaigns</span></a>
+    <a href="http://www.reelcontent.com/support/" target="_blank" c6-params="{}" title="Manae DSPs" class="mainNav__settings mainNav__item c6-active"><i class="fa fa-newspaper-o mainNav__iconOnly"></i><span class="mainNav__label">Manage DSPs</span></a>
+    <a c6-sref="Selfie:Account" c6-params="{}" title="Account Settings" class="mainNav__settings mainNav__item" href="/#/apps/selfie/account" style=""><i class="fa fa-cog mainNav__iconOnly"></i><span class="mainNav__label">Account Settings</span></a>    
+    <a href="http://www.reelcontent.com/support/" target="_blank" c6-params="{}" title="Support" class="mainNav__settings mainNav__item"><i class="fa fa-question-circle mainNav__iconOnly"></i><span class="mainNav__label">Support</span></a>
+    
+
+    <!-- <a href="archives.html" title="Archives" class="mainNav__archives mainNav__item"><i class="fa fa-archive mainNav__iconOnly"></i><span class="mainNav__label">Archives</span></a> -->
+
+    <div class="mainNav__logout mainNav__item" title="Logout">
+        <button class="mainNav__btn" ng-click="SelfieCtrl.logout()"> <i class="fa fa-power-off mainNav__iconOnly"></i>Logout</button>
+    </div>
+
+</nav>
+
+
+<div class="pageHolder">
+
+
+    <div class="pageHeader__group">
+        <div class="mainHeader__group">
+            <h1 class="mainHeader__breadcrumbs tk--hdr">
+                <a href="settings.html">DSPs</a>  
+            </h1>
+        </div><!--.mainHeader__group-->
+        <div class="pageHeader__actions">
+                <button c6-sref="Selfie:NewCampaign" title="New Campaign" class="action__btn action__btn--small" type="button">                    
+                   <i class="fa fa-plus"></i> New DSP
+                </button>
+        </div>
+    </div><!--.pageHeader__group-->
+    <div class="grid grid--center">
+        <div class="grid__item">
+            <header class="settingsContent__header">
+                <h2 class="settingsContent__title tk--hdr">DSPs</h2>
+                <span class="settingsContent__subtitle">Add/Edit DSPs</span>
+            </header>
+        </div>        
+    </div>     
+    <div class="settingsContent__gridHolder manageDSP__group">
+        <div class="grid grid--center">
+        <div class="grid__item one-whole">
+            <!--<div style="max-width: 104em; width: 96%; margin: 2em auto;">-->
+        <div class="sortBar__group">
+            <ul class="sortBar__list clearfix">
+                <li class="sortBar__item column__DSPName">
+                    <button class="sortBar__btn sortBar__btn--asc" type="button">DSP</button>
+                </li>                
+                <li class="sortBar__item column__tagTypes">
+                    <button class="sortBar__btn" type="button">Tag Types</button>
+                </li>
+                <li class="sortBar__item column__networkName">
+                    <button class="sortBar__btn" type="button">Networks</button>
+                </li>
+                <li class="sortBar__item column__actionOptions">
+                    <button class="sortBar__btn" type="button">Actions</button>
+                </li>
+            </ul><!--.sortBar__list-->
+        </div><!--.sortBar__group-->
+        <ul class="dspList">            
+            <li class="dspList__item clearfix">
+                <div class="dspList__column column__DSPName">
+                    <span class="dspList__item--text tk--hdr"><a href="add-edit-dsp.html">Brightroll</a></span>
+                </div><!--.column__DSPName-->
+                
+                <div class="dspList__column column__tagTypes">
+                    <span class="dspList__item--text tk--hdr">MRAID, VPAID</span>
+                </div><!--.column__tagTypes-->
+               
+                <div class="dspList__column column__networkName">
+                    <span class="dspList__item--text tk--hdr">
+                        ABC, XYZ
+                    </span>
+                </div><!--.column__networkName-->
+                
+               <div class="dspList__column column__actionOptions">
+                    <div class="actionOptions__menu">
+                        <ul class="action__row">
+                            <!-- Right aligned menu on top of button  -->
+                            <li class="action__row--item">
+                                <nav class="action__dropdown">
+                                    <ul>
+                                      <li><button><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></button>
+                                        <ul>
+                                          <li><button>Edit</button></li>
+                                          <li><button>Delete</button></li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--.column__actionOptions-->    
+            </li><!--.dspList__item-->
+
+            <li class="dspList__item clearfix">
+                <div class="dspList__column column__DSPName">
+                    <span class="dspList__item--text tk--hdr"><a href="add-edit-dsp.html">Brightroll</a></span>
+                </div><!--.column__DSPName-->
+                
+                <div class="dspList__column column__tagTypes">
+                    <span class="dspList__item--text tk--hdr">MRAID, VPAID</span>
+                </div><!--.column__tagTypes-->
+               
+                <div class="dspList__column column__networkName">
+                    <span class="dspList__item--text tk--hdr">
+                        ABC, XYZ
+                    </span>
+                </div><!--.column__networkName-->
+                
+               <div class="dspList__column column__actionOptions">
+                    <div class="actionOptions__menu">
+                        <ul class="action__row">
+                            <!-- Right aligned menu on top of button  -->
+                            <li class="action__row--item">
+                                <nav class="action__dropdown">
+                                    <ul>
+                                      <li><button><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></button>
+                                        <ul>
+                                          <li><button>Edit</button></li>
+                                          <li><button>Delete</button></li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--.column__actionOptions-->    
+            </li><!--.dspList__item-->
+
+            <li class="dspList__item clearfix">
+                <div class="dspList__column column__DSPName">
+                    <span class="dspList__item--text tk--hdr"><a href="add-edit-dsp.html">Brightroll</a></span>
+                </div><!--.column__DSPName-->
+                
+                <div class="dspList__column column__tagTypes">
+                    <span class="dspList__item--text tk--hdr">MRAID, VPAID</span>
+                </div><!--.column__tagTypes-->
+               
+                <div class="dspList__column column__networkName">
+                    <span class="dspList__item--text tk--hdr">
+                        ABC, XYZ
+                    </span>
+                </div><!--.column__networkName-->
+                
+               <div class="dspList__column column__actionOptions">
+                    <div class="actionOptions__menu">
+                        <ul class="action__row">
+                            <!-- Right aligned menu on top of button  -->
+                            <li class="action__row--item">
+                                <nav class="action__dropdown">
+                                    <ul>
+                                      <li><button><i class="fa fa-ellipsis-v"></i><span class="ir">Menu</span></button>
+                                        <ul>
+                                          <li><button>Edit</button></li>
+                                          <li><button>Delete</button></li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--.column__actionOptions-->    
+            </li><!--.dspList__item-->
+        </ul>
+        <div class="paginator__group clearfix">
+            <paginator-controls page="SelfieCampaignsCtrl.model.page" limit="SelfieCampaignsCtrl.limit" limits="SelfieCampaignsCtrl.limits" total="SelfieCampaignsCtrl.model.items.page.total"></paginator-controls>
+                <div class="paginator__readout" c6-alias="SelfieCampaignsCtrl.model.items.value.meta.items as items">
+                    <span ng-show="campaigns.length">Displaying <strong>{{items.start}} &ndash; {{items.end}}</strong> &nbsp;of&nbsp; {{items.total}} Transactions</span>
+                    <span ng-show="!campaigns.length">0 Transactions</span>
+                </div><!--.paginator__readout-->
+
+        </div><!--.paginator__group-->
+        
+    </div>
+</div>
+</div><!-- .settingsContent__gridHolder -->
+
+    <div class="footer__group">
+        &copy; Copyright 2015 Cinema6. All rights reserved.
+    </div><!--.footer__group-->
+
+</div><!--.pageHolder-->
+
+<script type="text/javascript" src="js/selfie-ui.js"></script>
+</body>
+</html>
